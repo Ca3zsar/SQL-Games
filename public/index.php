@@ -1,16 +1,16 @@
 <?php
 
-require_once __DIR__.'/../autoload/autoloader.php';
+require_once __DIR__ . '/../vendor/autoloader.php';
 use app\core\Application;
 
-$app = new Application();
+$app = new Application(dirname(__DIR__));
 
-$app->router->get('/',function(){
-    return 'Hello World';
-});
+$app->router->get('/','home');
 
-$app->router->get('/contact',function(){
-    return 'Contact';
+$app->router->get('/contact','contact');
+
+$app->router->post('/contact',function(){
+    return 'handling data';
 });
 
 $app->run();
