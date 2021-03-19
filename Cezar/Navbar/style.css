@@ -1,0 +1,44 @@
+.html,body{
+	height:100vh;
+}
+
+.vertical-navbar{
+	display: grid;
+	justify-items: center;
+	text-align: center;
+}
+
+/* 
+.menu-option:nth-child(2)
+{
+	margin-right: auto;
+}
+
+#coins, #name-drop{
+	justify-self: flex-start;
+}
+
+#right-menu{
+	display:flex;
+	justify-content: flex-start;
+	flex-direction: row;
+}
+
+#name-drop{
+	margin-right:3%;
+} */
+
+
+@media (min-width: 30rem) {
+	nav {
+	  grid-template-rows: none;
+	  grid-template-columns: 1fr auto auto;
+	  text-align: right;
+	  justify-items: start;
+	  border-bottom: 2px solid #CFCFCF;
+	}
+	
+	hr {
+	  display: none;
+	}
+  }
