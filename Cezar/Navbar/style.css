@@ -1,3 +1,13 @@
+@font-face{
+	font-family:bebas;
+	src: url("fonts/Bebas-Regular.otf");
+}
+
+@font-face{
+	font-family:bignoodle;
+	src :url("fonts/big_noodle_titling.ttf")
+}
+
 *{
 	margin:0;
 	padding:0;
@@ -38,12 +48,19 @@ header{
 .logo a{
 	text-decoration: none;
 	font-size : 1.5em;
+	font-family: bebas;
 	color:#fff;
 	letter-spacing: 5px;
 }
 
 nav{
+	display:flex;
+	justify-content: flex-end;
+
+	margin-right:1em;
+
 	float:right;
+	width:25%;
 	line-height:4em;
 }
 
@@ -51,6 +68,7 @@ nav a, .left-side a{
 	text-decoration: none;
 	letter-spacing:  4px;
 	font-size:1em;
+	font-family: bebas;
 	margin : 0 10px;
 	color : #fff;
 }
@@ -70,6 +88,8 @@ nav a, .left-side a{
 .banner-area h2{
 	padding-top: 15%;
 	font-size:3em;
+	font-family: bebas;
+
 	text-transform: uppercase;
 	color: #fff;
 }
@@ -86,6 +106,8 @@ nav a, .left-side a{
 	letter-spacing: 4px;
 	padding-top: 1em;
 	font-size: 1.5em;
+	font-family: bignoodle;
+
 	margin:0;
 
 }
