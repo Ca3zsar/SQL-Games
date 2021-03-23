@@ -35,10 +35,12 @@ body{
 .banner-area{
 	user-select: none; /* Standard */
 	width:100%;
-	height: 600px;
+	height: 500px;
 	position:fixed;
 	top:0px;
-	background-color: #13274F;
+	/* background-color: #13274F; */
+	background: linear-gradient(to right, #193167,  #13274F,  #0a1429); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 	-webkit-background-size:cover;
 	background-size: cover;
 	background-position: center center;
@@ -46,6 +48,7 @@ body{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	
 }
 
 #banner-title{
@@ -77,9 +80,30 @@ body{
 .content-area{
 	width:100%;
 	position: relative;
-	top:600px;
+	top:500px;
 	background:#ddd;
 	height:1500px;
+	display:inline-flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.footer-bar{
+	align-self: flex-end;
+	padding-bottom: 1%;
+	padding-top: 1%;
+	background-color: #262626;
+	width: 100%;
+}
+
+.footer-bar h4,a{
+	color:#ffffff;
+	font-size: 1.2em;
+	font-family: bebas;
+}
+
+.footer-bar a{
+	text-decoration: none;
 }
 
 .content-area h2{
@@ -88,7 +112,7 @@ body{
 	font-size: 1.5em;
 	font-family: bignoodle;
 
-	margin:0;
+	margin:0;;
 }
 
 .content-area p{
@@ -110,12 +134,18 @@ body{
 		height:400px;
 	}
 
-	.contnet-area{
+	.content-area{
 		top:400px;
+		height:1000px;
 	}
 
 	#sql-image{
 		width:3.3em;
 	}
 
+	.footer-bar h4,a{
+		font-size: 0.9em;
+	}
+
 }
+
