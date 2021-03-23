@@ -71,8 +71,7 @@ body{
 }
 
 #sql-image{
-	float:left;
-	scale: 0.2;
+	width:5em;
 }
 
 .content-area{
@@ -95,4 +94,28 @@ body{
 .content-area p{
 	padding: 2% 0;
 	line-height: 1.5em;
+}
+
+@media(max-width:800px)
+{
+	.banner-area h2{
+		font-size:2em;
+	}
+
+	#sql-span{
+		font-size: 1.6em;
+	}
+
+	.banner-area{
+		height:400px;
+	}
+
+	.contnet-area{
+		top:400px;
+	}
+
+	#sql-image{
+		width:3.3em;
+	}
+
 }
