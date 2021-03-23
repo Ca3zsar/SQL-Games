@@ -1,11 +1,21 @@
 @font-face{
 	font-family:bebas;
-	src: url("fonts/Bebas-Regular.otf");
+	src: url("../fonts/Bebas-Regular.otf");
 }
 
 @font-face{
 	font-family:bignoodle;
-	src :url("fonts/big_noodle_titling.ttf")
+	src :url("../fonts/big_noodle_titling.ttf")
+}
+
+@font-face{
+	font-family:twoD;
+	src : url("../fonts/PressStart2P-Regular.ttf")
+}
+
+@font-face{
+	font-family:roboto;
+	src : url("../fonts/Roboto-Regular.ttf")
 }
 
 *{
@@ -25,7 +35,7 @@ body{
 .banner-area{
 	user-select: none; /* Standard */
 	width:100%;
-	height: 500px;
+	height: 600px;
 	position:fixed;
 	top:0px;
 	background-color: #13274F;
@@ -39,19 +49,37 @@ body{
 	
 }
 
+#banner-title{
+	display:inline-block;
+}
+
 .banner-area h2{
+	float:left;
 	/* padding-top: 15%; */
 	font-size:3em;
-	font-family: bebas;
+	font-family: twoD;
 
 	text-transform: uppercase;
 	color: #fff;
 }
 
+#sql-span{
+	font-size:1.7em;
+	font-family: roboto;
+
+	text-transform: uppercase;
+	color: #fff;
+}
+
+#sql-image{
+	float:left;
+	scale: 0.2;
+}
+
 .content-area{
 	width:100%;
 	position: relative;
-	top:450px;
+	top:600px;
 	background:#ddd;
 	height:1500px;
 }
