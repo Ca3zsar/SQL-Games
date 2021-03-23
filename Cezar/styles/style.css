@@ -46,7 +46,6 @@ body{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	
 }
 
 #banner-title{
@@ -91,7 +90,6 @@ body{
 	font-family: bignoodle;
 
 	margin:0;
-
 }
 
 .content-area p{
