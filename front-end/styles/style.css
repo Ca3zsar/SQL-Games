@@ -109,6 +109,21 @@ body{
 	margin:0;;
 }
 
+#mainpage-sql-area{
+	display: block;
+	margin: 20px auto 20px auto;
+	text-decoration: none;
+	width: 30%;
+	height: 80px;
+	background-color: white;
+	text-align:left;
+
+}
+
+#reservedKeyword{
+	color: #a303a3
+}
+
 .content-area p{
 	padding: 2% 0;
 	line-height: 1.5em;
