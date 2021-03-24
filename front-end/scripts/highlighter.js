@@ -7,12 +7,12 @@ var globalLength = 0;
 
 //seteaza cursorul la finalul comenzii(fara asta pune cursorul la inceputul cuvantului cu fiecare litera).
 function setCursor() {
-    let el = document.getElementById('mainpage-sql-area');
+    var el = document.getElementById('mainpage-sql-area');
 
-    let range = document.createRange();
+    var range = document.createRange();
     range.selectNodeContents(el);
     range.collapse(false);
-    let sel = window.getSelection();
+    var sel = window.getSelection();
 
     sel.removeAllRanges();
     sel.addRange(range);
@@ -21,17 +21,17 @@ function setCursor() {
 
 //cand gaseste cuvinte rezervate le pune in <span> si le schimba culoarea
 function modifyColor() {
-    let textInput = document.getElementById("mainpage-sql-area");
+    var textInput = document.getElementById("mainpage-sql-area");
 
-    let value = textInput.textContent;
+    var value = textInput.textContent;
 
-    let words = value.split(' ');
+    var words = value.split(' ');
 
-    let finalValue = '';
+    var finalValue = '';
 
-    for (let i = 0; i < words.length; i++) {
+    for (var i = 0; i < words.length; i++) {
         if (reservedKeywords.includes(words[i])) {
-            words[i] = "<span id='reservedKeyword'>" + words[i] + "</span>"
+            words[i] = "<span id='reservedKeyword'>" + words[i] + "</span>";
         }
         finalValue = finalValue + (words[i] + ' ');
     }
@@ -39,6 +39,7 @@ function modifyColor() {
     globalLength = value.length;
 
     value = textInput.innerHTML = finalValue;
+    setCursor();
 }
 
 
