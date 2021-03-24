@@ -129,6 +129,12 @@ body{
 	line-height: 1.5em;
 }
 
+.coin-img{
+	position: relative;
+	width:1em;
+	top:4px;
+}
+
 @media(max-width:800px)
 {
 	.banner-area h2{
@@ -154,6 +160,5 @@ body{
 	.footer-bar h4,a{
 		font-size: 0.9em;
 	}
-
 }
 

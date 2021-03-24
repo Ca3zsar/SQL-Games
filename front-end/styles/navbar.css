@@ -3,147 +3,6 @@
   src: url("../fonts/Bebas-Regular.otf");
 }
 
-<<<<<<< Updated upstream
-@font-face{
-	font-family:bignoodle;
-	src :url("../fonts/big_noodle_titling.ttf")
-}
-
-header{
-	/* height:4em; */
-	background : #262626;
-	width:100%;
-	z-index:2;
-	position: fixed;
-	user-select: none; /* Standard */
-}
-
-nav{
-	display:flex;
-	justify-content: flex-end;
-	align-content: center;
-
-	margin-right: 4vw;
-
-	float:right;
-	width:25%;
-	line-height:4em;
-}
-
-.dropdown{
-	display:inline-block;
-	overflow: hidden;
-}
-
-.dropdown .dropbtn{
-	border:none;
-	outline: none;
-	margin:0;
-}
-
-.dropdown-content{
-	right: 0;
-	display: none;
-	position: absolute;
-	max-width: 15vw;
-	background-color: #262626;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	z-index: 1;
-}
-
-.dropdown-content a{
-	width: 100%;
-	display:inline-block;
-	text-decoration: none;
-	text-align: center;
-}
-
-.dropdown:hover .dropdown-content {
-	display:block;
-}
-
-.logo{
-	display:flex;
-	align-items: flex-start;
-
-	padding-left: 15px;
-	float:left;
-	line-height : 4em;
-}
-
-nav a, .left-side a, nav p{
-	text-decoration: none;
-	letter-spacing:  4px;
-	font-size:1em;
-	font-family: bebas;
-	margin : 0 10px;
-	color : #ffffff;
-}
-
-.logo a{
-	text-decoration: none;
-	font-size : 1.5em;
-	font-family: bebas;
-	color:#ffffff;
-	letter-spacing: 5px;
-}
-
-.toggle-btn{
-	top:1.3em;
-	width: 35px;
-	
-	position: absolute;
-	right:8vw;
-	
-	display: none;
-}
-
-.toggle-btn span{
-	display: block;
-	width: 100%;
-	height:2px;
-	background-color: #ffffff;
-	float : left;
-	margin-bottom: 8px;
-}
-
-.coins-collapsed
-{
-	display:none;
-}
-
-@media (max-width:800px)
-{
-	.toggle-btn{
-		display:flex;
-		justify-content: center;
-		flex-direction: column;
-	}
-	nav{
-		display: none;
-		width:100%;
-		border-top:1px solid #ffffff;
-
-	}
-	nav a{
-		/* margin-top: 1px solid #ffffff; */
-		width: 100%;
-
-	}
-	.right-nav.show{
-		display:flex;
-		flex-direction: column;
-		justify-content: center;
-		background: #262626;
-	}
-	.coins-collapsed{
-		display:block;
-	}
-	.coins{
-		display:none;
-	}
-}
-=======
 @font-face {
   font-family: bignoodle;
   src: url("../fonts/big_noodle_titling.ttf");
@@ -228,7 +87,6 @@ nav>a:focus:after {
   right: 0;
   display: none;
   position: absolute;
-  max-width: 15vw;
   background-color: #262626;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -334,5 +192,18 @@ nav p {
   .coins {
     display: none;
   }
+
+  .dropbtn{
+    display:none;
+  }
+
+  .dropdown-content{
+    /* max-width: max-content; */
+    display:block;
+    width: 100vw;
+  }
+
+  .dropdown-content a:hover {
+    
+  }
 }
->>>>>>> Stashed changes
