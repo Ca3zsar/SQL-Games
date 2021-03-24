@@ -16,56 +16,55 @@
 </head>
 
 <body>
-    <div class="box-area">
-        <header>
-            <div class="left-side">
-                <div class="logo">
-                    <a href="#">SQL-GAMES</a>
+    <header>
+        <div class="left-side">
+            <div class="logo">
+                <a href="#">SQL-GAMES</a>
+            </div>
+        </div>
+        <nav class="right-nav">
+            <a href="/" class="coins">10<img src="resources/coin.png" class="coin-img" alt="sqliezi" /></a>
+            <a href="/" class="coins-collapsed">Coins : 10<img src="resources/coin.png" class="coin-img"
+                    alt="sqliezi" /></a>
+            <a href="main_page.html">Problems</a>
+            <div class="dropdown">
+                <p class="dropbtn">Account</p>
+                <div class="dropdown-content">
+                    <a href="#">Profile Settings</a>
+                    <a href="#">Statistics</a>
+                    <a href="#">Log out</a>
                 </div>
             </div>
-            <nav class="right-nav">
-                <a href="/" class="coins">10<img src="resources/coin.png" class="coin-img" alt="sqliezi"/></a>
-                <a href="/" class="coins-collapsed" >Coins : 10<img src="resources/coin.png" class="coin-img" alt="sqliezi"/></a>
-                <a href="main_page.html">Problems</a>
-                <div class="dropdown">
-                    <p class="dropbtn">Account</p>
-                    <div class="dropdown-content">
-                        <a href="#">Profile Settings</a>
-                        <a href="#">Statistics</a>
-                        <a href="#">Log out</a>
-                    </div>
-                </div>
-            </nav>
-            <div class="toggle-btn" onclick="displayOptions()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-        </header>
-        <div class="banner-area">
-            <div id="banner-title"></div>
-            <img id="sql-image" alt="" src="resources/sql.png" />
-            <h2>SQL-Games</h2>
+        </nav>
+        <div class="toggle-btn" onclick="displayOptions()">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
 
-        <div class="content-area" id="content-id">
-            <div class="wrapper">
-                <h2>Content area</h2>
-                <!-- <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto tempore hic possimus, in cupiditate
+    </header>
+    <div class="banner-area">
+        <div id="banner-title"></div>
+        <img id="sql-image" alt="" src="resources/sql.png" />
+        <h2>SQL-Games</h2>
+    </div>
+
+    <div class="content-area" id="content-id">
+        <div class="wrapper">
+            <h2>Content area</h2>
+            <!-- <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto tempore hic possimus, in cupiditate
                     saepe illum, quisquam similique aperiam nihil a aut quae ullam ipsa quos, eos vel dolor
                     exercitationem.</p> -->
 
-                <div contenteditable="true" id='mainpage-sql-area' oninput="modifyColor();setCursor()"></div>
+            <div contenteditable="true" id='mainpage-sql-area' oninput="modifyColor();setCursor()"></div>
 
-            </div>
-            <footer class="footer-bar">
-                <a href="#">Contact us</a>
-                <h4>© SQL-GAMES 2021 Buliga Eugeniu, Todirisca Cezar, Toma Andrei</h4>
-            </footer>
         </div>
-
+        <footer class="footer-bar">
+            <a href="#">Contact us</a>
+            <h4>© SQL-GAMES 2021 Buliga Eugeniu, Todirisca Cezar, Toma Andrei</h4>
+        </footer>
     </div>
+
 
     <script src="scripts/resize.js"></script>
 </body>
