@@ -5,9 +5,13 @@ document.getElementsByClassName("content-area")[0].style.top = heightValue;
 
 function modifyDimensions(condition)
 {
+    var navbar = document.querySelector("header")
+    var navHeight = navbar.offsetHeight;
+    document.getElementsByClassName("banner-area")[0].style.top=navHeight+"px";
+
     var banner = document.querySelector(".banner-area");
-    var heightValue = window.getComputedStyle(banner).height;
-    document.getElementsByClassName("content-area")[0].style.top = heightValue;
+    var heightValue = banner.offsetHeight;
+    document.getElementsByClassName("content-area")[0].style.top = (heightValue+navHeight)+"px";
     
 }
 

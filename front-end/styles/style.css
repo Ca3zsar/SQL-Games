@@ -39,9 +39,8 @@ body{
 .banner-area{
 	user-select: none; /* Standard */
 	width:100%;
-	height: 500px;
+	height: 400px;
 	position:fixed;
-	top:0px;
 	/* background-color: #13274F; */
 	background: linear-gradient(to right, #193167,  #13274F,  #0a1429); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
@@ -61,7 +60,6 @@ body{
 
 .banner-area h2{
 	float:left;
-	/* padding-top: 15%; */
 	font-size:3em;
 	font-family: twoD;
 
@@ -76,9 +74,9 @@ body{
 .content-area{
 	width:100%;
 	position: relative;
-	/* top:500px; */
+	margin-top: 0;
 	background:#ddd;
-	height:1500px;
+	height:1000px;
 	display:inline-flex;
 	flex-wrap: wrap;
 	justify-content: center;
