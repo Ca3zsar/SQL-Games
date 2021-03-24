@@ -13,4 +13,4 @@ function modifyDimensions(condition)
 
 var condition = window.matchMedia("(max-width:800px");
 modifyDimensions(condition);
-condition.addEventListener("change",MediaQueryListEvent);
+condition.addEventListener("change",modifyDimensions);
