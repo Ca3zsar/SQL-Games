@@ -75,7 +75,7 @@ nav a, .left-side a{
 	margin-bottom: 8px;
 }
 
-#coins-collapsed
+.coins-collapsed
 {
 	display:none;
 }
@@ -98,16 +98,16 @@ nav a, .left-side a{
 		width: 100%;
 
 	}
-	#right-nav.show{
+	.right-nav.show{
 		display:flex;
 		flex-direction: column;
 		justify-content: center;
 		background: #262626;
 	}
-	#coins-collapsed{
+	.coins-collapsed{
 		display:block;
 	}
-	#coins{
+	.coins{
 		display:none;
 	}
 }

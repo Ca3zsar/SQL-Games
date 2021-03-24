@@ -18,6 +18,10 @@
 	src : url("../fonts/Roboto-Regular.ttf")
 }
 
+:root{
+	--white : #ffffff;
+}
+
 *{
 	margin:0;
 	padding:0;
@@ -62,15 +66,7 @@ body{
 	font-family: twoD;
 
 	text-transform: uppercase;
-	color: #fff;
-}
-
-#sql-span{
-	font-size:1.7em;
-	font-family: roboto;
-
-	text-transform: uppercase;
-	color: #fff;
+	color: var(--white);
 }
 
 #sql-image{
@@ -80,7 +76,7 @@ body{
 .content-area{
 	width:100%;
 	position: relative;
-	top:500px;
+	/* top:500px; */
 	background:#ddd;
 	height:1500px;
 	display:inline-flex;
@@ -97,7 +93,7 @@ body{
 }
 
 .footer-bar h4,a{
-	color:#ffffff;
+	color:var(--white);
 	font-size: 1.2em;
 	font-family: bebas;
 }
@@ -135,7 +131,6 @@ body{
 	}
 
 	.content-area{
-		top:400px;
 		height:1000px;
 	}
 

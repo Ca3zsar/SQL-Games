@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title> Navbar Test</title>
+<html lang="ro">
+    <head >
+        <title> SQL-Games</title>
 
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <link rel="stylesheet" href="styles/style.css" />
         <link rel="stylesheet" href="styles/navbar.css"/>
-        <script src="navFunctions.js"></script>
+        <script src="scripts/navFunctions.js"></script>
+
+        <link rel="shortcut icon" type="image/png" href="resources/favicon-32x32.png"/>
+        
     </head>
 
     <body>
@@ -18,9 +22,9 @@
                         <a href="#">SQL-GAMES</a>
                     </div>
                 </div>
-                <nav id="right-nav">
-                    <a href="#" id="coins">10</a>
-                    <a href="#" id="coins-collapsed">Coins : 10</a>
+                <nav class="right-nav">
+                    <a href="#" class="coins">10</a>
+                    <a href="#" class="coins-collapsed">Coins : 10</a>
                     <a href="#">Problems</a>
                     <a href="#">Account</a>
                 </nav>
@@ -33,11 +37,11 @@
            </header>
            <div class="banner-area">
                <div id="banner-title"></div>
-                    <img id="sql-image" src="resources/sql.png"/>   
-                    <h2 ><span id="sql-span">SQL</span>-Games</h2>
+                    <img id="sql-image" alt="" src="resources/sql.png"/>   
+                    <h2 >SQL-Games</h2>
                 </div>
             
-           <div class="content-area">
+           <div class="content-area" id="content-id">
                <div class="wrapper">
                    <h2>Content area</h2>
                    <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto tempore hic possimus, in cupiditate saepe illum, quisquam similique aperiam nihil a aut quae ullam ipsa quos, eos vel dolor exercitationem.</p>
@@ -51,9 +55,7 @@
            
        </div>
 
-
-
-       
+       <script src="scripts/resize.js"></script>  
     </body>
 
 </html>
