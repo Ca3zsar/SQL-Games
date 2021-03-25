@@ -39,7 +39,9 @@ function ready(functionToRun){
 	while(document.readyState != 'loading'){
 		continue;
 	}
-	console.log("CIVA");
+	console.log("ce");
+	document.querySelector("textarea").content = "";
+	document.querySelector("code").content = "";
 	functionToRun();
 }
 
@@ -83,7 +85,7 @@ function correctTextareaHeight(element)
 	Run syntax hightlighter  
 ------------------------------------------*/
 function highlightBlock(block){
-	if([" select "].indexOf(block.innerHTML) >= 0)
+	if(["select"].indexOf(block.innerHTML) >= 0)
 	{
 		console.log("ALTCEVA");
 		var newSpan = document.createElement("span");
@@ -108,10 +110,6 @@ function hightlightSyntax(){
 			highlightBlock(block);
 		}
 	);
-
-	// $('.syntax-highlight').each(function(i, block) {
-	// 	hljs.highlightBlock(block);
-	// });
 }
 
 

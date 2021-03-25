@@ -95,7 +95,7 @@ body{
 .content-area h2{
 	letter-spacing: 4px;
 	padding-top: 1em;
-	font-size: 1.5em;
+	font-size: 2em;
 	font-family: bignoodle;
 
 	margin:0;
@@ -159,6 +159,10 @@ body{
 	height: 500px;
 	margin: 0;
 	left: 0;
+}
+
+.editor-holder.fullscreen .full-exp{
+	content : url("../resources/minimize-fullscreen.png");
 }
 
 .editor-holder .toolbar {
@@ -226,7 +230,7 @@ body{
 	color: #fff;
 	text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
 	-webkit-text-fill-color: transparent;
-	user-select: none;
+	/* user-select: none; */
 }
 
 .editor-holder textarea::-webkit-input-placeholder {
@@ -256,4 +260,13 @@ pre {
 pre code {
 	background: #1f1f1f !important;
 	color: #adadad;
+}
+
+.full-exp{
+	width:14px;
+	content: url("../resources/expand-fullscreen.png");
+}
+
+.indent-class{
+	width: 14px;
 }
