@@ -90,6 +90,7 @@ body{
 
 .footer-bar a{
 	text-decoration: none;
+	padding: 0px 20px;
 }
 
 .content-area h2{
@@ -105,6 +106,24 @@ body{
 	padding: 2% 0;
 	line-height: 1.5em;
 }
+
+.text-space p{
+	background-color: #adadad;
+	font-family: bignoodle;
+	letter-spacing: 4px;
+	padding-top: 1em;
+	font-size: 2em;
+}
+
+.text-space {
+	background-color: #adadad;
+	font-family: roboto;
+	letter-spacing: 4px;
+	padding-top: 1em;
+	font-size: 2em;
+}
+
+
 
 @media(max-width:800px)
 {
