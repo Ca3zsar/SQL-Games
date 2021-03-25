@@ -12,7 +12,7 @@ header {
   /* height:4em; */
   background: #262626;
   width: 100%;
-  z-index: 2;
+  z-index: 4;
   position: fixed;
   user-select: none; /* Standard */
 }
