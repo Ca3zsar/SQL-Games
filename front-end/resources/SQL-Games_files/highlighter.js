@@ -1,6 +1,5 @@
 var tabCharacter = "  ";
 var tabOffset = 2;
-var newLines = 0;
 
 document.querySelector("#indent").addEventListener('click',e =>
 {
@@ -40,17 +39,9 @@ function ready(functionToRun){
 	while(document.readyState != 'loading'){
 		continue;
 	}
-
+	console.log("ce");
 	document.querySelector("textarea").content = "";
 	document.querySelector("code").content = "";
-
-	var firstLine = document.createElement("div");
-	firstLine.className = "specific-line";
-	firstLine.innerHTML = 1;
-
-	var lineShow = document.getElementsByClassName("line-number")[0];
-	lineShow.append(firstLine);
-
 	functionToRun();
 }
 
@@ -59,33 +50,11 @@ ready(hightlightSyntax);
 /*------------------------------------------
 	Capture text updates
 ------------------------------------------*/
-function updater(event)
+function updater()
 {
 	var thisObject = document.getElementsByClassName("editor allow-tabs")[0];
 	correctTextareaHeight(thisObject);
 	hightlightSyntax();
-
-	
-
-	if(event.type == "keydown")
-	{
-		var content = document.querySelector("code").innerHTML;
-		var lines = (content.match(/\n/g) || '').length;
-		if(lines != newLines)
-		{
-			newLines = lines;
-			
-			for(var i = 0; i<lines;i++)
-			{
-				var toAddLine = document.createElement("div");
-				toAddLine.className = "specific-line";
-				toAddLine.innerHTML = i+1;
-
-				var lineShow = document.getElementsByClassName("line-number")[0];
-				lineShow.append(toAddLine);
-			}
-		}
-	}
 }
 
 document.querySelector("textarea").addEventListener("ready",updater);
@@ -118,11 +87,10 @@ function correctTextareaHeight(element)
 function highlightBlock(block){
 	if(["select"].indexOf(block.innerHTML) >= 0)
 	{
+		console.log("ALTCEVA");
 		var newSpan = document.createElement("span");
 		newSpan.style.color = "red";
 		newSpan.innerHTML = block.innerHTML;
-
-		block.innerHTML = "";
 
 		var code = document.getElementsByClassName("syntax-highlight html")[0];
 		code.append(newSpan);
@@ -176,8 +144,7 @@ document.querySelector(".allow-tabs").addEventListener('keydown',function(e){
 								+ thisObject.value.substring(end);
 
 		// put caret at right position again
-		thisObject.selectionStart =	 start;
+		thisObject.selectionStart =
 		thisObject.selectionEnd = start + tabOffset;
 	}
 });
-

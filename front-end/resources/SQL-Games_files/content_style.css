@@ -242,9 +242,6 @@ body{
 }
 
 .editor-holder textarea {
-	left:45px;
-	margin: auto;
-	position: absolute;
 	background: transparent !important;
 	z-index: 2;
 	height: auto;
@@ -277,17 +274,11 @@ pre {
 	white-space: -pre-wrap;
 	white-space: -o-pre-wrap;
 	word-wrap: break-word;
-	position: relative;
-	left:45px;
-	top:-12px;
-	
 }
 
 pre code {
 	background: #1f1f1f !important;
-	color: #61AFEF;
-	font-size: 29px;
-	font-family: roboto;
+	color: #adadad;
 }
 
 .full-exp{
@@ -297,21 +288,4 @@ pre code {
 
 .indent-class{
 	width: 14px;
-}
-
-.line-number{
-	position: absolute;
-	width:45px;
-	border-right: 1px solid #fff ;
-	top:66px;
-}
-
-.specific-line{
-	width:100%;
-	line-height: 21px;
-	position: relative;
-	text-align: right;
-	right: 4px;
-	color:#ffffff;
-	font-family: roboto;
 }
