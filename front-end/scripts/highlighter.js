@@ -2,6 +2,13 @@ var tabCharacter = "  ";
 var tabOffset = 2;
 var newLines = 0;
 
+var textAreaVar = document.getElementsByClassName("editor allow-tabs")[0];
+
+textAreaVar.oninput = function(){
+	this.style.height = "";
+	this.style.height = this.scrollHeight - 38 + "px";
+};
+
 document.querySelector("#indent").addEventListener("click", (e) => {
   var thisObject = document.getElementById("indent");
 
@@ -177,3 +184,6 @@ document.querySelector(".allow-tabs").addEventListener("keydown", function (e) {
     thisObject.selectionEnd = start + tabOffset;
   }
 });
+
+textAreaVar.focus();
+

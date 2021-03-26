@@ -161,16 +161,19 @@ body{
 
 .editor-holder {
 	width: 800px;
-	height: 500px;
+	height: 537px;
 	margin-top: 50px;
 	border-radius: 3px;
+
+	text-align: initial;
 	position: relative;
 	top: 0;
-	background: #1C2434 !important;
-	overflow: auto;
+	background: #1f1f1f !important;
+
 	box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
 	transition: all 0.5s ease-in-out;
-	text-align:initial;
+
+	overflow-y: auto;
 	overflow-x:hidden;
 	overflow-wrap: break-word;
 }
@@ -185,6 +188,11 @@ body{
 .editor-holder.fullscreen .full-exp{
 	content : url("../resources/minimize-fullscreen.png");
 }
+
+.editor-holder.fullscreen textarea, .editor-holder.fullscreen code{
+	width:96%;
+}
+
 
 .editor-holder .toolbar {
 	max-width: 100%;
@@ -229,6 +237,7 @@ body{
 
 .editor-holder textarea, .editor-holder code {
 	width: 91%;
+	
 	height: auto;
 	min-height: 450px;
 	font-size: 14px;
@@ -274,6 +283,15 @@ body{
 	z-index: 1;
 }
 
+.editor-holder textarea::-webkit-scrollbar {
+  display: none;
+}
+
+.editor-holder textarea {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+
 pre {
 	white-space: pre-wrap;
 	white-space: -moz-pre-wrap;
@@ -303,10 +321,14 @@ pre code {
 }
 
 .line-number{
+	padding-top:20px;
 	position: absolute;
 	width:45px;
-	border-right: 1px solid #fff ;
-	top:66px;
+	top:46px;
+	background-color: #1C2434;
+
+	height: auto;
+	min-height: 88%;
 }
 
 .specific-line{
@@ -317,4 +339,5 @@ pre code {
 	right: 4px;
 	color:#ffffff;
 	font-family: roboto;
+	background-color: #1C2434;
 }
