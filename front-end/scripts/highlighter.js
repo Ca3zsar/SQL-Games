@@ -64,7 +64,7 @@ function updater(event) {
 
   if (event.type == "keydown") {
     var content = document.querySelector("code").innerHTML;
-    var lines = (content.match(/\n/g) || "").length;
+    var lines = (content.match(/\n/g) || "\n").length;
     if (lines != newLines) {
 
       if (lines > newLines) {
@@ -79,7 +79,7 @@ function updater(event) {
       }else{
 		var toDeleteChild = document.getElementsByClassName("specific-line");
 		var lineShow = document.getElementsByClassName("line-number")[0];
-		for(var i = newLines-1;i>=lines;i--)
+		for(var i = newLines;i>lines;i--)
 		{
 			toDeleteChild[i].remove();
 		}
