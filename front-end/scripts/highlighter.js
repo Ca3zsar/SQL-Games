@@ -64,7 +64,7 @@ function updater(event) {
 
   if (event.type == "keydown") {
     var content = document.querySelector("code").innerHTML;
-    var lines = (content.match(/\n/g) || "\n").length;
+    var lines = (content.match(/\n/g) || "").length;
     if (lines != newLines) {
 
       if (lines > newLines) {
