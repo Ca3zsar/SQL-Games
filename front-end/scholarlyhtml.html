@@ -8,11 +8,12 @@
 </head>
 
 <body>
+    <article typeof="schema:ScholarlyArticle" href="#">
+        <h1>Scholarly HTML "SQL-Games"</h1>
 
-    <h1>Scholarly "SQL-Games"</h1>
-    <div role="contentinfo">
 
         <section typeof="sa:AuthorsList">
+            <div role="contentinfo"></div>
             <h2>Authors</h2>
             <ul>
                 <li typeof="sa:ContributorRole" property="schema:author">
@@ -60,25 +61,105 @@
                     </ul>
                 </li>
             </ul>
+            </div>
         </section>
 
-    </div>
 
-    <div role="doc-abstract">
-        <h1>Abstract</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores dignissimos eligendi optio. Ad blanditiis
-            facilis, quo natus perferendis dolores nam illo. Libero tenetur ullam veritatis similique officia suscipit
-            delectus inventore.</p>
-    </div>
+        <section typeof="sa:Abstract">
+            <div role="doc-abstract">
+                <h2>Abstract</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores dignissimos eligendi optio. Ad
+                        blanditiis
+                        facilis, quo natus perferendis dolores nam illo. Libero tenetur ullam veritatis similique
+                        officia
+                        suscipit
+                        delectus inventore.</p>
+            </div>
+        </section>
 
-    <div role="doc-introduction">
-        <h1>Introduction</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores dignissimos eligendi optio. Ad blanditiis
-            facilis, quo natus perferendis dolores nam illo. Libero tenetur ullam veritatis similique officia suscipit
-            delectus inventore.</p>
-    </div>
+        <section typeof="sa:ReferenceList">
+            <div role="doc-introduction">
+                <h2>Introduction</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores dignissimos eligendi optio. Ad
+                    blanditiis
+                    facilis, quo natus perferendis dolores nam illo. Libero tenetur ullam veritatis similique
+                    officia
+                    suscipit
+                    delectus inventore.</p>
+            </div>
+        </section>
 
 
+        <section typeof="sa:MaterialsAndMethods">
+            <h2>Materials and methods?</h2>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa delectus expedita nisi facilis rem?
+                Placeat
+                quisquam a nulla facere saepe earum! Officia soluta officiis laudantium perspiciatis, quas obcaecati
+                iure laboriosam.</p>
+
+                
+        </section>
+
+
+
+        <section typeof="sa:Results">
+            <h2>Results</h2>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa delectus expedita nisi facilis rem?
+                Placeat
+                quisquam a nulla facere saepe earum! Officia soluta officiis laudantium perspiciatis, quas obcaecati
+                iure laboriosam.</p>
+        </section>
+
+
+        
+        <section typeof="sa:Conclusion">
+            <h2>Conclusion</h2>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa delectus expedita nisi facilis rem?
+                Placeat
+                quisquam a nulla facere saepe earum! Officia soluta officiis laudantium perspiciatis, quas obcaecati
+                iure laboriosam.</p>
+        </section>
+
+
+        
+        <section typeof="sa:Acknowledgements">
+            <h2>Acknowledgements?</h2>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa delectus expedita nisi facilis rem?
+                Placeat
+                quisquam a nulla facere saepe earum! Officia soluta officiis laudantium perspiciatis, quas obcaecati
+                iure laboriosam.</p>
+        </section>
+
+
+        
+
+
+
+
+
+
+        <section typeof="sa:ReferenceList">
+            <h2>References</h2>
+
+            <li id="ref-something" typeof="schema:ScholarlyArticle"
+                resource="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-projects.html">
+                <span property="schema:author" typeof="schema:Person">
+                    <span property="schema:familyName">Buraga</span>
+                    <span property="schema:givenName">Sabin</span>.
+                </span>
+                <cite property="schema:name">Site-ul Tehnologii Web.</cite>
+                <span property="schema:isPartOf" typeof="schema:PublicationVolume">
+                    <span property="schema:isPartOf" typeof="schema:Periodical">
+                        <span property="schema:name">FII UAIC.</span>
+                    </span>
+            </li>
+        </section>
+
+    </article>
 </body>
 
 </html>
