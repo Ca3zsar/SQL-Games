@@ -4,9 +4,9 @@ var newLines = 0;
 
 var textAreaVar = document.getElementsByClassName("editor allow-tabs")[0];
 
-textAreaVar.oninput = function(){
-	this.style.height = "";
-	this.style.height = this.scrollHeight - 38 + "px";
+textAreaVar.oninput = function () {
+  this.style.height = "";
+  this.style.height = this.scrollHeight - 38 + "px";
 };
 
 document.querySelector("#indent").addEventListener("click", (e) => {
@@ -64,16 +64,16 @@ ready(hightlightSyntax);
 /*------------------------------------------
 	Capture text updates
 ------------------------------------------*/
-function updater(event) {
+function updater(event, turn) {
   var thisObject = document.getElementsByClassName("editor allow-tabs")[0];
+  console.log(this)
   correctTextareaHeight(thisObject);
   hightlightSyntax();
 
-  if (event.type == "keydown") {
+  if (event.type == "keyup") {
     var content = document.querySelector("code").innerHTML;
     var lines = (content.match(/\n/g) || "").length;
     if (lines != newLines) {
-
       if (lines > newLines) {
         for (var i = newLines; i < lines; i++) {
           var toAddLine = document.createElement("div");
@@ -83,14 +83,13 @@ function updater(event) {
           var lineShow = document.getElementsByClassName("line-number")[0];
           lineShow.append(toAddLine);
         }
-      }else{
-		var toDeleteChild = document.getElementsByClassName("specific-line");
-		var lineShow = document.getElementsByClassName("line-number")[0];
-		for(var i = newLines;i>lines;i--)
-		{
-			toDeleteChild[i].remove();
-		}
-	  }
+      } else {
+        var toDeleteChild = document.getElementsByClassName("specific-line");
+        var lineShow = document.getElementsByClassName("line-number")[0];
+        for (var i = newLines; i > lines; i--) {
+          toDeleteChild[i].remove();
+        }
+      }
       newLines = lines;
     }
   }
@@ -186,4 +185,3 @@ document.querySelector(".allow-tabs").addEventListener("keydown", function (e) {
 });
 
 textAreaVar.focus();
-
