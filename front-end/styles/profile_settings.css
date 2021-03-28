@@ -1,0 +1,58 @@
+@import "font-importer.css";
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+.wrapper {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.content-area {
+	width: 100%;
+	position: relative;
+	margin-top: 0;
+	background: #d3d7de;
+	height: 800px;
+	display: inline-flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.profile-settings-div {
+	float: left;
+	justify-content: flex-start;
+	padding: 10px;
+	flex-direction: column;
+	line-height: 30px;
+	font-family: open-sans-light;
+	border-right: 1px solid gray;
+	width: 200px
+}
+
+.profile-settings-div div {
+	width: 100%;
+}
+
+.profile-settings-div div:hover {
+	background: rgb(21, 21, 21);
+	background: linear-gradient( 90deg, rgba(70, 69, 69, 0.964) 0%, rgba(129, 129, 129, 0.902) 50%, rgba(192, 191, 191, 0.757) 100%);
+}
+
+.settings-title {
+	margin-top: 80px;
+	padding-left: 10px;
+	font-family: open-sans-light;
+	font-size: 3em;
+	font-weight: 600;
+	color: #222121;
+	margin-bottom: 15px;
+}
+
+@media(max-width:810px) {
+	.settings-title {
+		font-size: 2em;
+	}
+}

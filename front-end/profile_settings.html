@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/profile_settings.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <script src="scripts/navFunctions.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="left-side">
+            <div class="logo">
+                <a href="main_page.html">SQL-GAMES</a>
+            </div>
+        </div>
+        <nav class="right-nav">
+            <a href="/" class="coins">10<img src="resources/coin.png" class="coin-img" alt="sqliezi" /></a>
+            <a href="/" class="coins-collapsed">Coins : 10<img src="resources/coin.png" class="coin-img"
+                    alt="sqliezi" /></a>
+            <a href="main_page.html">Exercises</a>
+            <div class="dropdown">
+                <p class="dropbtn">Account</p>
+                <div class="dropdown-content">
+                    <a href="profile_settings.html">Profile Settings</a>
+                    <a href="#">Statistics</a>
+                    <a href="#">Log out</a>
+                </div>
+            </div>
+        </nav>
+        <div class="toggle-btn" onclick="displayOptions()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </header>
+
+    <div class="content-area" id="content-id">
+        <div class="wrapper">
+            <div class="settings-title">
+                Profile Settings
+            </div>
+            <div class="profile-settings-div">
+                <div>Personal information</div>
+                <div>Password</div>
+                <div>Profile picture</div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer-bar">
+        <a href="#">Contact us</a>
+        <a href="scholarlyhtml.html">Better Scholarly HTML</a>
+        <h4>© SQL-GAMES 2021 Buliga Eugeniu, Todirisca Cezar, Toma Andrei</h4>
+    </footer>
+    </div>
+</body>
+
+</html>

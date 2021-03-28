@@ -55,25 +55,6 @@ body{
 	justify-content: center;
 }
 
-.footer-bar{
-	align-self: flex-end;
-	padding-bottom: 1%;
-	padding-top: 1%;
-	background-color: #262626;
-	width: 100%;
-}
-
-.footer-bar h4,a{
-	color:#ffffff;
-	font-size: 1.2em;
-	font-family: bebas;
-}
-
-.footer-bar a{
-	text-decoration: none;
-	padding: 0px 20px;
-}
-
 .content-area p{
 	padding: 2% 0;
 	line-height: 1.5em;
@@ -152,10 +133,6 @@ body{
 
 	#sql-image{
 		width:3.3em;
-	}
-
-	.footer-bar h4,a{
-		font-size: 0.9em;
 	}
 
 	.image img{
