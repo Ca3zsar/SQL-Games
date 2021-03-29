@@ -1,10 +1,11 @@
 @import "font-importer.css";
 body {
+	text-align: center;
 	margin: 0;
 	padding: 0;
 	height: 100%;
 }
-
+ 
 .wrapper {
 	width: 100%;
 	margin: 0 auto;
@@ -49,10 +50,11 @@ body {
 	font-weight: 600;
 	color: #222121;
 	margin-bottom: 15px;
+	text-align: left;
 }
 
 @media(max-width:810px) {
 	.settings-title {
 		font-size: 2em;
 	}
-}
+} 
