@@ -32,3 +32,13 @@
 	font-family:open-sans-light;
 	src : url("../fonts/OpenSans-Light.ttf")
 }
+
+@font-face{
+	font-family:montserrat-regular;
+	src : url("../fonts/Montserrat-Regular.ttf");
+}
+
+@font-face{
+	font-family:montserrat-extra-bold;
+	src : url("../fonts/Montserrat-ExtraBold.ttf");
+}
