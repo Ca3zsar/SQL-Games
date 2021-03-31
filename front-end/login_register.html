@@ -7,7 +7,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="styles/content_style.css" />
     <link rel="stylesheet" href="styles/navbar.css" />
     <link rel="stylesheet" href="styles/footer.css" />
     <link rel="stylesheet" href="styles/signin_register.css" />
@@ -21,14 +20,14 @@
     <header>
         <div class="left-side">
             <div class="logo">
-                <a href="#">SQL-GAMES</a>
+                <a href="main_page.html">SQL-GAMES</a>
             </div> 
         </div>
         <nav class="right-nav">
             <a href="/" class="coins">10<img src="resources/coin.png" class="coin-img" alt="sqliezi" /></a>
             <a href="/" class="coins-collapsed">Coins : 10<img src="resources/coin.png" class="coin-img"
                     alt="sqliezi" /></a>
-            <a href="main_page.html">Exercises</a>
+            <a href="exercise.html">Exercises</a>
             <div class="dropdown">
                 <p class="dropbtn">Account</p>
                 <div class="dropdown-content">
@@ -69,12 +68,12 @@
                 <div class="overlay">
                     <div class="overlay-panel overlay-left">
                         <h1 class="h1-title">Welcome Back!</h1>
-                        <p class="general-info">To keep connected with us please login with your personal info</p>
+                        <p class="general-info">Please enter your login and password to keep SQL-ing.</p>
                         <button  class="action-button ghost" id="signIn">Sign In</button>
                     </div>
                     <div class="overlay-panel overlay-right">
                         <h1 class="h1-title">Hello, Friend!</h1>
-                        <p class="general-info">Enter your personal details and start journey with us</p>
+                        <p class="general-info">Enter your details to start conquering SQl-craft!</p>
                         <button  class="action-button ghost" id="signUp">Sign Up</button>
                     </div>
                 </div>
@@ -88,4 +87,14 @@
         </footer>
     </div>
     <script src="scripts/signin_register.js"></script>
+    <script>
+        window.addEventListener(
+                "resize", getSizes, false);
+                  
+        function getSizes() {
+            let body = document.body;
+            let zoom = body.clientWidth + "px x " +
+                body.clientHeight + "px";
+        }
+    </script>
 </body>

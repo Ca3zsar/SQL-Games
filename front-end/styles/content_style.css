@@ -50,9 +50,8 @@ body{
 .content-area{
 	width:100%;
 	position: relative;
-	margin-top: 0;
 	background:#d3d7de;
-	height:auto;
+	height:100vh;
 	display:inline-flex;
 	flex-wrap: wrap;
 	justify-content: center;
