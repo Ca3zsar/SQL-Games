@@ -51,7 +51,7 @@ body{
 	width:100%;
 	position: relative;
 	background:#d3d7de;
-	height:100vh;
+	height:fit-content;
 	display:inline-flex;
 	flex-wrap: wrap;
 	justify-content: center;
