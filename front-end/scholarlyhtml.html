@@ -98,17 +98,17 @@
                 <h3 typeof="sa:ReferenceList">1.5 References</h3>
 
                 <li id="ref-something" typeof="schema:ScholarlyArticle"
-                resource="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-projects.html">
-                <span property="schema:author" typeof="schema:Person">
-                    <span property="schema:familyName">Buraga</span>
-                    <span property="schema:givenName">Sabin</span>.
-                </span>
-                <cite property="schema:name">Site-ul Tehnologii Web.</cite>
-                <span property="schema:isPartOf" typeof="schema:PublicationVolume">
-                    <span property="schema:isPartOf" typeof="schema:Periodical">
-                        <span property="schema:name">FII UAIC.</span>
+                    resource="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-projects.html">
+                    <span property="schema:author" typeof="schema:Person">
+                        <span property="schema:familyName">Buraga</span>
+                        <span property="schema:givenName">Sabin</span>.
                     </span>
-            </li>
+                    <cite property="schema:name">Site-ul Tehnologii Web.</cite>
+                    <span property="schema:isPartOf" typeof="schema:PublicationVolume">
+                        <span property="schema:isPartOf" typeof="schema:Periodical">
+                            <span property="schema:name">FII UAIC.</span>
+                        </span>
+                </li>
             </div>
         </section>
 
@@ -116,14 +116,18 @@
             <h2>2. Overall Description</h2>
 
             <h3>2.1 Product Perspective</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa delectus expedita nisi facilis rem?
-                Placeat
-                quisquam a nulla facere saepe earum! Officia soluta officiis laudantium perspiciatis, quas obcaecati
-                iure laboriosam.</p>
+            <p>A new self-contained product consisting of ...?</p>
 
             <h3>2.2 Product Functions</h3>
+            <p>SOme of the major functions are: the ability to solve database-related tasks, buy new tasks and earn sqlids currency, an achievement system integrated in the account of every user.</p>
 
             <h3>2.3 User Classes and Characteristics</h3>
+
+            <h4>2.3.1 Regular user</h4>
+            <p>Can solve tasks, gain sqlids and achievemts.</p>
+
+            <h4>2.3.2 Teacher user???</h4>
+            <p>Can see users responses and ...</p>
 
             <h3>2.4 Operating Environment</h3>
 
@@ -156,14 +160,22 @@
         <section typeof="sa:Conclusion?????">
             <h2>4. System Features</h2>
 
-            <h3>4.1 System Feature 1</h3>
+            <h3>4.1 System Feature 1: SQL exercises solving</h3>
+            <p>Users can solve a wide range of exercises relating to databases, by typing the interogation in the blank
+                space of the solving page. </p>
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa delectus expedita nisi facilis rem?
-                Placeat
-                quisquam a nulla facere saepe earum! Officia soluta officiis laudantium perspiciatis, quas obcaecati
-                iure laboriosam.</p>
+            <h3>4.2 System Feature 2: Shop</h3>
+            <p>By giving right solutions to the exercises, users gain an amount of local currency - "sqlids",
+                depending on the difficulty of the task. They can use this currency to buy other exercises in the "shop"
+                section, where all the other disponible tasks are filtered by difficulty. </p>
 
-            <h3>4.2 System Feature 2</h3>
+            <h3>4.3 System Feature 3: Achievements</h3>
+            <p>Special achievemnts are shown on the personal profile page of the user. Claiming some of them can even
+                give the user more "sqlids". Some of them include being the first to solve a task, solving all the tasks
+                of a category, solving an exercise in a record time.</p>
+
+            <h3>4.4 System Feature 4: Profile</h3>
+            <p>By registering, every user will have their own profile on the site, whic they can use to solve the given tasks and gain sqlids to solve others. </p>
 
         </section>
 
@@ -177,23 +189,25 @@
                 iure laboriosam.</p>
 
             <h3>5.2 Safety Requirements</h3>
+            <p>It is required that the database be protected from SQL injections.</p>
 
             <h3>5.3 Security Requirements</h3>
+            <p>The profile of the user should be protected from being accesed by others.</p>
 
             <h3>5.4 Software Quality Attributes</h3>
-
-            <h3>5.5 Business Rules</h3>
 
         </section>
 
         <section typeof="sa:Acknowledgements????">
             <h2>Other Requirements</h2>
+            <h3>1</h3>
+            <p>A database for storing user data such as profile information, achievemnts, number of sqlids.</p>
+            <h3>2</h3>
+            <p>A database for solving the tasks on the site. It should have defined tables and data, giving the users the privellege of using data contained in it, to solve the exercises.</p>
+
 
             <h3>Appendix A: Glossary</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa delectus expedita nisi facilis rem?
-                Placeat
-                quisquam a nulla facere saepe earum! Officia soluta officiis laudantium perspiciatis, quas obcaecati
-                iure laboriosam.</p>
+            <p><i>sqlid</i> - local currency used for buying new exercises from the shop. Can be earned by solving tasks or gaining achievements.</p>
 
             <h3>Appendix B: Analysis Models</h3>
 
