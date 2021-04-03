@@ -1,0 +1,28 @@
+article{
+    background-color: rgb(240, 231, 231);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+border-bottom-style: outset;
+}
+
+h3{
+margin-left: 20px;
+}
+
+h4{
+    margin-left: 40px;
+}
+
+li{
+    color: rgb(9, 5, 63);
+}
+li a{
+    color: rgb(25, 13, 192);
+}
