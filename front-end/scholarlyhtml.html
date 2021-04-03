@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Scholarly HTML</title>
@@ -9,55 +9,55 @@
 </head>
 
 <body>
-    <article typeof="schema:ScholarlyArticle" href="#">
+    <article typeof="schema:ScholarlyArticle">
         <h1>Scholarly HTML "SQL-Games"</h1>
 
         <section typeof="sa:AuthorsList">
-            <div role="contentinfo"></div>
-            <h2>Authors</h2>
-            <ul>
-                <li typeof="sa:ContributorRole" property="schema:author">
-                    <span typeof="schema:Person">
-                        <meta property="schema:givenName" content="Cezar">
-                        <meta property="schema:familyName" content="Todirisca">
-                        <span property="schema:name">Cezar Todirisca</span>
-                    </span>
-                    <ul>
-                        <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
-                            <a href="mailto:..." property="schema:email">...</a>
-                        </li>
+            <div role="contentinfo">
+                <h2>Authors</h2>
+                <ul>
+                    <li typeof="sa:ContributorRole" property="schema:author">
+                        <span typeof="schema:Person">
+                            <meta property="schema:givenName" content="Cezar">
+                            <meta property="schema:familyName" content="Todirisca">
+                            <span property="schema:name">Cezar Todirisca</span>
+                        </span>
+                        <ul>
+                            <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                                <a href="mailto:..." property="schema:email">...</a>
+                            </li>
 
-                    </ul>
-                </li>
+                        </ul>
+                    </li>
 
-                <li typeof="sa:ContributorRole" property="schema:author">
-                    <span typeof="schema:Person">
-                        <meta property="schema:givenName" content="Andrei">
-                        <meta property="schema:familyName" content="Toma">
-                        <span property="schema:name">Andrei Toma</span>
-                    </span>
-                    <ul>
-                        <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
-                            <a href="mailto: " property="schema:email">???</a>
-                        </li>
+                    <li typeof="sa:ContributorRole" property="schema:author">
+                        <span typeof="schema:Person">
+                            <meta property="schema:givenName" content="Andrei">
+                            <meta property="schema:familyName" content="Toma">
+                            <span property="schema:name">Andrei Toma</span>
+                        </span>
+                        <ul>
+                            <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                                <a href="mailto: " property="schema:email">???</a>
+                            </li>
 
-                    </ul>
-                </li>
+                        </ul>
+                    </li>
 
-                <li typeof="sa:ContributorRole" property="schema:author">
-                    <span typeof="schema:Person">
-                        <meta property="schema:givenName" content="Eugeniu">
-                        <meta property="schema:familyName" content="Buliga">
-                        <span property="schema:name">Eugeniu Buliga</span>
-                    </span>
-                    <ul>
-                        <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
-                            <a href="mailto:bul9001.com@gmail.com" property="schema:email">bul9001.com@gmail.com</a>
-                        </li>
+                    <li typeof="sa:ContributorRole" property="schema:author">
+                        <span typeof="schema:Person">
+                            <meta property="schema:givenName" content="Eugeniu">
+                            <meta property="schema:familyName" content="Buliga">
+                            <span property="schema:name">Eugeniu Buliga</span>
+                        </span>
+                        <ul>
+                            <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                                <a href="mailto:bul9001.com@gmail.com" property="schema:email">bul9001.com@gmail.com</a>
+                            </li>
 
-                    </ul>
-                </li>
-            </ul>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </section>
 
@@ -73,7 +73,8 @@
 
                 <h3>1.2 Document Conventions</h3>
                 <p>
-                    <i><b>Italic bold</b></i> text is used for defining stuff.</p>
+                    <i><b>Italic bold</b></i> text is used for defining stuff.
+                </p>
 
                 <h3>1.3 Intended Audience and Reading Suggestions</h3>
                 <p>Document intended for both developers and users. Some techincal stuff could rise up here-and-there,
@@ -95,19 +96,21 @@
                     learn.</p>
 
                 <h3 typeof="sa:ReferenceList">1.5 References</h3>
-
-                <li id="ref-something" typeof="schema:ScholarlyArticle"
-                    resource="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-projects.html">
-                    <span property="schema:author" typeof="schema:Person">
-                        <span property="schema:familyName">Buraga</span>
-                        <span property="schema:givenName">Sabin</span>.
-                    </span>
-                    <cite property="schema:name">Site-ul Tehnologii Web.</cite>
-                    <span property="schema:isPartOf" typeof="schema:PublicationVolume">
-                        <span property="schema:isPartOf" typeof="schema:Periodical">
-                            <span property="schema:name">FII UAIC.</span>
+                <ul>
+                    <li id="ref-something" typeof="schema:ScholarlyArticle"
+                        resource="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-projects.html">
+                        <span property="schema:author" typeof="schema:Person">
+                            <span property="schema:familyName">Buraga</span>
+                            <span property="schema:givenName">Sabin</span>.
                         </span>
-                </li>
+                        <cite property="schema:name">Site-ul Tehnologii Web.</cite>
+                        <span property="schema:isPartOf" typeof="schema:PublicationVolume">
+                            <span property="schema:isPartOf" typeof="schema:Periodical">
+                                <span property="schema:name">FII UAIC.</span>
+                            </span>
+                        </span>
+                    </li>
+                </ul>
             </div>
         </section>
 
@@ -118,7 +121,8 @@
             <p>A new self-contained product consisting of ...?</p>
 
             <h3>2.2 Product Functions</h3>
-            <p>SOme of the major functions are: the ability to solve database-related tasks, buy new tasks and earn sqlids currency, an achievement system integrated in the account of every user.</p>
+            <p>SOme of the major functions are: the ability to solve database-related tasks, buy new tasks and earn
+                sqlids currency, an achievement system integrated in the account of every user.</p>
 
             <h3>2.3 User Classes and Characteristics</h3>
 
@@ -171,7 +175,8 @@
                 of a category, solving an exercise in a record time.</p>
 
             <h3>4.4 System Feature 4: Profile</h3>
-            <p>By registering, every user will have their own profile on the site, whic they can use to solve the given tasks and gain sqlids to solve others. </p>
+            <p>By registering, every user will have their own profile on the site, whic they can use to solve the given
+                tasks and gain sqlids to solve others. </p>
 
         </section>
 
@@ -199,11 +204,13 @@
             <h3>1</h3>
             <p>A database for storing user data such as profile information, achievemnts, number of sqlids.</p>
             <h3>2</h3>
-            <p>A database for solving the tasks on the site. It should have defined tables and data, giving the users the privellege of using data contained in it, to solve the exercises.</p>
+            <p>A database for solving the tasks on the site. It should have defined tables and data, giving the users
+                the privellege of using data contained in it, to solve the exercises.</p>
 
 
             <h3>Appendix A: Glossary</h3>
-            <p><i><b>sqlid</b></i> - local currency used for buying new exercises from the shop. Can be earned by solving tasks or gaining achievements.</p>
+            <p><i><b>sqlid</b></i> - local currency used for buying new exercises from the shop. Can be earned by
+                solving tasks or gaining achievements.</p>
 
             <h3>Appendix B: Analysis Models</h3>
 

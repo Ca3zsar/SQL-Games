@@ -36,6 +36,7 @@ document.querySelector("#fullscreen").addEventListener("click", (e) => {
   document
     .getElementsByClassName("editor-holder")[0]
     .classList.toggle("fullscreen");
+  document.getElementsByClassName("buttons")[0].classList.toggle("fullscreen");
 });
 
 /*------------------------------------------

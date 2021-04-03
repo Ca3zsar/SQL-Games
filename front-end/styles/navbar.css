@@ -1,12 +1,4 @@
-@font-face {
-  font-family: bebas;
-  src: url("../fonts/Bebas-Regular.otf");
-}
-
-@font-face {
-  font-family: bignoodle;
-  src: url("../fonts/big_noodle_titling.ttf");
-}
+@import "font-importer.css";
 
 header {
   /* height:4em; */
@@ -25,7 +17,7 @@ nav {
   margin-right: 4vw;
 
   float: right;
-  width: 35%;
+  width: 60%;
   line-height: 4em;
 }
 
@@ -70,6 +62,10 @@ nav>a:hover:after,
 nav>a:focus:after {
   transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
     opacity 0s 0.2s;
+}
+
+.coins{
+  cursor:default;
 }
 
 .dropdown {

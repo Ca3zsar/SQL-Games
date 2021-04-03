@@ -7,7 +7,7 @@ function displayOptions()
 function displayDrop(event)
 {
     event.preventDefault();
-    var dropbtn = document.getElementsByClassName("dropdown")[0];
+    var dropbtn = document.getElementsByClassName("dropbtn")[0];
     var drop = document.getElementsByClassName("dropdown-content")[0];
 
     if(dropbtn.classList.contains("active"))
@@ -21,7 +21,7 @@ function displayDrop(event)
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    var button = document.getElementsByClassName("dropdown")[0];
+    var button = document.getElementsByClassName("dropbtn")[0];
     button.addEventListener("click",function(event){
         displayDrop(event);
     },false);
