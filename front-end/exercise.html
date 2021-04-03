@@ -1,79 +1,114 @@
 <!DOCTYPE html>
 <html lang="ro">
+  <head>
+    <title>SQL-Games</title>
 
-<head>
-    <title> SQL-Games</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta content="utf-8" http-equiv="encoding">
-
-    <link rel="stylesheet" href="styles/content_style.css" />
-    <link rel="stylesheet" href="styles/code_editor.css">
+    <link rel="stylesheet" href="styles/exercise.css" />
+    <link rel="stylesheet" href="styles/code_editor.css" />
     <link rel="stylesheet" href="styles/navbar.css" />
     <link rel="stylesheet" href="styles/footer.css" />
     <script src="scripts/navFunctions.js"></script>
 
-    <link rel="shortcut icon" type="image/png" href="resources/favicon-32x32.png" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="resources/favicon-32x32.png"
+    />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <header>
-        <div class="left-side">
-            <div class="logo">
-                <a href="main_page.html">SQL-GAMES</a>
-            </div>
+      <div class="left-side">
+        <div class="logo">
+          <a href="main_page.html">SQL-GAMES</a>
         </div>
-        <nav class="right-nav">
-            <a href="/" class="coins">10<img src="resources/coin.png" class="coin-img" alt="sqliezi" /></a>
-            <a href="/" class="coins-collapsed">Coins : 10<img src="resources/coin.png" class="coin-img"
-                    alt="sqliezi" /></a>
-            <a href="main_page.html">Exercises</a>
-            <div class="dropdown">
-                <p class="dropbtn">Account</p>
-                <div class="dropdown-content">
-                    <a href="profile_settings.html">Profile Settings</a>
-                    <a href="#">Statistics</a>
-                    <a href="#">Log out</a>
-                </div>
-            </div>
-        </nav>
-        <div class="toggle-btn" onclick="displayOptions()">
-            <span></span>
-            <span></span>
-            <span></span>
+      </div>
+      <nav class="right-nav">
+        <a href="/" class="coins"
+          >10<img src="resources/coin.png" class="coin-img" alt="sqliezi"
+        /></a>
+        <a href="/" class="coins-collapsed"
+          >Coins : 10<img
+            src="resources/coin.png"
+            class="coin-img"
+            alt="sqliezi"
+        /></a>
+        <a href="main_page.html">Exercises</a>
+        <div class="dropdown">
+          <p class="dropbtn">Account</p>
+          <div class="dropdown-content">
+            <a href="profile_settings.html">Profile Settings</a>
+            <a href="#">Statistics</a>
+            <a href="#">Log out</a>
+          </div>
         </div>
-
+      </nav>
+      <div class="toggle-btn" onclick="displayOptions()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </header>
     <div class="content-area" id="content-id">
-        <h2 class="editor-title">Try out our code editor by solving a test exercise</h2>
-        <section class="editor-wrapper">
-            <div class="editor-holder">
-                <ul class="toolbar">
-                    <li><a href="#" id="indent" title="Toggle tabs or spaces"><img alt="I" src="resources/indent.png"
-                                class="indent-class" /></a></li>
-                    <li><a href="#" id="fullscreen" title="Toggle fullscreen mode"><span alt="F"
-                                class="full-exp"></span></a>
-                    </li>
-                </ul>
-                <div class="scroller">
-                    <div class="line-number" role="presentation">
-                    </div>
-                    <textarea autocomplete="off" spellcheck="false" class="editor allow-tabs"></textarea>
-                    <pre><code class="syntax-highlight html"></code></pre>
-                </div>
+      <section class="exercise-requirement">
+        <div class="requirements">
+          <div class="meta-info">
+            <div class="difficulty-bar">
+              <div class="difficulty easy"></div>
+              <div class="difficulty medium"></div>
+              <div class="difficulty hard"></div>
             </div>
-        </section>
+            <h3 class="exercise-author">by Nume_Imaginar</h3>
+          </div>
+          <br class="meta-break">
+          <h1 class="exercise-title">#001 Nascuti in aceeasi zi</h1>
+          <p class="requirement-text">
+            Sa se afiseze toti studentii care au un coleg de grupa nascut in
+            aceeasi zi a saptamanii cu el si au nume de familie care incep cu
+            aceeasi litera.
+          </p>
+        </div>
+      </section>
+      <section class="editor-wrapper">
+        <div class="editor-holder">
+          <ul class="toolbar">
+            <li>
+              <a href="#" id="indent" title="Toggle tabs or spaces"
+                ><img alt="I" src="resources/indent.png" class="indent-class"
+              /></a>
+            </li>
+            <li>
+              <a href="#" id="fullscreen" title="Toggle fullscreen mode"
+                ><span alt="F" class="full-exp"></span
+              ></a>
+            </li>
+          </ul>
+          <div class="scroller">
+            <div class="line-number" role="presentation"></div>
+            <textarea
+              autocomplete="off"
+              spellcheck="false"
+              class="editor allow-tabs"
+            ></textarea>
+            <pre><code class="syntax-highlight html"></code></pre>
+          </div>
+        </div>
+      </section>
 
-        <footer class="footer-bar">
-            <a href="#">Contact us</a>
-            <a href="scholarlyhtml.html">Better Scholarly HTML</a>
-            <h4>© SQL-GAMES 2021 Buliga Eugeniu, Todirisca Cezar, Toma Andrei</h4>
-        </footer>
+      <footer class="footer-bar">
+        <a href="#">Contact us</a>
+        <a href="scholarlyhtml.html">Better Scholarly HTML</a>
+        <h4>© SQL-GAMES 2021 Buliga Eugeniu, Todirisca Cezar, Toma Andrei</h4>
+      </footer>
     </div>
 
     <script src="scripts/highlighter.js"></script>
-</body>
+    <script src="scripts/exercise.js"></script>
+  </body>
+</html>

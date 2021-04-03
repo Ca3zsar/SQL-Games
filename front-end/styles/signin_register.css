@@ -17,7 +17,7 @@ body{
 	height:100vh;
 	position: relative;
 	margin-top: 0;
-	background:#d3d7de;
+	background:#F3F7F7;
 	display:flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -219,7 +219,7 @@ body{
 }
 
 
-@media(max-width:1400px)
+@media(max-width:900px)
 {
 	.content-area{
 		height:auto;

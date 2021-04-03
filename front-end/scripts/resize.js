@@ -6,7 +6,6 @@ document.getElementsByClassName("content-area")[0].style.top = heightValue;
 function modifyDimensions(condition)
 {
     if(condition.matches){
-        console.log("ceva");
         document.getElementsByClassName("dropdown-content")[0].style.width="100vw";
     }else{
         document.getElementsByClassName("dropdown-content")[0].style.width="260px";

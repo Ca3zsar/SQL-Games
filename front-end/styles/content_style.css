@@ -13,6 +13,11 @@ body{
 	margin:0 auto;
 }
 
+.content-wrapper{
+	width:100%;
+	margin:0 auto;
+	margin-bottom: 30px;
+}
 
 .banner-area{
 	user-select: none; /* Standard */
@@ -50,7 +55,7 @@ body{
 .content-area{
 	width:100%;
 	position: relative;
-	background:#d3d7de;
+	background:#F3F7F7;
 	height:fit-content;
 	display:inline-flex;
 	flex-wrap: wrap;

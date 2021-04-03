@@ -8,7 +8,7 @@
 }
 
 .editor-holder {
-	width: 800px;
+	width: 950px;
 	height: 537px;
 	margin-top: 30px;
 	border-radius: 3px;
@@ -18,7 +18,7 @@
 	top: 0;
 	background: #1f1f1f !important;
 
-	box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.4);
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
 	transition: all 0.5s ease-in-out;
 
 	overflow-y: auto;
@@ -41,7 +41,6 @@
 	width:96%;
 }
 
-
 .editor-holder .toolbar {
 	max-width: 100%;
 	width: 100%;
@@ -52,7 +51,7 @@
 	left: 0;
 	z-index: 3;
 	padding: 8px;
-	background: #afafaf;
+	background: #F3F7F7;
 }
 
 .editor-holder .toolbar li {
@@ -61,12 +60,8 @@
 
 .editor-holder .toolbar a {
 	line-height: 20px;
-	background: rgba(144, 144, 144, 0.6);
-	color: grey;
-	box-shadow: inset -1px -1px 1px 0 rgba(0, 0, 0, 0.28);
 	display: block;
 	border-radius: 3px;
-	cursor: pointer;
 }
 
 .editor-holder .toolbar a:hover {
@@ -153,19 +148,19 @@ pre {
 }
 
 pre code {
-	background: #1f1f1f !important;
+	background: #1C2434 !important;
 	color: #61AFEF;
 	font-size: 29px;
 	font-family: roboto;
 }
 
 .full-exp{
-	width:14px;
+	width:16px;
 	content: url("../resources/expand-fullscreen.png");
 }
 
 .indent-class{
-	width: 14px;
+	width: 16px;
 }
 
 .line-number{
