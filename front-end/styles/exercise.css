@@ -142,22 +142,6 @@ body{
     font-size:16px;
 }
 
-.easy{
-    background-color: #0F9347;
-    border-radius: 16px 0px 0px 0px;
-}
-
-.medium{
-    background-color: #FCC50E;
-    /* opacity: 0; */
-}
-
-.hard{
-    border-radius: 0px 0px 16px 0px;
-    background-color: #BE2026;
-    /* opacity: 0; */
-}
-
 @media (max-width:430px)
 {
     .content-area{
