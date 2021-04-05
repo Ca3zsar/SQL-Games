@@ -52,77 +52,69 @@
 
   <div class="content-area" id="content-id">
 
-    <section class="shop-header">
+    <div class="shop-header">
 
       <h1>SQL Exercises SHOP</h1>
 
-    </section>
+    </div>
 
-    <section class="shop-manager">
+    <div class="shop-manager">
 
-      <div class="shop-search">
-        <form>
-          <label for="fsearch">Search:</label>
-          <input type="text">
-        </form>
+      <div class="search-box">
+
+        <input class="search-input" type="text" name="" placeholder="Search">
+        <button class="search-button" href="#">
+          <img class="search-image" src="resources/search.png" />
+        </button>
       </div>
 
       <div class="shop-filter">
+        <div class="shop-filter-difficulty">
+          <label>Difficulty:</label>
+          <form>
+            <select size="1" name="D1">
+              <option>Easy</option>
+              <option>Medium</option>
+              <option>Hard</option>
+            </select>
+          </form>
+        </div>
 
         <div class="shop-filter-sort">
-          <div class="shop-filter-text">
-            <p>Difficulty:</p>
-          </div>
-          <div class="shop-filter-difficulty-select">
+          <div class="shop-filter-criteria">
+            <label>Order by:</label>
             <form>
-              <p><select size="1" name="D1">
-                  <option>Easy</option>
-                  <option>Medium</option>
-                  <option>Hard</option>
-                </select></p>
+              <select size="1" name="D1">
+                <option>Popular</option>
+                <option>New</option>
+                <option>Solved</option>
+                <option>Locked</option>
+                <option>Unlocked</option>
+              </select>
             </form>
           </div>
         </div>
 
-        <div class="shop-filter-sort">
-          <div class="shop-filter-text">
-            <p>Sort:</p>
-          </div>
-          <div class="shop-filter-text-select">
-            <form>
-              <p><select size="1" name="D1">
-                  <option>Popular</option>
-                  <option>New</option>
-                  <option>Solved</option>
-                  <option>Locked</option>
-                  <option>Unlocked</option>
-                </select></p>
-            </form>
-          </div>
+        <div class="shop-filter-text">
+          <p>Layout:</p>
+        </div>
+        <div class="shop-filter-layout">
+          <form>
+            <input type="image" value="Compact" src="resources/minimize-fullscreen.png"
+              onclick="switch_style('compact');return false;" name="theme" id="compact">
+            <input type="image" value="Extended" src="resources/expand-fullscreen.png"
+              onclick="switch_style('extended');return false;" name="theme" id="extended">
+          </form>
         </div>
 
-        <div class="shop-filter-sort">
-          <div class="shop-filter-text">
-            <p>Layout:</p>
-          </div>
-          <div class="shop-filter-layout">
-            <form>
-              <input type="image" value="Compact" src="resources/minimize-fullscreen.png" onclick="switch_style('compact');return false;" name="theme" 
-              id="compact">
-              <input type="image" value="Extended" src="resources/expand-fullscreen.png" onclick="switch_style('extended');return false;" name="theme" 
-              id="extended">
-            </form>
-          </div>
-
-        </div>
 
       </div>
 
-    </section>
+    </div>
 
-    <section class="shop-shelf">
+    <div class="shop-shelf">
 
-      <section class="task">
+      <div class="task">
 
         <div class="task-meta-diff">
           <div class="task-difficulty">
@@ -156,10 +148,10 @@
           </div>
         </div>
 
-      </section>
+      </div>
 
 
-      <section class="task">
+      <div class="task">
         <div class="task-meta-diff">
           <div class="task-difficulty">
             <div class="task-difficulty-text">
@@ -192,9 +184,9 @@
           </div>
         </div>
 
-      </section>
+      </div>
 
-      <section class="task">
+      <div class="task">
         <div class="task-meta-diff">
           <div class="task-difficulty">
             <div class="task-difficulty-text">
@@ -227,12 +219,12 @@
           </div>
         </div>
 
-      </section>
+      </div>
 
 
 
 
-    </section>
+    </div>
 
     <footer class="footer-bar">
       <a href="#">Contact us</a>

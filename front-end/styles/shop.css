@@ -1,169 +1,220 @@
 @import "font-importer.css";
 
-body{
-	text-align: center;
-	display: flex;
-	margin:0;
-	padding:0;
-	box-sizing: border-box;
+body {
+  text-align: center;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.content-area{
-    flex:1 0 auto;
-	width:100%;
-	position: relative;
-	background:#F3F7F7;
-	height: auto;
-	display:flex;
-    flex-direction: column;
-	align-items: center;
-	justify-content: center;
+.content-area {
+  flex: 1 0 auto;
+  width: 100%;
+  position: relative;
+  background: #f3f7f7;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.shop-header{
-    width: 100%;
-    padding-top: 50px;
-    background: linear-gradient(to bottom,rgb(25,49,103),rgb(50, 97, 206,0.5),rgba(255,0,0,0));
-    font-family: bebas;
-    font-size:40px;
+.shop-header {
+  width: 100%;
+  padding-top: 50px;
+  font-family: bebas;
+  font-size: 40px;
 }
 
-.shop-manager{
-    font-family: montserrat-regular;
-    padding: 10px;
-    height: 30px;
-    width: 920px;
-    display: flex;
-    justify-content: space-between;
+.shop-manager {
+  font-family: montserrat-regular;
+  padding: 10px;
+  /* height: fit-content; */
+  width: 920px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    border-top: 2px solid #d3d6d8;
-    border-bottom: 2px solid #d3d6d8;
+  border-top: 2px solid #d3d6d8;
+  border-bottom: 2px solid #d3d6d8;
 }
 
-.shop-filter{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width:50%;
-    flex-wrap: nowrap;
+.search-image {
+  width: 15px;
 }
 
-.shop-filter-sort{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: nowrap;
+.search-box {
+  background: #4d5156;
+  height: 30px;
+  border-radius: 30px;
+  padding: 10px;
 }
 
-.shop-filter p{
-    margin: 1px;
-    padding: 2px;
+.search-box:hover > .search-input {
+  width: 240px;
+  /* padding: 0 6px; */
 }
 
-.shop-filter-layout form{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
+.search-box:hover > .search-button {
+  background: white;
+  color: #757c87;
 }
 
-.shop-filter-layout input{
-    width:25px;
-    font-size: 10px;
-    border-style: solid;
-    border-color: #c4c2c2;
-    border-width: 1px;
-    padding: 2px;
+.search-button {
+  color: white;
+  float: right;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #717a87;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
 }
 
-.shop-shelf{
-    padding-top:1px;
-    padding-left: 60px;
-    padding-right: 60px;
+.search-input {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 30px;
+  width: 0px;
 }
 
-.task{
-    width:915px;
-    height:fit-content;
-    
-    background-color: #ffffff;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
-    margin-top:30px;
-    
-	padding-right: 20px;
-    padding-left: 20px;
-    margin-bottom: 5px;
+@media screen and (max-width: 620px) {
+  .search-box:hover > .search-input {
+    width: 150px;
+    padding: 0 6px;
+  }
 }
 
-.task-difficulty{
-    display:flex;
-    flex-direction: row;
-    align-items: center;
+.shop-filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
+  flex-wrap: nowrap;
 }
 
-.task-difficulty img{
-    display:flex;
-    align-items: center;
-    margin-left:10px;
-    width: 40px;
+.shop-filter-sort {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
 }
 
-.task-author{
-    font-weight: lighter;
+.shop-filter p {
+  margin: 1px;
+  padding: 2px;
 }
 
-.task-meta-diff{
-    display:flex;
-    justify-content: space-between;
-    border-bottom: 2px solid #d3d6d8;
-    align-items: center;
-    font-family: open-sans-bold;
+.shop-filter-layout form {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
-.task-meta-name p{
-    margin:0px;
-    display:flex;
-    padding:5px;
+.shop-filter-layout input {
+  width: 25px;
+  font-size: 10px;
+  border-style: solid;
+  border-color: #c4c2c2;
+  border-width: 1px;
+  padding: 2px;
 }
 
-
-
-.task-meta-name{
-    display:flex;
-
-    margin-top: 10px;
-	margin-left: 2px;
-    margin-bottom: 0px;
-
-    color:black;
-	font-family: montserrat-regular;
-    font-weight: bolder;
-    
-	font-size: 20px;
-    text-decoration: none; 
+.shop-shelf {
+  padding-top: 1px;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
-.task-meta-content{
-    display:flex;
-    flex-direction: row;
-    align-items: center;
+.task {
+  width: 915px;
+  height: fit-content;
+
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-bottom: 5px;
 }
 
-.task-content{
-    font-size: 1.2em;
-    font-family: open-sans-light;
-	text-align:left;
-	margin: 1px;
-    padding: 1px;
+.task-difficulty {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.task-content p{
-    margin: 5px;
-    padding: 3px;
+.task-difficulty img {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  width: 40px;
 }
 
-.task-button{
-    background-color: green;
-    color: white;
-    padding:5px;
+.task-author {
+  font-weight: lighter;
 }
 
+.task-meta-diff {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #d3d6d8;
+  align-items: center;
+  font-family: open-sans-bold;
+}
+
+.task-meta-name p {
+  margin: 0px;
+  display: flex;
+  padding: 5px;
+}
+
+.task-meta-name {
+  display: flex;
+
+  margin-top: 10px;
+  margin-left: 2px;
+  margin-bottom: 0px;
+
+  color: black;
+  font-family: montserrat-regular;
+  font-weight: bolder;
+
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.task-meta-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.task-content {
+  font-size: 1.2em;
+  font-family: open-sans-light;
+  text-align: left;
+  margin: 1px;
+  padding: 1px;
+}
+
+.task-content p {
+  margin: 5px;
+  padding: 3px;
+}
+
+.task-button {
+  background-color: green;
+  color: white;
+  padding: 5px;
+}
