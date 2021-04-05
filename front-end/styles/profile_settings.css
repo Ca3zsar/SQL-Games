@@ -1,31 +1,31 @@
 @import "font-importer.css";
-
-.html{
+.html {
 	width: 100vw;
-
+	overflow: hidden;
 }
+
 body {
 	text-align: center;
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	width: auto;
 }
 
 .wrapper {
 	width: 100vw;
 	margin: 0 auto;
+	overflow: hidden;
 }
 
 .content-area {
-	width: 100vw;
 	position: relative;
 	margin-top: 0;
 	background: #F3F7F7;
 	height: 800px;
-	display: inline-flex;
+	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
+	overflow: hidden;
 }
 
 .profile-settings-div {
@@ -36,7 +36,7 @@ body {
 	line-height: 30px;
 	font-family: open-sans-light;
 	border-right: 1px solid gray;
-	width: 200px
+	width: 200px;
 }
 
 .profile-settings-div div {
@@ -56,26 +56,37 @@ body {
 	font-weight: 600;
 	color: #222121;
 	margin-bottom: 15px;
-	text-align: left;
+	width: fit-content;
+	margin-right: 30;
 }
 
 @media(max-width:810px) {
 	.settings-title {
 		font-size: 2em;
 	}
-
 	.profile-settings-div {
 		width: 100vw;
 		overflow: auto;
 		white-space: nowrap;
 		border-bottom: 2px solid rgba(74, 74, 90, 0.5);
 	}
-	
-	.profile-settings-div div{
+	.profile-settings-div div {
 		display: inline-block;
 		width: fit-content;
 		margin-right: 30px;
-		margin-right: 30px;
-		margin-left: 30px;
+		margin-left: 10px;
+	}
+	::-webkit-scrollbar {
+		width: 15px;
+		height: 5px;
+	}
+	::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+	::-webkit-scrollbar-thumb {
+		background: #888;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background: #555;
 	}
 }
