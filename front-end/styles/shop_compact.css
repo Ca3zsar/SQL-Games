@@ -104,28 +104,41 @@ body{
     display:flex;
     align-items: center;
     margin-left:10px;
-    width: 40px;
+    width: 60px;
+    padding: 10px;
 }
 
-.task-author{
+.task-difficulty-text{
+    display: none;
+}
+
+.task-author p{
     font-weight: lighter;
+    text-align: left;
+    margin-top:3px;
 }
 
 .task-meta-diff{
     display:flex;
-    justify-content: space-between;
-    border-bottom: 2px solid #d3d6d8;
-    align-items: center;
+    flex-direction: column;
+    justify-content:start;
+    align-items: flex-start;
     font-family: open-sans-bold;
+}
+
+.task-meta-name{
+    display:flex;
+    align-items: center;
 }
 
 .task-meta-name p{
     margin:0px;
-    display:flex;
     padding:5px;
 }
 
-
+.task{
+    display:flex;
+}
 
 .task-meta-name{
     display:flex;
