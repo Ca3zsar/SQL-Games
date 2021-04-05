@@ -1,18 +1,24 @@
 @import "font-importer.css";
+
+.html{
+	width: 100vw;
+
+}
 body {
 	text-align: center;
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	width: auto;
 }
- 
+
 .wrapper {
-	width: 100%;
+	width: 100vw;
 	margin: 0 auto;
 }
 
 .content-area {
-	width: 100%;
+	width: 100vw;
 	position: relative;
 	margin-top: 0;
 	background: #F3F7F7;
@@ -57,4 +63,19 @@ body {
 	.settings-title {
 		font-size: 2em;
 	}
-} 
+
+	.profile-settings-div {
+		width: 100vw;
+		overflow: auto;
+		white-space: nowrap;
+		border-bottom: 2px solid rgba(74, 74, 90, 0.5);
+	}
+	
+	.profile-settings-div div{
+		display: inline-block;
+		width: fit-content;
+		margin-right: 30px;
+		margin-right: 30px;
+		margin-left: 30px;
+	}
+}
