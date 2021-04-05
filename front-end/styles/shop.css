@@ -14,9 +14,8 @@ body {
   position: relative;
   background: #f3f7f7;
   height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: inline-flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -30,14 +29,14 @@ body {
 .shop-manager {
   font-family: montserrat-regular;
   padding: 10px;
-  /* height: fit-content; */
-  width: 920px;
+  height: fit-content;
+  width: 940px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  border-top: 2px solid #d3d6d8;
-  border-bottom: 2px solid #d3d6d8;
+  border-top: 1px solid #d3d6d8;
+  border-bottom: 1px solid #d3d6d8;
 }
 
 .search-image {
@@ -87,31 +86,63 @@ body {
   width: 0px;
 }
 
-@media screen and (max-width: 620px) {
-  .search-box:hover > .search-input {
-    width: 150px;
-    padding: 0 6px;
-  }
+
+.shop-select{
+    display:flex;
+}
+
+.shop-select:after {
+  font: 15px "Consolas", monospace;
+  color: #333;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+
+  position: absolute;
+  pointer-events: none;
+}
+
+.shop-select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Add some styling */
+
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: 25px;
+  
+  float: right;
+  margin: 2px;
+  padding: 0px 6px;
+  font-size: 0.9em;
+  line-height: 1.5;
+  color: #333;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  -ms-word-break: normal;
+  word-break: normal;
+
+  text-align: center;
+}
+
+.shop-select label, .shop-filter-layout label{
+    padding:6px;
+    font-size:0.9em;
 }
 
 .shop-filter {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  width: 50%;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 55%;
+  height:100%;
   flex-wrap: nowrap;
-}
-
-.shop-filter-sort {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-}
-
-.shop-filter p {
-  margin: 1px;
-  padding: 2px;
 }
 
 .shop-filter-layout form {
@@ -129,92 +160,46 @@ body {
   padding: 2px;
 }
 
-.shop-shelf {
-  padding-top: 1px;
-  padding-left: 60px;
-  padding-right: 60px;
+@media screen and (max-width: 910px) {
+    .search-box:hover > .search-input {
+      width: 150px;
+      padding: 0 6px;
+    }
+  
+    .shop-filter{
+        width:65%;
+    }
+  }
+  
+@media screen and (max-width:800px)
+{
+    .search-box:hover > .search-input {
+        width: 130px;
+        padding: 0 6px;
+      }
+    .shop-filter{
+        width:70%;
+    }
+    .shop-select label, .shop-filter-layout label{
+        font-size:0.7em;
+    }
 }
 
-.task {
-  width: 915px;
-  height: fit-content;
+@media screen and (max-width: 690px) {
+    .shop-manager{
+        flex-direction: column;
+    }      
+    .shop-filter{
+        width:100%;
+        /* flex-direction: column; */
+    }
 
-  background-color: #ffffff;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  margin-top: 30px;
+    .search-box{
+        margin-bottom:10px;
+    }
 
-  padding-right: 20px;
-  padding-left: 20px;
-  margin-bottom: 5px;
+    .shop-header{
+        font-size:2em;
+    }
 }
-
-.task-difficulty {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.task-difficulty img {
-  display: flex;
-  align-items: center;
-  margin-left: 10px;
-  width: 40px;
-}
-
-.task-author {
-  font-weight: lighter;
-}
-
-.task-meta-diff {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 2px solid #d3d6d8;
-  align-items: center;
-  font-family: open-sans-bold;
-}
-
-.task-meta-name p {
-  margin: 0px;
-  display: flex;
-  padding: 5px;
-}
-
-.task-meta-name {
-  display: flex;
-
-  margin-top: 10px;
-  margin-left: 2px;
-  margin-bottom: 0px;
-
-  color: black;
-  font-family: montserrat-regular;
-  font-weight: bolder;
-
-  font-size: 20px;
-  text-decoration: none;
-}
-
-.task-meta-content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.task-content {
-  font-size: 1.2em;
-  font-family: open-sans-light;
-  text-align: left;
-  margin: 1px;
-  padding: 1px;
-}
-
-.task-content p {
-  margin: 5px;
-  padding: 3px;
-}
-
-.task-button {
-  background-color: green;
-  color: white;
-  padding: 5px;
-}
+  

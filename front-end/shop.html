@@ -59,9 +59,7 @@
     </div>
 
     <div class="shop-manager">
-
       <div class="search-box">
-
         <input class="search-input" type="text" name="" placeholder="Search">
         <button class="search-button" href="#">
           <img class="search-image" src="resources/search.png" />
@@ -69,10 +67,11 @@
       </div>
 
       <div class="shop-filter">
-        <div class="shop-filter-difficulty">
+        <div class="shop-select">
           <label>Difficulty:</label>
           <form>
-            <select size="1" name="D1">
+            <select>
+              <option selected> Not specified </option>
               <option>Easy</option>
               <option>Medium</option>
               <option>Hard</option>
@@ -80,151 +79,32 @@
           </form>
         </div>
 
-        <div class="shop-filter-sort">
-          <div class="shop-filter-criteria">
-            <label>Order by:</label>
-            <form>
-              <select size="1" name="D1">
-                <option>Popular</option>
-                <option>New</option>
-                <option>Solved</option>
-                <option>Locked</option>
-                <option>Unlocked</option>
-              </select>
-            </form>
-          </div>
+        <div class="shop-select">
+          <label>Order by:</label>
+          <form>
+            <select>
+              <option selected> Popularity </option>
+              <option> Date added </option>
+            </select>
+          </form>
         </div>
 
-        <div class="shop-filter-text">
-          <p>Layout:</p>
-        </div>
         <div class="shop-filter-layout">
           <form>
+            <label>Layout</label>
             <input type="image" value="Compact" src="resources/minimize-fullscreen.png"
               onclick="switch_style('compact');return false;" name="theme" id="compact">
             <input type="image" value="Extended" src="resources/expand-fullscreen.png"
               onclick="switch_style('extended');return false;" name="theme" id="extended">
           </form>
         </div>
-
-
       </div>
-
     </div>
 
-    <div class="shop-shelf">
-
-      <div class="task">
-
-        <div class="task-meta-diff">
-          <div class="task-difficulty">
-            <div class="task-difficulty-text">
-              <p>Difficulty: </p>
-            </div>
-            <img src="resources/difficulty_easy.png">
-          </div>
-          <div class="task-author">
-            <p>by Default_Author</p>
-          </div>
-        </div>
-
-        <div class="task-meta-name">
-          <div class="task-id">
-            <p>#001</p>
-          </div>
-          <div class="task-name">
-            <p>Task_name</p>
-          </div>
-        </div>
-
-        <div class="task-meta-content">
-          <div class="task-content">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae facilis provident voluptas velit
-              repudiandae dolorum asperiores porro dolorem. Facere incidunt nam, libero rerum ea nemo iure unde odit
-              quibusdam impedit?</p>
-          </div>
-          <div class="task-button">
-            <p>SOLVED</p>
-          </div>
-        </div>
-
-      </div>
-
-
-      <div class="task">
-        <div class="task-meta-diff">
-          <div class="task-difficulty">
-            <div class="task-difficulty-text">
-              <p>Difficulty: </p>
-            </div>
-            <img src="resources/difficulty_medium.png">
-          </div>
-          <div class="task-author">
-            <p>by Random_Author</p>
-          </div>
-        </div>
-
-        <div class="task-meta-name">
-          <div class="task-id">
-            <p>#032</p>
-          </div>
-          <div class="task-name">
-            <p>Task_name32</p>
-          </div>
-        </div>
-
-        <div class="task-meta-content">
-          <div class="task-content">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae facilis provident voluptas velit
-              repudiandae dolorum asperiores porro dolorem. Facere incidunt nam, libero rerum ea nemo iure unde odit
-              quibusdam impedit?</p>
-          </div>
-          <div class="task-button">
-            <p>SOLVED</p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="task">
-        <div class="task-meta-diff">
-          <div class="task-difficulty">
-            <div class="task-difficulty-text">
-              <p>Difficulty: </p>
-            </div>
-            <img src="resources/difficulty_hard.png">
-          </div>
-          <div class="task-author">
-            <p>by Unknown_Author</p>
-          </div>
-        </div>
-
-        <div class="task-meta-name">
-          <div class="task-id">
-            <p>#096</p>
-          </div>
-          <div class="task-name">
-            <p>Task_name_no_name</p>
-          </div>
-        </div>
-
-        <div class="task-meta-content">
-          <div class="task-content">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae facilis provident voluptas velit
-              repudiandae dolorum asperiores porro dolorem. Facere incidunt nam, libero rerum ea nemo iure unde odit
-              quibusdam impedit?</p>
-          </div>
-          <div class="task-button">
-            <p>SOLVED</p>
-          </div>
-        </div>
-
-      </div>
-
-
-
-
+    <div class="exercise-list">
+      
     </div>
+
 
     <footer class="footer-bar">
       <a href="#">Contact us</a>
