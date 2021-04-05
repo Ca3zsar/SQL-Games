@@ -186,8 +186,10 @@ nav p {
   .right-nav.show {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     background: #262626;
+    margin-right:0;
+    width:100vw;  
   }
   .coins-collapsed {
     display: block;
