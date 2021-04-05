@@ -23,47 +23,34 @@ body{
 	position: relative;
 	background:#F3F7F7;
 	height: auto;
-	display:inline-flex;
-	flex-wrap: wrap;
+	display:flex;
+    flex-direction: column;
+	
 	justify-content: center;
+    padding-top: 10%;
 }
+
+.title-area{
+    font-family: bebas;
+    font-size:60px;
+    
+}
+
 .exercise-requirement{
-    width:940px;
+    width:915px;
     height:fit-content;
     
     background-color: #ffffff;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
-    margin-top:50px;
-    	
-    display:flex;
- }
-
-.requirements
-{
-    width:90%;
-    padding: 20px;
-    padding-top: 10px;
-}
-
-.exercise-status{
-    width:10%;
-    padding:0;
-}
-
-.exercise-status.solved{
-    background-color: #0F9347;
-}
-
-.exercise-status.blocked{
-    background-color: #BE2026;
-}
-
-.exercise-status.tried{
-    background-color: #FCC50E;
-}
-
-.exercise-statistics{
+    margin-top:30px;
     
+	padding-right: 20px;
+    padding-left: 20px;
+    margin-bottom: 5px;
+}
+
+.requirement{
+    padding: 2px;
 }
 
 .exercise-author{
@@ -72,8 +59,9 @@ body{
 }
 
 .exercise-title{
-    margin-top: 5px;
-	margin-left: 5px;
+    margin-top: 2px;
+	margin-left: 2px;
+    margin-bottom: 0px;
 	font-family: montserrat-regular;
     font-weight: bolder;
     
@@ -81,12 +69,11 @@ body{
     text-align: left;
 }
 
-.requirement-text{
+.requirement-text {
     font-size: 1.2em;
     font-family: open-sans-light;
 	text-align:left;
-	margin-left: 10px;
-	margin-right: 10px;
+	margin: 5px;
 }
 
 .meta-info{
@@ -98,6 +85,8 @@ body{
     justify-content:space-between;
     align-items: center;
 }
+
+
 
 .difficulty-wrapper{
     display:flex;
