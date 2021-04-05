@@ -25,9 +25,9 @@ body{
 	height: auto;
 	display:flex;
     flex-direction: column;
-	
+	align-items: center;
 	justify-content: center;
-    padding-top: 10%;
+    padding-top: 50px;
 }
 
 .title-area{
@@ -97,8 +97,6 @@ body{
 .difficulty-bar{
     display:flex;
     align-items: center;
-    border-radius: 16px 0px 16px 0px;
-    border:1px solid #bbb7a8;
     margin-left:10px;
 }
 

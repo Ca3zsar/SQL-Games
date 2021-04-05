@@ -27,6 +27,7 @@ body{
 	flex-wrap: wrap;
 	justify-content: center;
 }
+
 .exercise-requirement{
     width:940px;
     height:fit-content;
@@ -63,13 +64,28 @@ body{
 }
 
 .exercise-statistics{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0;
+}
+
+.exercise-statistics>p{
+    padding-left:10px;
+    margin:0;
+    font-family: open-sans-light;
+    font-size: 0.75em;
     
+}
+
+.exercise-statistics>p:first-child{
+    padding-right:10px;
+    border-right: 1px solid gray;
 }
 
 .exercise-author{
 	font-family: open-sans-bold;
     font-weight: lighter;
-}
+} 
 
 .exercise-title{
     margin-top: 5px;
@@ -77,12 +93,12 @@ body{
 	font-family: montserrat-regular;
     font-weight: bolder;
     
-	font-size: 20px;
+	font-size: 1.25em;
     text-align: left;
 }
 
 .requirement-text{
-    font-size: 1.2em;
+    font-size: 1em;
     font-family: open-sans-light;
 	text-align:left;
 	margin-left: 10px;
@@ -108,9 +124,8 @@ body{
 .difficulty-bar{
     display:flex;
     align-items: center;
-    border-radius: 16px 0px 16px 0px;
-    border:1px solid #bbb7a8;
     margin-left:10px;
+    width:50px;
 }
 
 .difficulty{
