@@ -49,10 +49,6 @@ body{
     margin-bottom: 5px;
 }
 
-.requirement{
-    padding: 2px;
-}
-
 .exercise-author{
 	font-family: open-sans-bold;
     font-weight: lighter;
@@ -62,12 +58,20 @@ body{
     margin-top: 2px;
 	margin-left: 2px;
     margin-bottom: 0px;
+
+    color:black;
 	font-family: montserrat-regular;
     font-weight: bolder;
     
 	font-size: 20px;
+    text-decoration: none;
+}
+
+.requirements
+{
     text-align: left;
 }
+
 
 .requirement-text {
     font-size: 1.2em;
@@ -86,8 +90,6 @@ body{
     align-items: center;
 }
 
-
-
 .difficulty-wrapper{
     display:flex;
     flex-direction: row;
@@ -98,7 +100,9 @@ body{
     display:flex;
     align-items: center;
     margin-left:10px;
+    width:50px;
 }
+
 
 .difficulty{
     width : 25px;
