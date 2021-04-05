@@ -2,127 +2,182 @@
 <html lang="ro">
 
 <head>
-    <title> SQL-Games</title>
+  <title> SQL-Games</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 
-    <link rel="stylesheet" href="styles/content_style.css" />
-    <link rel="stylesheet" href="styles/navbar.css" />
-    <link rel="stylesheet" href="styles/footer.css" />
-    <link rel="stylesheet" href="styles/shop_style.css" />
-    <script src="scripts/navFunctions.js"></script>
-    
-    <link rel="shortcut icon" type="image/png" href="resources/favicon-32x32.png" />
+  <link rel="stylesheet" href="styles/content_style.css" />
+  <link rel="stylesheet" href="styles/navbar.css" />
+  <link rel="stylesheet" href="styles/footer.css" />
+  <link rel="stylesheet" href="styles/shop_style.css" />
+  <script src="scripts/navFunctions.js"></script>
+
+  <link rel="shortcut icon" type="image/png" href="resources/favicon-32x32.png" />
 
 </head>
 
 <body>
-    <header>
-        <div class="left-side">
-            <div class="logo">
-                <a href="main_page.html">SQL-GAMES</a>
-            </div>
-        </div>
-        <nav class="right-nav">
-            <a class="coins">10<img src="resources/coin.png" class="coin-img" alt="sqliezi" /></a>
-            <a class="coins-collapsed">Coins : 10<img src="resources/coin.png" class="coin-img"
-                    alt="sqliezi" /></a>
-            <a href="shop.html">Exercises</a>
-            <a href="login_register.html">Login/Register</a>
-            <div class="dropdown">
-                <p class="dropbtn">Account</p>
-                <div class="dropdown-content">
-                    <a href="profile_settings.html">Profile Settings</a>
-                    <a href="#">Statistics</a>
-                    <a href="#">Log out</a>
-                </div>
-            </div>
-        </nav>
-        <div class="toggle-btn" onclick="displayOptions()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-    </header>
-
-    
-    <div class="content-area" id="content-id">
-
-      <div class="title-area">
-        <h1>SQL Exercises SHOP</h1> 
+  <header>
+    <div class="left-side">
+      <div class="logo">
+        <a href="main_page.html">SQL-GAMES</a>
       </div>
-    
-        <section class="exercise-requirement">
-            <div class="requirements">
-              <div class="meta-info">
-                <div class="difficulty-wrapper">
-                  <p class="difficulty-title">Difficulty:</p>
-                  <div class="difficulty-bar">
-                    <div class="difficulty">
-                      <img src="resources/difficulty_easy.png" alt="difficulty">
-                    </div>
-                  </div>
-                </div>
-                <h3 class="exercise-author">by Nume_Imaginar</h3>
-              </div>
-              <br class="meta-break">
-              <h1 class="exercise-title">#001 Nascuti in aceeasi zi</h1>
-              <p class="requirement-text">
-                Sa se afiseze toti studentii care au un coleg de grupa nascut in
-                aceeasi zi a saptamanii cu el si au nume de familie care incep cu
-                aceeasi litera.
-              </p>
-            </div>
-          </section>
-
-          <section class="exercise-requirement">
-            <div class="requirements">
-              <div class="meta-info">
-                <div class="difficulty-wrapper">
-                  <p class="difficulty-title">Difficulty:</p>
-                  <div class="difficulty-bar">
-                    <div class="difficulty">
-                    </div>
-                  </div>
-                </div>
-                <h3 class="exercise-author">by Nume_Inchipuit</h3>
-              </div>
-              <br class="meta-break">
-              <h1 class="exercise-title">#002 Prieteni</h1>
-              <p class="requirement-text">
-                Sa se afiseze toti prietenii studentilor.
-              </p>
-            </div>
-          </section>
-
-          <section class="exercise-requirement">
-            <div class="requirements">
-              <div class="meta-info">
-                <div class="difficulty-wrapper">
-                  <p class="difficulty-title">Difficulty:</p>
-                  <div class="difficulty-bar">
-                    <div class="difficulty"></div>
-                  </div>
-                </div>
-                <h3 class="exercise-author">by Nume_Inexistent</h3>
-              </div>
-              <br class="meta-break">
-              <h1 class="exercise-title">#003 Profi</h1>
-              <p class="requirement-text">
-                Sa se afiseze toti profesorii buni.
-              </p>
-            </div>
-          </section>
-
-
-        <footer class="footer-bar">
-            <a href="#">Contact us</a>
-            <a href="scholarlyhtml.html">Scholarly HTML</a>
-            <h4>© SQL-GAMES 2021 Buliga Eugeniu, Todirisca Cezar, Toma Andrei</h4>
-        </footer>
     </div>
+    <nav class="right-nav">
+      <a class="coins">10<img src="resources/coin.png" class="coin-img" alt="sqliezi" /></a>
+      <a class="coins-collapsed">Coins : 10<img src="resources/coin.png" class="coin-img" alt="sqliezi" /></a>
+      <a href="shop.html">Exercises</a>
+      <a href="login_register.html">Login/Register</a>
+      <div class="dropdown">
+        <p class="dropbtn">Account</p>
+        <div class="dropdown-content">
+          <a href="profile_settings.html">Profile Settings</a>
+          <a href="#">Statistics</a>
+          <a href="#">Log out</a>
+        </div>
+      </div>
+    </nav>
+    <div class="toggle-btn" onclick="displayOptions()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </header>
+
+
+  <div class="content-area" id="content-id">
+
+    <section class="shop-header">
+      <div class="title-area">
+        <h1>SQL Exercises SHOP</h1>
+      </div>
+    </section>
+
+    <section class="shop-manager">
+
+      <div class="shop-search">
+        <form>
+          <label for="fsearch">Search:</label>
+          <input type="text">
+        </form>
+      </div>
+
+
+      <div class="shop-filter">
+
+        <div class="shop-filter-sort">
+          <div class="shop-filter-text">
+            <p>Difficulty:</p>
+          </div>
+          <div class="shop-filter-difficulty-select">
+            <form>
+              <p><select size="1" name="D1">
+                  <option>Easy</option>
+                  <option>Medium</option>
+                  <option>Hard</option>
+                </select></p>
+            </form>
+          </div>
+        </div>
+
+        <div class="shop-filter-sort">
+          <div class="shop-filter-text">
+            <p>Sort:</p>
+          </div>
+          <div class="shop-filter-text-select">
+            <form>
+              <p><select size="1" name="D1">
+                  <option>Popular</option>
+                  <option>New</option>
+                  <option>Solved</option>
+                  <option>Locked</option>
+                  <option>Unlocked</option>
+                </select></p>
+            </form>
+          </div>
+        </div>
+
+        <div class="shop-filter-sort">
+          <div class="shop-filter-text">
+            <p>Layout:</p>
+          </div>
+          <div class="shop-filter-layout">
+            <form>
+              <input type="submit" value="Compact">
+              <input type="submit" value="Extended">
+            </form>
+          </div>
+
+
+        </div>
+      </div>
+
+    </section>
+
+    <section class="shop-shelf">
+      <section class="exercise-requirement">
+        <div class="requirements">
+          <div class="meta-info">
+            <div class="difficulty-wrapper">
+              <p class="difficulty-title">Difficulty:</p>
+              <img src="resources/difficulty_easy.png" class="difficulty-bar">
+            </div>
+            <h3 class="exercise-author">by Nume_Imaginar</h3>
+          </div>
+          <br class="meta-break">
+          <h1 class="exercise-title">#001 Nascuti in aceeasi zi</h1>
+          <p class="requirement-text">
+            Sa se afiseze toti studentii care au un coleg de grupa nascut in
+            aceeasi zi a saptamanii cu el si au nume de familie care incep cu
+            aceeasi litera.
+          </p>
+        </div>
+      </section>
+
+      <section class="exercise-requirement">
+        <div class="requirements">
+          <div class="meta-info">
+            <div class="difficulty-wrapper">
+              <p class="difficulty-title">Difficulty:</p>
+              <img src="resources/difficulty_medium.png" class="difficulty-bar">
+            </div>
+            <h3 class="exercise-author">by Nume_Inchipuit</h3>
+          </div>
+          <br class="meta-break">
+          <h1 class="exercise-title">#002 Prieteni</h1>
+          <p class="requirement-text">
+            Sa se afiseze toti prietenii studentilor.
+          </p>
+        </div>
+      </section>
+
+      <section class="exercise-requirement">
+        <div class="requirements">
+          <div class="meta-info">
+            <div class="difficulty-wrapper">
+              <p class="difficulty-title">Difficulty:</p>
+              <img src="resources/difficulty_hard.png" class="difficulty-bar">
+            </div>
+            <h3 class="exercise-author">by Nume_Inexistent</h3>
+          </div>
+          <br class="meta-break">
+          <h1 class="exercise-title">#003 Profi</h1>
+          <p class="requirement-text">
+            Sa se afiseze toti profesorii buni.
+          </p>
+        </div>
+      </section>
+
+    </section>
+
+    <footer class="footer-bar">
+      <a href="#">Contact us</a>
+      <a href="scholarlyhtml.html">Scholarly HTML</a>
+      <h4>© SQL-GAMES 2021 Buliga Eugeniu, Todirisca Cezar, Toma Andrei</h4>
+    </footer>
+  </div>
 
 </body>
