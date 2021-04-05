@@ -218,6 +218,14 @@ pre code {
 	background-color: #fff;
 	color: #39424e;
 	box-shadow: 0 3px 10px 0 rgba(0,0,0,.1);
+	font-family: open-sans-bold;
+	font-size: 15px;
+	font-weight: 700;
+	padding-left: 20px;
+	padding-right: 20px;
+	cursor: pointer;
+	margin-left:30px;
+	border:none;
 }
 
 .buttons.fullscreen{
