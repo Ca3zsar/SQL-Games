@@ -11,8 +11,10 @@
   <link rel="stylesheet" href="styles/content_style.css" />
   <link rel="stylesheet" href="styles/navbar.css" />
   <link rel="stylesheet" href="styles/footer.css" />
-  <link rel="stylesheet" href="styles/shop_compact.css" />
+  <link rel="stylesheet" title="extended" type="text/css" href="styles/shop.css" />
+  <link rel="alternate stylesheet" title="compact" type="text/css" href="styles/shop_compact.css" />
   <script src="scripts/navFunctions.js"></script>
+  <script src="scripts/shop_change_css.js"></script>
 
   <link rel="shortcut icon" type="image/png" href="resources/favicon-32x32.png" />
 
@@ -105,13 +107,15 @@
           </div>
           <div class="shop-filter-layout">
             <form>
-              <input type="image" value="Compact" src="resources/minimize-fullscreen.png">
-              <input type="image" value="Extended" src="resources/expand-fullscreen.png">
+              <input type="image" value="Compact" src="resources/minimize-fullscreen.png" onclick="switch_style('compact');return false;" name="theme" 
+              id="compact">
+              <input type="image" value="Extended" src="resources/expand-fullscreen.png" onclick="switch_style('extended');return false;" name="theme" 
+              id="extended">
             </form>
           </div>
 
-
         </div>
+
       </div>
 
     </section>
@@ -119,7 +123,7 @@
     <section class="shop-shelf">
 
       <section class="task">
-        
+
         <div class="task-meta-diff">
           <div class="task-difficulty">
             <div class="task-difficulty-text">
