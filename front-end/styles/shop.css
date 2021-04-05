@@ -202,4 +202,122 @@ body {
         font-size:2em;
     }
 }
-  
+
+.exercise-list{
+    width:100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.exercise-requirement{
+    width:940px;
+    height:fit-content;
+    
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
+    margin-top:50px;
+    	
+    display:flex;
+ }
+
+ .requirements
+{
+    width:100%;
+    padding: 20px;
+    padding-top: 10px;
+}
+
+.exercise-statistics{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0;
+}
+
+.exercise-statistics>p{
+    padding-left:10px;
+    margin:0;
+    font-family: open-sans-light;
+    font-size: 0.75em;
+}
+
+.exercise-statistics>p:first-child{
+    padding-right:10px;
+    border-right: 1px solid gray;
+}
+
+.exercise-author{
+	font-family: open-sans-bold;
+    font-weight: lighter;
+} 
+
+.exercise-title{
+    margin-top: 5px;
+	margin-left: 5px;
+	font-family: montserrat-regular;
+    font-weight: bolder;
+    
+	font-size: 1.25em;
+    text-align: left;
+}
+
+.requirement-text{
+    font-size: 1em;
+    font-family: open-sans-light;
+	text-align:left;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.meta-info{
+    width:100%;
+    border-bottom: 2px solid #d3d6d8;
+    
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.difficulty-wrapper{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.difficulty-bar{
+    display:flex;
+    align-items: center;
+    margin-left:10px;
+    width:50px;
+}
+
+.difficulty{
+    width : 25px;
+    height: 10px;
+    list-style: none;
+    padding: 5px;
+    float: left;
+}
+
+.difficulty-title{
+    font-family: open-sans-light;
+    font-size:16px;
+}
+
+.easy{
+    background-color: #0F9347;
+    border-radius: 16px 0px 0px 0px;
+}
+
+.medium{
+    background-color: #FCC50E;
+    /* opacity: 0; */
+}
+
+.hard{
+    border-radius: 0px 0px 16px 0px;
+    background-color: #BE2026;
+    /* opacity: 0; */
+}
