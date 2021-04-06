@@ -30,9 +30,7 @@ body {
 
 .profile-settings-div {
 	float: left;
-	justify-content: flex-start;
 	padding: 10px;
-	flex-direction: column;
 	line-height: 30px;
 	font-family: open-sans-light;
 	border-right: 1px solid gray;
@@ -58,21 +56,18 @@ body {
 	margin-bottom: 15px;
 	width: fit-content;
 	width: -moz-fit-content;
-	margin-right: 30;
 }
 
 @media(max-width:810px) {
 	.settings-title {
 		font-size: 2em;
 	}
-
 	.profile-settings-div {
-		width: 100vw;
+		width: 95vw;
 		overflow: auto;
 		white-space: nowrap;
 		border-bottom: 2px solid rgba(74, 74, 90, 0.5);
 	}
-
 	.profile-settings-div div {
 		display: inline-block;
 		width: fit-content;
@@ -80,37 +75,29 @@ body {
 		margin-right: 30px;
 		margin-left: 10px;
 	}
-
 	::-webkit-scrollbar {
 		width: 15px;
 		height: 5px;
 	}
-
 	::-webkit-scrollbar-track {
 		background: #f1f1f1;
 	}
-
 	::-webkit-scrollbar-thumb {
 		background: #888;
 	}
-
 	::-webkit-scrollbar-thumb:hover {
 		background: #555;
 	}
-
 	.profile-settings-div {
 		scrollbar-width: thin;
 		scrollbar-color: gray;
 	}
-	
 	.profile-settings-div:-webkit-scrollbar {
 		width: 11px;
 	}
-
 	.profile-settings-div:-webkit-scrollbar-track {
 		background: transparent;
 	}
-	
 	.profile-settings-div:-webkit-scrollbar-thumb {
 		background-color: gray;
 		border-radius: 6px;

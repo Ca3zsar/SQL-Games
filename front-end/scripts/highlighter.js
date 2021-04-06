@@ -40,7 +40,7 @@ document.querySelector("#fullscreen").addEventListener("click", (e) => {
 });
 
 /*------------------------------------------
-	Render existing code
+  Render existing code
 ------------------------------------------*/
 function ready(functionToRun) {
   while (document.readyState != "loading") {
@@ -63,7 +63,7 @@ function ready(functionToRun) {
 ready(hightlightSyntax);
 
 /*------------------------------------------
-	Capture text updates
+  Capture text updates
 ------------------------------------------*/
 function updater(event, turn) {
   var thisObject = document.getElementsByClassName("editor allow-tabs")[0];
@@ -103,7 +103,7 @@ document.querySelector("textarea").addEventListener("keydown", updater);
 document.querySelector("textarea").addEventListener("change", updater);
 
 /*------------------------------------------
-	Resize textarea based on content  
+  Resize textarea based on content  
 ------------------------------------------*/
 function correctTextareaHeight(element) {
   var self = document.querySelector("textarea");
@@ -121,7 +121,7 @@ function correctTextareaHeight(element) {
 }
 
 /*------------------------------------------
-	Run syntax hightlighter  
+  Run syntax hightlighter  
 ------------------------------------------*/
 function highlightBlock(block) {
   if (["select"].indexOf(block.innerHTML) >= 0) {
@@ -150,7 +150,7 @@ function hightlightSyntax() {
 }
 
 /*------------------------------------------
-	String html characters
+  String html characters
 ------------------------------------------*/
 function escapeHtml(unsafe) {
   return unsafe
@@ -162,7 +162,7 @@ function escapeHtml(unsafe) {
 }
 
 /*------------------------------------------
-	Enable tabs in textarea
+  Enable tabs in textarea
 ------------------------------------------*/
 document.querySelector(".allow-tabs").addEventListener("keydown", function (e) {
   var keyCode = e.keyCode || e.which;
@@ -186,3 +186,19 @@ document.querySelector(".allow-tabs").addEventListener("keydown", function (e) {
 });
 
 textAreaVar.focus();
+
+document.getElementsByClassName("reset-button")[0].addEventListener("click", () => {
+  let textCode = document.getElementsByClassName("syntax-highlight")[0];
+  let textAreaElement = document.getElementsByTagName("textarea")[0];
+  let line = document.getElementsByClassName("specific-line");
+  let lineNumber = document.getElementsByClassName("line-number")[0].childElementCount;
+
+  textCode.innerHTML = "";
+  textAreaElement.value = "";
+
+  for (let i = lineNumber - 1; i > 0; i--) {
+    line[i].remove();
+  }
+
+  newLines = 0;
+});
