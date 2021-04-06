@@ -25,6 +25,7 @@ body {
   font-family: bebas;
   font-size: 40px;
   user-select: none;
+  color:#333;
 }
 
 .shop-manager {
@@ -195,6 +196,7 @@ body {
 }
 
 .title-holder{
+  display:flex;
   text-align: left;
   width:100%;
 }
@@ -211,6 +213,11 @@ body {
   font-size: 1.25em;
   color: black;
   text-decoration: none;
+}
+
+.first-image{
+  margin-left:15px;
+  width:25px;
 }
 
 .exercise-content{
