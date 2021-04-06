@@ -8,9 +8,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 
-  <link rel="stylesheet" href="styles/navbar.css" />
+  <link rel="stylesheet" href="styles/navbar.css" />  
   <link rel="stylesheet" href="styles/footer.css" />
   <link rel="stylesheet" title="extended" type="text/css" href="styles/shop.css" />
+  <link rel="stylesheet" title="compact" type="text/css" href="styles/compact-shop.css" />
   <script src="scripts/navFunctions.js"></script>
 
   <link rel="shortcut icon" type="image/png" href="resources/favicon-32x32.png" />
@@ -89,8 +90,8 @@
         <div class="shop-filter-layout">
           <form>
             <label>Layout</label>
-            <input type="image" value="Compact" src="resources/minimize-fullscreen.png" id="compact">
-            <input type="image" value="Extended" src="resources/expand-fullscreen.png" id="extended">
+            <img src="resources/minimize-fullscreen.png" id="compact">
+            <img src="resources/expand-fullscreen.png" id="extended">
           </form>
         </div>
       </div>
@@ -115,6 +116,10 @@
               Sa se afiseze toti studentii care au un coleg de grupa nascut in
               aceeasi zi a saptamanii cu el si au nume de familie care incep cu
               aceeasi litera.
+            </div>
+            <div class="exercise-statistics">
+              <p >Difficulty : <span class="difficulty-span medium">Medium</span></p>
+              <p >Solved by : 10 </p>
             </div>
             <div class="solve-button-div">
               <button class="exercise-button to-solve">
@@ -146,6 +151,10 @@
               voluptatum aperiam optio, perspiciatis sint atque quasi! Necessitatibus
               sequi aliquam consectetur. Rerum!
             </div>
+            <div class="exercise-statistics">
+              <p >Difficulty : <span class="difficulty-span hard">Hard</span></p>
+              <p >Solved by : 10 </p>
+            </div>
             <div class="solve-button-div">
               <button class="exercise-button to-buy">
                 10 eSQLids
@@ -175,6 +184,10 @@
               minus accusantium? Molestias ipsam est vel delectus! Officia laudantium
               voluptatum aperiam optio, perspiciatis sint atque quasi! Necessitatibus
               sequi aliquam consectetur. Rerum!
+            </div>
+            <div class="exercise-statistics">
+              <p >Difficulty : <span class="difficulty-span easy">Easy</span></p>
+              <p >Solved by : 10 </p>
             </div>
             <div class="solve-button-div">
               <button class="exercise-button blocked">
@@ -206,6 +219,10 @@
               voluptatum aperiam optio, perspiciatis sint atque quasi! Necessitatibus
               sequi aliquam consectetur. Rerum!
             </div>
+            <div class="exercise-statistics">
+              <p >Difficulty : <span class="difficulty-span medium">Medium</span></p>
+              <p >Solved by : 10 </p>
+            </div>
             <div class="solve-button-div">
               <button class="exercise-button solved">
                 Solved
@@ -222,5 +239,5 @@
       <h4>© SQL-GAMES 2021 Buliga Eugeniu, Todirisca Cezar, Toma Andrei</h4>
     </footer>
   </div>
-
+  <script src="scripts/shop_resizer.js"></script>
 </body>

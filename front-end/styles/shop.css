@@ -45,7 +45,7 @@ body {
 }
 
 .search-box {
-  background: #9da1a5;
+  background: #e8e9eb;
   height: 30px;
   border-radius: 30px;
   padding: 10px;
@@ -67,7 +67,7 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: #f8f9fa;
+  background: #d3d8dd;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,7 +80,7 @@ body {
   outline: none;
   float: left;
   padding: 0;
-  color: white;
+  color: rgb(120, 119, 119);
   font-size: 16px;
   transition: 0.4s;
   line-height: 30px;
@@ -151,7 +151,7 @@ body {
   flex-direction: row;
 }
 
-.shop-filter-layout input {
+.shop-filter-layout img {
   width: 25px;
   font-size: 10px;
   border-style: solid;
@@ -173,6 +173,7 @@ body {
 .exercise-requirement {
   width: 940px;
   height: fit-content;
+  height: -moz-fit-content;
 
   background-color: #ffffff;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -213,6 +214,7 @@ body {
 }
 
 .exercise-content{
+  width:100%;
   display:flex;
   justify-content: space-between;
 }
@@ -230,6 +232,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.exercise-statistics{
+  display:none;
 }
 
 .exercise-button{
@@ -348,4 +354,53 @@ body {
   .shop-header {
     font-size: 2em;
   }
+}
+
+.exercise-requirement.compact .requirement-text{
+  display: none;
+}
+
+.exercise-requirement.compact .meta-info{
+  display:none
+}
+
+.exercise-requirement.compact:first-child{
+  margin-top:50px;
+}
+
+.exercise-requirement.compact{
+  margin: 0;
+  border:1px solid rgba(0, 0, 0, 0.1);
+}
+
+.exercise-requirement.compact .exercise-content{
+  justify-content: space-between;
+}
+
+.exercise-requirement.compact .exercise-statistics{
+  display:flex;
+}
+
+.exercise-requirement.compact .exercise-statistics>p{
+  padding-left:10px;
+  /* margin:0; */
+  font-family: open-sans-light;
+  font-size: 0.75em;   
+}
+
+.exercise-requirement.compact .exercise-statistics>p:first-child{
+  padding-right:10px;
+  border-right: 1px solid gray;
+}
+
+.exercise-requirement.compact .exercise-statistics .easy{
+  color:#179342;
+}
+
+.exercise-requirement.compact .exercise-statistics .medium{
+  color:#FCC50E;
+}
+
+.exercise-requirement.compact .exercise-statistics .hard{
+  color:#BE2026;
 }
