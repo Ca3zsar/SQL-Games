@@ -24,6 +24,7 @@ body {
   padding-top: 50px;
   font-family: bebas;
   font-size: 40px;
+  user-select: none;
 }
 
 .shop-manager {
@@ -44,7 +45,7 @@ body {
 }
 
 .search-box {
-  background: #4d5156;
+  background: #9da1a5;
   height: 30px;
   border-radius: 30px;
   padding: 10px;
@@ -66,7 +67,7 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: #717a87;
+  background: #f8f9fa;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,7 +93,7 @@ body {
 
 .shop-select:after {
   font: 15px "Consolas", monospace;
-  color: #333;
+  color: rgb(103, 103, 103);
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
@@ -106,7 +107,6 @@ body {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  /* Add some styling */
 
   display: block;
   width: 100%;
@@ -160,49 +160,6 @@ body {
   padding: 2px;
 }
 
-@media screen and (max-width: 910px) {
-  .search-box:hover > .search-input {
-    width: 150px;
-    padding: 0 6px;
-  }
-
-  .shop-filter {
-    width: 65%;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .search-box:hover > .search-input {
-    width: 130px;
-    padding: 0 6px;
-  }
-  .shop-filter {
-    width: 70%;
-  }
-  .shop-select label,
-  .shop-filter-layout label {
-    font-size: 0.7em;
-  }
-}
-
-@media screen and (max-width: 690px) {
-  .shop-manager {
-    flex-direction: column;
-  }
-  .shop-filter {
-    width: 100%;
-    /* flex-direction: column; */
-  }
-
-  .search-box {
-    margin-bottom: 10px;
-  }
-
-  .shop-header {
-    font-size: 2em;
-  }
-}
-
 .exercise-list {
   width: 100%;
   position: relative;
@@ -236,13 +193,19 @@ body {
   font-size: 1em;
 }
 
+.title-holder{
+  text-align: left;
+  width:100%;
+}
+
 .exercise-title {
   display: flex;
 
-  /* margin-top: 2px; */
   margin-left: 5px;
   font-family: montserrat-regular;
   font-weight: bolder;
+  width:fit-content;
+  width:-moz-fit-content;
 
   font-size: 1.25em;
   color: black;
@@ -343,3 +306,46 @@ body {
   font-size: 1em;
 }
 
+
+@media screen and (max-width: 910px) {
+  .search-box:hover > .search-input {
+    width: 150px;
+    padding: 0 6px;
+  }
+
+  .shop-filter {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .search-box:hover > .search-input {
+    width: 130px;
+    padding: 0 6px;
+  }
+  .shop-filter {
+    width: 70%;
+  }
+  .shop-select label,
+  .shop-filter-layout label {
+    font-size: 0.7em;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .shop-manager {
+    flex-direction: column;
+  }
+  .shop-filter {
+    width: 100%;
+    /* flex-direction: column; */
+  }
+
+  .search-box {
+    margin-bottom: 10px;
+  }
+
+  .shop-header {
+    font-size: 2em;
+  }
+}
