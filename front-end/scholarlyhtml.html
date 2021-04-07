@@ -183,10 +183,28 @@
                 depending on the difficulty of the task. They can use this currency to buy other exercises in the "shop"
                 section, where all the other disponible tasks are filtered by difficulty. </p>
             <h4>4.2.1 Description and Priority</h4>
+            <p>High priority based on the fact that before solving an exercise, the user has to first pick one up. This
+                feature gives the user a way to choose what task to solve next. After that he is sent to the exrcise
+                screen. </p>
 
             <h4>4.2.2 Stimulus/Response</h4>
+            <ul>
+                <li>the user has enough sqlids and "buys" an exercise - the user is redirected to the exercise page</li>
+                <li>the user does not have enough currency to buy an exercise - the exercise page can not be accesed by
+                    clicking the button, untill the user has gained enough to finally unlock it.</li>
+                <li>by clicking on of the "layout" buttons, the user can choose to rearrange the way the list of items
+                    in the shop looks: an expanded or more compact way.</li>
+                <li>the search bar allows the user to find a specific exercise</li>
+                <li>the filter options can help the user alter the list of exercises, so the most relevant to him/her
+                    are shown</li>
+            </ul>
 
             <h4>4.2.3 Functional Requirements</h4>
+            <h5>4.2.3.1 ...</h5>
+            <p>The search bar should access the exercises database and return the needed values. The buttons shall
+                change the layout.</p>
+            <h5>4.2.3.2 Response to errors</h5>
+            <p>Invalid search inputs will return no results. </p>
 
             <h3>4.3 System Feature 3: Achievements</h3>
 
@@ -195,20 +213,38 @@
                 of a category, solving an exercise in a record time.</p>
 
             <h4>4.3.1 Description and Priority</h4>
+            <p>Low priority, as this feature is only cosmetic or/and stimullating for learning. But it is a feature we
+                would strongly like to implements, because it will greatly influence the users' experience.</p>
 
             <h4>4.3.2 Stimulus/Response</h4>
+            <ul>
+                <li>When a user does something remarcable, he/she gets an achievemnt, shown on personal profile page.
+                </li>
+                <li>The achievemnts are specific and can be added indefinetely after the project finnalization.</li>
+            </ul>
 
             <h4>4.3.3 Functional Requirements</h4>
+            <p>The site should be notified when the user does something that checks an achievement condition, so the
+                achievemnt in cause is unlocked on his/her profile page. </p>
 
             <h3>4.4 System Feature 4: Profile</h3>
             <p>By registering, every user will have their own profile on the site, whic they can use to solve the given
                 tasks and gain sqlids to solve others. </p>
 
             <h4>4.4.1 Description and Priority</h4>
+            <p>Medium-High prority, because it is an important safety/security requirement, but it is not the main
+                intent of the site.</p>
 
             <h4>4.4.2 Stimulus/Response</h4>
+            <ul>
+                <li>The user registers - the site remembers his/hers account details.</li>
+                <li>Logging in with the correct credentials gives the user acces to his/her account.</li>
+            </ul>
 
             <h4>4.4.3 Functional Requirements</h4>
+            <p>Introducing the wrong credentials will result in incapability of accesing the account features.
+                Registering requires a password and login of adequate lenght. Also some logins may be banned for obscene
+                meaning.</p>
 
         </section>
 
