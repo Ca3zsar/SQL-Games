@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>  
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    
+
     <link rel="stylesheet" href="styles/profile_settings.css" />
     <link rel="stylesheet" href="styles/navbar.css" />
     <link rel="stylesheet" href="styles/footer.css" />
     <script src="scripts/navFunctions.js"></script>
-    <title>Document</title>
+    <title>Profile Settings</title>
 </head>
 
 <body>
@@ -22,8 +22,7 @@
         </div>
         <nav class="right-nav">
             <a class="coins">10<img src="resources/coin.png" class="coin-img" alt="sqliezi" /></a>
-            <a class="coins-collapsed">Coins : 10<img src="resources/coin.png" class="coin-img"
-                    alt="sqliezi" /></a>
+            <a class="coins-collapsed">Coins : 10<img src="resources/coin.png" class="coin-img" alt="sqliezi" /></a>
             <a href="shop.html">Exercises</a>
             <a href="login_register.html">Login/Register</a>
             <div class="dropdown">
@@ -44,26 +43,62 @@
     </header>
 
     <div class="content-area" id="content-id">
-        <div class="wrapper">
-            <div class="settings-title">
-                Profile Settings
-            </div>
-            <div class="profile-settings-div">
+        <div class="settings-area">
+            <div class="settings-nav">
+                <h1 class="account-settings">Account Settings</h1>
                 <div>Personal information</div>
-                <div>Password</div>
                 <div>Profile picture</div>
+                <div>Password</div>
                 <div>Contact</div>
                 <div>About</div>
             </div>
+            <div class="settings">
+                <div class="personal-info">
+                    <h1 class="section-header">Personal information</h1>
+                    <div class="information">
+                        <form class="name-info">
+                            <div class="first-name-div">
+                                <label for="first-name-input" class="first-name-label settings-label">First Name</label>
+                                <input class="first-name-input settings-input" name="first-name-input" value="admin">
+                            </div>
+                            <div class="last-name-div">
+                                <label for="last-name-input" class="last-name-label settings-label">Last Name</label>
+                                <input class="last-name-input settings-input" name="last-name-input" value="admin">
+                            </div>
+                        </form>
+                        <form class="email-info">
+                            <div class="email-div">
+                                <label for="email-input" class="email-label settings-label">Email Address</label>
+                                <input class="email-input" name="email-input" type="email">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="profile-picture">
+                    <h1 class="section-header">Profile Picture</h1>
+                </div>
+                <div class="password-div">
+                    <h1 class="section-header">Password</h1>
+                </div>
+                <div class="contact-div">
+                    <h1 class="section-header">Contact</h1>
+                </div>
+                <div class="about-div">
+                    <h1 class="section-header">About</h1>
+                </div>
+            </div>
         </div>
 
+
+        <footer class="footer-bar">
+            <a href="#">Contact us</a>
+            <a href="scholarlyhtml.html">Scholarly HTML</a>
+            <h4>© SQL-GAMES 2021 Buliga Eugeniu, Todirisca Cezar, Toma Andrei</h4>
+        </footer>
     </div>
 
-    <footer class="footer-bar">
-        <a href="#">Contact us</a>
-        <a href="scholarlyhtml.html">Scholarly HTML</a>
-        <h4>© SQL-GAMES 2021 Buliga Eugeniu, Todirisca Cezar, Toma Andrei</h4>
-    </footer>
+
+    <script src="scripts/profile_settings.js"></script>
 </body>
 
 </html>

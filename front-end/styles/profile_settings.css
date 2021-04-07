@@ -28,47 +28,124 @@ body {
 	overflow: hidden;
 }
 
-.profile-settings-div {
+.settings-nav {
 	float: left;
 	padding: 10px;
 	line-height: 30px;
 	font-family: open-sans-light;
 	border-right: 1px solid gray;
 	width: 200px;
+	position: fixed;
 }
 
-.profile-settings-div div {
+.settings-nav div {
 	width: 100%;
 }
 
-.profile-settings-div div:hover {
+.settings-nav div:hover {
 	background: rgb(21, 21, 21);
 	background: linear-gradient( 90deg, rgba(70, 69, 69, 0.964) 0%, rgba(129, 129, 129, 0.902) 50%, rgba(192, 191, 191, 0.757) 100%);
 }
 
-.settings-title {
-	margin-top: 80px;
-	padding-left: 10px;
+.settings-area{
+	width:100%;
+	margin:80px;
+	margin-top:50px;
+	display:flex;
+}
+
+.account-settings{
+	margin-top:0;
+	user-select: none;
+}
+
+.settings{
+	position: absolute;
+	margin-left:250px;
+	text-align: left;
+}
+
+.settings h1:first-child{
+	margin-top:0;
+}
+
+.section-header{
+	font-family:open-sans-bold;
+	font-weight:lighter;
+	font-size:1.7em;
+}
+
+.settings-label{
 	font-family: open-sans-light;
-	font-size: 3em;
+}
+
+.settings{
+	width:calc(100% - 200px);
+}
+
+.personal-info{
+	width:50%;
+}
+
+.information{
+	width:100%;
+}
+
+.name-info, .email-info{
+	display:flex;
+	width:100%;
+	justify-content: space-between;
+
+	margin-bottom:20px;
+}
+
+.name-info label, .email-info label{
+	margin-bottom:3px;
+}
+
+.name-info input, .email-info input{
+	font-family: open-sans-light;
 	font-weight: 600;
-	color: #222121;
-	margin-bottom: 15px;
-	width: fit-content;
-	width: -moz-fit-content;
+	line-height: 1.5em;
+	font-size:1em;
+	
+	padding:5px;
+	padding-left:10px;
+
+	color:#39424e;
+
+	box-shadow: inset 0 1px 2px rgba(151,159,175,0.1),inset 0 1px 15px rgba(151,159,175,0.05);
+}
+
+
+.first-name-div , .last-name-div, .email-div{
+	display: flex;
+	flex-direction: column;
+	width:45%;
 }
 
 @media(max-width:810px) {
+	.settings-area{
+		margin:0;
+		flex-direction: column;
+	}
+
+	.settings{
+		margin-top:120px;
+		margin-left:20px;
+	}
+
 	.settings-title {
 		font-size: 2em;
 	}
-	.profile-settings-div {
+	.settings-nav {
 		width: 95vw;
 		overflow: auto;
 		white-space: nowrap;
 		border-bottom: 2px solid rgba(74, 74, 90, 0.5);
+		border-right:0;
 	}
-	.profile-settings-div div {
+	.settings-nav div {
 		display: inline-block;
 		width: fit-content;
 		width: -moz-fit-content;
@@ -88,17 +165,17 @@ body {
 	::-webkit-scrollbar-thumb:hover {
 		background: #555;
 	}
-	.profile-settings-div {
+	.settings-nav {
 		scrollbar-width: thin;
 		scrollbar-color: gray;
 	}
-	.profile-settings-div:-webkit-scrollbar {
+	.settings-nav:-webkit-scrollbar {
 		width: 11px;
 	}
-	.profile-settings-div:-webkit-scrollbar-track {
+	.settings-nav:-webkit-scrollbar-track {
 		background: transparent;
 	}
-	.profile-settings-div:-webkit-scrollbar-thumb {
+	.settings-nav:-webkit-scrollbar-thumb {
 		background-color: gray;
 		border-radius: 6px;
 		border: 3px solid transparent;

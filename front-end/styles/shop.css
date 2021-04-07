@@ -286,9 +286,16 @@ body {
   color:#1ba94c;
 }
 
+
 .exercise-button.solved::after{
   margin-top:4px;
   content:url(../resources/checked.png)
+}
+
+.solve-button-link{
+  text-decoration: none;
+  font-size: 15px;
+  font-family: open-sans-light;
 }
 
 .meta-info {
