@@ -47,10 +47,10 @@
             <div class="settings-nav">
                 <h1 class="account-settings">Account Settings</h1>
                 <div>Personal information</div>
-                <div>Profile picture</div>
                 <div>Password</div>
                 <div>Contact</div>
                 <div>About</div>
+                <button type="submit" class="submit-changes">Save Changes</button>
             </div>
             <div class="settings">
                 <div class="personal-info">
@@ -59,26 +59,42 @@
                         <form class="name-info">
                             <div class="first-name-div">
                                 <label for="first-name-input" class="first-name-label settings-label">First Name</label>
-                                <input class="first-name-input settings-input" name="first-name-input" value="admin">
+                                <input class="first-name-input settings-input" name="first-name-input" value="admin" />
                             </div>
                             <div class="last-name-div">
                                 <label for="last-name-input" class="last-name-label settings-label">Last Name</label>
-                                <input class="last-name-input settings-input" name="last-name-input" value="admin">
+                                <input class="last-name-input settings-input" name="last-name-input" value="admin" />
                             </div>
                         </form>
                         <form class="email-info">
                             <div class="email-div">
                                 <label for="email-input" class="email-label settings-label">Email Address</label>
-                                <input class="email-input" name="email-input" type="email">
+                                <input class="email-input" name="email-input" type="email" />
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class="profile-picture">
-                    <h1 class="section-header">Profile Picture</h1>
-                </div>
-                <div class="password-div">
+                <div class="pass-info">
                     <h1 class="section-header">Password</h1>
+                    <div class="information">
+                        <form class="current-info">
+                            <div class="current-password-div">
+                                <label for="current-pass-input" class="current-pass-label settings-label">Current Password</label>
+                                <input type = "password" name="current-pass-input" class="current-pass-input">
+                            </div>
+                        </form>
+
+                        <form class="password-info">
+                            <div class="password-div">
+                                <label for="password-input" class="password-label settings-label">New Password</label>
+                                <input type = "password" name="password-input" class="password-input" />
+                            </div>
+                            <div class="confirm-password-div">
+                                <label for="confirm-input" class="confirm-label settings-label">Confirm Password</label>
+                                <input type="password" name="confirm-input" class="confirm-input" />
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <div class="contact-div">
                     <h1 class="section-header">Contact</h1>

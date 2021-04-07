@@ -36,6 +36,10 @@ body {
 	border-right: 1px solid gray;
 	width: 200px;
 	position: fixed;
+	text-align: center;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .settings-nav div {
@@ -45,6 +49,24 @@ body {
 .settings-nav div:hover {
 	background: rgb(21, 21, 21);
 	background: linear-gradient( 90deg, rgba(70, 69, 69, 0.964) 0%, rgba(129, 129, 129, 0.902) 50%, rgba(192, 191, 191, 0.757) 100%);
+}
+
+.submit-changes{
+	margin-top:10px;
+	height:35px;
+	color: #fff;
+	font-size:15px;
+	font-family: open-sans-light;
+	font-weight: 400;
+	cursor: pointer;
+	width:60%;
+
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	background-color:#1ba94c;
+	border:none;
+	/* width:150px; */
 }
 
 .settings-area{
@@ -83,7 +105,7 @@ body {
 	width:calc(100% - 200px);
 }
 
-.personal-info{
+.personal-info, .pass-info{
 	width:50%;
 }
 
@@ -91,7 +113,7 @@ body {
 	width:100%;
 }
 
-.name-info, .email-info{
+.name-info, .email-info, .password-info, .current-info{
 	display:flex;
 	width:100%;
 	justify-content: space-between;
@@ -99,11 +121,11 @@ body {
 	margin-bottom:20px;
 }
 
-.name-info label, .email-info label{
+.name-info label, .email-info label, .password-info label, .current-info label{
 	margin-bottom:3px;
 }
 
-.name-info input, .email-info input{
+.name-info input, .email-info input, .password-info input, .current-info input{
 	font-family: open-sans-light;
 	font-weight: 600;
 	line-height: 1.5em;
@@ -111,14 +133,12 @@ body {
 	
 	padding:5px;
 	padding-left:10px;
-
 	color:#39424e;
-
-	box-shadow: inset 0 1px 2px rgba(151,159,175,0.1),inset 0 1px 15px rgba(151,159,175,0.05);
 }
 
 
-.first-name-div , .last-name-div, .email-div{
+.first-name-div , .last-name-div, .email-div, 
+.password-div, .confirm-password-div , .current-password-div{
 	display: flex;
 	flex-direction: column;
 	width:45%;
