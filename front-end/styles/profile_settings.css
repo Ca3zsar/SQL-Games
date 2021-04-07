@@ -42,12 +42,18 @@ body {
 	align-items: center;
 }
 
-.settings-nav div {
+.settings-nav a {
 	width: 100%;
 	user-select: none;
+
+	color:black;
+	font-family: open-sans-light;
+	font-size:1em;
+
+	text-decoration: none;
 }
 
-.settings-nav div:hover {
+.settings-nav a:hover {
 	background: rgb(21, 21, 21);
 	background: linear-gradient( 90deg, rgba(70, 69, 69, 0.964) 0%, rgba(129, 129, 129, 0.902) 50%, rgba(192, 191, 191, 0.757) 100%);
 }
