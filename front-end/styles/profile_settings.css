@@ -21,7 +21,7 @@ body {
 	position: relative;
 	margin-top: 0;
 	background: #F3F7F7;
-	height: 800px;
+	height:1000px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
@@ -105,7 +105,7 @@ body {
 	width:calc(100% - 200px);
 }
 
-.personal-info, .pass-info{
+.personal-info, .pass-info, .contact-info{
 	width:50%;
 }
 
@@ -113,7 +113,8 @@ body {
 	width:100%;
 }
 
-.name-info, .email-info, .password-info, .current-info{
+.name-info, .email-info, .password-info, .current-info, 
+.contact-info-phone, .contact-info-address{
 	display:flex;
 	width:100%;
 	justify-content: space-between;
@@ -121,11 +122,15 @@ body {
 	margin-bottom:20px;
 }
 
-.name-info label, .email-info label, .password-info label, .current-info label{
+.name-info label, .email-info label, .password-info label,
+.current-info label, .contact-info-address label, .contact-info-phone label 
+{
 	margin-bottom:3px;
 }
 
-.name-info input, .email-info input, .password-info input, .current-info input{
+.name-info input, .email-info input, 
+.password-info input, .current-info input,
+.contact-info-phone input, .contact-info-address input{
 	font-family: open-sans-light;
 	font-weight: 600;
 	line-height: 1.5em;
@@ -138,7 +143,8 @@ body {
 
 
 .first-name-div , .last-name-div, .email-div, 
-.password-div, .confirm-password-div , .current-password-div{
+.password-div, .confirm-password-div ,
+ .current-password-div, .phone-div, .address-div{
 	display: flex;
 	flex-direction: column;
 	width:45%;

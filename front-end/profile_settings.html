@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
 
     <link rel="stylesheet" href="styles/profile_settings.css" />
     <link rel="stylesheet" href="styles/navbar.css" />
@@ -39,7 +39,6 @@
             <span></span>
             <span></span>
         </div>
-
     </header>
 
     <div class="content-area" id="content-id">
@@ -79,15 +78,16 @@
                     <div class="information">
                         <form class="current-info">
                             <div class="current-password-div">
-                                <label for="current-pass-input" class="current-pass-label settings-label">Current Password</label>
-                                <input type = "password" name="current-pass-input" class="current-pass-input">
+                                <label for="current-pass-input" class="current-pass-label settings-label">Current
+                                    Password</label>
+                                <input type="password" name="current-pass-input" class="current-pass-input" />
                             </div>
                         </form>
 
                         <form class="password-info">
                             <div class="password-div">
                                 <label for="password-input" class="password-label settings-label">New Password</label>
-                                <input type = "password" name="password-input" class="password-input" />
+                                <input type="password" name="password-input" class="password-input" />
                             </div>
                             <div class="confirm-password-div">
                                 <label for="confirm-input" class="confirm-label settings-label">Confirm Password</label>
@@ -96,15 +96,29 @@
                         </form>
                     </div>
                 </div>
-                <div class="contact-div">
+                <div class="contact-info">
                     <h1 class="section-header">Contact</h1>
+                    <div class="information">
+                        <form class="contact-info-phone">
+                            <div class="phone-div">
+                                <label for="phone-number" class="phone-label settings-label">Phone Number</label>
+                                <input type="tel" pattern="[0-9]{10}" name="phone-number" />
+                            </div>
+                        </form>
+
+                        <form class="contact-info-address">
+                            <div class="address-div">
+                                <label for="address" class="address-label settings-label">Address</label>
+                                <input name="address" />
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="about-div">
+                <div class="about-info">
                     <h1 class="section-header">About</h1>
                 </div>
             </div>
         </div>
-
 
         <footer class="footer-bar">
             <a href="#">Contact us</a>
@@ -112,7 +126,6 @@
             <h4>© SQL-GAMES 2021 Buliga Eugeniu, Todirisca Cezar, Toma Andrei</h4>
         </footer>
     </div>
-
 
     <script src="scripts/profile_settings.js"></script>
 </body>
