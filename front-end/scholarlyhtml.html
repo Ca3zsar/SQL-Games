@@ -163,20 +163,52 @@
             <h3>4.1 System Feature 1: SQL exercises solving</h3>
             <p>Users can solve a wide range of exercises relating to databases, by typing the interogation in the blank
                 space of the solving page. </p>
+            <h4>4.1.1 Description and Priority</h4>
+            <p>This feature is of High priority, as it is the main use of this site. </p>
+            <h4>4.1.2 Stimulus/Response</h4>
+            <ul>
+                <li>The user types the response to the given exercise - the system checks if the solution is right using
+                    the exercise "student" database and returns a message depending on wether the solution was wrong,
+                    right or partially right.</li>
+                <li>Depending on how good, how fast or in which manner the task was solved, the user can get a
+                    corresponding achievemnt.</li>
+            </ul>
+            <h4>4.1.3 Functional Requirements</h4>
+            <p>In case of a wrong answer, invalid input or an error from the "student" database the site will notify the
+                user with the
+                "wrong" banner.</p>
 
             <h3>4.2 System Feature 2: Shop</h3>
             <p>By giving right solutions to the exercises, users gain an amount of local currency - "sqlids",
                 depending on the difficulty of the task. They can use this currency to buy other exercises in the "shop"
                 section, where all the other disponible tasks are filtered by difficulty. </p>
+            <h4>4.2.1 Description and Priority</h4>
+
+            <h4>4.2.2 Stimulus/Response</h4>
+
+            <h4>4.2.3 Functional Requirements</h4>
 
             <h3>4.3 System Feature 3: Achievements</h3>
+
             <p>Special achievemnts are shown on the personal profile page of the user. Claiming some of them can even
                 give the user more "sqlids". Some of them include being the first to solve a task, solving all the tasks
                 of a category, solving an exercise in a record time.</p>
 
+            <h4>4.3.1 Description and Priority</h4>
+
+            <h4>4.3.2 Stimulus/Response</h4>
+
+            <h4>4.3.3 Functional Requirements</h4>
+
             <h3>4.4 System Feature 4: Profile</h3>
             <p>By registering, every user will have their own profile on the site, whic they can use to solve the given
                 tasks and gain sqlids to solve others. </p>
+
+            <h4>4.4.1 Description and Priority</h4>
+
+            <h4>4.4.2 Stimulus/Response</h4>
+
+            <h4>4.4.3 Functional Requirements</h4>
 
         </section>
 
@@ -184,16 +216,17 @@
             <h2>5. Other Nonfunctional Requirements</h2>
 
             <h3>5.1 Performance Requirements</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa delectus expedita nisi facilis rem?
-                Placeat
-                quisquam a nulla facere saepe earum! Officia soluta officiis laudantium perspiciatis, quas obcaecati
-                iure laboriosam.</p>
+            <p>Make the site as fast as possible. Use techniques that require minimum capacity. Some sacrifices for the
+                sake of how beautiful the site looks can be made, but in decent quantities.</p>
 
             <h3>5.2 Safety Requirements</h3>
-            <p>It is required that the database be protected from SQL injections.</p>
+            <p>No damage to the user can be made using this site. The only necessary safeguard would be some
+                restrictions to avoid SQL injections.</p>
 
             <h3>5.3 Security Requirements</h3>
-            <p>The profile of the user should be protected from being accesed by others.</p>
+            <p>The user profile should be protected by a login and password system, to maintain their privacy and keep
+                their data safe. Some options such as hiding the amount of grossed sqlids, or number of achievemnts
+                could be hidden away by this system too.</p>
 
             <h3>5.4 Software Quality Attributes</h3>
 
@@ -212,9 +245,19 @@
             <p><i><b>sqlid</b></i> - local currency used for buying new exercises from the shop. Can be earned by
                 solving tasks or gaining achievements.</p>
 
+            <figure typeof="sa:image"><img src="resources/first.png"></figure>
+            <p> - this symbol means that the exercise has not been solved by anyone, so the user can be the fisrt
+                one to do it.</p>
+
+
+
             <h3>Appendix B: Analysis Models</h3>
 
             <h3>Appendix C: To Be Determined List</h3>
+            <ul>
+                <li>SQL icon source?</li>
+                <li>other references to be determined...</li>
+            </ul>
 
         </section>
 
