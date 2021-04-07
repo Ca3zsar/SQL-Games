@@ -21,7 +21,7 @@ body {
 	position: relative;
 	margin-top: 0;
 	background: #F3F7F7;
-	height:1300px;
+	height: 1300px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
@@ -37,7 +37,7 @@ body {
 	width: 200px;
 	position: fixed;
 	text-align: center;
-	display:flex;
+	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
@@ -45,11 +45,9 @@ body {
 .settings-nav a {
 	width: 100%;
 	user-select: none;
-
-	color:black;
+	color: black;
 	font-family: open-sans-light;
-	font-size:1em;
-
+	font-size: 1em;
 	text-decoration: none;
 }
 
@@ -58,123 +56,109 @@ body {
 	background: linear-gradient( 90deg, rgba(70, 69, 69, 0.964) 0%, rgba(129, 129, 129, 0.902) 50%, rgba(192, 191, 191, 0.757) 100%);
 }
 
-.submit-changes{
-	margin-top:10px;
-	height:35px;
+.submit-changes {
+	margin-top: 10px;
+	height: 35px;
 	color: #fff;
-	font-size:15px;
+	font-size: 15px;
 	font-family: open-sans-light;
 	font-weight: 400;
 	cursor: pointer;
-	width:60%;
-
-	display:flex;
+	width: 60%;
+	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color:#1ba94c;
-	border:none;
+	background-color: #1ba94c;
+	border: none;
 	/* width:150px; */
 }
 
-.settings-area{
-	width:100%;
-	margin:80px;
-	margin-top:50px;
-	display:flex;
+.settings-area {
+	width: 100%;
+	margin: 80px;
+	margin-top: 50px;
+	display: flex;
 }
 
-.account-settings{
-	margin-top:0;
+.account-settings {
+	margin-top: 0;
 	user-select: none;
 }
 
-.settings{
+.settings {
 	position: absolute;
-	margin-left:250px;
+	margin-left: 250px;
 	text-align: left;
 }
 
-.settings h1:first-child{
-	margin-top:0;
+.settings h1:first-child {
+	margin-top: 0;
 }
 
-.section-header{
-	font-family:open-sans-bold;
-	font-weight:lighter;
-	font-size:1.7em;
+.section-header {
+	font-family: open-sans-bold;
+	font-weight: lighter;
+	font-size: 1.7em;
 }
 
-.settings-label{
+.settings-label {
 	font-family: open-sans-light;
 }
 
-.settings{
-	width:calc(100% - 200px);
+.settings {
+	width: calc(100% - 200px);
 }
 
-.personal-info, .pass-info, .contact-info, .about-info{
-	width:50%;
+.personal-info, .pass-info, .contact-info, .about-info {
+	width: 50%;
 }
 
-.information{
-	width:100%;
+.information {
+	width: 100%;
 }
 
-.name-info, .email-info, .password-info, .current-info, 
-.contact-info-phone, .contact-info-address,
-.about-info-birthday, .about-info-description{
-	display:flex;
-	width:100%;
+.name-info, .email-info, .password-info, .current-info, .contact-info-phone, .contact-info-address, .about-info-birthday, .about-info-description {
+	display: flex;
+	width: 100%;
 	justify-content: space-between;
-	margin-bottom:20px;
+	margin-bottom: 20px;
 }
 
-.name-info label, .email-info label, .password-info label,
-.current-info label, .contact-info-address label, .contact-info-phone label,
-.about-info-birthday label, .about-info-description label
-{
-	margin-bottom:3px;
+.name-info label, .email-info label, .password-info label, .current-info label, .contact-info-address label, .contact-info-phone label, .about-info-birthday label, .about-info-description label {
+	margin-bottom: 3px;
 }
 
-.name-info input, .email-info input, 
-.password-info input, .current-info input,
-.contact-info-phone input, .contact-info-address input,
-.about-info-birthday input, .about-info-description textarea{
+.name-info input, .email-info input, .password-info input, .current-info input, .contact-info-phone input, .contact-info-address input, .about-info-birthday input, .about-info-description textarea {
 	font-family: open-sans-light;
 	font-weight: 600;
 	line-height: 1.5em;
-	font-size:1em;
-	
-	padding:5px;
-	padding-left:10px;
-	color:#39424e;
+	font-size: 1em;
+	padding: 5px;
+	padding-left: 10px;
+	color: #39424e;
 }
 
-
-.first-name-div , .last-name-div, .email-div, 
-.password-div, .confirm-password-div ,
- .current-password-div, .phone-div, .address-div,
- .birthday-div, .description-div{
+.first-name-div, .last-name-div, .email-div, .password-div, .confirm-password-div, .current-password-div, .phone-div, .address-div, .birthday-div, .description-div {
 	display: flex;
 	flex-direction: column;
-	width:45%;
+	width: 45%;
 }
 
-.about-info-description textarea{
+.about-info-description textarea {
 	width: calc(100% + 200px);
 	height: 150px;
 	resize: none;
 }
 
-@media (max-width:1100px){
-	.personal-info, .pass-info, .contact-info, .about-info{
-		width:70%;
+@media (max-width:1100px) {
+	.personal-info, .pass-info, .contact-info, .about-info {
+		width: 70%;
 	}
 }
 
 @media(max-width:810px) {
-	.settings-nav{
-		margin:0;
+	.settings-nav {
+		margin: 0;
 		position: relative;
 		height: fit-content;
 		height: -moz-fit-content;
@@ -182,49 +166,41 @@ body {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
+		overflow-y: scroll;
+		white-space: nowrap;
+		border-bottom: 2px solid rgba(74, 74, 90, 0.5);
+		border-right: 0;
 	}
-
-	.personal-info, .pass-info, .contact-info, .about-info{
-		width:70%;
+	.settings-nav a {
+		display: inline-block;
+		width: fit-content;
+		width: -moz-fit-content;
+		margin: 0 20px;
 	}
-
-	.settings-area{
-		margin:30px;
+	.personal-info, .pass-info, .contact-info, .about-info {
+		width: 70%;
+	}
+	.settings-area {
+		margin: 30px;
 		position: relative;
 		display: flex;
 		flex-direction: column;
 	}
-
-	.settings{
+	.settings {
 		margin: 10px;
 		width: 100%;
 		position: relative;
-		display:flex;
+		overflow:auto;
+		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
-
-	.submit-changes{
+	.submit-changes {
 		display: none;
 	}
-
 	.account-settings {
 		font-size: 1.5em;
 		display: none;
-	}
-	.settings-nav {
-		width: 95vw;
-		overflow: auto;
-		white-space: nowrap;
-		border-bottom: 2px solid rgba(74, 74, 90, 0.5);
-		border-right:0;
-	}
-	.settings-nav div {
-		display: inline-block;
-		width: fit-content;
-		width: -moz-fit-content;
-		margin-right: 30px;
-		margin-left: 10px;
 	}
 	::-webkit-scrollbar {
 		width: 15px;
