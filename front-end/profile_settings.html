@@ -74,7 +74,11 @@
 
     <div class="content-area" id="content-id">
       <div class="settings-area">
-        <div class="settings-nav">
+        <div
+          class="settings-nav"
+          itemscope
+          itemtype="https://schema.org/ItemList"
+        >
           <h1 class="account-settings">Account Settings</h1>
           <a href="#personal-info">Personal information</a>
           <a href="#pass-info">Password</a>
@@ -95,7 +99,7 @@
                     >First Name</label
                   >
                   <input
-                    class="first-name-input settings-input"
+                    id="first-name-input"
                     name="first-name-input"
                     value="admin"
                   />
@@ -107,7 +111,7 @@
                     >Last Name</label
                   >
                   <input
-                    class="last-name-input settings-input"
+                    id="last-name-input"
                     name="last-name-input"
                     value="admin"
                   />
@@ -118,7 +122,7 @@
                   <label for="email-input" class="email-label settings-label"
                     >Email Address</label
                   >
-                  <input class="email-input" name="email-input" type="email" />
+                  <input id="email-input" name="email-input" type="email" />
                 </div>
               </form>
             </div>
@@ -137,7 +141,7 @@
                   <input
                     type="password"
                     name="current-pass-input"
-                    class="current-pass-input"
+                    id="current-pass-input"
                   />
                 </div>
               </form>
@@ -152,7 +156,7 @@
                   <input
                     type="password"
                     name="password-input"
-                    class="password-input"
+                    id="password-input"
                   />
                 </div>
                 <div class="confirm-password-div">
@@ -164,7 +168,7 @@
                   <input
                     type="password"
                     name="confirm-input"
-                    class="confirm-input"
+                    id="confirm-input"
                   />
                 </div>
               </form>
@@ -179,7 +183,7 @@
                   <label for="phone-number" class="phone-label settings-label"
                     >Phone Number</label
                   >
-                  <input type="tel" pattern="[0-9]{10}" name="phone-number" />
+                  <input type="tel" pattern="[0-9]{10}" name="phone-number" id="phone-number" />
                 </div>
               </form>
 
@@ -188,7 +192,7 @@
                   <label for="address" class="address-label settings-label"
                     >Address</label
                   >
-                  <input name="address" />
+                  <input name="address" id="address"/>
                 </div>
               </form>
             </div>
@@ -201,7 +205,7 @@
                   <label for="birthday" class="birthday-label settings-label"
                     >Birthday</label
                   >
-                  <input type="date" name="birthday" value="2000-11-11" />
+                  <input type="date" name="birthday" value="2000-11-11" id="birthday"/>
                 </div>
               </form>
 
@@ -212,7 +216,7 @@
                     class="description-label settings-label"
                     >Description</label
                   >
-                  <textarea></textarea>
+                  <textarea id="description" name="description"></textarea>
                 </div>
               </form>
             </div>
