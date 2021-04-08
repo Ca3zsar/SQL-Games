@@ -1,306 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>Scholarly HTML</title>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <link rel="stylesheet" href="styles/scholarly_style.css" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <article typeof="schema:ScholarlyArticle">
-        <header>
-            <h1>Scholarly HTML "SQL-Games"</h1>
-        </header>
-        <section typeof="sa:AuthorsList">
-            <div role="contentinfo">
-                <h2>Authors</h2>
-                <ul>
-                    <li typeof="sa:ContributorRole" property="schema:author">
-                        <span typeof="schema:Person">
-                            <meta property="schema:givenName" content="Cezar">
-                            <meta property="schema:familyName" content="Todirisca">
-                            <span property="schema:name">Cezar Todirisca</span>
-                        </span>
-                        <ul>
-                            <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
-                                <a href="mailto:cezartodirisca@gmail.com"
-                                    property="schema:email">cezartodirisca@gmail.com</a>
-                            </li>
-
-                        </ul>
-                    </li>
-
-                    <li typeof="sa:ContributorRole" property="schema:author">
-                        <span typeof="schema:Person">
-                            <meta property="schema:givenName" content="Andrei">
-                            <meta property="schema:familyName" content="Toma">
-                            <span property="schema:name">Andrei Toma</span>
-                        </span>
-                        <ul>
-                            <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
-                                <a href="mailto:toma1.andrei47@gmail.com"
-                                    property="schema:email">toma1.andrei47@gmail.com</a>
-                            </li>
-
-                        </ul>
-                    </li>
-
-                    <li typeof="sa:ContributorRole" property="schema:author">
-                        <span typeof="schema:Person">
-                            <meta property="schema:givenName" content="Eugeniu">
-                            <meta property="schema:familyName" content="Buliga">
-                            <span property="schema:name">Eugeniu Buliga</span>
-                        </span>
-                        <ul>
-                            <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
-                                <a href="mailto:bul9001.com@gmail.com" property="schema:email">bul9001.com@gmail.com</a>
-                            </li>
-
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-
-
-        <section typeof="sa:ReferenceList">
-            <div role="doc-introduction">
-                <h2>1. Introduction</h2>
-                <h3>1.1 Purpose</h3>
-                <p>The following document specifies the requirements for the SQL-Games site.
-                    ...
-                </p>
-
-                <h3>1.2 Document Conventions</h3>
-                <p>
-                    <i><b>Italic bold</b></i> text is used for defining stuff.
-                </p>
-
-                <h3>1.3 Intended Audience and Reading Suggestions</h3>
-                <p>Document intended for both developers and users. Some techincal stuff could rise up here-and-there,
-                    but anyone should be able to understand the contents of this document.</p>
-
-                <h3>1.4 Product Scope</h3>
-                <h4>1.4.1 Purpose</h4>
-                <p>The following site has the purpose of offering its users a chance to practice their skills in the
-                    Data Bases course. </p>
-
-                <h4>1.4.2 Benefits</h4>
-                <p>The site offers a wide range of exercises for diffrenet levels of knowledge relating to the data
-                    bases course. The shop system encourages the users to perform as good as possible, so they can
-                    accumulate more coins. Achievemnts are intended as not only a form of bragging, but also a way of
-                    noting the most advanced students.</p>
-
-                <h4>1.4.2 Goals and objectives</h4>
-                <p> The prime goal of this site is to make learning data bases interogations easier and much more fun to
-                    learn.</p>
-
-                <h3 typeof="sa:ReferenceList">1.5 References</h3>
-                <ul>
-                    <li id="ref-something" typeof="schema:ScholarlyArticle"
-                        resource="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-projects.html">
-                        <span property="schema:author" typeof="schema:Person">
-                            <span property="schema:familyName">Buraga</span>
-                            <span property="schema:givenName">Sabin</span>.
-                        </span>
-                        <cite property="schema:name">Site-ul Tehnologii Web.</cite>
-                        <span property="schema:isPartOf" typeof="schema:PublicationVolume">
-                            <span property="schema:isPartOf" typeof="schema:Periodical">
-                                <span property="schema:name">FII UAIC.</span>
-                            </span>
-                        </span>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section typeof="sa:MaterialsAndMethods????">
-            <h2>2. Overall Description</h2>
-
-            <h3>2.1 Product Perspective</h3>
-            <p>A new self-contained product consisting of ...?</p>
-
-            <h3>2.2 Product Functions</h3>
-            <p>SOme of the major functions are: the ability to solve database-related tasks, buy new tasks and earn
-                sqlids currency, an achievement system integrated in the account of every user.</p>
-
-            <h3>2.3 User Classes and Characteristics</h3>
-
-            <h4>2.3.1 Regular user</h4>
-            <p>Can solve tasks, gain sqlids and achievemts.</p>
-
-            <h4>2.3.2 Teacher user???</h4>
-            <p>Can see users responses and ...</p>
-
-            <h3>2.4 Operating Environment</h3>
-
-            <h3>2.5 Design and Implementation Constraints</h3>
-
-            <h3>2.6 User Documentation</h3>
-
-            <h3>2.7 Assumptions and Dependencies</h3>
-
-        </section>
-
-        <section typeof="sa:Results?????">
-            <h2>3. External Interface Requirements</h2>
-
-            <h3>3.1 User Interfaces</h3>
-            <p></p>
-
-            <h3>3.2 Hardware Interfaces</h3>
-
-            <h3>3.3 Software Interfaces</h3>
-
-            <h3>3.4 Communications Interfaces</h3>
-
-
-        </section>
-
-        <section typeof="sa:Conclusion?????">
-            <h2>4. System Features</h2>
-
-            <h3>4.1 System Feature 1: SQL exercises solving</h3>
-            <p>Users can solve a wide range of exercises relating to databases, by typing the interogation in the blank
-                space of the solving page. </p>
-            <h4>4.1.1 Description and Priority</h4>
-            <p>This feature is of High priority, as it is the main use of this site. </p>
-            <h4>4.1.2 Stimulus/Response</h4>
-            <ul>
-                <li>The user types the response to the given exercise - the system checks if the solution is right using
-                    the exercise "student" database and returns a message depending on wether the solution was wrong,
-                    right or partially right.</li>
-                <li>Depending on how good, how fast or in which manner the task was solved, the user can get a
-                    corresponding achievemnt.</li>
-            </ul>
-            <h4>4.1.3 Functional Requirements</h4>
-            <p>In case of a wrong answer, invalid input or an error from the "student" database the site will notify the
-                user with the
-                "wrong" banner.</p>
-
-            <h3>4.2 System Feature 2: Shop</h3>
-            <p>By giving right solutions to the exercises, users gain an amount of local currency - "sqlids",
-                depending on the difficulty of the task. They can use this currency to buy other exercises in the "shop"
-                section, where all the other disponible tasks are filtered by difficulty. </p>
-            <h4>4.2.1 Description and Priority</h4>
-            <p>High priority based on the fact that before solving an exercise, the user has to first pick one up. This
-                feature gives the user a way to choose what task to solve next. After that he is sent to the exrcise
-                screen. </p>
-
-            <h4>4.2.2 Stimulus/Response</h4>
-            <ul>
-                <li>the user has enough sqlids and "buys" an exercise - the user is redirected to the exercise page</li>
-                <li>the user does not have enough currency to buy an exercise - the exercise page can not be accesed by
-                    clicking the button, untill the user has gained enough to finally unlock it.</li>
-                <li>by clicking on of the "layout" buttons, the user can choose to rearrange the way the list of items
-                    in the shop looks: an expanded or more compact way.</li>
-                <li>the search bar allows the user to find a specific exercise</li>
-                <li>the filter options can help the user alter the list of exercises, so the most relevant to him/her
-                    are shown</li>
-            </ul>
-
-            <h4>4.2.3 Functional Requirements</h4>
-            <h5>4.2.3.1 ...</h5>
-            <p>The search bar should access the exercises database and return the needed values. The buttons shall
-                change the layout.</p>
-            <h5>4.2.3.2 Response to errors</h5>
-            <p>Invalid search inputs will return no results. </p>
-
-            <h3>4.3 System Feature 3: Achievements</h3>
-
-            <p>Special achievemnts are shown on the personal profile page of the user. Claiming some of them can even
-                give the user more "sqlids". Some of them include being the first to solve a task, solving all the tasks
-                of a category, solving an exercise in a record time.</p>
-
-            <h4>4.3.1 Description and Priority</h4>
-            <p>Low priority, as this feature is only cosmetic or/and stimullating for learning. But it is a feature we
-                would strongly like to implements, because it will greatly influence the users' experience.</p>
-
-            <h4>4.3.2 Stimulus/Response</h4>
-            <ul>
-                <li>When a user does something remarcable, he/she gets an achievemnt, shown on personal profile page.
+      <header>
+        <h1>Scholarly HTML "SQL-Games"</h1>
+      </header>
+      <section typeof="sa:AuthorsList">
+        <div role="contentinfo">
+          <h2>Authors</h2>
+          <ul>
+            <li typeof="sa:ContributorRole" property="schema:author">
+              <span typeof="schema:Person">
+                <meta property="schema:givenName" content="Cezar" />
+                <meta property="schema:familyName" content="Todirisca" />
+                <span property="schema:name">Cezar Todirisca</span>
+              </span>
+              <ul>
+                <li
+                  property="schema:roleContactPoint"
+                  typeof="schema:ContactPoint"
+                >
+                  <a
+                    href="mailto:cezartodirisca@gmail.com"
+                    property="schema:email"
+                    >cezartodirisca@gmail.com</a
+                  >
                 </li>
-                <li>The achievemnts are specific and can be added indefinetely after the project finnalization.</li>
-            </ul>
+              </ul>
+            </li>
 
-            <h4>4.3.3 Functional Requirements</h4>
-            <p>The site should be notified when the user does something that checks an achievement condition, so the
-                achievemnt in cause is unlocked on his/her profile page. </p>
+            <li typeof="sa:ContributorRole" property="schema:author">
+              <span typeof="schema:Person">
+                <meta property="schema:givenName" content="Andrei" />
+                <meta property="schema:familyName" content="Toma" />
+                <span property="schema:name">Andrei Toma</span>
+              </span>
+              <ul>
+                <li
+                  property="schema:roleContactPoint"
+                  typeof="schema:ContactPoint"
+                >
+                  <a
+                    href="mailto:toma1.andrei47@gmail.com"
+                    property="schema:email"
+                    >toma1.andrei47@gmail.com</a
+                  >
+                </li>
+              </ul>
+            </li>
 
-            <h3>4.4 System Feature 4: Profile</h3>
-            <p>By registering, every user will have their own profile on the site, whic they can use to solve the given
-                tasks and gain sqlids to solve others. </p>
+            <li typeof="sa:ContributorRole" property="schema:author">
+              <span typeof="schema:Person">
+                <meta property="schema:givenName" content="Eugeniu" />
+                <meta property="schema:familyName" content="Buliga" />
+                <span property="schema:name">Eugeniu Buliga</span>
+              </span>
+              <ul>
+                <li
+                  property="schema:roleContactPoint"
+                  typeof="schema:ContactPoint"
+                >
+                  <a href="mailto:bul9001.com@gmail.com" property="schema:email"
+                    >bul9001.com@gmail.com</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-            <h4>4.4.1 Description and Priority</h4>
-            <p>Medium-High prority, because it is an important safety/security requirement, but it is not the main
-                intent of the site.</p>
+      <section typeof="sa:Abstract">
+        <div role="doc-introduction">
+          <h2>1. Introduction</h2>
+          <h3>1.1 Purpose</h3>
+          <p>
+            The purpose of this document is to specify the requirements for the
+            SQL-Games site. It will present the purpose and features of the web
+            application and what the application will be able to do. This
+            document is intended for general users of the application.
+          </p>
 
-            <h4>4.4.2 Stimulus/Response</h4>
-            <ul>
-                <li>The user registers - the site remembers his/hers account details.</li>
-                <li>Logging in with the correct credentials gives the user acces to his/her account.</li>
-            </ul>
+          <h3>1.2 Document Conventions</h3>
 
-            <h4>4.4.3 Functional Requirements</h4>
-            <p>Introducing the wrong credentials will result in incapability of accesing the account features.
-                Registering requires a password and login of adequate lenght. Also some logins may be banned for obscene
-                meaning.</p>
+          <ul>
+            <li>This document follows the IEEE SRS documentation template.</li>
+            <li>
+              <i><b>Italic bold</b></i> text is used for defining custom
+              notions.
+            </li>
+          </ul>
 
-        </section>
+          <h3>1.3 Intended Audience and Reading Suggestions</h3>
+          <p>
+            Document intended for both developers and users. Some techincal
+            notions could rise up here-and-there, but anyone should be able to
+            understand the contents of this document.
+          </p>
 
-        <section typeof="sa:Acknowledgements????">
-            <h2>5. Other Nonfunctional Requirements</h2>
+          <h3>1.4 Product Scope</h3>
+          <h4>1.4.1 Purpose</h4>
+          <p>
+            The following site has the purpose of offering its users a chance to
+            practice their skills in the databases course and learn how to use
+            SQL write queries properly. Also it could be a great way to boost
+            the users creativity by offering them a chance to create their own
+            queries to be solved by other users.
+          </p>
 
-            <h3>5.1 Performance Requirements</h3>
-            <p>Make the site as fast as possible. Use techniques that require minimum capacity. Some sacrifices for the
-                sake of how beautiful the site looks can be made, but in decent quantities.</p>
+          <h4>1.4.2 Benefits</h4>
+          <p>
+            The site offers a wide range of exercises for different levels of
+            knowledge relating to the databases course. The shop system
+            encourages the users to perform as good as possible, so they can
+            accumulate more eSQLids. Achievements are intended as not only a
+            form of bragging, but also a way of noting the most advanced
+            students.
+          </p>
 
-            <h3>5.2 Safety Requirements</h3>
-            <p>No damage to the user can be made using this site. The only necessary safeguard would be some
-                restrictions to avoid SQL injections.</p>
+          <h4>1.4.3 Goals and objectives</h4>
+          <p>
+            The prime goal of this site is to make learning databases queries
+            easier and much more fun to learn.
+          </p>
 
-            <h3>5.3 Security Requirements</h3>
-            <p>The user profile should be protected by a login and password system, to maintain their privacy and keep
-                their data safe. Some options such as hiding the amount of grossed sqlids, or number of achievemnts
-                could be hidden away by this system too.</p>
+          <h3 typeof="sa:ReferenceList">1.5 References</h3>
+          <ul>
+            <li
+              id="ref-something"
+              typeof="schema:ScholarlyArticle"
+              resource="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-projects.html"
+            >
+              <span property="schema:author" typeof="schema:Person">
+                <span property="schema:familyName">Buraga</span>
+                <span property="schema:givenName">Sabin</span>.
+                <span property="schema:additionalName">Corneliu</span>
+              </span>
+              <cite property="schema:name">Site-ul Tehnologii Web.</cite>
+              <span
+                property="schema:isPartOf"
+                typeof="schema:PublicationVolume"
+              >
+                <span property="schema:isPartOf" typeof="schema:Periodical">
+                  <span property="schema:name">FII UAIC.</span>
+                </span>
+              </span>
+            </li>
+          </ul>
 
-            <h3>5.4 Software Quality Attributes</h3>
+          <ul>
+            <li
+              id="ref-something"
+              typeof="schema:ScholarlyArticle"
+              resource="https://github.com/rick4470/IEEE-SRS-Tempate"
+            >
+              <span property="schema:author" typeof="schema:Person">
+                <span property="schema:familyName">H</span>
+                <span property="schema:givenName">Rick</span>.
+              </span>
+              <cite property="schema:name">IEEE-Tempate.</cite>
+                <span property="schema:isPartOf" typeof="schema:Periodical">
+                  <span property="schema:name">gitHub</span>
+                </span>
+              </span>
+            </li>
+          </ul>
 
-        </section>
+          <ul>
+            <li
+              id="ref-something"
+              typeof="schema:ScholarlyArticle"
+              resource="https://vivliostyle.github.io/vivliostyle_doc/samples/scholarly/index.html"
+            >
+              <span property="schema:author" typeof="schema:Person">
+                <span property="schema:familyName">Berjon</span>
+                <span property="schema:givenName">Robin</span>.
+              </span>
+              <span property="schema:author" typeof="schema:Person">
+                <span property="schema:familyName">Ballesteros</span>
+                <span property="schema:givenName">Sebastien</span>.
+              </span>
+              <cite property="schema:name">What is Scholarly HTML?</cite>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-        <section typeof="sa:Acknowledgements????">
-            <h2>Other Requirements</h2>
-            <h3>1</h3>
-            <p>A database for storing user data such as profile information, achievemnts, number of sqlids.</p>
-            <h3>2</h3>
-            <p>A database for solving the tasks on the site. It should have defined tables and data, giving the users
-                the privellege of using data contained in it, to solve the exercises.</p>
+      <section typeof="sa:MaterialsAndMethods">
+        <h2>2. Overall Description</h2>
+
+        <h3>2.1 Product Perspective</h3>
+        <p>A new self-contained product consisting of ...?
+            (To add C2 Schema!!!)
+        </p>
 
 
-            <h3>Appendix A: Glossary</h3>
-            <p><i><b>sqlid</b></i> - local currency used for buying new exercises from the shop. Can be earned by
-                solving tasks or gaining achievements.</p>
+        <h3>2.2 Product Functions</h3>
+        <p>
+          Some of the major functions are: the ability to solve database-related
+          tasks, buy new tasks and earn eSQLids currency, an achievement system
+          integrated in the account of every user.
+        </p>
 
-            <figure typeof="sa:image"><img src="resources/first.png" alt="first"></figure>
-            <p> - this symbol means that the exercise has not been solved by anyone, so the user can be the fisrt
-                one to do it.</p>
+        <h3>2.3 User Classes and Characteristics</h3>
 
+        <h4>2.3.1 Regular user</h4>
+        <ul>
+            <li>Can solve tasks</li>
+            <li>Gain achivements.</li>
+            <li>Can create his own problems to be solved by other users</li>   
+            <li>Gain eSQLids </li>
+            <li>See their statistics </li>
+            <li>Modify account details.</li>
+        </ul>
 
+        <h4>2.3.2 Teacher user</h4>
+        <ul>
+            <li>Cand do the same actions a regular user can do.</li>
+            <li>Group students in a class and give them specific tasks.</li>
+            <li>Can see students responses.</li>
+            <li>(Low priority)</li>
+        </ul>
 
-            <h3>Appendix B: Analysis Models</h3>
+        <h4>2.3.3 Admin</h4>
+        <ul>
+            <li>Everything the above roles can do +</li>
+            <li>Set task price</li>
+            <li>Change task requirements</li>
+            <li>Assign teacher role to a simple user.</li>
+        </ul>
 
-            <h3>Appendix C: To Be Determined List</h3>
-            <ul>
-                <li><a href="https://www.flaticon.com/free-icon/sql_603201">SQL icon source</a></li>
-                <li><a href="http://clipart-library.com/clipart/achievement-cliparts_7.htm">Award icon source</a></li>
-            </ul>
+        <h3>2.4 Operating Environment</h3>
+        <p>Can be used on any device with a web browser. Media queries allow for a comfortable use for any screen resolution.</p>
 
-        </section>
+        <h3>2.5 Design and Implementation Constraints</h3>
+        <p>User/developer can not use the site without javascript due to its usage in all the pages. The site is only in the English language.</p>
 
+        <h3>2.6 User Documentation</h3>
+
+        <h3>2.7 Assumptions and Dependencies</h3>
+      </section>
+
+      <section typeof="sa:MaterialsAndMethods">
+        <h2>3. External Interface Requirements</h2>
+
+        <h3>3.1 User Interfaces</h3>
+        <p></p>
+
+        <h3>3.2 Hardware Interfaces</h3>
+        <p>
+          This product does not require any hardware interfaces. It works in a
+          browser that has to be installed on the user's device (PC, mobile,
+          etc.).
+        </p>
+
+        <h3>3.3 Software Interfaces</h3>
+
+        <h3>3.4 Communications Interfaces</h3>
+      </section>
+
+      <section typeof="sa:MaterialsAndMethods">
+        <h2>4. System Features</h2>
+
+        <h3>4.1 System Feature 1: SQL exercises solving</h3>
+        <p>
+          Users can solve a wide range of exercises relating to databases, by
+          typing the interogation in the blank space of the solving page.
+        </p>
+        <h4>4.1.1 Description and Priority</h4>
+        <p>
+          This feature is of High priority, as it is the main use of this site.
+        </p>
+        <h4>4.1.2 Stimulus/Response</h4>
+        <ul>
+          <li>
+            The user types the response to the given exercise - the system
+            checks if the solution is right using the exercise "student"
+            database and returns a message depending on wether the solution was
+            wrong, right or partially right.
+          </li>
+          <li>
+            Depending on how good, how fast or in which manner the task was
+            solved, the user can get a corresponding achievemnt.
+          </li>
+        </ul>
+        <h4>4.1.3 Functional Requirements</h4>
+        <p>
+          In case of a wrong answer, invalid input or an error from the
+          "student" database the site will notify the user with the "wrong"
+          banner.
+        </p>
+
+        <h3>4.2 System Feature 2: Shop</h3>
+        <p>
+          By giving right solutions to the exercises, users gain an amount of
+          local currency - "sqlids", depending on the difficulty of the task.
+          They can use this currency to buy other exercises in the "shop"
+          section, where all the other disponible tasks are filtered by
+          difficulty.
+        </p>
+        <h4>4.2.1 Description and Priority</h4>
+        <p>
+          High priority based on the fact that before solving an exercise, the
+          user has to first pick one up. This feature gives the user a way to
+          choose what task to solve next. After that he is sent to the exrcise
+          screen.
+        </p>
+
+        <h4>4.2.2 Stimulus/Response</h4>
+        <ul>
+          <li>
+            the user has enough sqlids and "buys" an exercise - the user is
+            redirected to the exercise page
+          </li>
+          <li>
+            the user does not have enough currency to buy an exercise - the
+            exercise page can not be accesed by clicking the button, untill the
+            user has gained enough to finally unlock it.
+          </li>
+          <li>
+            by clicking on of the "layout" buttons, the user can choose to
+            rearrange the way the list of items in the shop looks: an expanded
+            or more compact way.
+          </li>
+          <li>the search bar allows the user to find a specific exercise</li>
+          <li>
+            the filter options can help the user alter the list of exercises, so
+            the most relevant to him/her are shown
+          </li>
+        </ul>
+
+        <h4>4.2.3 Functional Requirements</h4>
+        <h5>4.2.3.1 ...</h5>
+        <p>
+          The search bar should access the exercises database and return the
+          needed values. The buttons shall change the layout.
+        </p>
+        <h5>4.2.3.2 Response to errors</h5>
+        <p>Invalid search inputs will return no results.</p>
+
+        <h3>4.3 System Feature 3: Achievements</h3>
+
+        <p>
+          Special achievemnts are shown on the personal profile page of the
+          user. Claiming some of them can even give the user more "sqlids". Some
+          of them include being the first to solve a task, solving all the tasks
+          of a category, solving an exercise in a record time.
+        </p>
+
+        <h4>4.3.1 Description and Priority</h4>
+        <p>
+          Low priority, as this feature is only cosmetic or/and stimullating for
+          learning. But it is a feature we would strongly like to implements,
+          because it will greatly influence the users' experience.
+        </p>
+
+        <h4>4.3.2 Stimulus/Response</h4>
+        <ul>
+          <li>
+            When a user does something remarcable, he/she gets an achievemnt,
+            shown on personal profile page.
+          </li>
+          <li>
+            The achievemnts are specific and can be added indefinetely after the
+            project finnalization.
+          </li>
+        </ul>
+
+        <h4>4.3.3 Functional Requirements</h4>
+        <p>
+          The site should be notified when the user does something that checks
+          an achievement condition, so the achievemnt in cause is unlocked on
+          his/her profile page.
+        </p>
+
+        <h3>4.4 System Feature 4: Profile</h3>
+        <p>
+          By registering, every user will have their own profile on the site,
+          whic they can use to solve the given tasks and gain sqlids to solve
+          others.
+        </p>
+
+        <h4>4.4.1 Description and Priority</h4>
+        <p>
+          Medium-High prority, because it is an important safety/security
+          requirement, but it is not the main intent of the site.
+        </p>
+
+        <h4>4.4.2 Stimulus/Response</h4>
+        <ul>
+          <li>
+            The user registers - the site remembers his/hers account details.
+          </li>
+          <li>
+            Logging in with the correct credentials gives the user acces to
+            his/her account.
+          </li>
+        </ul>
+
+        <h4>4.4.3 Functional Requirements</h4>
+        <p>
+          Introducing the wrong credentials will result in incapability of
+          accesing the account features. Registering requires a password and
+          login of adequate lenght. Also some logins may be banned for obscene
+          meaning.
+        </p>
+      </section>
+
+      <section typeof="sa:MaterialsAndMethods">
+        <h2>5. Other Nonfunctional Requirements</h2>
+
+        <h3>5.1 Performance Requirements</h3>
+        <p>
+          Make the site as fast as possible. Use techniques that require minimum
+          capacity. Some sacrifices for the sake of how beautiful the site looks
+          can be made, but in decent quantities.
+        </p>
+
+        <h3>5.2 Safety Requirements</h3>
+        <p>
+          No damage to the user can be made using this site. The only necessary
+          safeguard would be some restrictions to avoid SQL injections.
+        </p>
+
+        <h3>5.3 Security Requirements</h3>
+        <p>
+          The user profile should be protected by a login and password system,
+          to maintain their privacy and keep their data safe. Some options such
+          as hiding the amount of grossed sqlids, or number of achievemnts could
+          be hidden away by this system too.
+        </p>
+
+        <h3>5.4 Software Quality Attributes</h3>
+      </section>
+
+      <section typeof="sa:ReferenceList">
+        <h2>Other Requirements</h2>
+        <h3>1</h3>
+        <p>
+          A database for storing user data such as profile information,
+          achievemnts, number of sqlids.
+        </p>
+        <h3>2</h3>
+        <p>
+          A database for solving the tasks on the site. It should have defined
+          tables and data, giving the users the privellege of using data
+          contained in it, to solve the exercises.
+        </p>
+
+        <h3>Appendix A: Glossary</h3>
+        <p>
+          <i><b>sqlid</b></i> - local currency used for buying new exercises
+          from the shop. Can be earned by solving tasks or gaining achievements.
+        </p>
+
+        <figure typeof="sa:image">
+          <img src="resources/first.png" alt="first" />
+        </figure>
+        <p>
+          - this symbol means that the exercise has not been solved by anyone,
+          so the user can be the fisrt one to do it.
+        </p>
+
+        <h3>Appendix B: Analysis Models</h3>
+
+        <h3>Appendix C: To Be Determined List</h3>
+        <ul>
+          <li>
+            <a href="https://www.flaticon.com/free-icon/sql_603201"
+              >SQL icon source</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://clipart-library.com/clipart/achievement-cliparts_7.htm"
+              >Award icon source</a
+            >
+          </li>
+        </ul>
+      </section>
     </article>
-</body>
-
+  </body>
 </html>
