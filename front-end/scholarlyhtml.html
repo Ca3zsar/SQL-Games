@@ -6,7 +6,11 @@
     <link rel="stylesheet" href="styles/scholarly_style.css" />
   </head>
 
-  <body prefix="schema: http://schema.org" itemscope="" itemtype="http://schema.org/WebPage">
+  <body
+    prefix="schema: http://schema.org"
+    itemscope=""
+    itemtype="http://schema.org/WebPage"
+  >
     <article typeof="schema:ScholarlyArticle">
       <header>
         <h1>Scholarly HTML "SQL-Games"</h1>
@@ -79,18 +83,19 @@
       <section typeof="sa:Abstract">
         <div role="doc-introduction">
           <h2>1. Introduction</h2>
-          SQL-Games is a web application whose purpose is to help people develop their
-          SQL skills by solving various types of exercises and also creating their own 
-          exercises in order to challenge other users. They will be able to track
-          their progress through the statistics section and through theirs teacher feedback.
+          SQL-Games is a web application whose purpose is to help people develop
+          their SQL skills by solving various types of exercises and also
+          creating their own exercises in order to challenge other users. They
+          will be able to track their progress through the statistics section
+          and through theirs teacher feedback.
           <h3>1.1 Purpose</h3>
           <p>
             The purpose of this document is to specify the requirements for the
             SQL-Games site. It will present the purpose and features of the web
-            application and what the application will be able to do. In addition,
-            this document will present the way this application is intended to be used
-            and will explain some concepts.
-            This document is intended for general users of the application.
+            application and what the application will be able to do. In
+            addition, this document will present the way this application is
+            intended to be used and will explain some concepts. This document is
+            intended for general users of the application.
           </p>
 
           <h3>1.2 Document Conventions</h3>
@@ -105,9 +110,9 @@
 
           <h3>1.3 Intended Audience and Reading Suggestions</h3>
           <p>
-            The document is intended for both developers and users. Some techincal
-            notions could rise up here-and-there, but anyone should be able to
-            understand the contents of this document.
+            The document is intended for both developers and users. Some
+            techincal notions could rise up here-and-there, but anyone should be
+            able to understand the contents of this document.
           </p>
 
           <h3>1.4 Product Scope</h3>
@@ -115,11 +120,11 @@
           <p>
             The following site has the purpose of offering its users a chance to
             practice their skills in the databases course and learn how to write
-            SQL queries properly. Another purpose of the application
-            is to boost the users' creativity by offering them a chance to create
-            their own queries to be solved by other users. 
-            Also, it is intended to help teachers track their students' progress 
-            and organize them in classes in order to evaluate them.
+            SQL queries properly. Another purpose of the application is to boost
+            the users' creativity by offering them a chance to create their own
+            queries to be solved by other users. Also, it is intended to help
+            teachers track their students' progress and organize them in classes
+            in order to evaluate them.
           </p>
 
           <h4>1.4.2 Benefits</h4>
@@ -127,26 +132,27 @@
             The site offers a wide range of exercises for different levels of
             knowledge relating to the databases course. The shop system
             encourages the users to perform as good as possible, so they can
-            accumulate more eSQLids. <br> Achievements are intended as not only a
-            form of bragging, but also a way of noting the most advanced
-            students. <br>
-            The grouping of students in classes in order to follow their evolution
-            is another benefit of the application, helping teachers evaluating their
-            students in an easier way.
+            accumulate more eSQLids. <br />
+            Achievements are intended as not only a form of bragging, but also a
+            way of noting the most advanced students. <br />
+            The grouping of students in classes in order to follow their
+            evolution is another benefit of the application, helping teachers
+            evaluating their students in an easier way.
           </p>
 
           <h4>1.4.3 Goals and objectives</h4>
           <p>
             The main goal of this web application is to help regular users learn
-            how to write SQL queries in a much easier way through solving exercises
-            that are easier to comprehend than abstract concepts. It will also 
-            make it much more fun to learn by receiving various achievements.
+            how to write SQL queries in a much easier way through solving
+            exercises that are easier to comprehend than abstract concepts. It
+            will also make it much more fun to learn by receiving various
+            achievements.
           </p>
 
           <h3 typeof="sa:ReferenceList">1.5 References</h3>
           <ul>
             <li
-              id="ref-something"
+              class="ref-something"
               typeof="schema:ScholarlyArticle"
               resource="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-projects.html"
             >
@@ -169,7 +175,7 @@
 
           <ul>
             <li
-              id="ref-something"
+              class="ref-something"
               typeof="schema:ScholarlyArticle"
               resource="https://github.com/rick4470/IEEE-SRS-Tempate"
             >
@@ -178,16 +184,15 @@
                 <span property="schema:givenName">Rick</span>.
               </span>
               <cite property="schema:name">IEEE-Template.</cite>
-                <span property="schema:isPartOf" typeof="schema:Periodical">
-                  <span property="schema:name">GitHub</span>
-                </span>
+              <span property="schema:isPartOf" typeof="schema:Periodical">
+                <span property="schema:name">GitHub</span>
               </span>
             </li>
           </ul>
 
           <ul>
             <li
-              id="ref-something"
+              class="ref-something"
               typeof="schema:ScholarlyArticle"
               resource="https://vivliostyle.github.io/vivliostyle_doc/samples/scholarly/index.html"
             >
@@ -200,7 +205,7 @@
                 <span property="schema:givenName">Sebastien</span>.
               </span>
               <cite property="schema:name">What is Scholarly HTML?</cite>
-              </span>
+              <!-- </span> -->
             </li>
           </ul>
         </div>
@@ -210,22 +215,21 @@
         <h2>2. Overall Description</h2>
 
         <h3>2.1 Product Perspective</h3>
-        <p>SQL-Games is an under development open source project that will receive
-          updates in the future and may change based on users feedback.
-          It is a platform created for anyone interested in learning SQL.  
-          It is a self-contained product that represents the authors' college project. 
-          The overall structure of this application is shown in the figure below. 
+        <p>
+          SQL-Games is an under development open source project that will
+          receive updates in the future and may change based on users feedback.
+          It is a platform created for anyone interested in learning SQL. It is
+          a self-contained product that represents the authors' college project.
+          The overall structure of this application is shown in the figure
+          below.
         </p>
         <figure typeof="sa:image">
-          <img src="resources/C2 Diagram.svg" class="img-c2-diagram">
+          <img src="resources/C2_Diagram.svg" class="img-c2-diagram" />
           <figcaption>C2 diagram of the SQL-Games site</figcaption>
         </figure>
 
-
         <h3>2.2 Product Functions</h3>
-        <p>
-          Some of the major functions are:   
-        </p>
+        <p>Some of the major functions are:</p>
 
         <ul>
           <li>create account</li>
@@ -238,93 +242,169 @@
           <li>view statistics</li>
         </ul>
 
-
         <h3>2.3 User Classes and Characteristics</h3>
         <ul>
-        <li>Regular user such as students, or anyone who has an interest in 
-          practising SQL
-        </li>
-        <li>Teacher user such as university, college professors, tutors or any other worker in the education system.</li>
-        <li>Admin user such as the project's authors or any pertinent or appropriate person willing to maintain the web application</li>
+          <li>
+            Regular user such as students, or anyone who has an interest in
+            practising SQL
+          </li>
+          <li>
+            Teacher user such as university, college professors, tutors or any
+            other worker in the education system.
+          </li>
+          <li>
+            Admin user such as the project's authors or any pertinent or
+            appropriate person willing to maintain the web application
+          </li>
         </ul>
 
         <h4>2.3.1 Regular user</h4>
         <ul>
-            <li>Can solve tasks</li>
-            <li>Gain achivements.</li>
-            <li>Can create his own problems to be solved by other users</li>   
-            <li>Gain eSQLids </li>
-            <li>See their statistics </li>
-            <li>Modify account details.</li>
+          <li>Can solve tasks</li>
+          <li>Gain achivements.</li>
+          <li>Can create his own problems to be solved by other users</li>
+          <li>Gain eSQLids</li>
+          <li>See their statistics</li>
+          <li>Modify account details.</li>
         </ul>
 
         <h4>2.3.2 Teacher user</h4>
         <ul>
-            <li>Cand do the same actions a regular user can do.</li>
-            <li>Group students in a class and give them specific tasks.</li>
-            <li>Can see students responses.</li>
-            <li>(Low priority)</li>
+          <li>Cand do the same actions a regular user can do.</li>
+          <li>Group students in a class and give them specific tasks.</li>
+          <li>Can see students responses.</li>
+          <li>(Low priority)</li>
         </ul>
 
         <h4>2.3.3 Admin</h4>
         <ul>
-            <li>Everything the above roles can do +</li>
-            <li>Set task price</li>
-            <li>Change task requirements</li>
-            <li>Assign teacher role to a simple user.</li>
+          <li>Everything the above roles can do +</li>
+          <li>Set task price</li>
+          <li>Change task requirements</li>
+          <li>Assign teacher role to a simple user.</li>
         </ul>
 
         <h3>2.4 Operating Environment</h3>
-        <p>Can be used on any device with a web browser that supports HTML5, CSS
-          and JavaScript. Media queries allow for a comfortable use on any screen resolution (above 400px width).</p>
+        <p>
+          Can be used on any device with a web browser that supports HTML5, CSS
+          and JavaScript. Media queries allow for a comfortable use on any
+          screen resolution (above 400px width).
+        </p>
 
         <h3>2.5 Design and Implementation Constraints</h3>
-        <p>SQL-Games interface is developed using only vanilla HTML5, CSS3, JavaScript without
-          any frameworks or plugins. <br>
-          The project backend is written in PHP 8 and is based on MVC architecture that will modularize
-          the project in 3 main components : Models, Views and Controllers. The MVC
-          structure will make the application modular and easier to develop.</p>
+        <p>
+          SQL-Games interface is developed using only vanilla HTML5, CSS3,
+          JavaScript without any frameworks or plugins. <br />
+          The project backend is written in PHP 8 and is based on MVC
+          architecture that will modularize the project in 3 main components :
+          Models, Views and Controllers. The MVC structure will make the
+          application modular and easier to develop.
+        </p>
 
         <h3>2.6 User Documentation</h3>
-        <p>A potential help page or guide for users on the site may be added sometime in the future.</p> 
+        <p>
+          A potential help page or guide for users on the site may be added
+          sometime in the future.
+        </p>
 
         <h3>2.7 Assumptions and Dependencies</h3>
-        <p>SQL-Games is developed using JavaScript and HTML5, therefore disabling the JavaScript 
-          or using a browser that does not support HTML5 could result in users being unable 
-          to use the site. Another factor that can alter users experience is using a device with 
-          a very low resolution screen (under 400px width) because otherwise the text editor would not load properly.</p> 
+        <p>
+          SQL-Games is developed using JavaScript and HTML5, therefore disabling
+          the JavaScript or using a browser that does not support HTML5 could
+          result in users being unable to use the site. Another factor that can
+          alter users experience is using a device with a very low resolution
+          screen (under 400px width) because otherwise the text editor would not
+          load properly.
+        </p>
       </section>
 
       <section typeof="sa:MaterialsAndMethods">
         <h2>3. External Interface Requirements</h2>
 
         <h3>3.1 User Interfaces</h3>
-          <h4>Main Page</h4>
+        
         <figure typeof="sa:image">
-          <img src="resources/screenshot_mainpage.png" alt="main-page-screenshot"  class="screenshots">
-          <figcaption>Main Page</figcaption>
+          <img
+            src="resources/screenshot_navbar.png"
+            alt="navbar-screenshot"
+            class="screenshots-nav"
+          />
+          <figcaption>3.1.1 Navbar</figcaption>
         </figure>
-        <h4>Login/Register Page</h4>
+
+      
         <figure typeof="sa:image">
-          <img src="" alt="login-register-screenshot" class="screenshots">
-          <figcaption>Login/Register Page</figcaption>
+          <img
+            src="resources/screenshot_dropdown.png"
+            alt="main-page-screenshot"
+            class="screenshots-element"
+          />
+          <figcaption>3.1.2 Navbar dropdown that appears when pressing Account Button on
+            Navbar</figcaption>
         </figure>
-        <h4>Shop Page</h4>
+
         <figure typeof="sa:image">
-          <img src="" alt="shop-page-screenshot" class="screenshots">
-          <figcaption>Shop Page</figcaption>
+          <img
+            src="resources/screenshot_mainpage.png"
+            alt="main-page-screenshot"
+            class="screenshots"
+          />
+          <figcaption>3.1.3 Main Page</figcaption>
         </figure>
-        <h4>Individual Exercise Page</h4>
+
         <figure typeof="sa:image">
-          <img src="" alt="exercise-page-screenshot" class="screenshots">
-          <figcaption>Exercise Page</figcaption>
+          <img
+            src="resources/screenshot_login.png"
+            alt="login-register-screenshot"
+            class="screenshots"
+          />
+          <figcaption>3.1.4 Login/Register Page</figcaption>
         </figure>
-        <h4>Profile Settings Page</h4>
+
         <figure typeof="sa:image">
-          <img src="" alt="profile-settings-page-screenshot" class="screenshots">
-          <figcaption>Profile Settings Page</figcaption>
+          <img
+            src="resources/screenshot_shop_extended.png"
+            alt="shop-page-extended-screenshot"
+            class="screenshots"
+          />
+          <figcaption>3.1.5 Shop Extended Page</figcaption>
         </figure>
-  
+
+        <figure typeof="sa:image">
+          <img
+            src="resources/screenshot_shop_compact.png"
+            alt="shop-page-compact-screenshot"
+            class="screenshots"
+          />
+          <figcaption>3.1.6 Shop Compact Page</figcaption>
+        </figure>
+
+        <figure typeof="sa:image" id="exercise-page">
+          <img
+            src="resources/screenshot_exercise.png"
+            alt="exercise-page-screenshot"
+            class="screenshots"
+          />
+          <figcaption>3.1.7 Individual Exercise Page</figcaption>
+        </figure>
+
+        <figure typeof="sa:image">
+          <img
+            src="resources/screenshot_settings.png"
+            alt="profile-settings-page-screenshot"
+            class="screenshots"
+          />
+          <figcaption>3.1.8 Profile Settings Page</figcaption>
+        </figure>
+
+        <figure typeof="sa:image">
+          <img
+            src="resources/screenshot_footer.png"
+            alt="footer-screenshot"
+            class="screenshots-nav"
+          />
+          <figcaption>3.1.9 Footer</figcaption>
+        </figure>
 
         <h3>3.2 Hardware Interfaces</h3>
         <p>
@@ -334,10 +414,24 @@
         </p>
 
         <h3>3.3 Software Interfaces</h3>
-        <p> The site interacts with two databases: one for exercises, the other for storing site data (accounts, achievemnts etc.).</p>
+        <p>
+          SQL-Games requires a browser compatible with HTML5 and CSS3 as well as
+          JavaScript being enabled.<br />
+          The site can also send messages to user email for different reasons
+          such as: resetting password, confirming email addres, notifying about
+          important events on the site.
+        </p>
 
         <h3>3.4 Communications Interfaces</h3>
-        <p>SQL-Games requires am internet connection to communicate with web server for validating users input</p>
+        <p>
+          SQL-Games requires am internet connection to communicate with web
+          server for validating users' input.
+          <br />
+          The site can send email to the users mailboxes using a SMTP server.
+          <br />
+          Communication between a client and the site is done according to the
+          standard protocol HTTPS.
+        </p>
       </section>
 
       <section typeof="sa:MaterialsAndMethods">
@@ -345,8 +439,12 @@
 
         <h3>4.1 System Feature 1: SQL exercises solving</h3>
         <p>
-          Users can solve a wide range of exercises relating to databases, by
-          typing the interogation in the blank space of the solving page.
+          Users can solve a wide range of exercises with certain levels of
+          difficulty relating to databases by typing the query in the code
+          editor on the exercise page. Every exercise will be solved on its own
+          individual page. The page contains a section with all the infromation
+          about the task and a blank space/code editor for solving the given
+          exercise as shown in the <a href="#exercise-page">3.1 screenshot</a>.
         </p>
         <h4>4.1.1 Description and Priority</h4>
         <p>
@@ -384,7 +482,7 @@
         <p>
           High priority based on the fact that before solving an exercise, the
           user has to first pick one up. This feature gives the user a way to
-          choose what task to solve next. After that he is sent to the exrcise
+          choose what task to solve next. After that he is sent to the exercise
           screen.
         </p>
 
@@ -513,6 +611,10 @@
         </p>
 
         <h3>5.4 Software Quality Attributes</h3>
+        <p>
+          The site interacts with two databases: one for exercises, the other
+          for storing site data (accounts, achievemnts etc.).
+        </p>
       </section>
 
       <section typeof="sa:ReferenceList">
@@ -536,7 +638,7 @@
         </p>
 
         <figure typeof="sa:image">
-          <img src="resources/first.png" alt="first" class="img-first"/>
+          <img src="resources/first.png" alt="first" class="img-first" />
         </figure>
         <p>
           - this symbol means that the exercise has not been solved by anyone,
