@@ -7,6 +7,8 @@ article{
     background-color: rgb(240, 231, 231);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 20px;
+    padding-left: 150px;
+    padding-right: 150px;
 }
 
 h1{
@@ -36,6 +38,10 @@ li a{
     color: rgb(25, 13, 192);
 }
 
-img{
+#img-c2-diagram{
+    width:80%;
+}
+
+.img-first{
     width:40px;
 }
