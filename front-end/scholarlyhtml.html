@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles/scholarly_style.css" />
   </head>
 
-  <body>
+  <body prefix="schema: http://schema.org" itemscope="" itemtype="http://schema.org/WebPage">
     <article typeof="schema:ScholarlyArticle">
       <header>
         <h1>Scholarly HTML "SQL-Games"</h1>
@@ -79,12 +79,18 @@
       <section typeof="sa:Abstract">
         <div role="doc-introduction">
           <h2>1. Introduction</h2>
+          SQL-Games is a web application whose purpose is to help people develop their
+          SQL skills by solving various types of exercises and also creating their own 
+          exercises in order to challenge other users. They will be able to track
+          their progress through the statistics section and through theirs teacher feedback.
           <h3>1.1 Purpose</h3>
           <p>
             The purpose of this document is to specify the requirements for the
             SQL-Games site. It will present the purpose and features of the web
-            application and what the application will be able to do. This
-            document is intended for general users of the application.
+            application and what the application will be able to do. In addition,
+            this document will present the way this application is intended to be used
+            and will explain some concepts.
+            This document is intended for general users of the application.
           </p>
 
           <h3>1.2 Document Conventions</h3>
@@ -99,7 +105,7 @@
 
           <h3>1.3 Intended Audience and Reading Suggestions</h3>
           <p>
-            Document intended for both developers and users. Some techincal
+            The document is intended for both developers and users. Some techincal
             notions could rise up here-and-there, but anyone should be able to
             understand the contents of this document.
           </p>
@@ -108,10 +114,12 @@
           <h4>1.4.1 Purpose</h4>
           <p>
             The following site has the purpose of offering its users a chance to
-            practice their skills in the databases course and learn how to use
-            SQL write queries properly. Also it could be a great way to boost
-            the users creativity by offering them a chance to create their own
-            queries to be solved by other users.
+            practice their skills in the databases course and learn how to write
+            SQL queries properly. Another purpose of the application
+            is to boost the users' creativity by offering them a chance to create
+            their own queries to be solved by other users. 
+            Also, it is intended to help teachers track their students' progress 
+            and organize them in classes in order to evaluate them.
           </p>
 
           <h4>1.4.2 Benefits</h4>
@@ -119,15 +127,20 @@
             The site offers a wide range of exercises for different levels of
             knowledge relating to the databases course. The shop system
             encourages the users to perform as good as possible, so they can
-            accumulate more eSQLids. Achievements are intended as not only a
+            accumulate more eSQLids. <br> Achievements are intended as not only a
             form of bragging, but also a way of noting the most advanced
-            students.
+            students. <br>
+            The grouping of students in classes in order to follow their evolution
+            is another benefit of the application, helping teachers evaluating their
+            students in an easier way.
           </p>
 
           <h4>1.4.3 Goals and objectives</h4>
           <p>
-            The prime goal of this site is to make learning databases queries
-            easier and much more fun to learn.
+            The main goal of this web application is to help regular users learn
+            how to write SQL queries in a much easier way through solving exercises
+            that are easier to comprehend than abstract concepts. It will also 
+            make it much more fun to learn by receiving various achievements.
           </p>
 
           <h3 typeof="sa:ReferenceList">1.5 References</h3>
@@ -164,9 +177,9 @@
                 <span property="schema:familyName">H</span>
                 <span property="schema:givenName">Rick</span>.
               </span>
-              <cite property="schema:name">IEEE-Tempate.</cite>
+              <cite property="schema:name">IEEE-Template.</cite>
                 <span property="schema:isPartOf" typeof="schema:Periodical">
-                  <span property="schema:name">gitHub</span>
+                  <span property="schema:name">GitHub</span>
                 </span>
               </span>
             </li>
@@ -197,22 +210,43 @@
         <h2>2. Overall Description</h2>
 
         <h3>2.1 Product Perspective</h3>
-        <p>A new self-contained product consisting of ...?
-            (To add C2 Schema!!!)
+        <p>SQL-Games is an under development open source project that will receive
+          updates in the future and may change based on users feedback.
+          It is a platform created for anyone interested in learning SQL.  
+          It is a self-contained product that represents the authors' college project. 
+          The overall structure of this application is shown in the figure below. 
         </p>
-        <figure typeof="sa:image" class="img-c2-diagram">
-          <img src="resources/C2 Diagram.png">
+        <figure typeof="sa:image">
+          <img src="resources/C2 Diagram.png" class="img-c2-diagram">
+          <figcaption>C2 diagram of the SQL-Games site</figcaption>
         </figure>
 
 
         <h3>2.2 Product Functions</h3>
         <p>
-          Some of the major functions are: the ability to solve database-related
-          tasks, buy new tasks and earn eSQLids currency, an achievement system
-          integrated in the account of every user.
+          Some of the major functions are:   
         </p>
 
+        <ul>
+          <li>create account</li>
+          <li>modify account settings</li>
+          <li>the ability to solve database-related tasks</li>
+          <li>buy new tasks and earn eSQLids currency</li>
+          <li>an achievement system integrated in the account of every user</li>
+          <li>group student users in classes</li>
+          <li>create new tasks</li>
+          <li>view statistics</li>
+        </ul>
+
+
         <h3>2.3 User Classes and Characteristics</h3>
+        <ul>
+        <li>Regular user such as students, or anyone who has an interest in 
+          practising SQL
+        </li>
+        <li>Teacher user such as university, college professors, tutors or any other worker in the education system.</li>
+        <li>Admin user such as the project's authors or any pertinent or appropriate person willing to maintain the web application</li>
+        </ul>
 
         <h4>2.3.1 Regular user</h4>
         <ul>
@@ -241,20 +275,56 @@
         </ul>
 
         <h3>2.4 Operating Environment</h3>
-        <p>Can be used on any device with a web browser. Media queries allow for a comfortable use for any screen resolution.</p>
+        <p>Can be used on any device with a web browser that supports HTML5, CSS
+          and JavaScript. Media queries allow for a comfortable use on any screen resolution (above 400px width).</p>
 
         <h3>2.5 Design and Implementation Constraints</h3>
-        <p>User/developer can not use the site without javascript due to its usage in all the pages. The site is only in the English language.</p>
+        <p>SQL-Games interface is developed using only vanilla HTML5, CSS3, JavaScript without
+          any frameworks or plugins. <br>
+          The project backend is written in PHP 8 and is based on MVC architecture that will modularize
+          the project in 3 main components : Models, Views and Controllers. The MVC
+          structure will make the application modular and easier to develop.</p>
 
         <h3>2.6 User Documentation</h3>
+        <p>A potential help page or guide for users on the site may be added sometime in the future.</p> 
 
         <h3>2.7 Assumptions and Dependencies</h3>
+        <p>SQL-Games is developed using JavaScript and HTML5, therefore disabling the JavaScript 
+          or using a browser that does not support HTML5 could result in users being unable 
+          to use the site. Another factor that can alter users experience is using a device with 
+          a very low resolution screen (under 400px width) because otherwise the text editor would not load properly.</p> 
       </section>
 
       <section typeof="sa:MaterialsAndMethods">
         <h2>3. External Interface Requirements</h2>
 
         <h3>3.1 User Interfaces</h3>
+        <figure typeof="sa:image">
+          <img src="" alt="main-page-screenshot">
+          <figcaption>Main Page</figcaption>
+        </figure>
+
+        <figure typeof="sa:image">
+          <img src="" alt="login-register-screenshot">
+          <figcaption>Login/Register Page</figcaption>
+        </figure>
+
+        <figure typeof="sa:image">
+          <img src="" alt="shop-page-screenshot">
+          <figcaption>Shop Page</figcaption>
+        </figure>
+
+        <figure typeof="sa:image">
+          <img src="" alt="exercise-page-screenshot">
+          <figcaption>Exercise Page</figcaption>
+        </figure>
+
+        <figure typeof="sa:image">
+          <img src="" alt="profile-settings-page-screenshot">
+          <figcaption>Profile Settings Page</figcaption>
+        </figure>
+
+
         <p></p>
 
         <h3>3.2 Hardware Interfaces</h3>
@@ -265,6 +335,7 @@
         </p>
 
         <h3>3.3 Software Interfaces</h3>
+        <p> The site interacts with two databases: one for exercises, the other for storing site data (accounts, exercises, achievemnts etc.).</p>
 
         <h3>3.4 Communications Interfaces</h3>
       </section>

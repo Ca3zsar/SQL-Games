@@ -38,10 +38,15 @@ li a{
     color: rgb(25, 13, 192);
 }
 
-#img-c2-diagram{
-    width:80%;
+.img-c2-diagram{
+    width:75%;
 }
 
 .img-first{
     width:40px;
+}
+
+figcaption{
+    text-align: center;
+    width:75%;
 }
