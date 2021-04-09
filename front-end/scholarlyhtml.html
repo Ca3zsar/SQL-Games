@@ -1,667 +1,666 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Scholarly HTML</title>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="styles/scholarly_style.css" />
-  </head>
 
-  <body
-    prefix="schema: http://schema.org"
-    itemscope=""
-    itemtype="http://schema.org/WebPage"
-  >
-    <article typeof="schema:ScholarlyArticle">
-      <header>
-        <h1>Scholarly HTML "SQL-Games"</h1>
-      </header>
-      <section typeof="sa:AuthorsList">
-        <div role="contentinfo">
-          <h2>Authors</h2>
-          <ul>
-            <li typeof="sa:ContributorRole" property="schema:author">
-              <span typeof="schema:Person">
-                <meta property="schema:givenName" content="Cezar" />
-                <meta property="schema:familyName" content="Todirisca" />
-                <span property="schema:name">Cezar Todirisca</span>
-              </span>
-              <ul>
-                <li
-                  property="schema:roleContactPoint"
-                  typeof="schema:ContactPoint"
-                >
-                  <a
-                    href="mailto:cezartodirisca@gmail.com"
-                    property="schema:email"
-                    >cezartodirisca@gmail.com</a
-                  >
-                </li>
-              </ul>
-            </li>
+<head>
+  <title>Scholarly HTML</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="styles/scholarly_style.css" />
+</head>
 
-            <li typeof="sa:ContributorRole" property="schema:author">
-              <span typeof="schema:Person">
-                <meta property="schema:givenName" content="Andrei" />
-                <meta property="schema:familyName" content="Toma" />
-                <span property="schema:name">Andrei Toma</span>
-              </span>
-              <ul>
-                <li
-                  property="schema:roleContactPoint"
-                  typeof="schema:ContactPoint"
-                >
-                  <a
-                    href="mailto:toma1.andrei47@gmail.com"
-                    property="schema:email"
-                    >toma1.andrei47@gmail.com</a
-                  >
-                </li>
-              </ul>
-            </li>
+<body prefix="schema: http://schema.org" itemscope="" itemtype="http://schema.org/WebPage">
+  <article typeof="schema:ScholarlyArticle">
+    <header>
+      <h1>Scholarly HTML "SQL-Games"</h1>
+    </header>
+    <section id="authors" typeof="sa:AuthorsList">
+      <div role="contentinfo">
+        <h2>Authors</h2>
+        <ul>
+          <li typeof="sa:ContributorRole" property="schema:author">
+            <span typeof="schema:Person">
+              <meta property="schema:givenName" content="Cezar" />
+              <meta property="schema:familyName" content="Todirisca" />
+              <span property="schema:name">Cezar Todirisca</span>
+            </span>
+            <ul>
+              <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                <a href="mailto:cezartodirisca@gmail.com" property="schema:email">cezartodirisca@gmail.com</a>
+              </li>
+            </ul>
+          </li>
 
-            <li typeof="sa:ContributorRole" property="schema:author">
-              <span typeof="schema:Person">
-                <meta property="schema:givenName" content="Eugeniu" />
-                <meta property="schema:familyName" content="Buliga" />
-                <span property="schema:name">Eugeniu Buliga</span>
-              </span>
-              <ul>
-                <li
-                  property="schema:roleContactPoint"
-                  typeof="schema:ContactPoint"
-                >
-                  <a href="mailto:bul9001.com@gmail.com" property="schema:email"
-                    >bul9001.com@gmail.com</a
-                  >
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </section>
+          <li typeof="sa:ContributorRole" property="schema:author">
+            <span typeof="schema:Person">
+              <meta property="schema:givenName" content="Andrei" />
+              <meta property="schema:familyName" content="Toma" />
+              <span property="schema:name">Andrei Toma</span>
+            </span>
+            <ul>
+              <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                <a href="mailto:toma1.andrei47@gmail.com" property="schema:email">toma1.andrei47@gmail.com</a>
+              </li>
+            </ul>
+          </li>
 
-      <section typeof="sa:Abstract">
-        <div role="doc-introduction">
-          <h2>1. Introduction</h2>
-          SQL-Games is a web application whose purpose is to help people develop
-          their SQL skills by solving various types of exercises and also
-          creating their own exercises in order to challenge other users. They
-          will be able to track their progress through the statistics section
-          and through theirs teacher feedback.
-          <h3>1.1 Purpose</h3>
-          <p>
-            The purpose of this document is to specify the requirements for the
-            SQL-Games site. It will present the purpose and features of the web
-            application and what the application will be able to do. In
-            addition, this document will present the way this application is
-            intended to be used and will explain some concepts. This document is
-            intended for general users of the application.
-          </p>
+          <li typeof="sa:ContributorRole" property="schema:author">
+            <span typeof="schema:Person">
+              <meta property="schema:givenName" content="Eugeniu" />
+              <meta property="schema:familyName" content="Buliga" />
+              <span property="schema:name">Eugeniu Buliga</span>
+            </span>
+            <ul>
+              <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                <a href="mailto:bul9001.com@gmail.com" property="schema:email">bul9001.com@gmail.com</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-          <h3>1.2 Document Conventions</h3>
+    <section typeof="sa:Abstract">
+      <div role="doc-introduction">
+        <h2 id="introduction">1. Introduction</h2>
+        SQL-Games is a web application whose purpose is to help people develop
+        their SQL skills by solving various types of exercises and also
+        creating their own exercises in order to challenge other users. They
+        will be able to track their progress through the statistics section
+        and through theirs teacher feedback.
+        <h3 id="introduction-purpose">1.1 Purpose</h3>
+        <p>
+          The purpose of this document is to specify the requirements for the
+          SQL-Games site. It will present the purpose and features of the web
+          application and what the application will be able to do. In
+          addition, this document will present the way this application is
+          intended to be used and will explain some concepts. This document is
+          intended for general users of the application.
+        </p>
 
-          <ul>
-            <li>This document follows the IEEE SRS documentation template.</li>
-            <li>
-              <i><b>Italic bold</b></i> text is used for defining custom
-              notions.
-            </li>
-          </ul>
+        <h3 id="conventions">1.2 Document Conventions</h3>
 
-          <h3>1.3 Intended Audience and Reading Suggestions</h3>
-          <p>
-            The document is intended for both developers and users. Some
-            techincal notions could rise up here-and-there, but anyone should be
-            able to understand the contents of this document.
-          </p>
+        <ul>
+          <li>This document follows the IEEE SRS documentation template.</li>
+          <li>
+            <i><b>Italic bold</b></i> text is used for defining custom
+            notions.
+          </li>
+        </ul>
 
-          <h3>1.4 Product Scope</h3>
-          <h4>1.4.1 Purpose</h4>
-          <p>
-            The following site has the purpose of offering its users a chance to
-            practice their skills in the databases course and learn how to write
-            SQL queries properly. Another purpose of the application is to boost
-            the users' creativity by offering them a chance to create their own
-            queries to be solved by other users. Also, it is intended to help
-            teachers track their students' progress and organize them in classes
-            in order to evaluate them.
-          </p>
+        <h3 id="audience">1.3 Intended Audience and Reading Suggestions</h3>
+        <p>
+          The document is intended for both developers and users. Some
+          techincal notions could rise up here-and-there, but anyone should be
+          able to understand the contents of this document.
+        </p>
 
-          <h4>1.4.2 Benefits</h4>
-          <p>
-            The site offers a wide range of exercises for different levels of
-            knowledge relating to the databases course. The shop system
-            encourages the users to perform as good as possible, so they can
-            accumulate more eSQLids. <br />
-            Achievements are intended as not only a form of bragging, but also a
-            way of noting the most advanced students. <br />
-            The grouping of students in classes in order to follow their
-            evolution is another benefit of the application, helping teachers
-            evaluating their students in an easier way.
-          </p>
+        <h3 id="product-scope">1.4 Product Scope</h3>
+        <h4 id="product-purpose">1.4.1 Purpose</h4>
+        <p>
+          The following site has the purpose of offering its users a chance to
+          practice their skills in the databases course and learn how to write
+          SQL queries properly. Another purpose of the application is to boost
+          the users' creativity by offering them a chance to create their own
+          queries to be solved by other users. Also, it is intended to help
+          teachers track their students' progress and organize them in classes
+          in order to evaluate them.
+        </p>
 
-          <h4>1.4.3 Goals and objectives</h4>
-          <p>
-            The main goal of this web application is to help regular users learn
-            how to write SQL queries in a much easier way through solving
-            exercises that are easier to comprehend than abstract concepts. It
-            will also make it much more fun to learn by receiving various
-            achievements.
-          </p>
+        <h4 id="product-benefits">1.4.2 Benefits</h4>
+        <p>
+          The site offers a wide range of exercises for different levels of
+          knowledge relating to the databases course. The shop system
+          encourages the users to perform as good as possible, so they can
+          accumulate more eSQLids. <br />
+          Achievements are intended as not only a form of bragging, but also a
+          way of noting the most advanced students. <br />
+          The grouping of students in classes in order to follow their
+          evolution is another benefit of the application, helping teachers
+          evaluating their students in an easier way.
+        </p>
 
-          <h3 typeof="sa:ReferenceList">1.5 References</h3>
-          <ul>
-            <li
-              class="ref-something"
-              typeof="schema:ScholarlyArticle"
-              resource="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-projects.html"
-            >
-              <span property="schema:author" typeof="schema:Person">
-                <span property="schema:familyName">Buraga</span>
-                <span property="schema:givenName">Sabin</span>.
-                <span property="schema:additionalName">Corneliu</span>
-              </span>
-              <cite property="schema:name">Site-ul Tehnologii Web.</cite>
-              <span
-                property="schema:isPartOf"
-                typeof="schema:PublicationVolume"
-              >
-                <span property="schema:isPartOf" typeof="schema:Periodical">
-                  <span property="schema:name">FII UAIC.</span>
-                </span>
-              </span>
-            </li>
-          </ul>
+        <h4 id="product-goals">1.4.3 Goals and objectives</h4>
+        <p>
+          The main goal of this web application is to help regular users learn
+          how to write SQL queries in a much easier way through solving
+          exercises that are easier to comprehend than abstract concepts. It
+          will also make it much more fun to learn by receiving various
+          achievements.
+        </p>
 
-          <ul>
-            <li
-              class="ref-something"
-              typeof="schema:ScholarlyArticle"
-              resource="https://github.com/rick4470/IEEE-SRS-Tempate"
-            >
-              <span property="schema:author" typeof="schema:Person">
-                <span property="schema:familyName">H</span>
-                <span property="schema:givenName">Rick</span>.
-              </span>
-              <cite property="schema:name">IEEE-Template.</cite>
+        <h3 id="product-references" typeof="sa:ReferenceList">1.5 References</h3>
+        <ul>
+          <li class="ref-something" typeof="schema:ScholarlyArticle"
+            resource="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-projects.html">
+            <span property="schema:author" typeof="schema:Person">
+              <span property="schema:familyName">Buraga</span>
+              <span property="schema:givenName">Sabin</span>.
+              <span property="schema:additionalName">Corneliu</span>
+            </span>
+            <cite property="schema:name">Site-ul Tehnologii Web.</cite>
+            <span property="schema:isPartOf" typeof="schema:PublicationVolume">
               <span property="schema:isPartOf" typeof="schema:Periodical">
-                <span property="schema:name">GitHub</span>
+                <span property="schema:name">FII UAIC.</span>
               </span>
-            </li>
-          </ul>
-
-          <ul>
-            <li
-              class="ref-something"
-              typeof="schema:ScholarlyArticle"
-              resource="https://vivliostyle.github.io/vivliostyle_doc/samples/scholarly/index.html"
-            >
-              <span property="schema:author" typeof="schema:Person">
-                <span property="schema:familyName">Berjon</span>
-                <span property="schema:givenName">Robin</span>.
-              </span>
-              <span property="schema:author" typeof="schema:Person">
-                <span property="schema:familyName">Ballesteros</span>
-                <span property="schema:givenName">Sebastien</span>.
-              </span>
-              <cite property="schema:name">What is Scholarly HTML?</cite>
-              <!-- </span> -->
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section typeof="sa:MaterialsAndMethods">
-        <h2>2. Overall Description</h2>
-
-        <h3>2.1 Product Perspective</h3>
-        <p>
-          SQL-Games is an under development open source project that will
-          receive updates in the future and may change based on users feedback.
-          It is a platform created for anyone interested in learning SQL. It is
-          a self-contained product that represents the authors' college project.
-          The overall structure of this application is shown in the figure
-          below.
-        </p>
-        <figure typeof="sa:image">
-          <img src="resources/C2_Diagram.svg" class="img-c2-diagram" />
-          <figcaption>C2 diagram of the SQL-Games site</figcaption>
-        </figure>
-
-        <h3>2.2 Product Functions</h3>
-        <p>Some of the major functions are:</p>
-
-        <ul>
-          <li>create account</li>
-          <li>modify account settings</li>
-          <li>the ability to solve database-related tasks</li>
-          <li>buy new tasks and earn eSQLids currency</li>
-          <li>an achievement system integrated in the account of every user</li>
-          <li>group student users in classes</li>
-          <li>create new tasks</li>
-          <li>view statistics</li>
-        </ul>
-
-        <h3>2.3 User Classes and Characteristics</h3>
-        <ul>
-          <li>
-            Regular user such as students, or anyone who has an interest in
-            practising SQL
-          </li>
-          <li>
-            Teacher user such as university, college professors, tutors or any
-            other worker in the education system.
-          </li>
-          <li>
-            Admin user such as the project's authors or any pertinent or
-            appropriate person willing to maintain the web application
+            </span>
           </li>
         </ul>
 
-        <h4>2.3.1 Regular user</h4>
         <ul>
-          <li>Can solve tasks</li>
-          <li>Gain achivements.</li>
-          <li>Can create his own problems to be solved by other users</li>
-          <li>Gain eSQLids</li>
-          <li>See their statistics</li>
-          <li>Modify account details.</li>
-        </ul>
-
-        <h4>2.3.2 Teacher user</h4>
-        <ul>
-          <li>Cand do the same actions a regular user can do.</li>
-          <li>Group students in a class and give them specific tasks.</li>
-          <li>Can see students responses.</li>
-          <li>(Low priority)</li>
-        </ul>
-
-        <h4>2.3.3 Admin</h4>
-        <ul>
-          <li>Everything the above roles can do +</li>
-          <li>Set task price</li>
-          <li>Change task requirements</li>
-          <li>Assign teacher role to a simple user.</li>
-        </ul>
-
-        <h3>2.4 Operating Environment</h3>
-        <p>
-          Can be used on any device with a web browser that supports HTML5, CSS
-          and JavaScript. Media queries allow for a comfortable use on any
-          screen resolution (above 400px width).
-        </p>
-
-        <h3>2.5 Design and Implementation Constraints</h3>
-        <p>
-          SQL-Games interface is developed using only vanilla HTML5, CSS3,
-          JavaScript without any frameworks or plugins. <br />
-          The project backend is written in PHP 8 and is based on MVC
-          architecture that will modularize the project in 3 main components :
-          Models, Views and Controllers. The MVC structure will make the
-          application modular and easier to develop.
-        </p>
-
-        <h3>2.6 User Documentation</h3>
-        <p>
-          A potential help page or guide for users on the site may be added
-          sometime in the future.
-        </p>
-
-        <h3>2.7 Assumptions and Dependencies</h3>
-        <p>
-          SQL-Games is developed using JavaScript and HTML5, therefore disabling
-          the JavaScript or using a browser that does not support HTML5 could
-          result in users being unable to use the site. Another factor that can
-          alter users experience is using a device with a very low resolution
-          screen (under 400px width) because otherwise the text editor would not
-          load properly.
-        </p>
-      </section>
-
-      <section typeof="sa:MaterialsAndMethods">
-        <h2>3. External Interface Requirements</h2>
-
-        <h3>3.1 User Interfaces</h3>
-        
-        <figure typeof="sa:image">
-          <img
-            src="resources/screenshot_navbar.png"
-            alt="navbar-screenshot"
-            class="screenshots-nav"
-          />
-          <figcaption>3.1.1 Navbar</figcaption>
-        </figure>
-
-      
-        <figure typeof="sa:image">
-          <img
-            src="resources/screenshot_dropdown.png"
-            alt="main-page-screenshot"
-            class="screenshots-element"
-          />
-          <figcaption>3.1.2 Navbar dropdown that appears when pressing Account Button on
-            Navbar</figcaption>
-        </figure>
-
-        <figure typeof="sa:image">
-          <img
-            src="resources/screenshot_mainpage.png"
-            alt="main-page-screenshot"
-            class="screenshots"
-          />
-          <figcaption>3.1.3 Main Page</figcaption>
-        </figure>
-
-        <figure typeof="sa:image">
-          <img
-            src="resources/screenshot_login.png"
-            alt="login-register-screenshot"
-            class="screenshots"
-          />
-          <figcaption>3.1.4 Login/Register Page</figcaption>
-        </figure>
-
-        <figure typeof="sa:image">
-          <img
-            src="resources/screenshot_shop_extended.png"
-            alt="shop-page-extended-screenshot"
-            class="screenshots"
-          />
-          <figcaption>3.1.5 Shop Extended Page</figcaption>
-        </figure>
-
-        <figure typeof="sa:image">
-          <img
-            src="resources/screenshot_shop_compact.png"
-            alt="shop-page-compact-screenshot"
-            class="screenshots"
-          />
-          <figcaption>3.1.6 Shop Compact Page</figcaption>
-        </figure>
-
-        <figure typeof="sa:image" id="exercise-page">
-          <img
-            src="resources/screenshot_exercise.png"
-            alt="exercise-page-screenshot"
-            class="screenshots"
-          />
-          <figcaption>3.1.7 Individual Exercise Page</figcaption>
-        </figure>
-
-        <figure typeof="sa:image">
-          <img
-            src="resources/screenshot_settings.png"
-            alt="profile-settings-page-screenshot"
-            class="screenshots"
-          />
-          <figcaption>3.1.8 Profile Settings Page</figcaption>
-        </figure>
-
-        <figure typeof="sa:image">
-          <img
-            src="resources/screenshot_footer.png"
-            alt="footer-screenshot"
-            class="screenshots-nav"
-          />
-          <figcaption>3.1.9 Footer</figcaption>
-        </figure>
-
-        <h3>3.2 Hardware Interfaces</h3>
-        <p>
-          This product does not require any hardware interfaces. It works in a
-          browser that has to be installed on the user's device (PC, mobile,
-          etc.).
-        </p>
-
-        <h3>3.3 Software Interfaces</h3>
-        <p>
-          SQL-Games requires a browser compatible with HTML5 and CSS3 as well as
-          JavaScript being enabled.<br />
-          The site can also send messages to user email for different reasons
-          such as: resetting password, confirming email addres, notifying about
-          important events on the site.
-        </p>
-
-        <h3>3.4 Communications Interfaces</h3>
-        <p>
-          SQL-Games requires am internet connection to communicate with web
-          server for validating users' input.
-          <br />
-          The site can send email to the users mailboxes using a SMTP server.
-          <br />
-          Communication between a client and the site is done according to the
-          standard protocol HTTPS.
-        </p>
-      </section>
-
-      <section typeof="sa:MaterialsAndMethods">
-        <h2>4. System Features</h2>
-
-        <h3>4.1 System Feature 1: SQL exercises solving</h3>
-        <p>
-          Users can solve a wide range of exercises with certain levels of
-          difficulty relating to databases by typing the query in the code
-          editor on the exercise page. Every exercise will be solved on its own
-          individual page. The page contains a section with all the infromation
-          about the task and a blank space/code editor for solving the given
-          exercise as shown in the <a href="#exercise-page">3.1 screenshot</a>.
-        </p>
-        <h4>4.1.1 Description and Priority</h4>
-        <p>
-          This feature is of High priority, as it is the main use of this site.
-        </p>
-        <h4>4.1.2 Stimulus/Response</h4>
-        <ul>
-          <li>
-            The user types the response to the given exercise - the system
-            checks if the solution is right using the exercise "student"
-            database and returns a message depending on wether the solution was
-            wrong, right or partially right.
-          </li>
-          <li>
-            Depending on how good, how fast or in which manner the task was
-            solved, the user can get a corresponding achievemnt.
-          </li>
-        </ul>
-        <h4>4.1.3 Functional Requirements</h4>
-        <p>
-          In case of a wrong answer, invalid input or an error from the
-          "student" database the site will notify the user with the "wrong"
-          banner.
-        </p>
-
-        <h3>4.2 System Feature 2: Shop</h3>
-        <p>
-          By giving right solutions to the exercises, users gain an amount of
-          local currency - "sqlids", depending on the difficulty of the task.
-          They can use this currency to buy other exercises in the "shop"
-          section, where all the other disponible tasks are filtered by
-          difficulty.
-        </p>
-        <h4>4.2.1 Description and Priority</h4>
-        <p>
-          High priority based on the fact that before solving an exercise, the
-          user has to first pick one up. This feature gives the user a way to
-          choose what task to solve next. After that he is sent to the exercise
-          screen.
-        </p>
-
-        <h4>4.2.2 Stimulus/Response</h4>
-        <ul>
-          <li>
-            the user has enough sqlids and "buys" an exercise - the user is
-            redirected to the exercise page
-          </li>
-          <li>
-            the user does not have enough currency to buy an exercise - the
-            exercise page can not be accesed by clicking the button, untill the
-            user has gained enough to finally unlock it.
-          </li>
-          <li>
-            by clicking on of the "layout" buttons, the user can choose to
-            rearrange the way the list of items in the shop looks: an expanded
-            or more compact way.
-          </li>
-          <li>the search bar allows the user to find a specific exercise</li>
-          <li>
-            the filter options can help the user alter the list of exercises, so
-            the most relevant to him/her are shown
+          <li class="ref-something" typeof="schema:ScholarlyArticle"
+            resource="https://github.com/rick4470/IEEE-SRS-Tempate">
+            <span property="schema:author" typeof="schema:Person">
+              <span property="schema:familyName">H</span>
+              <span property="schema:givenName">Rick</span>.
+            </span>
+            <cite property="schema:name">IEEE-Template.</cite>
+            <span property="schema:isPartOf" typeof="schema:Periodical">
+              <span property="schema:name">GitHub</span>
+            </span>
           </li>
         </ul>
 
-        <h4>4.2.3 Functional Requirements</h4>
-        <h5>4.2.3.1 ...</h5>
-        <p>
-          The search bar should access the exercises database and return the
-          needed values. The buttons shall change the layout.
-        </p>
-        <h5>4.2.3.2 Response to errors</h5>
-        <p>Invalid search inputs will return no results.</p>
-
-        <h3>4.3 System Feature 3: Achievements</h3>
-
-        <p>
-          Special achievemnts are shown on the personal profile page of the
-          user. Claiming some of them can even give the user more "sqlids". Some
-          of them include being the first to solve a task, solving all the tasks
-          of a category, solving an exercise in a record time.
-        </p>
-
-        <h4>4.3.1 Description and Priority</h4>
-        <p>
-          Low priority, as this feature is only cosmetic or/and stimullating for
-          learning. But it is a feature we would strongly like to implements,
-          because it will greatly influence the users' experience.
-        </p>
-
-        <h4>4.3.2 Stimulus/Response</h4>
         <ul>
-          <li>
-            When a user does something remarcable, he/she gets an achievemnt,
-            shown on personal profile page.
-          </li>
-          <li>
-            The achievemnts are specific and can be added indefinetely after the
-            project finnalization.
+          <li class="ref-something" typeof="schema:ScholarlyArticle"
+            resource="https://vivliostyle.github.io/vivliostyle_doc/samples/scholarly/index.html">
+            <span property="schema:author" typeof="schema:Person">
+              <span property="schema:familyName">Berjon</span>
+              <span property="schema:givenName">Robin</span>.
+            </span>
+            <span property="schema:author" typeof="schema:Person">
+              <span property="schema:familyName">Ballesteros</span>
+              <span property="schema:givenName">Sebastien</span>.
+            </span>
+            <cite property="schema:name">What is Scholarly HTML?</cite>
+            <!-- </span> -->
           </li>
         </ul>
+      </div>
+    </section>
 
-        <h4>4.3.3 Functional Requirements</h4>
-        <p>
-          The site should be notified when the user does something that checks
-          an achievement condition, so the achievemnt in cause is unlocked on
-          his/her profile page.
-        </p>
+    <section typeof="sa:MaterialsAndMethods">
+      <h2 id="overall">2. Overall Description</h2>
 
-        <h3>4.4 System Feature 4: Profile</h3>
-        <p>
-          By registering, every user will have their own profile on the site,
-          whic they can use to solve the given tasks and gain sqlids to solve
-          others.
-        </p>
+      <h3 id="product-perspective">2.1 Product Perspective</h3>
+      <p>
+        SQL-Games is an under development open source project that will
+        receive updates in the future and may change based on users feedback.
+        It is a platform created for anyone interested in learning SQL. It is
+        a self-contained product that represents the authors' college project.
+        The overall structure of this application is shown in the figure
+        below.
+      </p>
+      <figure typeof="sa:image">
+        <img src="resources/C2_Diagram.svg" class="img-c2-diagram" />
+        <figcaption>C2 diagram of the SQL-Games site</figcaption>
+      </figure>
 
-        <h4>4.4.1 Description and Priority</h4>
-        <p>
-          Medium-High prority, because it is an important safety/security
-          requirement, but it is not the main intent of the site.
-        </p>
+      <h3 id="product-functions">2.2 Product Functions</h3>
+      <p>Some of the major functions are:</p>
 
-        <h4>4.4.2 Stimulus/Response</h4>
-        <ul>
-          <li>
-            The user registers - the site remembers his/hers account details.
-          </li>
-          <li>
-            Logging in with the correct credentials gives the user acces to
-            his/her account.
-          </li>
-        </ul>
+      <ul>
+        <li>create account</li>
+        <li>modify account settings</li>
+        <li>the ability to solve database-related tasks</li>
+        <li>buy new tasks and earn eSQLids currency</li>
+        <li>an achievement system integrated in the account of every user</li>
+        <li>group student users in classes</li>
+        <li>create new tasks</li>
+        <li>view statistics</li>
+      </ul>
 
-        <h4>4.4.3 Functional Requirements</h4>
-        <p>
-          Introducing the wrong credentials will result in incapability of
-          accesing the account features. Registering requires a password and
-          login of adequate lenght. Also some logins may be banned for obscene
-          meaning.
-        </p>
-      </section>
+      <h3 id="users">2.3 User Classes and Characteristics</h3>
+      <ul>
+        <li>
+          Regular user such as students, or anyone who has an interest in
+          practising SQL
+        </li>
+        <li>
+          Teacher user such as university, college professors, tutors or any
+          other worker in the education system.
+        </li>
+        <li>
+          Admin user such as the project's authors or any pertinent or
+          appropriate person willing to maintain the web application
+        </li>
+      </ul>
 
-      <section typeof="sa:MaterialsAndMethods">
-        <h2>5. Other Nonfunctional Requirements</h2>
+      <h4 id="regular-users">2.3.1 Regular user</h4>
+      <ul>
+        <li>Can solve tasks</li>
+        <li>Gain achivements.</li>
+        <li>Can create his own problems to be solved by other users</li>
+        <li>Gain eSQLids</li>
+        <li>See their statistics</li>
+        <li>Modify account details.</li>
+      </ul>
 
-        <h3>5.1 Performance Requirements</h3>
-        <p>
-          Make the site as fast as possible. Use techniques that require minimum
-          capacity. Some sacrifices for the sake of how beautiful the site looks
-          can be made, but in decent quantities.
-        </p>
+      <h4 id="teacher-users">2.3.2 Teacher user</h4>
+      <ul>
+        <li>Cand do the same actions a regular user can do.</li>
+        <li>Group students in a class and give them specific tasks.</li>
+        <li>Can see students responses.</li>
+        <li>(Low priority)</li>
+      </ul>
 
-        <h3>5.2 Safety Requirements</h3>
-        <p>
-          No damage to the user can be made using this site. The only necessary
-          safeguard would be some restrictions to avoid SQL injections.
-        </p>
+      <h4 id="admin-users">2.3.3 Admin</h4>
+      <ul>
+        <li>Everything the above roles can do +</li>
+        <li>Set task price</li>
+        <li>Change task requirements</li>
+        <li>Assign teacher role to a simple user.</li>
+      </ul>
 
-        <h3>5.3 Security Requirements</h3>
-        <p>
-          The user profile should be protected by a login and password system,
-          to maintain their privacy and keep their data safe. Some options such
-          as hiding the amount of grossed sqlids, or number of achievemnts could
-          be hidden away by this system too.
-        </p>
+      <h3 id="operating-environment">2.4 Operating Environment</h3>
+      <p>
+        Can be used on any device with a web browser that supports HTML5, CSS
+        and JavaScript. Media queries allow for a comfortable use on any
+        screen resolution (above 400px width).
+      </p>
 
-        <h3>5.4 Software Quality Attributes</h3>
-        <p>
-          The site interacts with two databases: one for exercises, the other
-          for storing site data (accounts, achievemnts etc.).
-        </p>
-      </section>
+      <h3 id="constraints">2.5 Design and Implementation Constraints</h3>
+      <p>
+        SQL-Games interface is developed using only vanilla HTML5, CSS3,
+        JavaScript without any frameworks or plugins. <br />
+        The project backend is written in PHP 8 and is based on MVC
+        architecture that will modularize the project in 3 main components :
+        Models, Views and Controllers. The MVC structure will make the
+        application modular and easier to develop.
+      </p>
 
-      <section typeof="sa:ReferenceList">
-        <h2>Other Requirements</h2>
-        <h3>1</h3>
-        <p>
-          A database for storing user data such as profile information,
-          achievemnts, number of sqlids.
-        </p>
-        <h3>2</h3>
-        <p>
-          A database for solving the tasks on the site. It should have defined
-          tables and data, giving the users the privellege of using data
-          contained in it, to solve the exercises.
-        </p>
+      <h3 id="documentantion">2.6 User Documentation</h3>
+      <p>
+        A potential help page or guide for users on the site may be added
+        sometime in the future.
+      </p>
 
-        <h3>Appendix A: Glossary</h3>
-        <p>
-          <i><b>sqlid</b></i> - local currency used for buying new exercises
-          from the shop. Can be earned by solving tasks or gaining achievements.
-        </p>
+      <h3 id="dependencies">2.7 Assumptions and Dependencies</h3>
+      <p>
+        SQL-Games is developed using JavaScript and HTML5, therefore disabling
+        the JavaScript or using a browser that does not support HTML5 could
+        result in users being unable to use the site. Another factor that can
+        alter users experience is using a device with a very low resolution
+        screen (under 400px width) because otherwise the text editor would not
+        load properly.
+      </p>
+    </section>
 
-        <figure typeof="sa:image">
-          <img src="resources/first.png" alt="first" class="img-first" />
-        </figure>
-        <p>
-          - this symbol means that the exercise has not been solved by anyone,
-          so the user can be the fisrt one to do it.
-        </p>
+    <section typeof="sa:MaterialsAndMethods">
+      <h2 id="external">3. External Interface Requirements</h2>
 
-        <h3>Appendix B: Analysis Models</h3>
+      <h3 id="user-interface">3.1 User Interfaces</h3>
 
-        <h3>Appendix C: To Be Determined List</h3>
-        <ul>
-          <li>
-            <a href="https://www.flaticon.com/free-icon/sql_603201"
-              >SQL icon source</a
-            >
-          </li>
-          <li>
-            <a
-              href="http://clipart-library.com/clipart/achievement-cliparts_7.htm"
-              >Award icon source</a
-            >
-          </li>
-        </ul>
-      </section>
-    </article>
-  </body>
+      <figure typeof="sa:image">
+        <img src="resources/screenshot_navbar.png" alt="navbar-screenshot" class="screenshots-nav" />
+        <figcaption>3.1.1 Navbar</figcaption>
+      </figure>
+
+
+      <figure typeof="sa:image">
+        <img src="resources/screenshot_dropdown.png" alt="main-page-screenshot" class="screenshots-element" />
+        <figcaption>3.1.2 Navbar dropdown that appears when pressing Account Button on
+          Navbar</figcaption>
+      </figure>
+
+      <figure typeof="sa:image">
+        <img src="resources/screenshot_mainpage.png" alt="main-page-screenshot" class="screenshots" />
+        <figcaption>3.1.3 Main Page</figcaption>
+      </figure>
+
+      <figure typeof="sa:image">
+        <img src="resources/screenshot_login.png" alt="login-register-screenshot" class="screenshots" />
+        <figcaption>3.1.4 Login/Register Page</figcaption>
+      </figure>
+
+      <figure typeof="sa:image">
+        <img src="resources/screenshot_shop_extended.png" alt="shop-page-extended-screenshot" class="screenshots" />
+        <figcaption>3.1.5 Shop Extended Page</figcaption>
+      </figure>
+
+      <figure typeof="sa:image">
+        <img src="resources/screenshot_shop_compact.png" alt="shop-page-compact-screenshot" class="screenshots" />
+        <figcaption>3.1.6 Shop Compact Page</figcaption>
+      </figure>
+
+      <figure typeof="sa:image" id="exercise-page">
+        <img src="resources/screenshot_exercise.png" alt="exercise-page-screenshot" class="screenshots" />
+        <figcaption>3.1.7 Individual Exercise Page</figcaption>
+      </figure>
+
+      <figure typeof="sa:image">
+        <img src="resources/screenshot_settings.png" alt="profile-settings-page-screenshot" class="screenshots" />
+        <figcaption>3.1.8 Profile Settings Page</figcaption>
+      </figure>
+
+      <figure typeof="sa:image">
+        <img src="resources/screenshot_footer.png" alt="footer-screenshot" class="screenshots-nav" />
+        <figcaption>3.1.9 Footer</figcaption>
+      </figure>
+
+      <h3 id="hardware-interface">3.2 Hardware Interfaces</h3>
+      <p>
+        This product does not require any hardware interfaces. It works in a
+        browser that has to be installed on the user's device (PC, mobile,
+        etc.).
+      </p>
+
+      <h3 id="software-interface">3.3 Software Interfaces</h3>
+      <p>
+        SQL-Games requires a browser compatible with HTML5 and CSS3 as well as
+        JavaScript being enabled.<br />
+        The site can also send messages to user email for different reasons
+        such as: resetting password, confirming email addres, notifying about
+        important events on the site.
+      </p>
+
+      <h3 id="communications-interface">3.4 Communications Interfaces</h3>
+      <p>
+        SQL-Games requires am internet connection to communicate with web
+        server for validating users' input.
+        <br />
+        The site can send email to the users mailboxes using a SMTP server.
+        <br />
+        Communication between a client and the site is done according to the
+        standard protocol HTTPS.
+      </p>
+    </section>
+
+    <section typeof="sa:MaterialsAndMethods">
+      <h2 id="system-features">4. System Features</h2>
+
+      <h3 id="first-feature">4.1 System Feature 1: SQL exercises solving</h3>
+      <p>
+        Users can solve a wide range of exercises with certain levels of
+        difficulty relating to databases by typing the query in the code
+        editor on the exercise page. Every exercise will be solved on its own
+        individual page. The page contains a section with all the infromation
+        about the task and a blank space/code editor for solving the given
+        exercise as shown in the <a href="#exercise-page">3.1 screenshot</a>.
+      </p>
+      <h4 id="first-feature-1">4.1.1 Description and Priority</h4>
+      <p>
+        This feature is of High priority, as it is the main use of this site.
+        The requirement section also features a colored bar in its right part with the
+        following meaning: if the color is red it means that the user did not
+        unlocked the current exercise and therefore they cannot solve it; if the
+        color is yellow it means that the user did not succeed in solving the exercise
+        or they had not tried the exercise yet ( but they unlocked it previously);
+        the green color means that the user succeeded is solving the exercise.
+      </p>
+      <h4 id="first-feature-2">4.1.2 Stimulus/Response</h4>
+      <ul>
+        <li>
+          The user types the response to the given exercise - the system
+          checks if the solution is right using the exercise the especially created
+          database and returns a message depending on wether the solution was
+          wrong or right.
+        </li>
+        <li>
+          Depending on how good, how fast or in which manner the task was
+          solved, the user can get a corresponding achievement.
+        </li>
+      </ul>
+      <h4 id="first-feature-3">4.1.3 Functional Requirements</h4>
+      <p>
+        In case of a wrong answer, invalid input or an error from the
+        exercises database the site will notify the user either by an error, if
+        there was a mistake in the input or if there was a problem at the exercise database,
+        or through coloring the section of the requirement which
+        displays if the exercise was solved correctly
+      </p>
+
+      <h3 id="second-feature"> 4.2 System Feature 2: Shop</h3>
+      <p>
+        By giving right solutions to the exercises, users gain an amount of
+        local currency - "eSQLids", depending on the difficulty of the task.
+        They can use this currency to buy other exercises in the "shop"
+        section, where all the other available tasks are filtered by
+        difficulty or other criteria.
+      </p>
+      <h4 id="second-feature-1">4.2.1 Description and Priority</h4>
+      <p>
+        The priority of this feature is high priority based on the fact that before
+        solving an exercise, the user has to first pick one up. This feature
+        gives the user a way to choose what task to solve next. After that he
+        is sent to the exercise screen.
+      </p>
+
+      <h4 id="second-feature-2">4.2.2 Stimulus/Response</h4>
+      <ul>
+        <li>
+          the user has enough eSQLids and "buys" an exercise - the user is
+          redirected to the exercise page
+        </li>
+        <li>
+          the user does not have enough currency to buy an exercise - the
+          exercise page can not be accesed by clicking the button, untill the
+          user has gained enough to finally unlock it.
+        </li>
+        <li>
+          by clicking on of the "layout" buttons, the user can choose to
+          rearrange the way the list of items in the shop looks: an expanded
+          or more compact way.
+        </li>
+        <li>the search bar allows the user to find a specific exercise</li>
+        <li>
+          the filter options can help the user alter the list of exercises, so
+          the most relevant to him/her are shown
+        </li>
+        <li>
+          the color of the button from an exercise section represents the state
+          of the exercise : red means that the user cannot afford to buy that exercise,
+          yellow means that they can buy it, green means that the exercise is bought and
+          can be solved, and transparent with the text "solved" means that the user
+          solved the exercise
+        </li>
+      </ul>
+
+      <h4 id="second-feature-3">4.2.3 Functional Requirements</h4>
+      <ul>
+        <li>
+          <p>
+            The search bar should access the exercises database and return the
+            needed values. The buttons shall change the layout.
+          </p>
+        </li>
+        <li>
+          <p>Invalid search inputs will return no results.</p>
+        </li>
+        <li>
+          <p>
+          The layout button will resize the content of the page depending on the
+          user's prefference ( compact or extended).</p>
+        </li>
+        <li>
+          <p>
+            The filter button will show only the exercises that satisfy the criteria
+            chosen by the user.
+          </p>
+        </li>
+        <li>
+          <p>
+            The buy button will make the exercise available for a user if they have
+            enough eSQLids to buy it.
+          </p>
+        </li>
+      </ul>
+      <h3 id="third-feature">4.3 System Feature 3: Achievements</h3>
+
+      <p>
+        Special achievements are shown on the personal profile page of the
+        user. Claiming some of them can even give the user more eSQLids. Some
+        of them include being the first to solve a task, solving all the tasks
+        of a category.
+      </p>
+
+      <h4 id="third-feature-1">4.3.1 Description and Priority</h4>
+      <p>
+        Low priority, as this feature is only cosmetic or/and to stimulate
+        learning. But it is a feature we would strongly like to implements,
+        because it will greatly influence the users' experience.
+      </p>
+
+      <h4 id="third-feature-2">4.3.2 Stimulus/Response</h4>
+      <ul>
+        <li>
+          When a user does something remarkable, they gey an achievement,
+          shown on personal profile page.
+        </li>
+        <li>
+          The achievements are specific and can be added indefinetely after the
+          project finalization.
+        </li>
+      </ul>
+
+      <h4 id="third-feature-3">4.3.3 Functional Requirements</h4>
+      <p>
+        The site should be notified when the user does something that checks
+        an achievement condition, so the achievemnt in cause is unlocked on
+        his/her profile page.
+      </p>
+
+      <h3 id="fourth-feature">4.4 System Feature 4: Profile</h3>
+      <p>
+        By registering, every user will have their own profile on the site,
+        which they can use to solve the given tasks and gain eSQLids to solve
+        others.
+      </p>
+
+      <h4 id="fourth-feature-1">4.4.1 Description and Priority</h4>
+      <p>
+        Medium priority, because it is an important safety/security
+        requirement, but it is not the main intent of the site. The profile
+        is intended to help tracking the progress of an individual and help
+        the web application not getting spammed.
+      </p>
+
+      <h4 id="fourth-feature-2">4.4.2 Stimulus/Response</h4>
+      <ul>
+        <li>
+          The user registers - the site remembers their account details.
+          The user will be needed to enter information such as : their name,
+          an email used to confirm their account, and a password. In case of
+          wrong input (such as some other text than an email address) the person
+          will be notified.
+        </li>
+        <li>
+          Logging in with the correct credentials gives the user access to
+          their account. In order to log in the individual is required to 
+          enter the correct email and the corresponding password. 
+        </li>
+      </ul>
+
+      <h4 id="fourth-feature-3">4.4.3 Functional Requirements</h4>
+      <p>
+        Introducing the wrong credentials will result in incapability of
+        accessing the account features. Registering requires a password and
+        login of adequate length. Also some logins may be banned for obscene
+        meaning.
+      </p>
+    
+      <h3 id="fifth-feature">4.5 System Feature 5: Profile Settings</h3>
+      <p>
+        Every user is able to modify their account information in the profile 
+        settings section of the website. The Settings section enables users
+        to change things like : the email address linked to the account, their name,
+        their description and their contact information.
+      </p>
+      <h4 id="fifth-feature-1">4.4.1 Description and Priority</h4>
+      <p>
+        Low priority, because it offers the users the possibility to add
+        new information about themselves or modify some incorrect information from
+        their accounts, but it does not affect the process of solving exercises 
+        on the application, nor the overall interaction with the website.
+      </p>
+      <h4 id="fifth-feature-2">4.4.2 Stimulus/Response</h4>
+      <ul>
+        <li>
+          The user enters the settings section and can see the kind of information 
+          they can change. In order to access that section the person has to be
+          connected. If they are not connected an error message will be displayed
+        </li>
+        <li>
+          Users can modify information from their account, such as email address,
+          name or birthday. In case of invalid input the user will be notified.
+        </li>
+        <li>
+          The user has to submit all the changes they have made, otherwise all the
+          modifications will be discarded.
+        </li>
+      </ul>
+    </section>
+
+    <section typeof="sa:MaterialsAndMethods">
+      <h2>5. Other Nonfunctional Requirements</h2>
+
+      <h3>5.1 Performance Requirements</h3>
+      <p>
+        Make the site as fast as possible. Use techniques that require minimum
+        capacity. Some sacrifices for the sake of how beautiful the site looks
+        can be made, but in decent quantities.
+      </p>
+
+      <h3>5.2 Safety Requirements</h3>
+      <p>
+        No damage to the user can be made using this site. The only necessary
+        safeguard would be some restrictions to avoid SQL injections.
+      </p>
+
+      <h3>5.3 Security Requirements</h3>
+      <p>
+        The user profile should be protected by a login and password system,
+        to maintain their privacy and keep their data safe. Some options such
+        as hiding the amount of grossed sqlids, or number of achievemnts could
+        be hidden away by this system too.
+      </p>
+
+      <h3>5.4 Software Quality Attributes</h3>
+      <p>
+        The site interacts with two databases: one for exercises, the other
+        for storing site data (accounts, achievemnts etc.).
+      </p>
+    </section>
+
+    <section typeof="sa:ReferenceList">
+      <h2>Other Requirements</h2>
+      <h3>1</h3>
+      <p>
+        A database for storing user data such as profile information,
+        achievemnts, number of sqlids.
+      </p>
+      <h3>2</h3>
+      <p>
+        A database for solving the tasks on the site. It should have defined
+        tables and data, giving the users the privellege of using data
+        contained in it, to solve the exercises.
+      </p>
+
+      <h3>Appendix A: Glossary</h3>
+      <p>
+        <i><b>sqlid</b></i> - local currency used for buying new exercises
+        from the shop. Can be earned by solving tasks or gaining achievements.
+      </p>
+
+      <figure typeof="sa:image">
+        <img src="resources/first.png" alt="first" class="img-first" />
+      </figure>
+      <p>
+        - this symbol means that the exercise has not been solved by anyone,
+        so the user can be the fisrt one to do it.
+      </p>
+
+      <h3>Appendix B: Analysis Models</h3>
+
+      <h3>Appendix C: To Be Determined List</h3>
+      <ul>
+        <li>
+          <a href="https://www.flaticon.com/free-icon/sql_603201">SQL icon source</a>
+        </li>
+        <li>
+          <a href="http://clipart-library.com/clipart/achievement-cliparts_7.htm">Award icon source</a>
+        </li>
+      </ul>
+    </section>
+  </article>
+</body>
+
 </html>
