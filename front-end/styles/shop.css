@@ -157,7 +157,7 @@ body {
   border-style: solid;
   border-color: #c4c2c2;
   border-width: 1px;
-  padding: 2px;
+  padding: 0px;
 }
 
 .exercise-wrapper{
@@ -255,11 +255,11 @@ body {
 .exercise-button{
 	height:40px;
 	color: #ffffff;
+
 	font-size:15px;
 	font-family: open-sans-light;
 	font-weight: 400;
-	padding-left: 20px;
-	padding-right: 20px;
+
 	cursor: pointer;
 	margin-left:30px;
 
@@ -267,6 +267,7 @@ body {
   align-items: center;
   justify-content: center;
   width:150px;
+  text-decoration: none;
 }
 
 .exercise-button.to-solve{
@@ -297,12 +298,6 @@ body {
 .exercise-button.solved::after{
   margin-top:4px;
   content:url(../resources/checked.png)
-}
-
-.solve-button-link{
-  text-decoration: none;
-  font-size: 15px;
-  font-family: open-sans-light;
 }
 
 .meta-info {
