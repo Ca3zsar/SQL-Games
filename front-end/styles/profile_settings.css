@@ -157,29 +157,20 @@ body {
 }
 
 @media(max-width:810px) {
-	.settings-nav {
-		margin: 0;
+	.settings-nav{
 		position: relative;
-		height: fit-content;
-		height: -moz-fit-content;
-		width: 85%;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		overflow-y: scroll;
-		white-space: nowrap;
-		border-bottom: 2px solid rgba(74, 74, 90, 0.5);
-		border-right: 0;
+		border: 0;
+		margin-bottom:20px;	
 	}
-	.settings-nav a {
-		display: inline-block;
-		width: fit-content;
-		width: -moz-fit-content;
-		margin: 0 20px;
+
+	.content-area{
+		display:flex;
+		flex-wrap: wrap;
 	}
 	.personal-info, .pass-info, .contact-info, .about-info {
 		width: 70%;
 	}
+
 	.settings-area {
 		margin: 30px;
 		position: relative;
@@ -197,40 +188,7 @@ body {
 		align-items: center;
 	}
 	.submit-changes {
-		order: -1;
 		margin: 3px;
-	}
-	.account-settings {
-		font-size: 1.5em;
-		display: none;
-	}
-	::-webkit-scrollbar {
-		width: 15px;
-		height: 5px;
-	}
-	::-webkit-scrollbar-track {
-		background: #f1f1f1;
-	}
-	::-webkit-scrollbar-thumb {
-		background: #888;
-	}
-	::-webkit-scrollbar-thumb:hover {
-		background: #555;
-	}
-	.settings-nav {
-		scrollbar-width: thin;
-		scrollbar-color: gray;
-	}
-	.settings-nav:-webkit-scrollbar {
-		width: 11px;
-	}
-	.settings-nav:-webkit-scrollbar-track {
-		background: transparent;
-	}
-	.settings-nav:-webkit-scrollbar-thumb {
-		background-color: gray;
-		border-radius: 6px;
-		border: 3px solid transparent;
 	}
 }
 
