@@ -297,7 +297,7 @@ body {
 
 .exercise-button.solved::after{
   margin-top:4px;
-  content:url(../resources/checked.png)
+  content:url(../resources/images/checked.png)
 }
 
 .meta-info {

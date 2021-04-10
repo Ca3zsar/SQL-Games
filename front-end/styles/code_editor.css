@@ -36,7 +36,7 @@
 }
 
 .editor-holder.fullscreen .full-exp{
-	content : url("../resources/minimize-fullscreen.png");
+	content : url("../resources/images/minimize-fullscreen.png");
 }
 
 .editor-holder.fullscreen textarea, .editor-holder.fullscreen code{
@@ -159,7 +159,7 @@ pre code {
 
 .full-exp{
 	width:16px;
-	content: url("../resources/expand-fullscreen.png");
+	content: url("../resources/images/expand-fullscreen.png");
 }
 
 .indent-class{
