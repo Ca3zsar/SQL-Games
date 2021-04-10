@@ -52,8 +52,8 @@ body {
 }
 
 .settings-nav a:hover {
-	background: rgb(21, 21, 21);
-	background: linear-gradient( 90deg, rgba(70, 69, 69, 0.964) 0%, rgba(129, 129, 129, 0.902) 50%, rgba(192, 191, 191, 0.757) 100%);
+	background: #193167;
+	background: linear-gradient( 90deg, rgba(33, 63, 133, 0.864) 0%, rgba(51, 101, 219, 0.902) 50%, rgba(53, 112, 248, 0.757) 100%);
 }
 
 .submit-changes {
