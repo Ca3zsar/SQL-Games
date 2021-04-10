@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles/scholarly_style.css" />
 </head>
 
-<body prefix="schema: http://schema.org" itemscope="" itemtype="http://schema.org/WebPage">
+<body prefix="schema: http://schema.org" prefix="https://ns.science.ai/" itemscope="" itemtype="http://schema.org/WebPage">
   <article typeof="schema:ScholarlyArticle">
     <header>
       <h1>Scholarly HTML "SQL-Games"</h1>
@@ -641,16 +641,17 @@
     </section>
 
     <section typeof="sa:MaterialsAndMethods">
-      <h2>5. Other Nonfunctional Requirements</h2>
+      <h2 id="non-functional">5. Other Nonfunctional Requirements</h2>
 
-      <h3>5.1 Performance Requirements</h3>
+      <h3 id="performance">5.1 Performance Requirements</h3>
       <p>
-        Make the site as fast as possible. Use techniques that require minimum
-        capacity. Some sacrifices for the sake of how beautiful the site looks
-        can be made, but in decent quantities.
+        This web application does not have any specific system requirements in order to
+        run properly but it would be desirable to use a device able to load
+        load the pages properly and not in a slow way so as to the user experience
+        not to be sluggish or laggy.
       </p>
 
-      <h3>5.2 Safety Requirements</h3>
+      <h3 id="safety">5.2 Safety Requirements</h3>
       <p>
         To ensure that every solution is processed and the results are returned in
         a correct way, the application will get updated regularly based on users' 
@@ -660,58 +661,51 @@
         have the best experience, without any problem of any kind.
       </p>
 
-      <h3>5.3 Security Requirements</h3>
+      <h3 id="security">5.3 Security Requirements</h3>
       <p>
         The user profile should be protected by a login and password system,
-        to maintain their privacy and keep their data safe. Some options such
-        as hiding the amount of grossed sqlids, or number of achievements could
-        be hidden away by this system too.
-      </p>
-
-      <h3>5.4 Software Quality Attributes</h3>
-      <p>
-        The site interacts with two databases: one for exercises, the other
-        for storing site data (accounts, achievemnts etc.).
+        to maintain their privacy and keep their data safe. <br>
+        Other security measures that have to be taken are : prevention of SQL-injection
+        attacks, blocking the multiple consecutive request coming from a user
+        in order to prevent spamming that could slow down the application and
+        blocking the users that would try to use queries in the exercises that could
+        result in negative effects on the exercise database.
       </p>
     </section>
 
     <section typeof="sa:ReferenceList">
-      <h2>Other Requirements</h2>
-      <h3>1</h3>
+      <h2 id="other-requirements">Other Requirements</h2>
+      <h3 id="databases">1.The databases included in the web application</h3>
       <p>
-        A database for storing user data such as profile information,
-        achievemnts, number of sqlids.
-      </p>
-      <h3>2</h3>
-      <p>
-        A database for solving the tasks on the site. It should have defined
-        tables and data, giving the users the privellege of using data
-        contained in it, to solve the exercises.
+        There will be two databases used: one for storing the content on the site, such as
+        the accounts or the exercise requirements, and one to be used for
+        applying the queries on.
       </p>
 
-      <h3>Appendix A: Glossary</h3>
+      <h3 id="appendix-a">Appendix A: Glossary</h3>
       <p>
         <i><b>sqlid</b></i> - local currency used for buying new exercises
         from the shop. Can be earned by solving tasks or gaining achievements.
       </p>
-
-      <figure typeof="sa:image">
-        <img src="resources/first.png" alt="first" class="img-first" />
-      </figure>
-      <p>
+      <p><img itemtype = "sa:Image" property = "schema:encoding" encoding="schema:ImageObject" 
+            src="resources/first.png" alt="first" class="img-first"/>
         - this symbol means that the exercise has not been solved by anyone,
-        so the user can be the fisrt one to do it.
+        so the user can be the first one to do it.
       </p>
 
-      <h3>Appendix B: Analysis Models</h3>
-
-      <h3>Appendix C: To Be Determined List</h3>
+      <h3 id="appendix-b">Appendix B: Used Creative Works</h3>
       <ul>
         <li>
-          <a href="https://www.flaticon.com/free-icon/sql_603201">SQL icon source</a>
+          <a property="schema:hasPart" href="https://www.flaticon.com/free-icon/sql_603201">SQL icon source</a>
         </li>
         <li>
-          <a href="http://clipart-library.com/clipart/achievement-cliparts_7.htm">Award icon source</a>
+          <a property="schema:hasPart" href="http://clipart-library.com/clipart/achievement-cliparts_7.htm">Award icon source</a>
+        </li>
+        <li>
+          <a property="schema:hasPart" href="https://dryicons.com/icon/first-place-medal-icon-6435">First to solve an exercise icon source</a>
+        </li>
+        <li>
+          <a property="schema:hasPart" href="https://www.pngaaa.com/detail/1308962">Tick icon used in shop source</a>
         </li>
       </ul>
     </section>
