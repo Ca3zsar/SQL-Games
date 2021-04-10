@@ -7,11 +7,132 @@
   <link rel="stylesheet" href="styles/scholarly_style.css" />
 </head>
 
-<body prefix="schema: http://schema.org" prefix="https://ns.science.ai/" itemscope="" itemtype="http://schema.org/WebPage">
+<body prefix="schema: https://schema.org/" prefix="sa:https://ns.science.ai/" itemscope=""
+  itemtype="http://schema.org/WebPage">
   <article typeof="schema:ScholarlyArticle">
     <header>
       <h1>Scholarly HTML "SQL-Games"</h1>
     </header>
+    <h2>Table of contents</h2>
+    <ul>
+      <li>
+        <a href="#authors">Authors</a>
+      </li>
+      <li>
+        <a href="#introduction">1. Introduction</a>
+        <ul>
+          <li><a href="#introduction-purpose">1.1 Purpose</a></li>
+          <li><a href=" #conventions">1.2 Document Conventions</a></li>
+          <li><a href="#audience">1.3 Intended Audience and Reading Suggestions</a></li>
+          <li><a href=" #product-scope">1.4 Product Scope</a>
+
+            <ul>
+              <li><a href="#product-purpose">1.4.1 Purpose</a></li>
+              <li><a href="#product-benefits">1.4.2 Benefits</a></li>
+              <li><a href="#product-goals">1.4.3 Goals and objectives</a></li>
+            </ul>
+          </li>
+          <li><a href="#product-references">1.5 References</a></li>
+        </ul>
+      </li>
+      <li><a href="#overall">2. Overall Description</a>
+        <ul>
+          <li><a href="#product-perspective">2.1 Product Perspective</a></li>
+          <li><a href="#product-functions">2.2 Product Functions</a></li>
+          <li><a href="#users">2.3 User Classes and Characteristics</a>
+            <ul>
+              <li><a href="#regular-users">2.3.1 Regular user</a></li>
+              <li><a href="#teacher-users">2.3.2 Teacher user</a></li>
+              <li><a href="#admin-users">2.3.3 Admin</a></li>
+            </ul>
+          </li>
+          <li><a href="#operating-environment">2.4 Operating Environment</a></li>
+          <li><a href="#constraints">2.5 Design and Implementation Constraints</a></li>
+          <li><a href="#documentantion">2.6 User Documentation</a></li>
+          <li><a href="#dependencies">2.7 Assumptions and Dependencies</a></li>
+        </ul>
+      </li>
+      <li><a href="#external">3. External Interface Requirements</a>
+        <ul>
+          <li><a href="#user-interface">3.1 User Interfaces</a>
+            <ul>
+              <li><a href="#user-interface-1">3.1.1 Navbar</a></li>
+              <li><a href="#user-interface-2">3.1.2 Navbar dropdown</a></li>
+              <li><a href="#user-interface-3">3.1.3 Main Page</a></li>
+              <li><a href="#user-interface-4">3.1.4 Login/Register Page</a></li>
+              <li><a href="#user-interface-5">3.1.5 Shop Extended Page</a></li>
+              <li><a href="#user-interface-6">3.1.6 Shop Compact Page</a></li>
+              <li><a href="#user-interface-7">3.1.7 Individual Exercise Page</a></li>
+              <li><a href="#user-interface-8">3.1.8 Profile Settings Page</a></li>
+              <li><a href="#user-interface-9">3.1.9 Footer</a></li>
+            </ul>
+          </li>
+          <li><a href="#hardware-interface">3.2 Hardware Interfaces</a></li>
+          <li><a href="#software-interface">3.3 Software Interfaces</a></li>
+          <li><a href="#communications-interface">3.4 Communications Interfaces</a></li>
+        </ul>
+      </li>
+      <li><a href="#system-features">4. System Features</a>
+        <ul>
+          <li><a href="#first-feature">4.1 System Feature 1: SQL exercises solving</a>
+            <ul>
+              <li><a href="#first-feature-1">4.1.1 Description and Priority</a></li>
+              <li><a href="#first-feature-2">4.1.2 Stimulus/Response</a></li>
+              <li><a href="#first-feature-3">4.1.3 Functional Requirements</a></li>
+            </ul>
+          </li>
+          <li><a href="#second-feature">4.2 System Feature 2: Shop</a>
+            <ul>
+              <li><a href="#second-feature-1">4.2.1 Description and Priority</a></li>
+              <li><a href="#second-feature-2">4.2.2 Stimulus/Response</a></li>
+              <li><a href="#second-feature-3">4.2.3 Functional Requirements</a></li>
+            </ul>
+          </li>
+          <li><a href="#third-feature">4.3 System Feature 3: Achievements</a>
+            <ul>
+              <li><a href="#third-feature-1">4.3.1 Description and Priority</a></li>
+              <li><a href="#third-feature-2">4.3.2 Stimulus/Response</a></li>
+              <li><a href="#third-feature-3">4.3.3 Functional Requirements</a></li>
+            </ul>
+          </li>
+          <li><a href="#fourth-feature">4.4 System Feature 4: Profile</a>
+            <ul>
+              <li><a href="#fourth-feature-1">4.4.1 Description and Priority</a></li>
+              <li><a href="#fourth-feature-2">4.4.2 Stimulus/Response</a></li>
+              <li><a href="#fourth-feature-3">4.4.3 Functional Requirements</a></li>
+            </ul>
+          </li>
+          <li><a href="#fifth-feature">4.5 System Feature 5: Profile Settings</a>
+            <ul>
+              <li><a href="#fifth-feature-1">4.5.1 Description and Priority</a></li>
+              <li><a href="#fifth-feature-2">4.5.2 Stimulus/Response</a></li>
+              <li><a href="#fifth-feature-3">4.5.3 Functional Requirements</a></li>
+            </ul>
+          </li>
+          <li><a href="#sixth-feature">4.6 System Feature 6: Code Editor Syntax Highlighting</a>
+            <ul>
+              <li><a href="#sixth-feature-1">4.6.1 Description and Priority</a></li>
+              <li><a href="#sixth-feature-2">4.6.2 Stimulus/Response</a></li>
+              <li><a href="#sixth-feature-3">4.6.3 Functional Requirements</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#non-functional">5. Other Nonfunctional Requirements</a>
+        <ul>
+          <li><a href="#performance">5.1 Performance Requirements</a></li>
+          <li><a href="#safety">5.2 Safety Requirements</a></li>
+          <li><a href="#security">5.3 Security Requirements</a></li>
+        </ul>
+      </li>
+      <li><a href="#other-requirements">Other Requirements</a>
+        <ul>
+          <li><a href="#databases">1.The databases included in the web application</a></li>
+          <li><a href="#appendix-a">Appendix A: Glossary</a></li>
+          <li><a href="#appendix-b">Appendix B: Used Creative Works</a></li>
+        </ul>
+      </li>
+    </ul>
     <section id="authors" typeof="sa:AuthorsList">
       <div role="contentinfo">
         <h2>Authors</h2>
@@ -289,49 +410,49 @@
 
       <h3 id="user-interface">3.1 User Interfaces</h3>
 
-      <figure typeof="sa:image">
+      <figure typeof="sa:image" id="user-interface-1">
         <img src="resources/screenshot_navbar.png" alt="navbar-screenshot" class="screenshots-nav" />
         <figcaption>3.1.1 Navbar</figcaption>
       </figure>
 
 
-      <figure typeof="sa:image">
+      <figure typeof="sa:image" id="user-interface-2">
         <img src="resources/screenshot_dropdown.png" alt="main-page-screenshot" class="screenshots-element" />
         <figcaption>3.1.2 Navbar dropdown that appears when pressing Account Button on
           Navbar</figcaption>
       </figure>
 
-      <figure typeof="sa:image">
+      <figure typeof="sa:image" id="user-interface-3">
         <img src="resources/screenshot_mainpage.png" alt="main-page-screenshot" class="screenshots" />
         <figcaption>3.1.3 Main Page</figcaption>
       </figure>
 
-      <figure typeof="sa:image">
+      <figure typeof="sa:image" id="user-interface-4">
         <img src="resources/screenshot_login.png" alt="login-register-screenshot" class="screenshots" />
         <figcaption>3.1.4 Login/Register Page</figcaption>
       </figure>
 
-      <figure typeof="sa:image">
+      <figure typeof="sa:image" id="user-interface-5">
         <img src="resources/screenshot_shop_extended.png" alt="shop-page-extended-screenshot" class="screenshots" />
         <figcaption>3.1.5 Shop Extended Page</figcaption>
       </figure>
 
-      <figure typeof="sa:image">
+      <figure typeof="sa:image" id="user-interface-6">
         <img src="resources/screenshot_shop_compact.png" alt="shop-page-compact-screenshot" class="screenshots" />
         <figcaption>3.1.6 Shop Compact Page</figcaption>
       </figure>
 
-      <figure typeof="sa:image" id="exercise-page">
+      <figure typeof="sa:image" id="user-interface-7">
         <img src="resources/screenshot_exercise.png" alt="exercise-page-screenshot" class="screenshots" />
         <figcaption>3.1.7 Individual Exercise Page</figcaption>
       </figure>
 
-      <figure typeof="sa:image">
+      <figure typeof="sa:image" id="user-interface-8">
         <img src="resources/screenshot_settings.png" alt="profile-settings-page-screenshot" class="screenshots" />
         <figcaption>3.1.8 Profile Settings Page</figcaption>
       </figure>
 
-      <figure typeof="sa:image">
+      <figure typeof="sa:image" id="user-interface-9">
         <img src="resources/screenshot_footer.png" alt="footer-screenshot" class="screenshots-nav" />
         <figcaption>3.1.9 Footer</figcaption>
       </figure>
@@ -374,7 +495,7 @@
         editor on the exercise page. Every exercise will be solved on its own
         individual page. The page contains a section with all the infromation
         about the task and a blank space/code editor for solving the given
-        exercise as shown in the <a href="#exercise-page">3.1 screenshot</a>.
+        exercise as shown in the <a href="#user-interface-8">3.1 screenshot</a>.
       </p>
       <h4 id="first-feature-1">4.1.1 Description and Priority</h4>
       <p>
@@ -472,8 +593,8 @@
         </li>
         <li>
           <p>
-          The layout button will resize the content of the page depending on the
-          user's prefference ( compact or extended).</p>
+            The layout button will resize the content of the page depending on the
+            user's prefference ( compact or extended).</p>
         </li>
         <li>
           <p>
@@ -549,8 +670,8 @@
         </li>
         <li>
           Logging in with the correct credentials gives the user access to
-          their account. In order to log in the individual is required to 
-          enter the correct email and the corresponding password. 
+          their account. In order to log in the individual is required to
+          enter the correct email and the corresponding password.
         </li>
       </ul>
 
@@ -561,10 +682,10 @@
         login of adequate length. Also some logins may be banned for obscene
         meaning.
       </p>
-    
+
       <h3 id="fifth-feature">4.5 System Feature 5: Profile Settings</h3>
       <p>
-        Every user is able to modify their account information in the profile 
+        Every user is able to modify their account information in the profile
         settings section of the website. The Settings section enables users
         to change things like : the email address linked to the account, their name,
         their description and their contact information.
@@ -573,13 +694,13 @@
       <p>
         Low priority, because it offers the users the possibility to add
         new information about themselves or modify some incorrect information from
-        their accounts, but it does not affect the process of solving exercises 
+        their accounts, but it does not affect the process of solving exercises
         on the application, nor the overall interaction with the website.
       </p>
       <h4 id="fifth-feature-2">4.5.2 Stimulus/Response</h4>
       <ul>
         <li>
-          The user enters the settings section and can see the kind of information 
+          The user enters the settings section and can see the kind of information
           they can change. In order to access that section the person has to be
           connected. If they are not connected an error message will be displayed
         </li>
@@ -611,7 +732,7 @@
       <h4 id="sixth-feature-1">4.6.1 Description and Priority</h4>
       <p>
         This feature has a medium priority because even though an user will
-        be able to write code without the syntax highlighting, this would come 
+        be able to write code without the syntax highlighting, this would come
         in handy when the solution gets more extended and they will need some
         way to visualize the code in a better way.
       </p>
@@ -633,7 +754,7 @@
           </p>
         </li>
         <li>
-          If the user wants to use the syntax highlighter they are required to 
+          If the user wants to use the syntax highlighter they are required to
           enable JavaScript as the editor runs a script that constantly verifies
           the input and highlights it accordingly.
         </li>
@@ -654,8 +775,8 @@
       <h3 id="safety">5.2 Safety Requirements</h3>
       <p>
         To ensure that every solution is processed and the results are returned in
-        a correct way, the application will get updated regularly based on users' 
-        feedback or bugs discovered by the developers of the application.  
+        a correct way, the application will get updated regularly based on users'
+        feedback or bugs discovered by the developers of the application.
         Another aspect that we will take care about is the aquisition of exercises,
         so the shop will be constantly verified and taken care of, so the users
         have the best experience, without any problem of any kind.
@@ -687,8 +808,8 @@
         <i><b>sqlid</b></i> - local currency used for buying new exercises
         from the shop. Can be earned by solving tasks or gaining achievements.
       </p>
-      <p><img itemtype = "sa:Image" property = "schema:encoding" encoding="schema:ImageObject" 
-            src="resources/first.png" alt="first" class="img-first"/>
+      <p><img itemtype="sa:Image" property="schema:encoding" encoding="schema:ImageObject" src="resources/first.png"
+          alt="first" class="img-first" />
         - this symbol means that the exercise has not been solved by anyone,
         so the user can be the first one to do it.
       </p>
@@ -699,10 +820,12 @@
           <a property="schema:hasPart" href="https://www.flaticon.com/free-icon/sql_603201">SQL icon source</a>
         </li>
         <li>
-          <a property="schema:hasPart" href="http://clipart-library.com/clipart/achievement-cliparts_7.htm">Award icon source</a>
+          <a property="schema:hasPart" href="http://clipart-library.com/clipart/achievement-cliparts_7.htm">Award icon
+            source</a>
         </li>
         <li>
-          <a property="schema:hasPart" href="https://dryicons.com/icon/first-place-medal-icon-6435">First to solve an exercise icon source</a>
+          <a property="schema:hasPart" href="https://dryicons.com/icon/first-place-medal-icon-6435">First to solve an
+            exercise icon source</a>
         </li>
         <li>
           <a property="schema:hasPart" href="https://www.pngaaa.com/detail/1308962">Tick icon used in shop source</a>
