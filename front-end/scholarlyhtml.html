@@ -398,6 +398,11 @@
           Depending on how good, how fast or in which manner the task was
           solved, the user can get a corresponding achievement.
         </li>
+        <li>
+          If the user tries to enter DML / DDL commands they will be notified,
+          because this type of commands is forbidden. In case of spamming this kind
+          of command, the user will be restricted from the site.
+        </li>
       </ul>
       <h4 id="first-feature-3">4.1.3 Functional Requirements</h4>
       <p>
@@ -564,14 +569,14 @@
         to change things like : the email address linked to the account, their name,
         their description and their contact information.
       </p>
-      <h4 id="fifth-feature-1">4.4.1 Description and Priority</h4>
+      <h4 id="fifth-feature-1">4.5.1 Description and Priority</h4>
       <p>
         Low priority, because it offers the users the possibility to add
         new information about themselves or modify some incorrect information from
         their accounts, but it does not affect the process of solving exercises 
         on the application, nor the overall interaction with the website.
       </p>
-      <h4 id="fifth-feature-2">4.4.2 Stimulus/Response</h4>
+      <h4 id="fifth-feature-2">4.5.2 Stimulus/Response</h4>
       <ul>
         <li>
           The user enters the settings section and can see the kind of information 
@@ -587,7 +592,7 @@
           modifications will be discarded.
         </li>
       </ul>
-      <h4 id="fifth-feature-3">4.4.3 Functional Requirements</h4>
+      <h4 id="fifth-feature-3">4.5.3 Functional Requirements</h4>
       <ul>
         <li>The user is required to enter valid data, such as a valid
           email address or a valid birthday
@@ -595,6 +600,42 @@
         <li>
           The user has to enter their current password in order to be able
           to change it, and must type the new password twitce, in order to confirm it
+        </li>
+      </ul>
+      <h3 id="sixth-feature">4.6 System Feature 6: Code Editor Syntax Highlighting</h3>
+      <p>
+        While typing their solution to a specific exercise the users will
+        have specific syntax higlighted in order to help them visualize their
+        code better.
+      </p>
+      <h4 id="sixth-feature-1">4.6.1 Description and Priority</h4>
+      <p>
+        This feature has a medium priority because even though an user will
+        be able to write code without the syntax highlighting, this would come 
+        in handy when the solution gets more extended and they will need some
+        way to visualize the code in a better way.
+      </p>
+      <h4 id="sixth-feature-2">4.6.2 Stimulus/Response</h4>
+      <ul>
+        <li>
+          When the user will type some SQL reserved keywords, they will be colored
+          with a different color in the code editor in order to make the exercise solving
+          easier for the user.
+        </li>
+      </ul>
+      <h4 id="sixth-feature-3">4.6.3 Functional Requirements</h4>
+      <ul>
+        <li>
+          <p>
+            In order to use the syntax highlighter the user has to enter valid
+            SQL keywords, otherwise the words will be considered to be names from
+            the tables or other kind of placeholders.
+          </p>
+        </li>
+        <li>
+          If the user wants to use the syntax highlighter they are required to 
+          enable JavaScript as the editor runs a script that constantly verifies
+          the input and highlights it accordingly.
         </li>
       </ul>
     </section>
@@ -611,15 +652,19 @@
 
       <h3>5.2 Safety Requirements</h3>
       <p>
-        No damage to the user can be made using this site. The only necessary
-        safeguard would be some restrictions to avoid SQL injections.
+        To ensure that every solution is processed and the results are returned in
+        a correct way, the application will get updated regularly based on users' 
+        feedback or bugs discovered by the developers of the application.  
+        Another aspect that we will take care about is the aquisition of exercises,
+        so the shop will be constantly verified and taken care of, so the users
+        have the best experience, without any problem of any kind.
       </p>
 
       <h3>5.3 Security Requirements</h3>
       <p>
         The user profile should be protected by a login and password system,
         to maintain their privacy and keep their data safe. Some options such
-        as hiding the amount of grossed sqlids, or number of achievemnts could
+        as hiding the amount of grossed sqlids, or number of achievements could
         be hidden away by this system too.
       </p>
 
