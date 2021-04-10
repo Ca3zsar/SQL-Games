@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>SQL-Games Exercise</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+  <meta name="keywords" content="HTML, CSS, JavaScript, SQL" />
+  <meta name="description" content="An website where you can solve SQL exercises" />
+  <meta name="author" content="Buliga Eugeniu, Todirisca Cezar, Toma Andrei" />
+  <meta name="application-name" content="SQL-Games" />
+
+  <link rel="stylesheet" href="styles/exercise.css" />
+  <link rel="stylesheet" href="styles/code_editor.css" />
+  <link rel="stylesheet" href="styles/navbar.css" />
+  <link rel="stylesheet" href="styles/footer.css" />
+  <script src="scripts/navFunctions.js"></script>
+
+  <link rel="shortcut icon" type="image/png" href="resources/favicon.png" />
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <header itemscope itemtype="https://schema.org/SiteNavigationElement">
+    <div class="left-side">
+      <div class="logo" itemscope itemtype="http://schema.org/logo">
+        <a href="main_page.html" itemprop="name">SQL-GAMES</a>
+      </div>
+    </div>
+    <nav class="right-nav">
+      <a class="coins">10<img src="resources/coin.png" class="coin-img" alt="sqliezi" itemscope
+          itemtype="https://schema.org/ImageObject" /></a>
+      <a class="coins-collapsed">Coins : 10<img src="resources/coin.png" class="coin-img" alt="sqliezi" /></a>
+      <a href="shop.html" itemprop="url">Exercises</a>
+      <a href="login_register.html">Login/Register</a>
+      <div class="dropdown">
+        <p class="dropbtn">Account</p>
+        <div class="dropdown-content" itemscope itemtype="https://schema.org/ItemList">
+          <a href="profile_settings.html" itemprop="url"><span itemprop="name">Profile Settings</span></a>
+          <a href="#" itemprop="url"><span itemprop="name">Statistics</span></a>
+          <a href="#" itemprop="url"><span itemprop="name">Log out</span></a>
+        </div>
+      </div>
+    </nav>
+    <div class="toggle-btn" onclick="displayOptions()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+  <div class="content-area" id="content-id">
+    <div class="exercise-requirement" itemscope itemtype="https://schema.org/Text">
+      <div class="requirements">
+        <div class="meta-info">
+          <div class="difficulty-wrapper">
+            <p class="difficulty-title">Difficulty:</p>
+            <img itemscope itemtype="https://schema.org/ImageObject" class="difficulty-bar" alt="difficulty"
+              src="resources/difficulty_medium.png" />
+          </div>
+          <h3 class="exercise-author" itemscope itemtype="https://schema.org/Person"><span itemprop="givenName">by
+              Nume_Imaginar</span></h3>
+        </div>
+        <br class="meta-break" />
+        <h1 class="exercise-title" itemprop="title">#001 Nascuti in aceeasi zi</h1>
+        <p class="requirement-text" itemprop="text">
+          Sa se afiseze toti studentii care au un coleg de grupa nascut in
+          aceeasi zi a saptamanii cu el si au nume de familie care incep cu
+          aceeasi litera.
+        </p>
+        <div class="exercise-statistics" itemscope itemtype="https://schema.org/InteractionCounter">
+          <p class="bought-by" itemprop="interactionStatistic">bought by : 10 persons</p>
+          <p class="solved-by" itemprop="interactionStatistic">solved by : 1 person</p></div>
+        
+      </div>
+      <div class="exercise-status"></div>
+    </div>
+    
+    <div class="editor-wrapper">
+      <div class="editor-holder">
+        <ul class="toolbar">
+          <li>
+            <a href="#" id="indent" title="Toggle tabs or spaces"><img alt="I" src="resources/indent.png"
+                class="indent-class" /></a>
+          </li>
+          <li>
+            <a href="#" id="fullscreen" title="Toggle fullscreen mode"><span class="full-exp"></span></a>
+          </li>
+        </ul>
+        <div class="scroller" itemscope itemtype="https://schema.org/Code">
+          <div class="line-number" role="presentation"></div>
+          <textarea autocomplete="off" spellcheck="false" class="editor allow-tabs"></textarea>
+          <pre><code class="syntax-highlight html"></code></pre>
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="reset-button">Reset Content</button>
+        <button class="submit-button">Submit Answer</button>
+      </div>
+    </div>
+
+    <footer class="footer-bar">
+      <a href="#">Contact us</a>
+      <a href="scholarlyhtml.html">Scholarly HTML</a>
+      <h4 itemscope itemtype="https://schema.org/copyrightHolder">
+        © SQL-GAMES 2021
+        <span itemscope="" itemtype="http://schema.org/Person" itemprop="author">Buliga Eugeniu, Todirisca Cezar, Toma
+          Andrei</span>
+      </h4>
+    </footer>
+  </div>
+
+    <script src="scripts/highlighter.js"></script>
+    <script src="scripts/exercise.js"></script>
+</body>
+
+</html>

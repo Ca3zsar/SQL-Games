@@ -1,0 +1,273 @@
+@import "font-importer.css";
+
+.editor-wrapper{
+	width:100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.editor-holder {
+	width: 950px;
+	height: 537px;
+	margin-top: 30px;
+	border-radius: 3px;
+
+	text-align: initial;
+	position: relative;
+	top: 0;
+	background: #1f1f1f !important;
+
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
+	transition: all 0.5s ease-in-out;
+
+	overflow-y: auto;
+	overflow-x:hidden;
+	overflow-wrap: break-word;
+}
+
+.editor-holder.fullscreen {
+	width: 100%;
+	height: 500px;
+	margin: 0;
+	left: 0;
+}
+
+.editor-holder.fullscreen .full-exp{
+	content : url("../resources/minimize-fullscreen.png");
+}
+
+.editor-holder.fullscreen textarea, .editor-holder.fullscreen code{
+	width:96%;
+}
+
+.editor-holder .toolbar {
+	max-width: 100%;
+	width: 100%;
+	list-style: none;
+	position: absolute;
+	/* top: -2px; */
+	margin: 0;
+	left: 0;
+	z-index: 3;
+	padding: 8px;
+	background: #F3F7F7;
+}
+
+.editor-holder .toolbar li {
+	display: inline-block;
+}
+
+.editor-holder .toolbar a {
+	line-height: 20px;
+	display: block;
+	border-radius: 3px;
+}
+
+.editor-holder .toolbar a:hover {
+	background: rgba(144, 144, 144, 0.8);
+}
+
+.editor-holder .toolbar a.active {
+	background: rgba(144, 144, 144, 0.8);
+	box-shadow: none;
+}
+
+.editor-holder .toolbar a {
+	color: #565656;
+	padding: 8px;
+}
+
+.editor-holder textarea, .editor-holder code {
+	width: 91%;
+	
+	height: auto;
+	min-height: 450px;
+	font-size: 14px;
+	border: 0;
+	margin: 0;
+	top: 46px;
+	left: 0;
+	padding: 20px !important;
+	line-height: 21px;
+	position: absolute;
+	font-family: Consolas, Courier, monospace;
+	overflow: visible;
+	transition: all 0.5s ease-in-out;
+}
+
+.editor-holder textarea {
+	left:45px;
+	margin: auto;
+	position: absolute;
+	background: transparent !important;
+	z-index: 2;
+	height: auto;
+	resize: none;
+	text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+	
+	-webkit-text-fill-color: transparent;
+	color:white;
+	/* user-select: none; */
+}
+
+.editor-holder textarea::-webkit-input-placeholder {
+	color: rgba(255, 255, 255, 1);
+}
+
+.editor-holder textarea:focus {
+	outline: 0;
+	border: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.editor-holder code {
+	z-index: 1;
+}
+
+.editor-holder textarea::-webkit-scrollbar {
+  display: none;
+}
+
+.editor-holder textarea::-webkit-scrollbar { 
+  -ms-overflow-style: none;  
+  width:0;
+}
+
+pre {
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+	position: relative;
+	left:45px;
+	top:-12px;
+	
+}
+
+pre code {
+	background: #1C2434 !important;
+	color: #61AFEF;
+	font-size: 29px;
+	font-family: roboto;
+}
+
+.full-exp{
+	width:16px;
+	content: url("../resources/expand-fullscreen.png");
+}
+
+.indent-class{
+	width: 16px;
+}
+
+.line-number{
+	padding-top:20px;
+	position: absolute;
+	width:45px;
+	top:46px;
+	background-color: #1C2434;
+
+	height: auto;
+	min-height: 88%;
+}
+
+.specific-line{
+	width:100%;
+	line-height: 21px;
+	position: relative;
+	text-align: right;
+	right: 4px;
+	color:#ffffff;
+	font-family: roboto;
+	background-color: #1C2434;
+}
+
+.buttons{
+	width: 950px;
+	display:flex;
+	justify-content: flex-end;
+
+	margin-top:10px;
+	margin-right:20px;
+	transition: all 0.5s ease-in-out;
+}
+
+.submit-button{
+	height:50px;
+	box-shadow: 0 4px 12px 0 rgba(27,169,76,.5);
+	background-color: #1ba94c;
+	border:1px solid #179342;
+
+	color: #ffffff;
+	font-size:15px;
+	font-family: open-sans-bold;
+	font-weight: 700;
+	padding-left: 20px;
+	padding-right: 20px;
+	cursor: pointer;
+	margin-left:30px;
+}
+
+.reset-button{
+	background-color: #fff;
+	color: #39424e;
+	box-shadow: 0 3px 10px 0 rgba(0,0,0,.1);
+	font-family: open-sans-bold;
+	font-size: 15px;
+	font-weight: 700;
+	padding-left: 20px;
+	padding-right: 20px;
+	cursor: pointer;
+	margin-left:30px;
+	border:none;
+}
+
+.buttons.fullscreen{
+	width: 100%;
+}
+
+@media(max-width:1050px)
+{
+	.editor-holder{
+		width:800px;
+	}
+
+	.buttons{
+		width:800px;
+	}
+}
+
+@media(max-width:830px)
+{
+	.editor-holder{
+		width:600px;
+	}
+
+	.buttons{
+		width:600px;
+	}
+}
+
+@media(max-width:630px)
+{
+	.editor-holder{
+		width:400px;
+	}
+	
+	.buttons{
+		width:400px;
+	}
+}
+
+@media(max-width:430px)
+{
+	.editor-wrapper{
+		display:none;
+	}
+}

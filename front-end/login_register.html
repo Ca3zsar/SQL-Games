@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SQL-Games Login/Register</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, SQL" />
+    <meta
+      name="description"
+      content="An website where you can solve SQL exercises"
+    />
+    <meta
+      name="author"
+      content="Buliga Eugeniu, Todirisca Cezar, Toma Andrei"
+    />
+    <meta name="application-name" content="SQL-Games" />
+
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/signin_register.css" />
+    <script src="scripts/navFunctions.js"></script>
+
+    <link rel="shortcut icon" type="image/png" href="resources/favicon.png" />
+  </head>
+
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <header itemscope itemtype="https://schema.org/SiteNavigationElement">
+      <div class="left-side">
+        <div class="logo" itemscope itemtype="http://schema.org/logo">
+          <a href="main_page.html" itemprop="name">SQL-GAMES</a>
+        </div>
+      </div>
+      <nav class="right-nav">
+        <a class="coins"
+          >10<img
+            src="resources/coin.png"
+            class="coin-img"
+            alt="sqliezi"
+            itemscope
+            itemtype="https://schema.org/ImageObject"
+        /></a>
+        <a class="coins-collapsed"
+          >Coins : 10<img
+            src="resources/coin.png"
+            class="coin-img"
+            alt="sqliezi"
+        /></a>
+        <a href="shop.html" itemprop="url">Exercises</a>
+        <a href="login_register.html">Login/Register</a>
+        <div class="dropdown">
+          <p class="dropbtn">Account</p>
+          <div
+            class="dropdown-content"
+            itemscope
+            itemtype="https://schema.org/ItemList"
+          >
+            <a href="profile_settings.html" itemprop="url"
+              ><span itemprop="name">Profile Settings</span></a
+            >
+            <a href="#" itemprop="url"
+              ><span itemprop="name">Statistics</span></a
+            >
+            <a href="#" itemprop="url"><span itemprop="name">Log out</span></a>
+          </div>
+        </div>
+      </nav>
+      <div class="toggle-btn" onclick="displayOptions()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+    <div class="content-area" id="content-id">
+      <div class="container" id="container">
+        <div class="form-container sign-up-container">
+          <form class="complete-form" action="#">
+            <h1 class="h1-title">Create Account</h1>
+            <input class="user-input" type="text" placeholder="Name" />
+            <input class="user-input" type="email" placeholder="Email" />
+            <input class="user-input" type="password" placeholder="Password" />
+            <button class="action-button">Sign Up</button>
+          </form>
+        </div>
+        <div class="form-container sign-in-container">
+          <form class="complete-form" action="#">
+            <h1 class="h1-title">Sign in</h1>
+            <input class="user-input" type="email" placeholder="Email" />
+            <input class="user-input" type="password" placeholder="Password" />
+            <a class="forgot-password" href="#">Forgot your password?</a>
+            <button class="action-button">Sign In</button>
+          </form>
+        </div>
+        <div class="overlay-container">
+          <div class="overlay">
+            <div class="overlay-panel overlay-left">
+              <h1 class="h1-title">Welcome Back!</h1>
+              <p class="general-info">
+                Please enter your login and password to keep SQL-ing.
+              </p>
+              <button class="action-button ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+              <h1 class="h1-title">Hello, Friend!</h1>
+              <p class="general-info">
+                Enter your details to start conquering SQl-craft!
+              </p>
+              <button class="action-button ghost" id="signUp">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer-bar">
+        <a href="#">Contact us</a>
+        <a href="scholarlyhtml.html">Scholarly HTML</a>
+        <h4 itemscope itemtype="https://schema.org/copyrightHolder">
+          © SQL-GAMES 2021
+          <span
+            itemscope=""
+            itemtype="http://schema.org/Person"
+            itemprop="author"
+            >Buliga Eugeniu, Todirisca Cezar, Toma Andrei</span
+          >
+        </h4>
+      </footer>
+    </div>
+    <script src="scripts/signin_register.js"></script>
+  </body>
+</html>

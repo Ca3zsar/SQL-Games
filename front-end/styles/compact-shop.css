@@ -1,0 +1,5 @@
+@import "font-importer.css";
+
+.exercise-requirement.compact .meta-info{
+    display:none;
+}

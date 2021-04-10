@@ -1,0 +1,54 @@
+@font-face{
+	font-family:bebas;
+	src: url("../fonts/Bebas-Regular.otf");
+}
+
+@font-face{
+	font-family:bignoodle;
+	src :url("../fonts/big_noodle_titling.ttf")
+}
+
+@font-face{
+	font-family:twoD;
+	src : url("../fonts/PressStart2P-Regular.ttf")
+}
+
+@font-face{
+	font-family:roboto;
+	src : url("../fonts/Roboto-Regular.ttf")
+}
+
+@font-face{
+	font-family:lato;
+	src : url("../fonts/Lato-Thin.ttf")
+}
+
+@font-face{
+	font-family:open-sans-bold;
+	src : url("../fonts/OpenSans-Bold.ttf")
+}
+
+@font-face{
+	font-family:open-sans-light;
+	src : url("../fonts/OpenSans-Light.ttf")
+}
+
+@font-face{
+	font-family:montserrat-regular;
+	src : url("../fonts/Montserrat-Regular.ttf");
+}
+
+@font-face{
+	font-family:montserrat-extra-bold;
+	src : url("../fonts/Montserrat-ExtraBold.ttf");
+}
+
+@font-face{
+	font-family:source-code-pro-bold;
+	src : url("../fonts/SourceCodePro-Bold.ttf");
+}
+
+@font-face{
+	font-family:monaco;
+	src : url("../fonts/Monaco.ttf");
+}
