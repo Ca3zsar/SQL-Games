@@ -1,0 +1,257 @@
+@import "font-importer.css";
+
+header {
+  /* height:4em; */
+  background: #262626;
+  width: 100%;
+  z-index: 10;
+  position: fixed;
+  user-select: none; /* Standard */
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+
+  margin-right: 4vw;
+
+  float: right;
+  width: 60%;
+  line-height: 4em;
+}
+
+nav>a{
+	position: relative;
+}
+
+nav>a:before,
+nav>a:after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #706c6c;
+}
+nav>a:before {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s;
+}
+nav>a:after {
+  opacity: 0;
+  transform: translateY(4px);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 0.2s;
+}
+nav>a:hover:before,
+nav>a:hover:after,
+nav>a:focus:before,
+nav>a:focus:after {
+  opacity: 1;
+  transform: translateY(0);
+}
+nav>a:hover:before,
+nav>a:focus:before {
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 0.2s;
+}
+nav>a:hover:after,
+nav>a:focus:after {
+  transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 0s 0.2s;
+}
+
+.coins{
+  cursor:default;
+}
+
+.dropdown {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  border: none;
+  outline: none;
+  margin: 0;
+}
+
+.dropdown-content {
+  right: 0;
+  display: none;
+  position: absolute;
+  background-color: #262626;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  width: 100%;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  margin-left: 0px;
+}
+
+.dropdown-content a:hover {
+  background: rgb(21, 21, 21);
+  background: linear-gradient(
+    90deg,
+    rgba(21, 21, 21, 0.9640231092436975) 0%,
+    rgba(32, 32, 32, 0.9023984593837535) 50%,
+    rgba(38, 38, 38, 0.7567401960784313) 100%
+  );
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.logo {
+  display: flex;
+  align-items: flex-start;
+
+  padding-left: 15px;
+  float: left;
+  line-height: 4em;
+}
+
+nav a,
+.left-side a,
+nav p {
+  text-decoration: none;
+  letter-spacing: 4px;
+  font-size: 1em;
+  font-family: bebas;
+  margin: 0 10px;
+  color: #ffffff;
+}
+
+.logo a {
+  text-decoration: none;
+  font-size: 1.5em;
+  font-family: bebas;
+  color: #ffffff;
+  letter-spacing: 5px;
+}
+
+.toggle-btn {
+  top: 1.3em;
+  width: 35px;
+
+  position: absolute;
+  right: 8vw;
+
+  display: none;
+}
+
+.toggle-btn span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  float: left;
+  margin-bottom: 8px;
+}
+
+.coins-collapsed {
+  display: none;
+}
+
+.coin-img{
+	position: relative;
+	width:1em;
+	top:4px;
+}
+
+
+@media (max-width: 800px) {
+  .toggle-btn {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  nav {
+    display: none;
+    width: 100%;
+    border-top: 1px solid #ffffff;
+  }
+  nav a {
+    /* margin-top: 1px solid #ffffff; */
+    width: 100vw;
+  }
+  .right-nav.show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #262626;
+    margin-right:0;
+    width:100vw;  
+  }
+  .coins-collapsed {
+    display: block;
+  }
+  .coins {
+    display: none;
+  }
+
+  .dropbtn{
+    display:none;
+  }
+
+  .dropdown-content{
+    /* max-width: max-content; */
+    display:block;
+    width: 100vw;
+  }
+
+  .dropdown-content>a{
+    position: relative;
+  }
+
+  .dropdown-content>a:hover{
+    background: #262626;
+  }
+  
+  .dropdown-content>a:before,
+  .dropdown-content>a:after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #706c6c;
+  }
+  .dropdown-content>a:before {
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: transform 0s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0s;
+  }
+  .dropdown-content>a:after {
+    opacity: 0;
+    transform: translateY(4px);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+      opacity 0.2s;
+  }
+  .dropdown-content>a:hover:before,
+  .dropdown-content>a:hover:after,
+  .dropdown-content>a:focus:before,
+  .dropdown-content>a:focus:after {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .dropdown-content>a:hover:before,
+  .dropdown-content>a:focus:before {
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+      opacity 0.2s;
+  }
+  .dropdown-content>a:hover:after,
+  .dropdown-content>a:focus:after {
+    transition: transform 0s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+      opacity 0s 0.2s;
+  }
+}

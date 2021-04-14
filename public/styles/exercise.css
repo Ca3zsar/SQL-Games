@@ -1,0 +1,154 @@
+@import "font-importer.css";
+
+body{
+	text-align: center;
+	display: flex;
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+.editor-wrapper{
+    margin-bottom:100px;
+}
+
+.wrapper{
+	width:100%;
+	margin:0 auto;
+}
+
+.content-area{
+    flex:1 0 auto;
+	width:100%;
+	position: relative;
+	background:#F3F7F7;
+	height: auto;
+	display:inline-flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.exercise-requirement{
+    width:940px;
+    height:fit-content;
+    
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
+    margin-top:50px;
+    	
+    display:flex;
+ }
+
+.requirements
+{
+    width:90%;
+    padding: 20px;
+    padding-top: 10px;
+}
+
+.exercise-status{
+    width:10%;
+    padding:0;
+}
+
+.exercise-status.solved{
+    background-color: #0F9347;
+}
+
+.exercise-status.blocked{
+    background-color: #BE2026;
+}
+
+.exercise-status.tried{
+    background-color: #FCC50E;
+}
+
+.exercise-statistics{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0;
+}
+
+.exercise-statistics>p{
+    padding-left:10px;
+    margin:0;
+    font-family: open-sans-light;
+    font-size: 0.75em;   
+}
+
+.exercise-statistics>p:first-child{
+    padding-right:10px;
+    border-right: 1px solid gray;
+}
+
+.exercise-author{
+	font-family: open-sans-bold;
+    font-weight: lighter;
+} 
+
+.exercise-title{
+    margin-top: 5px;
+	margin-left: 5px;
+	font-family: montserrat-regular;
+    font-weight: bolder;
+    
+	font-size: 1.25em;
+    text-align: left;
+}
+
+.requirement-text{
+    font-size: 1em;
+    font-family: open-sans-light;
+	text-align:left;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.meta-info{
+    width:100%;
+    border-bottom: 2px solid #d3d6d8;
+    
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.difficulty-wrapper{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.difficulty-bar{
+    display:flex;
+    align-items: center;
+    margin-left:10px;
+    width:50px;
+}
+
+.difficulty{
+    width : 25px;
+    height: 10px;
+    list-style: none;
+    padding: 5px;
+    float: left;
+    
+}
+
+.difficulty-title{
+    font-family: open-sans-light;
+    font-size:16px;
+}
+
+@media (max-width:430px)
+{
+    .content-area{
+        height:100vh;
+    }
+
+    .exercise-requirement{
+        height:min-content;
+    }
+    
+}

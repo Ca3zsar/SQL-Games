@@ -1,0 +1,202 @@
+@import "font-importer.css";
+.html {
+	width: 100vw;
+	overflow: hidden;
+}
+
+body {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+.wrapper {
+	width: 100vw;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.content-area {
+	position: relative;
+	margin-top: 0;
+	background: #F3F7F7;
+	height: 1300px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	overflow: hidden;
+}
+
+.settings-nav {
+	float: left;
+	padding: 10px;
+	line-height: 30px;
+	font-family: open-sans-light;
+	border-right: 1px solid gray;
+	width: 200px;
+	position: fixed;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.settings-nav a {
+	width: 100%;
+	user-select: none;
+	color: black;
+	font-family: open-sans-light;
+	font-size: 1em;
+	text-decoration: none;
+}
+
+.settings-nav a:hover {
+	background: #193167;
+	background: linear-gradient( 90deg, rgba(33, 63, 133, 0.864) 0%, rgba(51, 101, 219, 0.902) 50%, rgba(53, 112, 248, 0.757) 100%);
+}
+
+.submit-changes {
+	margin-top: 10px;
+	height: 35px;
+	color: #fff;
+	font-size: 15px;
+	font-family: open-sans-light;
+	font-weight: 400;
+	cursor: pointer;
+	width: 60%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #1ba94c;
+	border: none;
+	/* width:150px; */
+}
+
+.settings-area {
+	width: 100%;
+	margin: 80px;
+	margin-top: 50px;
+	display: flex;
+}
+
+.account-settings {
+	margin-top: 0;
+	user-select: none;
+}
+
+.settings {
+	position: absolute;
+	margin-left: 250px;
+	text-align: left;
+}
+
+.settings h1:first-child {
+	margin-top: 0;
+}
+
+.section-header {
+	font-family: open-sans-bold;
+	font-weight: lighter;
+	font-size: 1.7em;
+}
+
+.settings-label {
+	font-family: open-sans-light;
+}
+
+.settings {
+	width: calc(100% - 200px);
+}
+
+.personal-info, .pass-info, .contact-info, .about-info {
+	width: 50%;
+}
+
+.information {
+	width: 100%;
+}
+
+.name-info, .email-info, .password-info, .current-info, .contact-info-phone, .contact-info-address, .about-info-birthday, .about-info-description {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.name-info label, .email-info label, .password-info label, .current-info label, .contact-info-address label, .contact-info-phone label, .about-info-birthday label, .about-info-description label {
+	margin-bottom: 3px;
+}
+
+.name-info input, .email-info input, .password-info input, .current-info input, .contact-info-phone input, .contact-info-address input, .about-info-birthday input, .about-info-description textarea {
+	font-family: open-sans-light;
+	font-weight: 600;
+	line-height: 1.5em;
+	font-size: 1em;
+	padding: 5px;
+	padding-left: 10px;
+	color: #39424e;
+}
+
+.first-name-div, .last-name-div, .email-div, .password-div, .confirm-password-div, .current-password-div, .phone-div, .address-div, .birthday-div, .description-div {
+	display: flex;
+	flex-direction: column;
+	width: 45%;
+}
+
+.about-info-description textarea {
+	width: calc(100% + 200px);
+	height: 150px;
+	resize: none;
+}
+
+@media (max-width:1100px) {
+	.personal-info, .pass-info, .contact-info, .about-info {
+		width: 70%;
+	}
+}
+
+@media(max-width:810px) {
+	.settings-nav{
+		position: relative;
+		border: 0;
+		margin-bottom:20px;	
+	}
+
+	.content-area{
+		display:flex;
+		flex-wrap: wrap;
+	}
+	.personal-info, .pass-info, .contact-info, .about-info {
+		width: 70%;
+	}
+
+	.settings-area {
+		margin: 30px;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.settings {
+		margin: 10px;
+		width: 100%;
+		position: relative;
+		overflow: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.submit-changes {
+		margin: 3px;
+	}
+}
+
+@media(max-width:650px) {
+	.settings-nav {
+		width: 70%;
+	}
+	.settings-area {
+		margin-left: 5px;
+	}
+}

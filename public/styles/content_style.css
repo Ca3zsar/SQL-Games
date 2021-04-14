@@ -1,0 +1,187 @@
+@import "font-importer.css";
+
+
+body{
+	text-align: center;
+	display: flex;
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+.wrapper{
+	width:100%;
+	margin:0 auto;
+}
+
+.content-wrapper{
+	width:100%;
+	margin:0 auto;
+	margin-bottom: 30px;
+}
+
+.banner-area{
+	user-select: none; /* Standard */
+	width:100%;
+	height: 400px;
+	position:fixed;
+	background: linear-gradient(to right, #193167,  #13274F,  #0a1429); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	-webkit-background-size:cover;
+	background-size: cover;
+	background-position: center center;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.banner-title{
+	display:inline-block;
+}
+
+.banner-area h2{
+	float:left;
+	font-size:3em;
+	font-family: twoD;
+
+	text-transform: uppercase;
+	color: #ffffff;
+}
+
+#sql-image{
+	width:6em;
+}
+
+.content-area{
+	width:100%;
+	position: relative;
+	background:#F3F7F7;
+	height:fit-content;
+	display:inline-flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.content-area p{
+	padding: 2% 0;
+	line-height: 1.5em;
+}
+
+.text-space p{
+	background-color: #adadad;
+	font-family: bignoodle;
+	letter-spacing: 4px;
+	padding-top: 1em;
+	font-size: 2em;
+}
+
+.text-space {
+	background-color: #adadad;
+	font-family: roboto;
+	letter-spacing: 4px;
+	padding-top: 1em;
+	font-size: 2em;
+}
+
+.image img{
+	width:300px;
+	border-radius: 100%;
+	box-shadow:  0 0 4px #ffffff, 0 0 0 6px #e6e6e6;
+}
+
+.present-site{
+	width:100%;
+	display:flex;
+	flex-wrap: wrap;
+	justify-content:center;
+	margin-top: 50px;
+}
+
+.present-site .image, .present-site article{
+	width:35%;
+}
+
+.present-site article p{
+	font-family: open-sans-light;
+	color: #504e4e;
+}
+
+.present-site article h3{
+	font-size: 1.5em;
+	font-family: open-sans-bold;
+	color: #504e4e;
+}
+
+.editor-title{
+	margin-top:45px;
+	font-family: open-sans-bold;
+}
+
+@media(max-width:930px)
+{
+	.image img{
+		width:250px;
+	}
+}
+
+@media(max-width:810px)
+{
+	.banner-area h2{
+		font-size:2em;
+	}
+
+	#sql-span{
+		font-size: 1.6em;
+	}
+
+	.banner-area{
+		height:400px;
+	}
+
+	#sql-image{
+		width:3.3em;
+	}
+
+	.image img{
+		width:200px;
+	}
+	
+	.present-site article h3{
+		font-size: 1.2em;	
+	}
+
+	.present-site article p{
+		font-size:0.9em;
+	}
+}
+
+@media(max-width:660px)
+{
+	.present-site .image{
+		width:45%;
+	}
+	
+	.present-site article{
+		width:45%;
+	}
+
+	.image img{
+		width:175px;
+	}
+}
+
+@media(max-width:440px)
+{
+	.image{
+		width: 100%;
+	}
+
+	.present-site article{
+		width: 100%;
+	}
+
+	#second-image{
+		order:-1;
+	}
+}

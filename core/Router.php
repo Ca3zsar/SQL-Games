@@ -34,10 +34,10 @@ class Router
 
         if ($callback === false) {
             $this->response->setStatusCode(404);
-            return $this->renderView("_404");
+            return $this->renderView("_404","");
         }
         if (is_string($callback)) {
-            return $this->renderView($callback);
+            return $this->renderView($callback,"");
         }
         if (is_array($callback)) {
             Application::$app->controller = new $callback[0]();
@@ -47,16 +47,19 @@ class Router
         return call_user_func($callback,$this->request);
     }
 
-    public function renderView($view, $params = [])
+    public function renderView($view, $title,$styles,$params = [])
     {
         $layoutContent = $this->layoutContent();
         $viewContent = $this->renderOnlyView($view, $params);
+        $layoutContent = str_replace("{{title}}",$title,$layoutContent);
+        $layoutContent = str_replace('{{styles}}',$styles,$layoutContent);
         return str_replace('{{content}}', $viewContent, $layoutContent);
     }
 
-    public function renderContent($viewContent)
+    public function renderContent($viewContent,$styles)
     {
         $layoutContent = $this->layoutContent();
+        $layoutContent = str_replace('{{styles}}',$styles,$layoutContent);
         return str_replace('{{content}}', $viewContent, $layoutContent);
     }
 
@@ -68,7 +71,7 @@ class Router
         return ob_get_clean();
     }
 
-    protected function renderOnlyView($view, $params)
+    protected function renderOnlyView($view,$params)
     {
         foreach ($params as $key => $value) {
             $$key = $value;
