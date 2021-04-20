@@ -34,10 +34,10 @@ class Router
 
         if ($callback === false) {
             $this->response->setStatusCode(404);
-            return $this->renderView("_404","");
+            return $this->renderView("_404","","");
         }
         if (is_string($callback)) {
-            return $this->renderView($callback,"");
+            return $this->renderView($callback,"","");
         }
         if (is_array($callback)) {
             Application::$app->controller = new $callback[0]();

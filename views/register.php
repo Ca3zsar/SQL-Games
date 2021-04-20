@@ -2,19 +2,19 @@
     <div class="form-container sign-up-container">
         <form class="complete-form" action="#">
             <h1 class="h1-title">Create Account</h1>
-            <input class="user-input" type="text" placeholder="Name" />
-            <input class="user-input" type="email" placeholder="Email" />
-            <input class="user-input" type="password" placeholder="Password" />
+            <input name="name" class="user-input" type="text" placeholder="Name" />
+            <input name="email" class="user-input" type="email" placeholder="Email" />
+            <input name="password" class="user-input" type="password" placeholder="Password" />
             <button class="action-button">Sign Up</button>
         </form>
     </div>
     <div class="form-container sign-in-container">
         <form class="complete-form" action="#">
             <h1 class="h1-title">Sign in</h1>
-            <input class="user-input" type="email" placeholder="Email" />
-            <input class="user-input" type="password" placeholder="Password" />
+            <input name="email" class="user-input" type="email" placeholder="Email" />
+            <input name="password" class="user-input" type="password" placeholder="Password" />
             <a class="forgot-password" href="#">Forgot your password?</a>
-            <button class="action-button">Sign In</button>
+            <button type="submit" class="action-button">Sign In</button>
         </form>
     </div>
     <div class="overlay-container">
@@ -31,7 +31,7 @@
                 <p class="general-info">
                     Enter your details to start conquering SQl-craft!
                 </p>
-                <button class="action-button ghost" id="signUp">Sign Up</button>
+                <button type="submit" class="action-button ghost" id="signUp">Sign Up</button>
             </div>
         </div>
     </div>
