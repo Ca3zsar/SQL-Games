@@ -21,9 +21,6 @@ class SiteController extends Controller
 
     public function home()
     {
-        $params = [
-            'name' => "SQL-Games"
-        ];
-        return $this->render('home',$params);
+        return $this->render('home',"SQL-Games");
     }
 }

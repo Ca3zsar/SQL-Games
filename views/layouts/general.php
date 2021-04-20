@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>SQL-Games</title>
+    <title>{{title}}</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
@@ -16,12 +17,12 @@
     />
     <meta name="application-name" content="SQL-Games"/>
 
-    <link rel="stylesheet" href="styles/content_style.css"/>
     <link rel="stylesheet" href="styles/navbar.css"/>
     <link rel="stylesheet" href="styles/footer.css"/>
+    {{styles}}
     <script src="scripts/navFunctions.js"></script>
 
-    <link rel="shortcut icon" type="image/png" href="resources/favicon.ico"/>
+    <link rel="shortcut icon" type="image/png" href="resources/favicon.png"/>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -32,7 +33,8 @@
         </div>
     </div>
     <nav class="right-nav">
-        <a class="coins">10<img
+        <a class="coins"
+        >10<img
                     src="resources/images/coin.png"
                     class="coin-img"
                     alt="eSQLids"
@@ -70,55 +72,9 @@
         <span></span>
     </div>
 </header>
-<div class="banner-area" itemscope itemtype="https://schema.org/WPHeader">
-    <div class="banner-title"></div>
-    <img
-            id="sql-image"
-            alt=""
-            src="resources/images/animation.gif"
-            itemprop="image"
-    />
-    <h2 itemprop="name">SQL-Games</h2>
-</div>
 <div class="content-area" id="content-id">
-    <div class="content-wrapper">
-        <div class="present-site">
-            <div class="image">
-                <img
-                        itemprop="image"
-                        src="resources/images/sql-presentation.png"
-                        alt="sql-photo"
-                />
-            </div>
-            <article>
-                <h3 itemprop="description">Improve your SQL skills</h3>
-                <p itemprop="description">
-                    Try our database-related exercises and prove your knowledge.
-                    There are three main types of exercises depending on your level:
-                    <strong>Beginner</strong>, <strong>Intermediate</strong> and
-                    <strong>Skilled</strong>
-                </p>
-            </article>
-        </div>
+    {{content}}
 
-        <div class="present-site">
-            <article>
-                <h3 itemprop="description">
-                    Earn coins, get achievements and climb the top!
-                </h3>
-                <p itemprop="description">
-                    For each exercise that you solve you will receive a specific number
-                    of <strong>eSQLids</strong> based on its difficulty. Be among
-                    the first ones to solve an exercise and you will receive a bonus.
-                    Solve as many exercises as you can and be among the
-                    <strong>best</strong>!
-                </p>
-            </article>
-            <div class="image" id="second-image">
-                <img src="resources/images/achievement.png" alt="achievement" />
-            </div>
-        </div>
-    </div>
     <footer class="footer-bar">
         <a href="#">Contact us</a>
         <a href="/scholarlyhtml">Scholarly HTML</a>
@@ -133,6 +89,6 @@
         </h4>
     </footer>
 </div>
-<script src="scripts/resize.js"></script>
+<script src="scripts/signin_register.js"></script>
 </body>
 </html>

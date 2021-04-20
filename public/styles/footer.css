@@ -1,0 +1,26 @@
+.footer-bar{
+	align-self: flex-end;
+	padding-bottom: 1%;
+	text-align: center;
+	padding-top: 1%;
+	background-color: #262626;
+	width: 100%;
+}
+
+.footer-bar h4,a{
+	color:#ffffff;
+	font-size: 1.2em;
+	font-family: bebas;
+}
+
+.footer-bar a{
+	text-decoration: none;
+	padding: 0px 20px;
+}
+
+@media(max-width:810px)
+{
+	.footer-bar h4,a{
+		font-size: 0.9em;
+	}
+}
