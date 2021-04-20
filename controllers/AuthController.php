@@ -12,15 +12,13 @@ class AuthController extends Controller
 {
     public function login()
     {
-        $this->setLayout('general');
-        $styles = "<link rel=\"stylesheet\" href=\"styles/signin_register.css\"/>";
-        return $this->render('login',"Login",$styles);
+        $this->setLayout('auth');
+        return $this->render('login');
     }
 
     public function register(Request $request)
     {
         $registerModel = new RegisterModel();
-        $styles = "<link rel=\"stylesheet\" href=\"styles/signin_register.css\"/>";
         if($request->isPost())
         {
 
@@ -28,12 +26,12 @@ class AuthController extends Controller
 
             if($registerModel->validate() && $registerModel->register())
             {
-                return 'Success';
+                return 'Succes';
             }
-            $this->setLayout('general');
-            return $this->render('register',"Register",$styles,['model' =>$registerModel]);
+
+            return $this->render('register',['model' =>$registerModel]);
         }
-        $this->setLayout('general');
-        return $this->render('register',"Register",$styles,['model' =>$registerModel]);
+        $this->setLayout('auth');
+        return $this->render('register',['model' =>$registerModel]);
     }
 }
