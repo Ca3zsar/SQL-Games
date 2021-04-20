@@ -1,15 +1,16 @@
 <div class="container right-panel-active" id="container">
     <div class="form-container sign-up-container">
-        <form class="complete-form" action="#">
+        <form class="complete-form" action="" method="post">
             <h1 class="h1-title">Create Account</h1>
             <input name="name" class="user-input" type="text" placeholder="Name" />
             <input name="email" class="user-input" type="email" placeholder="Email" />
             <input name="password" class="user-input" type="password" placeholder="Password" />
-            <button class="action-button">Sign Up</button>
+            <input name="confirmPassword" class="user-input" type="password" placeholder="Confirm Password " />
+            <button type="submit" class="action-button">Sign Up</button>
         </form>
     </div>
-    <div class="form-container sign-in-container">
-        <form class="complete-form" action="#">
+    <div class="form-container sign-in-container" >
+        <form class="complete-form" action="" method="post">
             <h1 class="h1-title">Sign in</h1>
             <input name="email" class="user-input" type="email" placeholder="Email" />
             <input name="password" class="user-input" type="password" placeholder="Password" />
