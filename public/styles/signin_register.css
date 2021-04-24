@@ -90,6 +90,29 @@ body{
 	width: 100%;
 }
 
+.user-input.invalid{
+	border: #b00000 1px solid;
+}
+
+.invalid-text{
+	width:100%;
+	text-align: left;
+	margin-bottom: 3px;
+	margin-top:0;
+}
+
+.invalid-text:last-of-type
+{
+	margin-bottom: 10px;
+}
+.invalid-text p{
+	margin:0;
+	margin-left:8px;
+	font-size:11px;
+	color:#ff0000;
+	font-family: open-sans-light;
+}
+
 .container {
 	margin-top: 100px;
 	margin-bottom: 100px;
