@@ -7,8 +7,20 @@ use app\controllers\ShopController;
 use app\core\Application;
 use app\controllers\SiteController;
 use app\controllers\AuthController;
+use app\core\DotEnv;
 
-$app = new Application(dirname(__DIR__));
+(new DotEnv(dirname(__DIR__) . '/.env'))->load();
+
+$config = [
+    'db' => [
+        'dsn' => getenv('DB_DSN'),
+        'user' => getenv('DB_USER'),
+        'password' => getenv('DB_PASSWORD')
+    ]
+];
+
+
+$app = new Application(dirname(__DIR__),$config);
 
 $app->router->get('/',[SiteController::class, 'home']);
 $app->router->get('/home',[SiteController::class, 'home']);

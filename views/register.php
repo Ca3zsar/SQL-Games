@@ -3,7 +3,6 @@
 
     <div class="form-container sign-up-container">
         <?php use app\core\form\Form;
-
         $form = Form::begin('', "post") ?>
         <h1 class="h1-title">Create Account</h1>
         <?php echo $form->field($model, 'name') ?>

@@ -4,9 +4,10 @@
 namespace app\models;
 
 
+use app\core\DBModel;
 use app\core\Model;
 
-class RegisterModel extends Model
+class User extends DBModel
 {
     public string $name= '';
     public string $email= '';
@@ -23,6 +24,10 @@ class RegisterModel extends Model
         ];
     }
 
+    public function tableName(): string
+    {
+        return 'users';
+    }
 
     public function register()
     {
