@@ -3,7 +3,6 @@
 
 namespace app\core;
 
-
 use PDO;
 
 class Database
@@ -27,14 +26,18 @@ class Database
 
         $newMigrations = [];
         $files = scandir(Application::$ROOT_DIR . '/migrations');
+
         $toApplyMigrations = array_diff($files, $appliedMigrations);
         foreach ($toApplyMigrations as $migration) {
             if ($migration === '.' || $migration === '..') {
                 continue;
             }
 
+            echo $migration.PHP_EOL;
+
             require_once Application::$ROOT_DIR . '/migrations/' . $migration;
             $className = pathinfo($migration, PATHINFO_FILENAME);
+            echo $className.PHP_EOL;
             $instance = new $className();
 
             $this->log("Applying migration $migration");

@@ -9,7 +9,7 @@ use app\core\Model;
 
 class User extends DBModel
 {
-    public string $name= '';
+    public string $username= '';
     public string $email= '';
     public string $password= '';
     public string $confirmPassword= '';
@@ -17,7 +17,7 @@ class User extends DBModel
     public function rules(): array
     {
         return [
-            'name' => [self::RULE_REQUIRED],
+            'username' => [self::RULE_REQUIRED],
             'email' => [self::RULE_REQUIRED,self::RULE_EMAIL],
             'password' => [self::RULE_REQUIRED,[self::RULE_MIN,'min'=>8]],
             'confirmPassword' => [self::RULE_REQUIRED,[self::RULE_MATCH,'match'=>'password']]
@@ -29,8 +29,14 @@ class User extends DBModel
         return 'users';
     }
 
-    public function register()
+    public function save()
     {
-        echo "Creating new user";
+        $this->password = password_hash($this->password, PASSWORD_DEFAULT);
+        return parent::save();
+    }
+
+    public function attributes(): array
+    {
+        return ['username','email','password'];
     }
 }

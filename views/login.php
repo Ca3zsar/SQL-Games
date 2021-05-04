@@ -1,21 +1,22 @@
 <div class="container" id="container">
+
+
     <div class="form-container sign-up-container">
         <?php use app\core\form\Form;
-
         $form = Form::begin('', "post") ?>
         <h1 class="h1-title">Create Account</h1>
-        <?php echo $form->field($model, 'name') ?>
+        <?php echo $form->field($model, 'username') ?>
         <?php echo $form->field($model, 'email') ?>
-        <?php echo $form->field($model, 'password') ?>
-        <?php echo $form->field($model, 'confirmPassword') ?>
+        <?php echo $form->field($model, 'password')->passwordField() ?>
+        <?php echo $form->field($model, 'confirmPassword')->passwordField() ?>
         <button type="submit" class="action-button">Sign Up</button>
         <?php echo Form::end() ?>p
     </div>
     <div class="form-container sign-in-container">
         <?php $form = Form::begin('', "post") ?>
         <h1 class="h1-title">Sign in</h1>
-        <?php echo $form->field($model, 'name') ?>
-        <?php echo $form->field($model, 'password') ?>
+        <?php echo $form->field($model, 'username') ?>
+        <?php echo $form->field($model, 'password')->passwordField() ?>
         <a class="forgot-password" href="#">Forgot your password?</a>
         <button type="submit" class="action-button">Sign In</button>
         <?php echo Form::end() ?>

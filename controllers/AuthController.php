@@ -19,21 +19,21 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-        $registerModel = new User();
+        $user = new User();
         $styles = "<link rel=\"stylesheet\" href=\"styles/signin_register.css\"/>";
         if($request->isPost())
         {
 
-            $registerModel->loadData($request->getBody());
+            $user->loadData($request->getBody());
 
-            if($registerModel->validate() && $registerModel->register())
+            if($user->validate() && $user->save())
             {
                 return 'Success';
             }
             $this->setLayout('general');
-            return $this->render('register',"Register",$styles,['model' =>$registerModel]);
+            return $this->render('register',"Register",$styles,['model' =>$user]);
         }
         $this->setLayout('general');
-        return $this->render('register',"Register",$styles,['model' =>$registerModel]);
+        return $this->render('register',"Register",$styles,['model' =>$user]);
     }
 }
