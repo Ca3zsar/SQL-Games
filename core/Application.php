@@ -10,6 +10,7 @@ class Application
     public Response $response;
     public Database $db;
     public static Application $app;
+    public Session $session;
     public Controller $controller;
 
     public function __construct($rootPath,array $config)
@@ -19,6 +20,7 @@ class Application
         $this->request = new Request();
         $this->response = new Response();
         $this->router = new Router($this->request,$this->response);
+        $this->session = new Session();
 
         $this->db = new Database($config['db']);
     }

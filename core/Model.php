@@ -10,6 +10,7 @@ abstract class Model
     public const RULE_EMAIL = 'email';
     public const RULE_MIN = 'min';
     public const RULE_MATCH = 'match';
+    public const RULE_UNIQUE = 'unique';
 
     public array $errors = [];
 
@@ -54,6 +55,18 @@ abstract class Model
                 {
                     $this->addError($attribute,self::RULE_MATCH);
                 }
+                if($ruleName === self::RULE_UNIQUE){
+                    $className = $rule['class'];
+                    $uniqueAttr = $rule['attribute'] ?? $attribute;
+                    $tableName = $className::tableName();
+                    $statement = Application::$app->db->prepare("SELECT * FROM $tableName WHERE $uniqueAttr = :attr");
+                    $statement->bindValue(':attr', $value);
+                    $statement->execute();
+                    $record = $statement->fetch();
+                    if($record){
+                        $this->addError($attribute, self::RULE_UNIQUE, ['field' => $attribute]);
+                    }
+                }
             }
         }
 
@@ -76,7 +89,8 @@ abstract class Model
             self::RULE_REQUIRED => 'This field is required',
             self::RULE_EMAIL => 'This field must be a valid email address',
             self::RULE_MIN => 'Minimum length of the password must be {min}',
-            self::RULE_MATCH => 'The passwords are not the same'
+            self::RULE_MATCH => 'The passwords are not the same',
+            self::RULE_UNIQUE => 'User with this {field} already exists'
         ];
     }
 
