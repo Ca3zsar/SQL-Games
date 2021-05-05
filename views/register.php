@@ -1,8 +1,18 @@
+<?php if (\app\core\Application::$app->session->getFlash('success')): ?>
+    <div class="container-flash">
+        <div class="alert alert-success">
+            <?php echo \app\core\Application::$app->session->getFlash('success') ?>
+        </div>
+    </div>
+<?php endif; ?>
+
+
 <div class="container right-panel-active" id="container">
 
 
     <div class="form-container sign-up-container">
         <?php use app\core\form\Form;
+
         $form = Form::begin('', "post") ?>
         <h1 class="h1-title">Create Account</h1>
         <?php echo $form->field($model, 'username') ?>

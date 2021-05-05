@@ -30,12 +30,21 @@ class Field
 
     public function __toString(): string
     {
-        return sprintf('<input type="%s" placeholder="%s" name="%s" value="%s" class="user-input%s">
+        if ($this->type !== self::TYPE_PASSWORD){
+            return sprintf('<input type="%s" placeholder="%s" name="%s" value="%s" class="user-input%s">
                     <div class="invalid-text">
                 <p>%s</p>
             </div>',
-            $this->type,ucfirst($this->attribute), $this->attribute, $this->model->{$this->attribute}, $this->model->hasError($this->attribute) ? ' invalid' : '',
-            $this->model->getFirstError($this->attribute));
+                $this->type, ucfirst($this->attribute), $this->attribute, $this->model->{$this->attribute}, $this->model->hasError($this->attribute) ? ' invalid' : '',
+                $this->model->getFirstError($this->attribute));}
+        else{
+            return sprintf('<input type="%s" placeholder="%s" name="%s" value="" class="user-input%s">
+                    <div class="invalid-text">
+                <p>%s</p>
+            </div>',
+                $this->type, ucfirst($this->attribute), $this->attribute, $this->model->hasError($this->attribute) ? ' invalid' : '',
+                $this->model->getFirstError($this->attribute));
+        }
     }
 
     public function passwordField(): Field

@@ -23,6 +23,7 @@ abstract class DBModel extends Model
         }
 
         $statement->execute();
+
         return true;
     }
 

@@ -246,6 +246,15 @@ body{
 	transform: translateY(100%);
 }
 
+.container-flash{
+	height: fit-content;
+	position:absolute;
+	padding-top: 40px;
+	font-family:montserrat-regular,sans-serif;
+	text-decoration: underline;
+	font-size: 1.8em;
+}
+
 
 @media(max-width:900px)
 {

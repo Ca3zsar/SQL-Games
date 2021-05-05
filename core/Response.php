@@ -13,6 +13,6 @@ class Response
 
     public function redirect(string $url)
     {
-        header('Location: ' . $url);
+        header("refresh:3;url = " . $url);
     }
 }
