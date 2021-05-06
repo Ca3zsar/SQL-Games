@@ -1,3 +1,7 @@
+<?php
+/** @var $model \app\models\User */
+?>
+
 <?php if (\app\core\Application::$app->session->getFlash('success')): ?>
     <div class="container-flash">
         <div class="alert alert-success">
@@ -38,14 +42,14 @@
                 <p class="general-info">
                     Please enter your login and password to keep SQL-ing.
                 </p>
-                <button class="action-button ghost" id="signIn">Sign In</button>
+                <a href="/login"><button class="action-button ghost" id="signIn">Sign In</button></a>
             </div>
             <div class="overlay-panel overlay-right">
                 <h1 class="h1-title">Hello, Friend!</h1>
                 <p class="general-info">
                     Enter your details to start conquering SQl-craft!
                 </p>
-                <button type="submit" class="action-button ghost" id="signUp">Sign Up</button>
+               <button type="submit" href="/register" class="action-button ghost" id="signUp">Sign Up</button>
             </div>
         </div>
     </div>

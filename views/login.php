@@ -1,3 +1,7 @@
+<?php
+/** @var $model \app\models\User */
+?>
+
 <div class="container" id="container">
 
 
@@ -35,7 +39,7 @@
                 <p class="general-info">
                     Enter your details to start conquering SQl-craft!
                 </p>
-                <button type="submit" class="action-button ghost" id="signUp">Sign Up</button>
+                <a href="/register"><button type="submit" class="action-button ghost" id="signUp">Sign Up</button></a>
             </div>
         </div>
     </div>

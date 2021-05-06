@@ -8,7 +8,7 @@ class m0001_initial
         $db = Application::$app->db;
         $SQL = "CREATE TABLE users (id INT AUTO_INCREMENT PRIMARY KEY,
                    username VARCHAR(30),
-                   password VARCHAR(40),
+                   password VARCHAR(100),
                    firstName VARCHAR(20),
                    lastName VARCHAR(30),
                    email VARCHAR(70) UNIQUE,

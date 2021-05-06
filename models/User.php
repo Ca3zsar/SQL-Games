@@ -5,7 +5,6 @@ namespace app\models;
 
 
 use app\core\DBModel;
-use app\core\Model;
 
 class User extends DBModel
 {
@@ -38,5 +37,10 @@ class User extends DBModel
     public function attributes(): array
     {
         return ['username','email','password'];
+    }
+
+    public function primaryKey(): string
+    {
+        return 'id';
     }
 }
