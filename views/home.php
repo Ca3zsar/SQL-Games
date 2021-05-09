@@ -1,3 +1,4 @@
+<?php use app\core\Application;?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,37 +33,44 @@
         </div>
     </div>
     <nav class="right-nav">
-        <a class="coins">10<img
-                    src="resources/images/coin.png"
-                    class="coin-img"
-                    alt="eSQLids"
-                    itemscope
-                    itemtype="https://schema.org/ImageObject"
-            /></a>
-        <a class="coins-collapsed"
-        >Coins : 10<img
-                    src="resources/images/coin.png"
-                    class="coin-img"
-                    alt="eSQLids"
-            /></a>
+
+        <?php if (!Application::isGuest()): ?>
+            <a class="coins">10<img
+                        src="resources/images/coin.png"
+                        class="coin-img"
+                        alt="eSQLids"
+                        itemscope
+                        itemtype="https://schema.org/ImageObject"
+                /></a>
+            <a class="coins-collapsed"
+            >Coins : 10<img
+                        src="resources/images/coin.png"
+                        class="coin-img"
+                        alt="eSQLids"
+                /></a>
+        <?php endif; ?>
         <a href="/shop" itemprop="url">Exercises</a>
-        <a href="/login">Login/Register</a>
-        <div class="dropdown">
-            <p class="dropbtn">Account</p>
-            <div
-                    class="dropdown-content"
-                    itemscope
-                    itemtype="https://schema.org/ItemList"
-            >
-                <a href="/profile_settings" itemprop="url"
-                ><span itemprop="name">Profile Settings</span></a
+        <?php if (Application::isGuest()): ?>
+            <a href="/login">Login/Register</a>
+        <?php endif; ?>
+        <?php if (!Application::isGuest()): ?>
+            <div class="dropdown">
+                <p class="dropbtn">Account</p>
+                <div
+                        class="dropdown-content"
+                        itemscope
+                        itemtype="https://schema.org/ItemList"
                 >
-                <a href="#" itemprop="url"
-                ><span itemprop="name">Statistics</span></a
-                >
-                <a href="#" itemprop="url"><span itemprop="name">Log out</span></a>
+                    <a href="/profile_settings" itemprop="url"
+                    ><span itemprop="name">Profile Settings</span></a
+                    >
+                    <a href="#" itemprop="url"
+                    ><span itemprop="name">Statistics</span></a
+                    >
+                    <a href="/logout" itemprop="url"><span itemprop="name">Log out</span></a>
+                </div>
             </div>
-        </div>
+        <?php endif; ?>
     </nav>
     <div class="toggle-btn" onclick="displayOptions()">
         <span></span>
@@ -115,7 +123,7 @@
                 </p>
             </article>
             <div class="image" id="second-image">
-                <img src="resources/images/achievement.png" alt="achievement" />
+                <img src="resources/images/achievement.png" alt="achievement"/>
             </div>
         </div>
     </div>

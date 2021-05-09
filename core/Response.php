@@ -13,6 +13,11 @@ class Response
 
     public function redirect(string $url)
     {
-        header("refresh:3;url = " . $url);
+        header("Location: " . $url);
+    }
+
+    public function redirectInTime(int $seconds, string $url)
+    {
+        header("refresh:$seconds;url = " . $url);
     }
 }

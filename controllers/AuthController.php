@@ -40,12 +40,17 @@ class AuthController extends Controller
             if($user->validate() && $user->save())
             {
                 Application::$app->session->setFlash('success', "You have successfully registered!");
-                Application::$app->response->redirect('/');
+                Application::$app->response->redirectInTime(3, '/');
             }
             $this->setLayout('general');
             return $this->render('register',"Register",$styles,['model' =>$user]);
         }
         $this->setLayout('general');
         return $this->render('register',"Register",$styles,['model' =>$user]);
+    }
+
+    public function logout(Request $request, Response $response){
+        Application::$app->logout();
+        $response->redirect('/');
     }
 }
