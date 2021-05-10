@@ -141,7 +141,6 @@
 pre {
 	white-space: pre-wrap;
 	white-space: -moz-pre-wrap;
-	white-space: -pre-wrap;
 	white-space: -o-pre-wrap;
 	word-wrap: break-word;
 	position: relative;
@@ -154,7 +153,7 @@ pre code {
 	background: #1C2434 !important;
 	color: #61AFEF;
 	font-size: 29px;
-	font-family: roboto;
+	font-family: roboto, sans-serif;
 }
 
 .full-exp{
@@ -184,7 +183,7 @@ pre code {
 	text-align: right;
 	right: 4px;
 	color:#ffffff;
-	font-family: roboto;
+	font-family: roboto, serif;
 	background-color: #1C2434;
 }
 
@@ -206,7 +205,7 @@ pre code {
 
 	color: #ffffff;
 	font-size:15px;
-	font-family: open-sans-bold;
+	font-family: open-sans-bold, serif;
 	font-weight: 700;
 	padding-left: 20px;
 	padding-right: 20px;
@@ -218,7 +217,7 @@ pre code {
 	background-color: #fff;
 	color: #39424e;
 	box-shadow: 0 3px 10px 0 rgba(0,0,0,.1);
-	font-family: open-sans-bold;
+	font-family: open-sans-bold, serif;
 	font-size: 15px;
 	font-weight: 700;
 	padding-left: 20px;

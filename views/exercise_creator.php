@@ -1,13 +1,16 @@
 <div class="container">
     <div class="meta-info">
         <div class="title-subdiv">
-            <label>
-                <label class="meta-label">Exercise Title</label>
+            <label class="meta-label">
+                Exercise Title
                 <textarea class="title-area" spellcheck="false"></textarea>
             </label>
         </div>
         <div class="difficulty-subdiv">
-            <label class="meta-label">Difficulty</label>
+            <label class="meta-label">
+                Difficulty
+
+            </label>
             <div class="choices">
                 <input
                         type="radio" name="difficulty"
@@ -33,16 +36,29 @@
         </div>
     </div>
     <div class="exercise-requirement">
-        <label>
+        <label class="requirement-label">
             Exercise Requirement
             <textarea class="requirement-text" spellcheck="false"></textarea>
         </label>
     </div>
     <div class="price-div">
-
+        <label class="price-label">
+            Exercise Price
+            <input name="slider" type="range" min="1" max="15" value="3" class="slider" id="price_range">
+            <div class="bubble-wrap">
+                <output class="bubble"></output>
+            </div>
+        </label>
     </div>
     <div class="correct-solution">
-
+        <label class="correct-label">
+            Your Solution
+            <textarea class="solution-text"></textarea>
+        </label>
+        <div class="buttons">
+            <button class="reset-button">Reset Content</button>
+            <button class="submit-button">Submit</button>
+        </div>
     </div>
     <div class="correct-output">
 
