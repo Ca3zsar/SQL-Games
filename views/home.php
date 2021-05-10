@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="styles/footer.css"/>
     <script src="scripts/navFunctions.js"></script>
 
-    <link rel="shortcut icon" type="image/png" href="resources/favicon.ico"/>
+    <link rel="shortcut icon" type="image/png" href="resources/favicon.png"/>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">

@@ -21,10 +21,13 @@ function displayDrop(event)
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    var button = document.getElementsByClassName("dropbtn")[0];
-    button.addEventListener("click",function(event){
-        displayDrop(event);
-    },false);
-    
+    var button = document.getElementsByClassName("dropbtn");
+    if(button.length > 0)
+    {
+        button = button[0];
+        button.addEventListener("click",function(event){
+            displayDrop(event);
+        },false);
+    }
  }, false);
 

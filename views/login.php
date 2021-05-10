@@ -44,3 +44,4 @@
         </div>
     </div>
 </div>
+<script src="scripts/signin_register.js"></script>

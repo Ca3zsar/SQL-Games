@@ -1,3 +1,17 @@
+@import "font-importer.css";
+
+body{
+  margin:0;
+  box-sizing: border-box;
+  padding:0;
+  display:flex;
+}
+
+.content-area{
+  width:100%;
+}
+
 h1{
   position: relative;
+  width:100%;
 }

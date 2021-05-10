@@ -1,11 +1,11 @@
 <?php
-/** @var $model \app\models\User */
+/** @var $model User */
 ?>
 
-<?php if (\app\core\Application::$app->session->getFlash('success')): ?>
+<?php if (Application::$app->session->getFlash('success')): ?>
     <div class="container-flash">
         <div class="alert alert-success">
-            <?php echo \app\core\Application::$app->session->getFlash('success') ?>
+            <?php echo Application::$app->session->getFlash('success') ?>
         </div>
     </div>
 <?php endif; ?>
@@ -15,7 +15,9 @@
 
 
     <div class="form-container sign-up-container">
-        <?php use app\core\form\Form;
+        <?php use app\core\Application;
+        use app\core\form\Form;
+        use app\models\User;
 
         $form = Form::begin('', "post") ?>
         <h1 class="h1-title">Create Account</h1>
@@ -54,3 +56,4 @@
         </div>
     </div>
 </div>
+<script src="scripts/signin_register.js"></script>

@@ -98,6 +98,5 @@
         </h4>
     </footer>
 </div>
-<script src="scripts/signin_register.js"></script>
 </body>
 </html>

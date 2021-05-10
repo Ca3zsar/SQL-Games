@@ -4,6 +4,7 @@
 namespace app\core;
 
 
+use app\models\User;
 use PDOStatement;
 
 abstract class DBModel extends Model
@@ -23,8 +24,8 @@ abstract class DBModel extends Model
         }
 
         $statement->execute();
-
-        return true;
+        $user = (new User)->findOne(['username' => $this->username]);
+        return Application::$app->register($user);
     }
 
     public static function prepare($sqlStatement): bool|PDOStatement
