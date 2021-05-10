@@ -6,14 +6,16 @@ class Application
 {
     public string $userClass;
     public static string $ROOT_DIR;
+    public string $layout = 'main';
     public Router $router;
     public Request $request;
     public Response $response;
     public Database $db;
     public static Application $app;
     public Session $session;
-    public Controller $controller;
+    public ?Controller $controller = null;
     public ?DBModel $user;
+    public array $errorTitles = ['404' => 'Not found', '403' => 'Forbidden'];
 
     public function __construct($rootPath, array $config)
     {
@@ -31,15 +33,20 @@ class Application
         if ($primaryValue) {
             $primaryKey = (new $this->userClass)->primaryKey();
             $this->user = (new $this->userClass)->findOne([$primaryKey => $primaryValue]);
-        }
-        else{
+        } else {
             $this->user = null;
         }
     }
 
     public function run()
     {
-        echo $this->router->resolve();
+        try {
+            echo $this->router->resolve();
+        } catch (\Exception $e) {
+            $this->response->setStatusCode($e->getCode());
+            $styles = '<link rel="stylesheet" title="extended" type="text/css" href="styles/error.css"/>';
+            echo $this->router->renderView('_error', $this->errorTitles[$e->getCode()], $styles, ['exception' => $e]);
+        }
     }
 
     public function getController(): Controller
@@ -61,12 +68,14 @@ class Application
         return true;
     }
 
-    public function logout(){
+    public function logout()
+    {
         $this->user = null;
         $this->session->remove('user');
     }
 
-    public static function isGuest(){
+    public static function isGuest()
+    {
         return !self::$app->user;
     }
 }

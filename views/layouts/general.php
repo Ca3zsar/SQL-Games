@@ -70,7 +70,7 @@
                     <a href="#" itemprop="url"
                     ><span itemprop="name">Statistics</span></a
                     >
-                    <a href="#" itemprop="url"><span itemprop="name">Log out</span></a>
+                    <a href="/logout" itemprop="url"><span itemprop="name">Log out</span></a>
                 </div>
             </div>
         <?php endif; ?>
