@@ -3,7 +3,6 @@
 
 namespace app\models;
 
-
 use app\core\DBModel;
 
 class User extends DBModel
@@ -28,10 +27,10 @@ class User extends DBModel
         return 'users';
     }
 
-    public function save()
+    public function saveUser(): bool
     {
         $this->password = password_hash($this->password, PASSWORD_DEFAULT);
-        return parent::save();
+        return parent::saveUser();
     }
 
     public function attributes(): array

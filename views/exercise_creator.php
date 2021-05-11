@@ -1,9 +1,22 @@
+<?php
+/** @var $model Creator */
+
+use app\models\Creator;
+
+?>
+
+<?php
+
+use app\core\form\Form;
+
+$form = Form::begin('', "post") ?>
 <div class="container">
+
     <div class="meta-info">
         <div class="title-subdiv">
             <label class="meta-label">
                 Exercise Title
-                <textarea class="title-area" spellcheck="false"></textarea>
+                <?php echo $form->field($model, 'title', 'title-area')->textArea() ?>
             </label>
         </div>
         <div class="difficulty-subdiv">
@@ -12,13 +25,9 @@
 
             </label>
             <div class="choices">
-                <input
-                        type="radio" name="difficulty"
-                        id="easy" class="input-hidden"/>
+                <input type="radio" name="difficulty" id="easy" class="input-hidden"/>
                 <label for="easy">
-                    <img class="difficulty-img"
-                         src="resources/images/difficulty_easy.png"
-                         alt="Easy"/>
+                    <img class="difficulty-img" src="resources/images/difficulty_easy.png" alt="Easy"/>
                 </label>
                 <input type="radio" name="difficulty"
                        id="medium" class="input-hidden"/>
@@ -38,40 +47,36 @@
     <div class="exercise-requirement">
         <label class="requirement-label">
             Exercise Requirement
-            <textarea class="requirement-text" spellcheck="false"></textarea>
+            <?php echo $form->field($model, 'requirement', 'requirement-text')->textArea() ?>
         </label>
     </div>
     <div class="price-div">
         <label class="price-label">
             Exercise Price
             <input name="slider" type="range" min="1" max="15" value="3" class="slider" id="price_range">
-            <div class="bubble-wrap">
-                <output class="bubble"></output>
-            </div>
+
         </label>
+        <output class="bubble"></output>
     </div>
     <div class="correct-solution">
         <label class="correct-label">
             Your Solution
         </label>
         <div class="editor-holder">
-                <textarea autocomplete="off" spellcheck="false" class="editor"></textarea>
-                <pre><code class="syntax-highlight html"></code></pre>
+            <?php echo $form->field($model, 'correctQuery', 'editor')->textArea() ?>
+<!--            <textarea name="correctQuery" autocomplete="off" spellcheck="false" class="editor"></textarea>-->
+            <pre><code class="syntax-highlight html"></code></pre>
         </div>
         <div class="to-download">
             <h1 class="download-text"><a class="download-link" href="#">Here</a> is the result of your query</h1>
         </div>
         <div class="buttons">
+            <button class="verify-button">Verify Query</button>
             <button class="reset-button">Reset Content</button>
             <button class="submit-button">Submit</button>
         </div>
 
     </div>
-    <div class="correct-output">
-
-    </div>
-    <div class="submit-changes">
-
-    </div>
 </div>
+<?php echo Form::end() ?>
 <script src="scripts/creator.js"></script>

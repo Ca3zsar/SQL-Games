@@ -162,19 +162,16 @@ input[type=radio]:checked + label > img {
     cursor: pointer;
 }
 
-.bubble-wrap {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
 .bubble {
+    width:100%;
+    display:flex;
+    justify-content: center;
     color: black;
     font-family: montserrat-regular,sans-serif;
-    padding: 4px 12px;
     position: relative;
     border-radius: 2px;
     margin-top: 10px;
+    font-size: 18px;
 }
 
 .buttons {
@@ -227,7 +224,7 @@ input[type=radio]:checked + label > img {
     margin-left: 30px;
 }
 
-.reset-button {
+.reset-button, .verify-button {
     background-color: #fff;
     color: #39424e;
     box-shadow: 0 3px 10px 0 rgba(0, 0, 0, .1);
@@ -337,8 +334,12 @@ pre code {
     }
 }
 
+.complete-form{
+    width:100%;
+}
+
 @media (max-width: 800px) {
-    .submit-button, .reset-button {
+    .submit-button, .reset-button, .verify-button {
         padding-left: 12px;
         padding-right: 12px;
         margin-left: 25px;
@@ -374,7 +375,7 @@ pre code {
 }
 
 @media (max-width: 400px) {
-    .submit-button, .reset-button {
+    .submit-button, .reset-button, .verify-button {
         padding-left: 8px;
         padding-right: 8px;
         margin-left: 20px;

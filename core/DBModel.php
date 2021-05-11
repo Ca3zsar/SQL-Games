@@ -13,7 +13,7 @@ abstract class DBModel extends Model
 
     abstract public function attributes(): array;
 
-    public function save()
+    public function saveUser(): bool
     {
         $tableName = $this->tableName();
         $attributes = $this->attributes();
@@ -26,6 +26,20 @@ abstract class DBModel extends Model
         $statement->execute();
         $user = (new User)->findOne(['username' => $this->username]);
         return Application::$app->register($user);
+    }
+
+    public function save(): bool
+    {
+        $tableName = $this->tableName();
+        $attributes = $this->attributes();
+        $params = array_map(fn($attribute) => ":$attribute", $attributes);
+        $statement = self::prepare("INSERT INTO $tableName (" . implode(',',$attributes) . ") VALUES (" .implode(',',$params) . ")");
+        foreach ($attributes as $attribute){
+            $statement->bindValue(":$attribute",$this->{$attribute});
+        }
+
+        $statement->execute();
+        return true;
     }
 
     public static function prepare($sqlStatement): bool|PDOStatement

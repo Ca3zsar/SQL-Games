@@ -7,6 +7,7 @@ use app\models\Creator;
 class Application
 {
     public string $userClass;
+    public string $creatorClass;
     public static string $ROOT_DIR;
     public string $layout = 'general';
     public Router $router;
@@ -17,12 +18,13 @@ class Application
     public Session $session;
     public ?Controller $controller = null;
     public ?DBModel $user;
-    public ?Model $creator;
+    public ?DBModel $creator;
     public array $errorTitles = ['404' => 'Not found', '403' => 'Forbidden'];
 
     public function __construct($rootPath, array $config)
     {
         $this->userClass = $config['userClass'];
+        $this->creatorClass = $config['creatorClass'];
         self::$ROOT_DIR = $rootPath;
         self::$app = $this;
         $this->request = new Request();

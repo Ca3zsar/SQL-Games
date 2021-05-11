@@ -12,10 +12,10 @@
 
 
 <div class="container right-panel-active" id="container">
-
-
     <div class="form-container sign-up-container">
-        <?php use app\core\Application;
+        <?php
+
+        use app\core\Application;
         use app\core\form\Form;
         use app\models\User;
 

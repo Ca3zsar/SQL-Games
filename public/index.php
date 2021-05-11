@@ -13,6 +13,7 @@ use app\core\DotEnv;
 (new DotEnv(dirname(__DIR__) . '/.env'))->load();
 
 $config = [
+    'creatorClass' => \app\models\Creator::class,
     'userClass' => \app\models\User::class,
     'db' => [
         'dsn' => getenv('DB_DSN'),

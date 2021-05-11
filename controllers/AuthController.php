@@ -43,7 +43,7 @@ class AuthController extends Controller
 
             $user->loadData($request->getBody());
 
-            if ($user->validate() && $user->save()) {
+            if ($user->validate() && $user->saveUser()) {
                 Application::$app->session->setFlash('success', "You have successfully registered!");
                 Application::$app->response->redirectInTime(3, '/');
             }
