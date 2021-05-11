@@ -19,27 +19,19 @@ class CreatorController extends Controller
 
     public function creator(Request $request, Response $response)
     {
-        $creator = new Creator();
+        $creator = new Creator(Application::$app->session->get('id'));
+        $styles = '<link rel="stylesheet" href="styles/creator.css" />';
 
         if ($request->isPost()) {
             $creator->loadData($request->getBody());
+
+            if($creator->validate() && $creator->addUnverified())
+            {
+                Application::$app->response->redirectInTime(3, '/');
+            }
         }
-
-        $styles = '<link rel="stylesheet" href="styles/creator.css" />';
-
         $this->setLayout('general');
         return $this->render('exercise_creator', "Add Exercise", $styles,['model' => $creator]);
     }
 
-    public function rules(): array
-    {
-        return ['username' => [self::RULE_REQUIRED],
-            'password' => [self::RULE_REQUIRED]
-        ];
-    }
-
-    public function tableName(): string
-    {
-        return 'unverifiedex';
-    }
 }

@@ -25,18 +25,16 @@ $form = Form::begin('', "post") ?>
 
             </label>
             <div class="choices">
-                <input type="radio" name="difficulty" id="easy" class="input-hidden"/>
+                <?php echo $form->field($model, 'difficulty', 'input-hidden', 'id="easy" value="easy" checked')->radioButton() ?>
                 <label for="easy">
                     <img class="difficulty-img" src="resources/images/difficulty_easy.png" alt="Easy"/>
                 </label>
-                <input type="radio" name="difficulty"
-                       id="medium" class="input-hidden"/>
+                <?php echo $form->field($model, 'difficulty', 'input-hidden', 'id="medium" value="medium"')->radioButton() ?>
                 <label for="medium">
                     <img class="difficulty-img" src="resources/images/difficulty_medium.png"
                          alt="Medium"/>
                 </label>
-                <input type="radio" name="difficulty"
-                       id="hard" class="input-hidden"/>
+                <?php echo $form->field($model, 'difficulty', 'input-hidden', 'id="hard" value="hard"')->radioButton() ?>
                 <label for="hard">
                     <img class="difficulty-img" src="resources/images/difficulty_hard.png"
                          alt="Hard"/>
@@ -53,8 +51,7 @@ $form = Form::begin('', "post") ?>
     <div class="price-div">
         <label class="price-label">
             Exercise Price
-            <input name="slider" type="range" min="1" max="15" value="3" class="slider" id="price_range">
-
+            <?php echo $form->field($model, 'price', 'slider', 'id="price_range" min="1" max="15" value="3"')->slider() ?>
         </label>
         <output class="bubble"></output>
     </div>
@@ -64,7 +61,6 @@ $form = Form::begin('', "post") ?>
         </label>
         <div class="editor-holder">
             <?php echo $form->field($model, 'correctQuery', 'editor')->textArea() ?>
-<!--            <textarea name="correctQuery" autocomplete="off" spellcheck="false" class="editor"></textarea>-->
             <pre><code class="syntax-highlight html"></code></pre>
         </div>
         <div class="to-download">
@@ -73,7 +69,7 @@ $form = Form::begin('', "post") ?>
         <div class="buttons">
             <button class="verify-button">Verify Query</button>
             <button class="reset-button">Reset Content</button>
-            <button class="submit-button">Submit</button>
+            <button type="submit" class="submit-button">Submit</button>
         </div>
 
     </div>

@@ -388,3 +388,8 @@ pre code {
         width: 75%;
     }
 }
+
+.invalid-text{
+    font-size: 14px;
+    color: #FF0000;
+}

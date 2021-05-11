@@ -1,5 +1,6 @@
 <?php
 /** @var $model User */
+use app\core\Application;
 ?>
 
 <?php if (Application::$app->session->getFlash('success')): ?>
@@ -15,7 +16,6 @@
     <div class="form-container sign-up-container">
         <?php
 
-        use app\core\Application;
         use app\core\form\Form;
         use app\models\User;
 

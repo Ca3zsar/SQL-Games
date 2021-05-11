@@ -11,6 +11,8 @@ abstract class Model
     public const RULE_MIN = 'min';
     public const RULE_MATCH = 'match';
     public const RULE_UNIQUE = 'unique';
+    public const RULE_TITLE_UNIQUE = 'title-unique';
+    public const RULE_MIN_TEXT = 'min-text';
 
     public array $errors = [];
 
@@ -48,14 +50,20 @@ abstract class Model
                 {
                     $this->addErrorForRule($attribute,self::RULE_EMAIL);
                 }
-                if($ruleName === self::RULE_MIN && strlen($value) < $rule['min']){
-                    $this->addErrorForRule($attribute,self::RULE_MIN, $rule);
+                if(($ruleName === self::RULE_MIN || $ruleName === self::RULE_MIN_TEXT) && strlen($value) < $rule['min']){
+                    if($ruleName === self::RULE_MIN)
+                    {
+                        $this->addErrorForRule($attribute,self::RULE_MIN, $rule);
+                    }
+                    else {
+                        $this->addErrorForRule($attribute, self::RULE_MIN_TEXT, $rule);
+                    }
                 }
                 if($ruleName === self::RULE_MATCH && $value !== $this->{$rule['match']})
                 {
                     $this->addErrorForRule($attribute,self::RULE_MATCH);
                 }
-                if($ruleName === self::RULE_UNIQUE){
+                if($ruleName === self::RULE_UNIQUE || $ruleName === self::RULE_TITLE_UNIQUE){
                     $className = $rule['class'];
                     $uniqueAttr = $rule['attribute'] ?? $attribute;
                     $tableName = $className::tableName();
@@ -64,7 +72,11 @@ abstract class Model
                     $statement->execute();
                     $record = $statement->fetch();
                     if($record){
-                        $this->addErrorForRule($attribute, self::RULE_UNIQUE, ['field' => $attribute]);
+                        if($ruleName === self::RULE_UNIQUE){
+                            $this->addErrorForRule($attribute, self::RULE_UNIQUE, ['field' => $attribute]);
+                        }else {
+                            $this->addErrorForRule($attribute, self::RULE_TITLE_UNIQUE, ['field' => $attribute]);
+                        }
                     }
                 }
             }
@@ -95,7 +107,9 @@ abstract class Model
             self::RULE_EMAIL => 'This field must be a valid email address',
             self::RULE_MIN => 'Minimum length of the password must be {min}',
             self::RULE_MATCH => 'The passwords are not the same',
-            self::RULE_UNIQUE => 'User with this {field} already exists'
+            self::RULE_UNIQUE => 'User with this {field} already exists',
+            self::RULE_TITLE_UNIQUE => 'There is another exercise with this title',
+            self::RULE_MIN_TEXT => 'Minimum length is not satisfied ( {min} )'
         ];
     }
 

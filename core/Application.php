@@ -31,7 +31,6 @@ class Application
         $this->response = new Response();
         $this->router = new Router($this->request, $this->response);
         $this->session = new Session();
-        $this->creator = new Creator();
         $this->db = new Database($config['db']);
 
         $primaryValue = $this->session->get('user');

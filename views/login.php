@@ -3,8 +3,6 @@
 ?>
 
 <div class="container" id="container">
-
-
     <div class="form-container sign-up-container">
         <?php use app\core\form\Form;
         $form = Form::begin('', "post") ?>
