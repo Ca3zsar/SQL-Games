@@ -19,7 +19,7 @@ class CreatorController extends Controller
             $creator->loadData($request->getBody());
         }
 
-        $styles = '<link rel="stylesheet" href="styles/code_editor.css" />
+        $styles = '
 <link rel="stylesheet" href="styles/creator.css" />';
 
         $this->setLayout('general');

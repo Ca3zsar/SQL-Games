@@ -53,12 +53,19 @@
     <div class="correct-solution">
         <label class="correct-label">
             Your Solution
-            <textarea class="solution-text"></textarea>
         </label>
+        <div class="editor-holder">
+                <textarea autocomplete="off" spellcheck="false" class="editor"></textarea>
+                <pre><code class="syntax-highlight html"></code></pre>
+        </div>
+        <div class="to-download">
+            <h1 class="download-text"><a class="download-link" href="#">Here</a> is the result of your query</h1>
+        </div>
         <div class="buttons">
             <button class="reset-button">Reset Content</button>
             <button class="submit-button">Submit</button>
         </div>
+
     </div>
     <div class="correct-output">
 
