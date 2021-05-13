@@ -40,19 +40,19 @@ class Field
     {
         if ($this->type === self::TYPE_PASSWORD) {
             return sprintf('<input type="%s" placeholder="%s" name="%s" value="" class="%s%s">
-                    <div class="invalid-text"><p>%s</p></div>',
-                $this->type, ucfirst($this->attribute), $this->attribute, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '', $this->model->getFirstError($this->attribute));
+                    <div class="invalid-text %s"><p>%s</p></div>',
+                $this->type, ucfirst($this->attribute), $this->attribute, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '',$this->attribute, $this->model->getFirstError($this->attribute));
         } elseif ($this->type === self::TYPE_TEXT_AREA) {
             return sprintf('<textarea name="%s" value="%s" class="%s%s" spellcheck="false"></textarea>
-                    <div class="invalid-text"><p>%s</p></div>',
-                $this->attribute, $this->model->{$this->attribute}, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '', $this->model->getFirstError($this->attribute));
+                    <div class="invalid-text %s"><p>%s</p></div>',
+                $this->attribute, $this->model->{$this->attribute}, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '',$this->attribute, $this->model->getFirstError($this->attribute));
         } elseif ($this->type === self::TYPE_RADIO_BUTTON || $this->type === self::TYPE_SLIDER) {
             return sprintf('<input type="%s" placeholder="%s" name="%s" %s class="%s%s">',
                 $this->type, ucfirst($this->attribute), $this->attribute, $this->options, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '');
         } else {
             return sprintf('<input type="%s" placeholder="%s" name="%s" value="%s" class="%s%s">
-                    <div class="invalid-text"><p>%s</p> </div>',
-                $this->type, ucfirst($this->attribute), $this->attribute, $this->model->{$this->attribute}, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '',
+                    <div class="invalid-text %s"><p>%s</p> </div>',
+                $this->type, ucfirst($this->attribute), $this->attribute, $this->model->{$this->attribute}, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '', $this->attribute,
                 $this->model->getFirstError($this->attribute));
         }
     }

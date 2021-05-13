@@ -73,7 +73,9 @@ function validate($receivedRules, $values,$database): array
                 continue;
             }
             if ($ruleName === RULE_REQUIRED && !$value) {
-                $errors[$attribute] = ['This field is required!'];
+                if($attribute != 'correctQuery') {
+                    $errors[$attribute] = ['This field is required!'];
+                }
             }
             if ($ruleName === RULE_MIN_TEXT && strlen($value) < 20) {
                 $errors[$attribute] = ['The minimum length is ' . 20];
@@ -114,25 +116,25 @@ function addInformation($values,$database): bool
 
 $information = getInformation();
 
-if(empty($information[0]->correctQuery))
-{
-    $errors['correctQuery'] = 'This field is required!';
-}
+//if(empty($information[0]->correctQuery))
+//{
+//    $errors['correctQuery'] = ['This field is required!'];
+//}
 if(empty($information[0]->price))
 {
-    $errors['price'] = 'This field is required!';
+    $errors['price'] = ['This field is required!'];
 }
 if(empty($information[0]->requirement))
 {
-    $errors['requirement'] = 'This field is required!';
+    $errors['requirement'] = ['This field is required!'];
 }
 if(empty($information[0]->title))
 {
-    $errors['title'] = 'This field is required!';
+    $errors['title'] = ['This field is required!'];
 }
 if(empty($information[0]->difficulty))
 {
-    $errors['difficulty'] = 'This field is required!';
+    $errors['difficulty'] = ['This field is required!'];
 }
 
 header('Cache-Control: no-cache, must-revalidate');

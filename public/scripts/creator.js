@@ -1,5 +1,5 @@
-var navbar = document.querySelector("header");
-var heightValue = window.getComputedStyle(navbar).height;
+let navbar = document.querySelector("header");
+let heightValue = window.getComputedStyle(navbar).height;
 document.getElementsByClassName("content-area")[0].style.top = heightValue;
 
 function modifyDimensions()
@@ -25,18 +25,33 @@ button.addEventListener('click',async function (event){
     //     object[pair[0]] = pair[1];
     // }
 
+    classNames = ["title","correctQuery","requirement"];
+
     let request = new XMLHttpRequest();
     request.open('POST', 'exercise_creator');
     request.responseType = 'json';
 
     request.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+        let errorClass;
+        if (this.readyState === 4 && this.status === 200) {
             let response = request.response;
-            if(response.errors.length == 0)
-            {
+            if (response.errors.length === 0) {
                 window.location.replace("/");
+            } else {
+                for (let key of classNames) {
+                    let classname = 'invalid-text ' + key;
+                    errorClass = document.getElementsByClassName(classname)[0];
+                    if(key in response.errors)
+                    {
+                        errorClass.innerHTML = response.errors[key][0];
+                    }else{
+                        errorClass.innerHTML = '';
+                    }
+                }
             }
+            console.log(response.errors);
         }
+
     };
 
     request.send(formData);
@@ -57,8 +72,6 @@ function setBubble(range, bubble) {
         bubble.innerHTML = val+" coins";
 }
 
-var tabCharacter = "  ";
-var tabOffset = 2;
 var newLines = 0;
 
 var textAreaVar = document.getElementsByClassName("editor")[0];
@@ -80,7 +93,7 @@ function ready(functionToRun) {
     functionToRun();
 }
 
-ready(hightlightSyntax);
+ready(highlightSyntax);
 
 /*------------------------------------------
   Capture text updates
@@ -89,7 +102,7 @@ function updater(event, turn) {
     var thisObject = document.getElementsByClassName("editor")[0];
     console.log(this)
     correctTextareaHeight(thisObject);
-    hightlightSyntax();
+    highlightSyntax();
 }
 
 document.querySelector(".editor").addEventListener("ready", updater);
@@ -117,7 +130,7 @@ function correctTextareaHeight(element) {
 }
 
 /*------------------------------------------
-  Run syntax hightlighter
+  Run syntax highlighter
 ------------------------------------------*/
 function highlightBlock(block) {
     if (["select"].indexOf(block.innerHTML) >= 0) {
@@ -132,7 +145,7 @@ function highlightBlock(block) {
     }
 }
 
-function hightlightSyntax() {
+function highlightSyntax() {
     var me = document.getElementsByClassName("editor")[0];
     var content = me.value;
     var codeHolder = document.querySelector("code");
