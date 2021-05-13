@@ -3,13 +3,9 @@
 
 use app\models\Creator;
 
-?>
-
-<?php
-
 use app\core\form\Form;
 
-$form = Form::begin('', "post") ?>
+$form = Form::begin('', "") ?>
 <div class="container">
 
     <div class="meta-info">
@@ -69,7 +65,7 @@ $form = Form::begin('', "post") ?>
         <div class="buttons">
             <button class="verify-button">Verify Query</button>
             <button class="reset-button">Reset Content</button>
-            <button type="submit" class="submit-button">Submit</button>
+            <button type="button" class="submit-button">Submit</button>
         </div>
 
     </div>

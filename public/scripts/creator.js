@@ -15,24 +15,32 @@ condition.addEventListener("change",modifyDimensions);
 
 
 
-// const infoForm = document.getElementById("complete-form");
-// infoForm.addEventListener('submit',async function (event){
-//     event.preventDefault();
-//     const formData = new FormData(infoForm).entries();
-//     var object = {};
-//     for (const pair of formData) {
-//         object[pair[0]] = pair[1];
-//     }
-//
-//     var json = JSON.stringify(object);
-//     const response = await fetch('http://localhost:8080/create.php', {
-//         method: 'POST',
-//         body: object, // string or object
-//         headers: {
-//             'Content-Type': 'application/json'
-//         }
-//     });
-// });
+const button = document.getElementsByClassName("submit-button")[0];
+const infoForm = document.getElementById("complete-form");
+button.addEventListener('click',async function (event){
+    event.preventDefault();
+    const formData = new FormData(infoForm);
+    // var object = {};
+    // for (const pair of formData) {
+    //     object[pair[0]] = pair[1];
+    // }
+
+    let request = new XMLHttpRequest();
+    request.open('POST', 'exercise_creator');
+    request.responseType = 'json';
+
+    request.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let response = request.response;
+            if(response.errors.length == 0)
+            {
+                window.location.replace("/");
+            }
+        }
+    };
+
+    request.send(formData);
+});
 
 
 const range = document.querySelector(".slider");

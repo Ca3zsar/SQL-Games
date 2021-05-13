@@ -46,7 +46,7 @@ $app->router->get('/logout', [AuthController::class, 'logout']);
 
 $app->router->get('/profile_settings', [AuthController::class, 'profileSettings']);
 
-$app->router->get('/exercise_creator', [CreatorController::class, 'creator']);
+$app->router->get('/exercise_creator', [CreatorController::class, 'viewCreator']);
 $app->router->post('/exercise_creator',[CreatorController::class, 'creator']);
 
 $app->run();
