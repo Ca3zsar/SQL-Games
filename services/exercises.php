@@ -157,7 +157,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $record = $statement->fetchAll(PDO::FETCH_ASSOC);
 
         if (!empty($record)) {
-            var_dump(json_encode($record));
+            echo json_encode($record);
             exit();
         }
     } elseif (sizeof($params) === 1 && $params[0] != '') {
@@ -170,7 +170,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $record = $statement->fetch(PDO::FETCH_ASSOC);
 
             if (!empty($record)) {
-                var_dump(json_encode($record));
+                echo json_encode($record);
                 exit();
             } else {
                 http_response_code(404);

@@ -13,17 +13,11 @@ var condition = window.matchMedia("(max-width:800px)");
 modifyDimensions();
 condition.addEventListener("change",modifyDimensions);
 
-
-
 const button = document.getElementsByClassName("submit-button")[0];
 const infoForm = document.getElementById("complete-form");
 button.addEventListener('click',async function (event){
     event.preventDefault();
     const formData = new FormData(infoForm);
-    // var object = {};
-    // for (const pair of formData) {
-    //     object[pair[0]] = pair[1];
-    // }
 
     classNames = ["title","correctQuery","requirement"];
 

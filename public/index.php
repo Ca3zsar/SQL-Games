@@ -34,7 +34,8 @@ $app->router->get('/login', [AuthController::class, 'login']);
 $app->router->post('/login', [AuthController::class, 'login']);
 
 $app->router->get('/shop', [ShopController::class, 'shop']);
-$app->router->post('/shop', [ShopController::class, 'shop']);
+
+$app->router->get('/exercises',[ShopController::class,'exercises']);
 
 $app->router->get('/exercise', [ExerciseController::class, 'exercise']);
 $app->router->get('/exercise', [ExerciseController::class, 'exercise']);
@@ -43,6 +44,7 @@ $app->router->get('/register', [AuthController::class, 'register']);
 $app->router->post('/register', [AuthController::class, 'register']);
 
 $app->router->get('/logout', [AuthController::class, 'logout']);
+$app->router->get('/getExercises',[ShopController::class,'loadExercises']);
 
 $app->router->get('/profile_settings', [AuthController::class, 'profileSettings']);
 
