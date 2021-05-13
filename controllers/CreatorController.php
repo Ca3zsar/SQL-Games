@@ -41,7 +41,7 @@ class CreatorController extends Controller
         curl_setopt($curl, CURLOPT_POST, 1);
         curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
         curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
-        curl_setopt($curl, CURLOPT_URL, "http://localhost:8201/create.php");
+        curl_setopt($curl, CURLOPT_URL, "http://localhost:8201/exercises.php");
 
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
