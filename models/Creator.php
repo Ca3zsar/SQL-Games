@@ -24,19 +24,19 @@ class Creator extends DBModel
     {
         return ['difficulty' => [self::RULE_REQUIRED],
             'title' => [self::RULE_REQUIRED, [self::RULE_TITLE_UNIQUE, 'class' => self::class]],
-            'requirement' => [self::RULE_REQUIRED, [self::RULE_MIN, 'min' => 20]],
+            'requirement' => [self::RULE_REQUIRED, [self::RULE_MIN_TEXT, 'min' => 20]],
             'price' => [self::RULE_REQUIRED]
         ];
     }
 
-    public function addUnverified(): bool
+    public function addExercise(): bool
     {
         return parent::save();
     }
 
     public function tableName(): string
     {
-        return 'unverifiedex';
+        return 'exercises';
     }
 
     public function attributes(): array

@@ -9,12 +9,14 @@ use app\core\Application;
 use app\controllers\SiteController;
 use app\controllers\AuthController;
 use app\core\DotEnv;
+use app\models\Creator;
+use app\models\User;
 
 (new DotEnv(dirname(__DIR__) . '/.env'))->load();
 
 $config = [
-    'creatorClass' => \app\models\Creator::class,
-    'userClass' => \app\models\User::class,
+    'creatorClass' => Creator::class,
+    'userClass' => User::class,
     'db' => [
         'dsn' => getenv('DB_DSN'),
         'user' => getenv('DB_USER'),

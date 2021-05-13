@@ -13,6 +13,28 @@ var condition = window.matchMedia("(max-width:800px)");
 modifyDimensions();
 condition.addEventListener("change",modifyDimensions);
 
+
+
+// const infoForm = document.getElementById("complete-form");
+// infoForm.addEventListener('submit',async function (event){
+//     event.preventDefault();
+//     const formData = new FormData(infoForm).entries();
+//     var object = {};
+//     for (const pair of formData) {
+//         object[pair[0]] = pair[1];
+//     }
+//
+//     var json = JSON.stringify(object);
+//     const response = await fetch('http://localhost:8080/create.php', {
+//         method: 'POST',
+//         body: object, // string or object
+//         headers: {
+//             'Content-Type': 'application/json'
+//         }
+//     });
+// });
+
+
 const range = document.querySelector(".slider");
 const bubble = document.querySelector(".bubble");
 

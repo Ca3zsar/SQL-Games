@@ -25,7 +25,7 @@ class CreatorController extends Controller
         if ($request->isPost()) {
             $creator->loadData($request->getBody());
 
-            if($creator->validate() && $creator->addUnverified())
+            if($creator->validate() && $creator->addExercise())
             {
                 Application::$app->response->redirectInTime(3, '/');
             }
