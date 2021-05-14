@@ -10,13 +10,14 @@ async function loadExercises() {
             let response = request.response;
             console.log(response);
             for (let exercise in response) {
+
                 var exerciseWrapper = document.createElement("div");
                 exerciseWrapper.className = 'exercise-wrapper';
 
                 let buttonText = response[exercise].price + ' eSQLids';
 
                 let exerciseStatus;
-                if(response[exercise].solved == -2)
+                if(response[exercise].solved == -2 || response[exercise].userCoins < response[exercise].price)
                 {
                     exerciseStatus = "blocked";
                 }else if(response[exercise].solved == -1)

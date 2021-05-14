@@ -65,10 +65,10 @@ class ShopController extends Controller
         $newResults = [];
 
         $user_id = Application::$app->session->get('user');
-        foreach($result as $row)
-        {
-            $row->solved = $this->checkStatus($user_id,$row->id);
-
+        foreach ($result as $row) {
+            $row->solved = $this->checkStatus($user_id, $row->id);
+            if(isset($_SESSION['user']))
+            $row->userCoins = Application::$app->user->coins;
             $row->authorName = $this->getAuthorName($row->authorId);
             unset($row->{'authorId'});
 
