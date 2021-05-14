@@ -13,6 +13,26 @@ async function loadExercises() {
                 var exerciseWrapper = document.createElement("div");
                 exerciseWrapper.className = 'exercise-wrapper';
 
+                let buttonText = response[exercise].price + ' eSQLids';
+
+                let exerciseStatus;
+                if(response[exercise].solved == -2)
+                {
+                    exerciseStatus = "blocked";
+                }else if(response[exercise].solved == -1)
+                {
+                    exerciseStatus = "to-buy";
+                }else if(response[exercise].solved == 0)
+                {
+                    exerciseStatus = "to-solve";
+                    buttonText = "Solve exercise";
+
+                }else if(response[exercise].solved == 1)
+                {
+                    exerciseStatus = "solved";
+                    buttonText = "Solved"
+                }
+
                 exerciseWrapper.innerHTML=
                     '<div class="exercise-requirement">\n' +
                     '            <div class="requirements">\n' +
@@ -25,7 +45,7 @@ async function loadExercises() {
                     '                            alt="difficulty"\n' +
                     '                        />\n' +
                     '                    </div>\n' +
-                    '                    <h3 class="exercise-author">by ' + response[exercise].authorId +'</h3>\n' +
+                    '                    <h3 class="exercise-author">by ' + response[exercise].authorName +'</h3>\n' +
                     '                </div>\n' +
                     '                <br class="meta-break" />\n' +
                     '                <div class="title-holder">\n' +
@@ -52,10 +72,10 @@ async function loadExercises() {
                     '                            itemprop="offers"\n' +
                     '                            itemscope\n' +
                     '                            itemtype="http://schema.org/Offer"\n' +
-                    '                            class="exercise-button to-buy"\n' +
+                    '                            class="exercise-button ' + exerciseStatus +'"\n' +
                     '                            href="/exercise"\n' +
                     '                        >\n' +
-                    '                            '+ response[exercise].price +' eSQLids\n' +
+                    '                            '+ buttonText +
                     '                        </a>\n' +
                     '                    </div>\n' +
                     '                </div>\n' +
