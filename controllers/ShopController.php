@@ -50,7 +50,8 @@ class ShopController extends Controller
         }
     }
 
-    public function loadExercises()
+    /** @noinspection PhpWrongForeachArgumentTypeInspection */
+    public function loadExercises($currentPage)
     {
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_POST, 0);
@@ -62,15 +63,26 @@ class ShopController extends Controller
         $result = curl_exec($curl);
         $result = json_decode($result);
 
+        $limit = 2;
+        $offset = ($currentPage-1)*$limit;
+        $result = array_slice($result,$offset,$limit);
+
         $newResults = [];
 
         $user_id = Application::$app->session->get('user');
         foreach ($result as $row) {
             $row->solved = $this->checkStatus($user_id, $row->id);
-            if(isset($_SESSION['user']))
-            $row->userCoins = Application::$app->user->coins;
+
+            if (isset($_SESSION['user'])) {
+                if($row->solved === -1)
+                {
+                    if(Application::$app->user->coins < $row->price)
+                    {
+                        $row->solved = -2;
+                    }
+                }
+            }
             $row->authorName = $this->getAuthorName($row->authorId);
-            unset($row->{'authorId'});
 
             $newResults[] = $row;
         }
@@ -83,6 +95,12 @@ class ShopController extends Controller
     {
         $styles = '<link rel="stylesheet" title="extended" type="text/css" href="styles/shop.css"/>
         <link rel="stylesheet" title="compact" type="text/css" href="styles/compact-shop.css" />';
+
+        if($request->isGet() && isset($_GET["page"]) &&isset($_GET["fromJS"]))
+        {
+            $this->loadExercises($_GET["page"]);
+            return;
+        }
 
         $this->setLayout('general');
         return $this->render('shop', "SQL-Games Shop", $styles);

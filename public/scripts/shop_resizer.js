@@ -1,10 +1,12 @@
 var compactButton = document.getElementById("compact");
 var extendedButton = document.getElementById("extended");
+var compact = '';
 
 compactButton.addEventListener("click",function(){
     var requirements = document.getElementsByClassName("exercise-wrapper");
     if(!requirements[0].classList.contains("compact"))
     {
+        compact=' compact';
         for(var i=0, len=requirements.length;i<len;i=i+1|0)
         {
             requirements[i].classList.toggle("compact",true);
@@ -16,6 +18,7 @@ extendedButton.addEventListener("click",function(){
     var requirements = document.getElementsByClassName("exercise-wrapper");
     if(requirements[0].classList.contains("compact"))
     {
+        compact = '';
         for(var i=0, len=requirements.length;i<len;i=i+1|0)
         {
             requirements[i].classList.toggle("compact");

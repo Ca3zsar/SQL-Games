@@ -55,7 +55,7 @@
         <?php endif; ?>
         <?php if (!Application::isGuest()): ?>
             <div class="dropdown">
-                <p class="dropbtn">Account</p>
+                <p class="dropbtn"><?php echo Application::$app->user->username?></p>
                 <div
                         class="dropdown-content"
                         itemscope
