@@ -28,6 +28,14 @@ body {
 	justify-content: center;
 }
 
+.page-up{
+    flex:1 0 auto;
+    width:100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .exercise-requirement{
     width:940px;
     height:fit-content;
@@ -145,11 +153,11 @@ body {
 }
 
 .not-bought{
-    width:950px;
-    display: flex;
-    flex-direction: column;
+    flex:1 0 auto;
+    width:100%;
+    display: inline-flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
 }
 
 .buy{
@@ -180,6 +188,7 @@ body {
 }
 
 .buy-text{
+    width:100%;
     font-size:15px;
     font-weight: 400;
     font-family: open-sans-bold,sans-serif;
