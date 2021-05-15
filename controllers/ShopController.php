@@ -17,22 +17,6 @@ class ShopController extends Controller
         Application::$app->response->redirect('/shop');
     }
 
-    public function checkStatus($id_user, $id_exercise)
-    {
-        $tableName = 'userexercises';
-        $statement = Application::$app->db->prepare("SELECT solved FROM $tableName WHERE idUser = :idUser and idExercise = :idExercise");
-        $statement->bindValue(':idUser', $id_user);
-        $statement->bindValue(':idExercise', $id_exercise);
-        $statement->execute();
-        $record = $statement->fetch(PDO::FETCH_ASSOC);
-
-        if (!empty($record)) {
-            return $record["solved"];
-        } else {
-            return -1;
-        }
-    }
-
 
     public function loadExercises($currentPage)
     {
@@ -73,7 +57,7 @@ class ShopController extends Controller
 
         $user_id = Application::$app->session->get('user');
         foreach ($result as $row) {
-            $row->solved = $this->checkStatus($user_id, $row->id);
+            $row->solved = Exercise::checkStatus($user_id, $row->id);
 
             if (isset($_SESSION['user'])) {
                 if ($row->solved === -1) {

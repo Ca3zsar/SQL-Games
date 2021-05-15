@@ -1,11 +1,11 @@
 @import "font-importer.css";
 
-body{
-	text-align: center;
-	display: flex;
-	margin:0;
-	padding:0;
-	box-sizing: border-box;
+body {
+    text-align: center;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .editor-wrapper{
@@ -31,6 +31,7 @@ body{
 .exercise-requirement{
     width:940px;
     height:fit-content;
+    height: -moz-fit-content;
     
     background-color: #ffffff;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
@@ -102,6 +103,8 @@ body{
 	text-align:left;
 	margin-left: 10px;
 	margin-right: 10px;
+    word-break: break-word;
+    word-wrap: anywhere;
 }
 
 .meta-info{
@@ -139,6 +142,47 @@ body{
 .difficulty-title{
     font-family: open-sans-light;
     font-size:16px;
+}
+
+.not-bought{
+    width:950px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buy{
+    height: 40px;
+    color: #ffffff;
+
+    font-size: 15px;
+    font-family: open-sans-light;
+    font-weight: 400;
+
+    cursor: pointer;
+
+    align-items: center;
+    width: 150px;
+    text-decoration: none;
+}
+
+.buy.can-buy{
+    box-shadow: 0 4px 12px 0 rgba(245, 193, 23, 0.5);
+    background-color: #FCC50E;
+    border: 1px solid #ffcf30;
+}
+
+.buy.cant-buy{
+    box-shadow: 0 4px 12px 0 rgba(190, 32, 38, .5);
+    background-color: #BE2026;
+    border: 1px solid #a02327;
+}
+
+.buy-text{
+    font-size:15px;
+    font-weight: 400;
+    font-family: open-sans-bold,sans-serif;
 }
 
 @media (max-width:430px)

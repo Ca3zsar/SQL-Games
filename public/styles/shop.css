@@ -239,6 +239,8 @@ body {
     text-align: left;
     margin: 10px;
     width: 70%;
+    word-wrap: break-word;
+    word-break: break-word;
 }
 
 .solve-button-div {

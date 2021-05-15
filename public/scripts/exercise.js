@@ -15,19 +15,27 @@ condition.addEventListener("change",modifyDimensions);
 
 document.getElementsByClassName("exercise-status")[0].classList.toggle("blocked");
 
-document.querySelector(".submit-button").addEventListener("click", (e) => {
-    e.preventDefault();
-    var status = document.getElementsByClassName("exercise-status")[0];
-    if(status.classList.contains("blocked")){
-        status.classList.toggle("blocked");
-        status.classList.toggle("tried");
-    } 
-    else{
-        if(status.classList.contains("tried"))
-        {
-            status.classList.toggle("tried");
-            status.classList.toggle("solved");
-        }
-    }
-});
+let outerHeight = window.outerHeight;
+let pageHeight = window.innerHeight;
+if(pageHeight < outerHeight)
+{
+    console.log(window.innerHeight);
+    document.body.style.height = "93.35vh";
+}
+
+// document.querySelector(".submit-button").addEventListener("click", (e) => {
+//     e.preventDefault();
+//     var status = document.getElementsByClassName("exercise-status")[0];
+//     if(status.classList.contains("blocked")){
+//         status.classList.toggle("blocked");
+//         status.classList.toggle("tried");
+//     }
+//     else{
+//         if(status.classList.contains("tried"))
+//         {
+//             status.classList.toggle("tried");
+//             status.classList.toggle("solved");
+//         }
+//     }
+// });
   
