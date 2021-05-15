@@ -1,4 +1,4 @@
-<?php use app\core\Application; ?>
+<?php use app\core\Application;?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,12 +18,12 @@
     />
     <meta name="application-name" content="SQL-Games"/>
 
-    <link rel="stylesheet" href="styles/navbar.css"/>
-    <link rel="stylesheet" href="styles/footer.css"/>
+    <link rel="stylesheet" href="/styles/navbar.css"/>
+    <link rel="stylesheet" href="/styles/footer.css"/>
     {{styles}}
-    <script src="scripts/navFunctions.js"></script>
+    <script src="/scripts/navFunctions.js"></script>
 
-    <link rel="shortcut icon" type="image/png" href="resources/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="/resources/favicon.png"/>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -37,7 +37,7 @@
         <?php if (!Application::isGuest()): ?>
             <a class="coins"
             ><?php echo Application::$app->user->coins ?><img
-                        src="resources/images/coin.png"
+                        src="/resources/images/coin.png"
                         class="coin-img"
                         alt="eSQLids"
                         itemscope
@@ -45,7 +45,7 @@
                 /></a>
             <a class="coins-collapsed"
             >Coins : <?php echo Application::$app->user->coins ?><img
-                        src="resources/images/coin.png"
+                        src="/resources/images/coin.png"
                         class="coin-img"
                         alt="eSQLids"
                 /></a>

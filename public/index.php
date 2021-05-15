@@ -36,9 +36,9 @@ $app->router->post('/login', [AuthController::class, 'login']);
 $app->router->get('/shop', [ShopController::class, 'shop']);
 
 $app->router->get('/exercises',[ShopController::class,'exercises']);
+$app->router->get('/exercise',[ExerciseController::class,'exercise']);
 
-$app->router->get('/exercise', [ExerciseController::class, 'exercise']);
-$app->router->get('/exercise', [ExerciseController::class, 'exercise']);
+$app->router->getRegex('/exercises\/([0-9]*)$/', [ExerciseController::class, 'specificExercise']);
 
 $app->router->get('/register', [AuthController::class, 'register']);
 $app->router->post('/register', [AuthController::class, 'register']);

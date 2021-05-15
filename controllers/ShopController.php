@@ -6,14 +6,12 @@ namespace app\controllers;
 use app\core\Application;
 use app\core\Controller;
 use app\core\Request;
-use app\core\Response;
 
+use app\models\Exercise;
 use PDO;
 
 class ShopController extends Controller
 {
-    public $exercises;
-
     public function exercises()
     {
         Application::$app->response->redirect('/shop');
@@ -35,22 +33,7 @@ class ShopController extends Controller
         }
     }
 
-    public function getAuthorName($id_author)
-    {
-        $tableName = 'users';
-        $statement = Application::$app->db->prepare("SELECT username FROM $tableName WHERE id = :idUser");
-        $statement->bindValue(':idUser', $id_author);
-        $statement->execute();
-        $record = $statement->fetch(PDO::FETCH_ASSOC);
 
-        if (!empty($record)) {
-            return $record["username"];
-        } else {
-            return -1;
-        }
-    }
-
-    /** @noinspection PhpWrongForeachArgumentTypeInspection */
     public function loadExercises($currentPage)
     {
         $curl = curl_init();
@@ -99,7 +82,7 @@ class ShopController extends Controller
                     }
                 }
             }
-            $row->authorName = $this->getAuthorName($row->authorId);
+            $row->authorName = Exercise::getAuthorName($row->authorId);
 
             $newResults[] = $row;
         }
@@ -108,7 +91,7 @@ class ShopController extends Controller
         echo json_encode($newResults);
     }
 
-    public function shop(Request $request, Response $response)
+    public function shop(Request $request)
     {
         $styles = '<link rel="stylesheet" title="extended" type="text/css" href="styles/shop.css"/>
         <link rel="stylesheet" title="compact" type="text/css" href="styles/compact-shop.css" />';

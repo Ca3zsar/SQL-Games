@@ -2,7 +2,7 @@ let filter = '';
 let orderBy = '&orderBy=popularity';
 let currentPage = new URLSearchParams(window.location.search).get('page');
 
-function loadExercises(url) {
+async function loadExercises(url) {
     let request = new XMLHttpRequest();
     request.open('GET', url + "&fromJS=1", true);
     request.responseType = 'json';
@@ -12,7 +12,6 @@ function loadExercises(url) {
     request.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             let response = request.response;
-
             while (exerciseList.hasChildNodes()) {
                 exerciseList.removeChild(exerciseList.lastChild);
             }
@@ -54,7 +53,7 @@ function loadExercises(url) {
                         '                </div>\n' +
                         '                <br class="meta-break" />\n' +
                         '                <div class="title-holder">\n' +
-                        '                    <a href="/exercise" class="exercise-title">#' + response[exercise].id + ' ' + response[exercise].title + '</a>\n' +
+                        '                    <a href="/exercises/' + response[exercise]["id"] + '" class="exercise-title">#' + response[exercise].id + ' ' + response[exercise].title + '</a>\n' +
                         '                </div>\n' +
                         '                <div\n' +
                         '                    itemscope\n' +
@@ -78,7 +77,7 @@ function loadExercises(url) {
                         '                            itemscope\n' +
                         '                            itemtype="http://schema.org/Offer"\n' +
                         '                            class="exercise-button ' + exerciseStatus + '"\n' +
-                        '                            href="/exercise"\n' +
+                        '                            href="/exercises/' + response[exercise]["id"] + '"\n' +
                         '                        >\n' +
                         '                            ' + buttonText +
                         '                        </a>\n' +

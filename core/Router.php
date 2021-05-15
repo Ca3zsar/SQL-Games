@@ -7,6 +7,7 @@ use app\core\exception\NotFoundException;
 class Router
 {
     protected array $routes = [];
+    protected array $regexRoutes = [];
     public Request $request;
     public Response $response;
 
@@ -16,6 +17,15 @@ class Router
         $this->response = $response;
     }
 
+    public function getRegex($expression, $callback)
+    {
+        $this->regexRoutes['get'][$expression] = $callback;
+    }
+
+    public function postRegex($expression, $callback)
+    {
+        $this->regexRoutes['post'][$expression] = $callback;
+    }
 
     public function get($path, $callback)
     {
@@ -35,9 +45,21 @@ class Router
         $callback = $this->routes[$method][$path] ?? false;
 
         if ($callback === false) {
-            throw new NotFoundException();
+            foreach($this->regexRoutes[$method] as $key=>$value)
+            {
+                if(preg_match($key,$path))
+                {
+                    $callback = $this->regexRoutes[$method][$key];
+                    break;
+                }
+            }
+            if($callback === false)
+            {
+                throw new NotFoundException();
+            }
         }
         if (is_string($callback)) {
+
             return $this->renderView($callback, "", "");
         }
         if (is_array($callback)) {
