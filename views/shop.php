@@ -31,9 +31,9 @@
         <div class="shop-select">
             <label>Order by:</label>
             <form>
-                <select>
-                    <option selected>Popularity</option>
-                    <option>Date added</option>
+                <select id="order-by-filter">
+                    <option value="popularity" selected>Popularity</option>
+                    <option value="dateAdded">Date added</option>
                 </select>
             </form>
         </div>

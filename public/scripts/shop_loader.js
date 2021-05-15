@@ -1,5 +1,5 @@
 var filter = '';
-var orderBy = '';
+var orderBy = '&orderBy=popularity';
 
 async function loadExercises(url) {
     let request = new XMLHttpRequest();
@@ -103,29 +103,34 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if ("page" in keyValue) {
         if (parseInt(keyValue.page)) {
-            loadExercises("shop?page=" + keyValue.page);
+            loadExercises("shop?page=" + keyValue.page+filter+orderBy);
         } else {
-            loadExercises("shop?page=1");
+            loadExercises("shop?page=1"+filter+orderBy);
         }
     } else {
-        loadExercises("shop?page=1");
+        loadExercises("shop?page=1"+filter+orderBy);
     }
 }, false);
 
 var pageButtons = document.querySelectorAll(".page-buttons button");
 pageButtons.forEach(function(pageButton){
     pageButton.addEventListener("click", function () {
-        loadExercises("shop?page=" + pageButton.innerHTML);
+        loadExercises("shop?page=" + pageButton.innerHTML+filter+orderBy);
     }, false);
 });
 
 var diffFilter = document.querySelector("#difficulty-filter");
 diffFilter.addEventListener("change",function(){
-    console.log("HELLO");
     if (diffFilter.value == '') {
         filter = '';
     } else {
-        filter = "difficulty=" + diffFilter.value;
+        filter = "&difficulty=" + diffFilter.value;
     }
     loadExercises("shop?page=1&" + filter + orderBy);
+},false);
+
+var orderFilter = document.querySelector("#order-by-filter");
+orderFilter.addEventListener("change",function(){
+    orderBy = "&orderBy="+orderFilter.value;
+    loadExercises("shop?page=1" + filter + orderBy);
 },false);
