@@ -12,7 +12,6 @@ async function loadExercises(url) {
     request.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             let response = request.response;
-            console.log(response);
             while (exerciseList.hasChildNodes()) {
                 exerciseList.removeChild(exerciseList.lastChild);
             }
@@ -98,7 +97,6 @@ const pageButtons = document.querySelectorAll(".page-buttons button");
 
 function changeButtonValues() {
     let buttonIndex = currentPage - 1;
-    console.log(buttonIndex);
     pageButtons.forEach(function (tempPageButton) {
         tempPageButton.innerHTML = buttonIndex;
         if (buttonIndex === 0) {

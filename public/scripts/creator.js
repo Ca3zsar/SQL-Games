@@ -43,7 +43,6 @@ button.addEventListener('click',async function (event){
                     }
                 }
             }
-            console.log(response.errors);
         }
 
     };
@@ -94,7 +93,6 @@ ready(highlightSyntax);
 ------------------------------------------*/
 function updater(event, turn) {
     var thisObject = document.getElementsByClassName("editor")[0];
-    console.log(this)
     correctTextareaHeight(thisObject);
     highlightSyntax();
 }

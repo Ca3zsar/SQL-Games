@@ -67,7 +67,6 @@ ready(hightlightSyntax);
 ------------------------------------------*/
 function updater(event, turn) {
   var thisObject = document.getElementsByClassName("editor allow-tabs")[0];
-  console.log(this)
   correctTextareaHeight(thisObject);
   hightlightSyntax();
 

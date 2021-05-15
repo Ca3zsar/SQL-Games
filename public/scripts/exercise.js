@@ -20,7 +20,6 @@ function getCorrectSize() {
     let pageHeight = window.innerHeight;
 
     if (pageHeight < outerHeight) {
-        console.log(window.innerHeight);
         document.body.style.height = "93.35vh";
     } else {
         document.body.style.height = "auto";

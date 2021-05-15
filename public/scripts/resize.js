@@ -8,8 +8,11 @@ function modifyDimensions(condition)
     if(condition.matches){
         document.getElementsByClassName("dropdown-content")[0].style.width="100vw";
     }else{
-        document.getElementsByClassName("dropdown-content")[0].style.width="260px";
-        document.getElementsByClassName("dropdown-content")[0].style.max_width="none";
+        let dropDown = document.getElementsByClassName("dropdown-content")[0];
+        if(dropDown) {
+            document.getElementsByClassName("dropdown-content")[0].style.width = "260px";
+            document.getElementsByClassName("dropdown-content")[0].style.max_width = "none";
+        }
     }
 
     var navbar = document.querySelector("header")
