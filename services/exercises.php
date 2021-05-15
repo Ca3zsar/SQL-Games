@@ -108,9 +108,9 @@ function addInformation($values, $database): bool
 
     $statement->execute();
 
+    $tableName = 'userexercises';
     $lastId = $database->pdo->lastInsertId();
-    echo $lastId.PHP_EOL;
-    $statement = $database->pdo->prepare("INSERT INTO $tableName (id_user, id_exercise,solved) VALUES($values->authorId,$lastId,1)");
+    $statement = $database->pdo->prepare("INSERT INTO $tableName (`idUser`, `idExercise`,`solved`) VALUES($values->authorId,$lastId,1)");
     $statement->execute();
 
     return true;
