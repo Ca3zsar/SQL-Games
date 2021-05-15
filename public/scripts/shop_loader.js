@@ -1,3 +1,6 @@
+var filter = '';
+var orderBy = '';
+
 async function loadExercises(url) {
     let request = new XMLHttpRequest();
     request.open('GET', url + "&fromJS=1", true);
@@ -115,3 +118,14 @@ pageButtons.forEach(function(pageButton){
         loadExercises("shop?page=" + pageButton.innerHTML);
     }, false);
 });
+
+var diffFilter = document.querySelector("#difficulty-filter");
+diffFilter.addEventListener("change",function(){
+    console.log("HELLO");
+    if (diffFilter.value == '') {
+        filter = '';
+    } else {
+        filter = "difficulty=" + diffFilter.value;
+    }
+    loadExercises("shop?page=1&" + filter + orderBy);
+},false);

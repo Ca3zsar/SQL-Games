@@ -19,11 +19,11 @@
         <div class="shop-select">
             <label>Difficulty:</label>
             <form>
-                <select>
-                    <option selected>Not specified</option>
-                    <option>Easy</option>
-                    <option>Medium</option>
-                    <option>Hard</option>
+                <select id="difficulty-filter">
+                    <option class="diff-choice" value="" selected>Not specified</option>
+                    <option class="diff-choice" value="easy">Easy</option>
+                    <option class="diff-choice" value="medium">Medium</option>
+                    <option class="diff-choice" value="hard">Hard</option>
                 </select>
             </form>
         </div>
