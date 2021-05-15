@@ -58,12 +58,13 @@ class ShopController extends Controller
         curl_setopt($curl, CURLOPT_HTTPGET, 1);
         curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        if(isset($_GET[""]))
         curl_setopt($curl, CURLOPT_URL, "http://localhost:8201/exercises.php");
 
         $result = curl_exec($curl);
         $result = json_decode($result);
 
-        $limit = 2;
+        $limit = 3;
         $offset = ($currentPage-1)*$limit;
         $result = array_slice($result,$offset,$limit);
 
@@ -96,7 +97,7 @@ class ShopController extends Controller
         $styles = '<link rel="stylesheet" title="extended" type="text/css" href="styles/shop.css"/>
         <link rel="stylesheet" title="compact" type="text/css" href="styles/compact-shop.css" />';
 
-        if($request->isGet() && isset($_GET["page"]) &&isset($_GET["fromJS"]))
+        if($request->isGet() && isset($_GET["page"]) && isset($_GET["fromJS"]))
         {
             $this->loadExercises($_GET["page"]);
             return;
