@@ -147,10 +147,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $params = explode('/', trim($_SERVER['REQUEST_URI'], '/exercises.php')); // '\x20\x2f'
-    $database = getDatabaseConnection();
+    $params = substr($_SERVER['REQUEST_URI'], strlen("/exercises.php")); // '\x20\x2f'
+    if (!empty($params) && $params[0] == '/') {
+        $param = substr($params, 1);
+    }
 
-    if (trim($_SERVER['REQUEST_URI'], '/exercises.php') === '' || $params[0] == '') {
+    $database = getDatabaseConnection();
+//    $param = $params[1];
+    if (substr($_SERVER['REQUEST_URI'], strlen('/exercises.php')) === '' || $param == '') {
         $tableName = 'exercises';
         $statement = $database->prepare("SELECT * FROM $tableName");
         $statement->execute();
@@ -160,10 +164,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             echo json_encode($record);
             exit();
         }
-    } elseif (sizeof($params) === 1 && $params[0] != '') {
-        $param = $params[0];
+    } elseif ($param!= '' && !str_contains($param,'/')) {
+
+        $tableName = 'exercises';
+
         if (is_numeric($param) && !str_contains($param, '.')) {
-            $tableName = 'exercises';
+
             $statement = $database->prepare("SELECT * FROM $tableName WHERE id = :id");
             $statement->bindValue(':id', $param);
             $statement->execute();
@@ -176,9 +182,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 http_response_code(404);
                 echo json_encode(array("error" => "There is no exercise with that id"));
             }
+        } elseif ($param === 'easy' || $param === 'medium' || $param === 'hard') {
+            $statement = $database->prepare("SELECT * FROM $tableName WHERE difficulty = :difficulty");
+            $statement->bindValue(':difficulty', $param);
+            $statement->execute();
+            $record = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            echo json_encode($record);
+            exit();
+        } elseif ($param == 'dateAdded') {
+            $statement = $database->prepare("SELECT * FROM $tableName ORDER BY createdAt");
+            $statement->execute();
+            $record = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            echo json_encode($record);
+            exit();
+        } elseif ($param == 'popularity') {
+            $statement = $database->prepare("SELECT * FROM $tableName ORDER BY timesSolved/(DATEDIFF(CURDATE(),createdAt)+1) DESC");
+            $statement->execute();
+            $record = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            echo json_encode($record);
+            exit();
         } else {
             http_response_code(400); // bad request
-            echo json_encode(array("error" => "Invalid request. Invalid ID provided"));
+            echo json_encode(array("error" => "Invalid request."));
         }
     } else {
         http_response_code(400);// bad request
