@@ -39,6 +39,7 @@ $app->router->get('/exercises',[ShopController::class,'exercises']);
 $app->router->get('/exercise',[ExerciseController::class,'exercise']);
 
 $app->router->getRegex('/exercises\/([0-9]*)$/', [ExerciseController::class, 'specificExercise']);
+$app->router->postRegex('/exercises\/([0-9]*)$/', [ExerciseController::class, 'exerciseManager']);
 
 $app->router->get('/register', [AuthController::class, 'register']);
 $app->router->post('/register', [AuthController::class, 'register']);
@@ -50,5 +51,6 @@ $app->router->get('/profile_settings', [AuthController::class, 'profileSettings'
 
 $app->router->get('/exercise_creator', [CreatorController::class, 'viewCreator']);
 $app->router->post('/exercise_creator',[CreatorController::class, 'creator']);
+
 
 $app->run();

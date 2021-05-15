@@ -4,6 +4,7 @@
 namespace app\controllers;
 
 
+use app\core\Application;
 use app\core\Controller;
 use app\core\Request;
 use app\core\Response;
@@ -25,6 +26,58 @@ class ExerciseController extends Controller
 
         $this->setLayout('general');
         return $this->render('exercise',"#Exercise ID",$styles,['model' => $exercise]);
+    }
+
+    public function exerciseManager(Request $request)
+    {
+        $exercise = new Exercise();
+
+        $params = $request->getBody();
+        if (isset($_SESSION['user'])){
+            $response = ["errorCode" => ''];
+
+            if(isset($params["buy"]) && isset($params["exerciseId"]))
+            {
+                $exercise->loadExercise($params["exerciseId"]);
+                if($exercise->price <= Application::$app->user->coins)
+                {
+                    Exercise::buyExercise(Application::$app->user->id,$exercise->id);
+                    Application::$app->user->updateCoins($exercise->price);
+
+                    Application::$app->user->coins -= $exercise->price;
+                    $response["exerciseEditor"] = '
+                        <div class="editor-holder">
+                            <ul class="toolbar">
+                                <li>
+                                    <a href="#" id="indent" title="Toggle tabs or spaces"><img alt="I" src="/resources/images/indent.png"
+                                                                                               class="indent-class" /></a>
+                                </li>
+                                <li>
+                                    <a href="#" id="fullscreen" title="Toggle fullscreen mode"><span class="full-exp"></span></a>
+                                </li>
+                            </ul>
+                            <div class="scroller" itemscope itemtype="https://schema.org/Code">
+                                <div class="line-number" role="presentation"></div>
+                                <textarea autocomplete="off" spellcheck="false" class="editor allow-tabs"></textarea>
+                                <pre><code class="syntax-highlight html"></code></pre>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <button class="reset-button">Reset Content</button>
+                            <button class="submit-button">Submit Answer</button>
+                        </div>
+                        <script src="/scripts/highlighter.js"></script>
+                    ';
+
+                }else{
+                    $response["errorCode"] = 1;
+                }
+                $response["coins"]=Application::$app->user->coins;
+                echo json_encode($response);
+                return;
+            }
+        }
+
     }
 
     public function exercise()

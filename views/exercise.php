@@ -4,7 +4,25 @@
 use app\core\Application;
 use app\models\Exercise;
 
+if (isset($_SESSION['user'])) {
+    $status = Exercise::checkStatus(Application::$app->user->id, $model->id);
+
+    $exStatus = '';
+    if ($status == -1) {
+        $exStatus = 'blocked';
+    }
+    if ($status == 0) {
+        $exStatus = 'tried';
+    }
+    if ($status == 1) {
+        $exStatus = 'solved';
+    }
+}else{
+    $exStatus = 'blocked';
+}
+
 ?>
+
 <div class="page-up">
     <div class="exercise-requirement" itemscope itemtype="https://schema.org/Text">
         <div class="requirements">
@@ -28,7 +46,7 @@ use app\models\Exercise;
             </div>
 
         </div>
-        <div class="exercise-status"></div>
+        <div class="exercise-status <?php echo $exStatus; ?>"></div>
     </div>
     <div class="editor-wrapper">
 <?php if (isset($_SESSION['user'])) {

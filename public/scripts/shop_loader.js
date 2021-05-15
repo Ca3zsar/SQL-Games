@@ -12,6 +12,7 @@ async function loadExercises(url) {
     request.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             let response = request.response;
+            console.log(response);
             while (exerciseList.hasChildNodes()) {
                 exerciseList.removeChild(exerciseList.lastChild);
             }

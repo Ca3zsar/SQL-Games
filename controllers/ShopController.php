@@ -17,7 +17,6 @@ class ShopController extends Controller
         Application::$app->response->redirect('/shop');
     }
 
-
     public function loadExercises($currentPage)
     {
         $curl = curl_init();

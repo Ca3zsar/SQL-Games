@@ -21,6 +21,13 @@ class Exercise extends DBModel
     public int $boughtBy = 0;
     public int $solvedBy = 0;
 
+    static public function buyExercise($id_user, $id_exercise)
+    {
+        $tableName = "userexercises";
+        $statement = Application::$app->db->prepare("INSERT INTO $tableName (idUser, idExercise) VALUES ($id_user,$id_exercise)");
+        $statement->execute();
+    }
+
     static public function getAuthorName($id_author)
     {
         $tableName = 'users';

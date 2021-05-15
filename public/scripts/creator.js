@@ -29,7 +29,7 @@ button.addEventListener('click',async function (event){
         let errorClass;
         if (this.readyState === 4 && this.status === 200) {
             let response = request.response;
-            if (response.errors.length === 0) {
+            if ("errors" in response || response.errors.length === 0) {
                 window.location.replace("/");
             } else {
                 for (let key of classNames) {

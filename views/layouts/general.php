@@ -36,7 +36,7 @@
     <nav class="right-nav">
         <?php if (!Application::isGuest()): ?>
             <a class="coins"
-            ><?php echo Application::$app->user->coins ?><img
+            ><span class="coins-value"><?php echo Application::$app->user->coins ?></span><img
                         src="/resources/images/coin.png"
                         class="coin-img"
                         alt="eSQLids"
@@ -44,7 +44,7 @@
                         itemtype="https://schema.org/ImageObject"
                 /></a>
             <a class="coins-collapsed"
-            >Coins : <?php echo Application::$app->user->coins ?><img
+            >Coins : <span class="coins-value"> <?php echo Application::$app->user->coins ?> </span><img
                         src="/resources/images/coin.png"
                         class="coin-img"
                         alt="eSQLids"

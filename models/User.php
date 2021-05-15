@@ -3,6 +3,7 @@
 
 namespace app\models;
 
+use app\core\Application;
 use app\core\DBModel;
 
 class User extends DBModel
@@ -41,5 +42,12 @@ class User extends DBModel
     public function primaryKey(): string
     {
         return 'id';
+    }
+
+    public function updateCoins($toSubstract)
+    {
+        $tableName = "users";
+        $statement = $statement = Application::$app->db->prepare("UPDATE $tableName SET coins = $this->coins-$toSubstract WHERE id= $this->id");
+        $statement->execute();
     }
 }

@@ -1,41 +1,81 @@
-var navbar = document.querySelector("header");
-var heightValue = window.getComputedStyle(navbar).height;
+const navbar = document.querySelector("header");
+const heightValue = window.getComputedStyle(navbar).height;
+let exerciseId = window.location.pathname.replace("\/exercises\/", "");
+
 document.getElementsByClassName("content-area")[0].style.top = heightValue;
 
-function modifyDimensions(condition)
+function modifyDimensions()
 {
-    var navbar = document.querySelector("header")
-    var navHeight = navbar.offsetHeight;
+    const navbar = document.querySelector("header");
+    const navHeight = navbar.offsetHeight;
     document.getElementsByClassName("content-area")[0].style.top=navHeight+"px";
 }
 
-var condition = window.matchMedia("(max-width:800px)");
-modifyDimensions(condition);
+const condition = window.matchMedia("(max-width:800px)");
+modifyDimensions();
 condition.addEventListener("change",modifyDimensions);
 
-document.getElementsByClassName("exercise-status")[0].classList.toggle("blocked");
+function getCorrectSize() {
+    let outerHeight = window.outerHeight;
+    let pageHeight = window.innerHeight;
 
-let outerHeight = window.outerHeight;
-let pageHeight = window.innerHeight;
-if(pageHeight < outerHeight)
+    if (pageHeight < outerHeight) {
+        console.log(window.innerHeight);
+        document.body.style.height = "93.35vh";
+    } else {
+        document.body.style.height = "auto";
+    }
+}
+window.onresize = getCorrectSize;
+document.addEventListener('DOMContentLoaded',getCorrectSize,false);
+
+async function buyExercise()
 {
-    console.log(window.innerHeight);
-    document.body.style.height = "93.35vh";
+    let request = new XMLHttpRequest();
+    request.open('POST',window.location.pathname,true);
+    request.responseType = 'json';
+
+    let dataToSend = new FormData();
+    dataToSend.append("buy","yes");
+    dataToSend.append("exerciseId",exerciseId);
+
+    request.onreadystatechange = function () {
+        let errorText;
+        let wrapper;
+        let coinsTexts;
+        let buyButton;
+        if (this.readyState === 4 && this.status === 200) {
+            let response = request.response;
+            if ("errorCode" in response && response.errorCode!='') {
+                errorText = document.querySelector(".buy-text");
+                errorText.innerHTML = "You don't have enough eSQLids to buy this!";
+
+                buyButton = document.querySelector('.buy');
+                if (buyButton.classList.contains('can-buy')) {
+                    buyButton.classList.toggle('can-buy');
+                    buyButton.classList.toggle('cant-buy')
+                }
+            } else {
+                wrapper = document.querySelector(".editor-wrapper");
+                wrapper.innerHTML = response["exerciseEditor"];
+            }
+
+            coinsTexts = document.querySelectorAll(".coins-value");
+            coinsTexts.forEach(coinText => coinText.innerHTML = response["coins"]);
+
+        }
+    };
+
+    request.send(dataToSend);
 }
 
-// document.querySelector(".submit-button").addEventListener("click", (e) => {
-//     e.preventDefault();
-//     var status = document.getElementsByClassName("exercise-status")[0];
-//     if(status.classList.contains("blocked")){
-//         status.classList.toggle("blocked");
-//         status.classList.toggle("tried");
-//     }
-//     else{
-//         if(status.classList.contains("tried"))
-//         {
-//             status.classList.toggle("tried");
-//             status.classList.toggle("solved");
-//         }
-//     }
-// });
+let buyButton = document.querySelector(".buy");
+if(buyButton)
+{
+    document.querySelector(".buy").addEventListener("click", async function(e) {
+        e.preventDefault();
+        await buyExercise();
+    });
+}
+
   
