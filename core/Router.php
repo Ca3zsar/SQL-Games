@@ -32,6 +32,11 @@ class Router
         $this->routes['get'][$path] = $callback;
     }
 
+    public function put($path, $callback)
+    {
+        $this->routes['put'][$path] = $callback;
+    }
+
     public function post($path, $callback)
     {
         $this->routes['post'][$path] = $callback;
@@ -45,16 +50,13 @@ class Router
         $callback = $this->routes[$method][$path] ?? false;
 
         if ($callback === false) {
-            foreach($this->regexRoutes[$method] as $key=>$value)
-            {
-                if(preg_match($key,$path))
-                {
+            foreach ($this->regexRoutes[$method] as $key => $value) {
+                if (preg_match($key, $path)) {
                     $callback = $this->regexRoutes[$method][$key];
                     break;
                 }
             }
-            if($callback === false)
-            {
+            if ($callback === false) {
                 throw new NotFoundException();
             }
         }

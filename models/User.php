@@ -5,6 +5,7 @@ namespace app\models;
 
 use app\core\Application;
 use app\core\DBModel;
+use app\core\Model;
 
 class User extends DBModel
 {
@@ -21,6 +22,11 @@ class User extends DBModel
             'password' => [self::RULE_REQUIRED,[self::RULE_MIN,'min'=>8]],
             'confirmPassword' => [self::RULE_REQUIRED,[self::RULE_MATCH,'match'=>'password']]
         ];
+    }
+
+    public function updateSettings()
+    {
+
     }
 
     public function tableName(): string

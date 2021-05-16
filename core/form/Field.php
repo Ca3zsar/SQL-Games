@@ -14,6 +14,8 @@ class Field
     public const TYPE_TEXT_AREA = 'text_area';
     public const TYPE_RADIO_BUTTON = 'radio';
     public const TYPE_SLIDER = 'range';
+    public const TYPE_TEL = 'tel';
+    public const TYPE_DATE = 'date';
 
     public string $type;
     public Model $model;
@@ -43,16 +45,16 @@ class Field
                     <div class="invalid-text %s"><p>%s</p></div>',
                 $this->type, ucfirst($this->attribute), $this->attribute, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '',$this->attribute, $this->model->getFirstError($this->attribute));
         } elseif ($this->type === self::TYPE_TEXT_AREA) {
-            return sprintf('<textarea name="%s" value="%s" class="%s%s" spellcheck="false"></textarea>
+            return sprintf('<textarea name="%s" class="%s%s" spellcheck="false">%s</textarea>
                     <div class="invalid-text %s"><p>%s</p></div>',
-                $this->attribute, $this->model->{$this->attribute}, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '',$this->attribute, $this->model->getFirstError($this->attribute));
+                $this->attribute, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '',$this->model->{$this->attribute} ,$this->attribute, $this->model->getFirstError($this->attribute));
         } elseif ($this->type === self::TYPE_RADIO_BUTTON || $this->type === self::TYPE_SLIDER) {
             return sprintf('<input type="%s" placeholder="%s" name="%s" %s class="%s%s">',
                 $this->type, ucfirst($this->attribute), $this->attribute, $this->options, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '');
         } else {
-            return sprintf('<input type="%s" placeholder="%s" name="%s" value="%s" class="%s%s">
+            return sprintf('<input type="%s" placeholder="%s" name="%s" value="%s" %s class="%s%s">
                     <div class="invalid-text %s"><p>%s</p> </div>',
-                $this->type, ucfirst($this->attribute), $this->attribute, $this->model->{$this->attribute}, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '', $this->attribute,
+                $this->type, ucfirst($this->attribute), $this->attribute, $this->model->{$this->attribute}, $this->options, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '', $this->attribute,
                 $this->model->getFirstError($this->attribute));
         }
     }
@@ -60,6 +62,12 @@ class Field
     public function passwordField(): Field
     {
         $this->type = self::TYPE_PASSWORD;
+        return $this;
+    }
+
+    public function telField(): Field
+    {
+        $this->type = self::TYPE_TEL;
         return $this;
     }
 
@@ -74,6 +82,13 @@ class Field
         $this->type = self::TYPE_RADIO_BUTTON;
         return $this;
     }
+
+    public function dateField(): Field
+    {
+        $this->type = self::TYPE_DATE;
+        return $this;
+    }
+
 
     public function slider(): Field
     {

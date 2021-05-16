@@ -6,6 +6,7 @@ namespace app\controllers;
 
 use app\core\Application;
 use app\core\Controller;
+use app\core\form\Form;
 use app\core\middlewares\AuthMiddleware;
 use app\core\Request;
 use app\core\Response;
@@ -60,10 +61,5 @@ class AuthController extends Controller
         $response->redirect('/');
     }
 
-    public function profileSettings()
-    {
-        $styles = '<link rel="stylesheet" title="extended" type="text/css" href="styles/profile_settings.css"/>';
-        $this->setLayout('general');
-        return $this->render('profile_settings', "Profile Settings", $styles);
-    }
+
 }

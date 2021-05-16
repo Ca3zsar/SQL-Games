@@ -2,43 +2,42 @@ let navbar = document.querySelector("header");
 let heightValue = window.getComputedStyle(navbar).height;
 document.getElementsByClassName("content-area")[0].style.top = heightValue;
 
-function modifyDimensions()
-{
+function modifyDimensions() {
     var navbar = document.querySelector("header")
     var navHeight = navbar.offsetHeight;
-    document.getElementsByClassName("content-area")[0].style.top=navHeight+"px";
+    document.getElementsByClassName("content-area")[0].style.top = navHeight + "px";
 }
 
 var condition = window.matchMedia("(max-width:800px)");
 modifyDimensions();
-condition.addEventListener("change",modifyDimensions);
+condition.addEventListener("change", modifyDimensions);
 
 const button = document.getElementsByClassName("submit-button")[0];
 const infoForm = document.getElementById("complete-form");
-button.addEventListener('click',async function (event){
+button.addEventListener('click', async function (event) {
     event.preventDefault();
     const formData = new FormData(infoForm);
-
-    classNames = ["title","correctQuery","requirement"];
+    console.log(formData);
+    classNames = ["title", "correctQuery", "requirement"];
 
     let request = new XMLHttpRequest();
     request.open('POST', 'exercise_creator');
     request.responseType = 'json';
 
-    request.onreadystatechange = function() {
+    request.onreadystatechange = function () {
         let errorClass;
         if (this.readyState === 4 && this.status === 200) {
             let response = request.response;
-            if ("errors" in response || response.errors.length === 0) {
+            if ("errors" in response && response.errors.length === 0) {
+
                 window.location.replace("/");
             } else {
                 for (let key of classNames) {
                     let classname = 'invalid-text ' + key;
                     errorClass = document.getElementsByClassName(classname)[0];
-                    if(key in response.errors)
-                    {
+                    if (key in response.errors) {
                         errorClass.innerHTML = response.errors[key][0];
-                    }else{
+                    } else {
                         errorClass.innerHTML = '';
                     }
                 }
@@ -61,8 +60,8 @@ setBubble(range, bubble);
 
 function setBubble(range, bubble) {
     let slider = document.getElementsByClassName('slider')[0];
-        const val = range.value;
-        bubble.innerHTML = val+" coins";
+    const val = range.value;
+    bubble.innerHTML = val + " coins";
 }
 
 var newLines = 0;
