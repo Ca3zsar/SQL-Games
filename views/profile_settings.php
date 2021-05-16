@@ -19,7 +19,7 @@ use app\core\form\Form;
         <button type="submit" form="complete-form" class="submit-changes" id="submit-changes">Save Changes</button>
     </div>
     <!--    <div class="settings">-->
-    <?php $form = Form::begin("", "put") ?>
+    <?php $form = Form::begin("", "post") ?>
     <br id="personal-info"/>
     <div class="personal-info">
         <h1 class="section-header">Personal information</h1>
@@ -31,7 +31,7 @@ use app\core\form\Form;
                             class="first-name-label settings-label"
                     >First Name</label
                     >
-                    <?php echo $form->field($model, 'firstName', "", "id='first-name-input' value='admin'"); ?>
+                    <?php echo $form->field($model, 'firstName', "", "id='first-name-input'"); ?>
                 </div>
                 <div class="last-name-div">
                     <label
@@ -39,7 +39,7 @@ use app\core\form\Form;
                             class="last-name-label settings-label"
                     >Last Name</label
                     >
-                    <?php echo $form->field($model, 'lastName', "", "name='last-name-input' id='last-name-input' "); ?>
+                    <?php echo $form->field($model, 'lastName', "", "id='last-name-input' "); ?>
                 </div>
             </div>
             <div class="email-info">
@@ -47,7 +47,7 @@ use app\core\form\Form;
                     <label for="email-input" class="email-label settings-label"
                     >Email Address</label
                     >
-                    <?php echo $form->field($model, 'email', "", "name='email-input' id='email-input'"); ?>
+                    <?php echo $form->field($model, 'email', "", "id='email-input'"); ?>
                 </div>
             </div>
         </div>
@@ -64,7 +64,7 @@ use app\core\form\Form;
                     >Current Password</label
                     >
 
-                    <?php echo $form->field($model, 'password', "", "name='current-pass-input' id='current-pass-input'")->passwordField(); ?>
+                    <?php echo $form->field($model, 'password', "", "id='current-pass-input'")->passwordField(); ?>
                 </div>
             </div>
 
@@ -76,7 +76,7 @@ use app\core\form\Form;
                     >New Password</label
                     >
 
-                    <?php echo $form->field($model, 'password', "", "name='password-input' id='password-input'")->passwordField(); ?>
+                    <?php echo $form->field($model, 'password', "", "id='password-input'")->passwordField(); ?>
                 </div>
                 <div class="confirm-password-div">
                     <label
@@ -85,7 +85,7 @@ use app\core\form\Form;
                     >Confirm Password</label
                     >
 
-                    <?php echo $form->field($model, 'password', "", "name='confirm-input' id='confirm-input'")->passwordField(); ?>
+                    <?php echo $form->field($model, 'password', "", "id='confirm-input'")->passwordField(); ?>
                 </div>
             </div>
         </div>
@@ -100,7 +100,7 @@ use app\core\form\Form;
                     >Phone Number</label
                     >
 
-                    <?php echo $form->field($model, 'phone', "", "name='phone-number' pattern='[0-9]{10}' id='phone-number'")->passwordField(); ?>
+                    <?php echo $form->field($model, 'phone', "", "pattern='[0-9]{10}' id='phone-number'")->telField(); ?>
                 </div>
             </div>
 
@@ -109,7 +109,7 @@ use app\core\form\Form;
                     <label for="address" class="address-label settings-label"
                     >Address</label>
 
-                    <?php echo $form->field($model, 'address', "", "name='address' id='address'"); ?>
+                    <?php echo $form->field($model, 'address', "", "id='address'"); ?>
                 </div>
             </div>
         </div>
@@ -121,14 +121,14 @@ use app\core\form\Form;
                 <div class="birthday-div">
                     <label for="birthday" class="birthday-label settings-label"
                     >Birthday</label>
-                    <?php echo $form->field($model, 'birthday', "", "name='birthday' id='birthday'")->dateField(); ?>
+                    <?php echo $form->field($model, 'birthday', "", "id='birthday'")->dateField(); ?>
                 </div>
             </div>
 
             <div class="about-info-description">
                 <div class="description-div">
-                    <label for="description" class="description-label settings-label"
-                    >Description</label>
+                    <p class="description-label settings-label"
+                    >Description</p>
                     <?php echo $form->field($model, 'description', "", "name='description' id='description'")->textArea(); ?>
                 </div>
             </div>

@@ -14,7 +14,7 @@ class SettingsController extends \app\core\Controller
         Application::$app->response->redirect('/');
     }
 
-    public function profileSettings() : bool
+    public function profileSettings()
     {
         $styles = '<link rel="stylesheet" title="extended" type="text/css" href="styles/profile_settings.css"/>';
         $this->setLayout('general');

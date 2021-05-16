@@ -21,7 +21,7 @@ body {
 	position: relative;
 	margin-top: 0;
 	background: #F3F7F7;
-	height: 1300px;
+	height: 1400px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
@@ -75,8 +75,7 @@ body {
 
 .settings-area {
 	width: 100%;
-	margin: 80px;
-	/*margin-top: 50px;*/
+	margin: 50px 80px 80px;
 	display: flex;
 }
 
@@ -107,6 +106,7 @@ body {
 
 .complete-form {
 	width: calc(100% - 200px);
+	/*position: relative;*/
 }
 
 .personal-info, .pass-info, .contact-info, .about-info {
@@ -115,6 +115,7 @@ body {
 
 .information {
 	width: 100%;
+
 }
 
 .name-info, .email-info, .password-info, .current-info, .contact-info-phone, .contact-info-address, .about-info-birthday, .about-info-description {
