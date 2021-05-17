@@ -3,12 +3,12 @@ let heightValue = window.getComputedStyle(navbar).height;
 document.getElementsByClassName("content-area")[0].style.top = heightValue;
 
 function modifyDimensions() {
-    var navbar = document.querySelector("header")
-    var navHeight = navbar.offsetHeight;
+    let navbar = document.querySelector("header")
+    let navHeight = navbar.offsetHeight;
     document.getElementsByClassName("content-area")[0].style.top = navHeight + "px";
 }
 
-var condition = window.matchMedia("(max-width:800px)");
+let condition = window.matchMedia("(max-width:800px)");
 modifyDimensions();
 condition.addEventListener("change", modifyDimensions);
 
@@ -17,8 +17,7 @@ const infoForm = document.getElementById("complete-form");
 button.addEventListener('click', async function (event) {
     event.preventDefault();
     const formData = new FormData(infoForm);
-    console.log(formData);
-    classNames = ["title", "correctQuery", "requirement"];
+    let classNames = ["title", "correctQuery", "requirement"];
 
     let request = new XMLHttpRequest();
     request.open('POST', 'exercise_creator');
@@ -59,14 +58,13 @@ range.addEventListener("input", () => {
 setBubble(range, bubble);
 
 function setBubble(range, bubble) {
-    let slider = document.getElementsByClassName('slider')[0];
     const val = range.value;
     bubble.innerHTML = val + " coins";
 }
 
-var newLines = 0;
+let newLines = 0;
 
-var textAreaVar = document.getElementsByClassName("editor")[0];
+let textAreaVar = document.getElementsByClassName("editor")[0];
 
 textAreaVar.oninput = function () {
     this.style.height = "";
@@ -76,7 +74,6 @@ textAreaVar.oninput = function () {
 
 function ready(functionToRun) {
     while (document.readyState !== "loading") {
-
     }
 
     document.querySelector(".editor").content = "";
@@ -91,7 +88,7 @@ ready(highlightSyntax);
   Capture text updates
 ------------------------------------------*/
 function updater(event, turn) {
-    var thisObject = document.getElementsByClassName("editor")[0];
+    let thisObject = document.getElementsByClassName("editor")[0];
     correctTextareaHeight(thisObject);
     highlightSyntax();
 }
@@ -106,14 +103,14 @@ document.querySelector(".editor").addEventListener("change", updater);
   Resize textarea based on content
 ------------------------------------------*/
 function correctTextareaHeight(element) {
-    var self = document.querySelector("textarea");
-    var outerHeight = self.outerHeight;
-    var innerHeight = window.getComputedStyle(self).scrollheight;
-    var borderTop = parseFloat(window.getComputedStyle(self).borderTopWidth);
-    var borderBottom = parseFloat(
+    let self = document.querySelector("textarea");
+    let outerHeight = self.outerHeight;
+    let innerHeight = window.getComputedStyle(self).scrollheight;
+    let borderTop = parseFloat(window.getComputedStyle(self).borderTopWidth);
+    let borderBottom = parseFloat(
         window.getComputedStyle(self).borderBottomWidth
     );
-    var combinedScrollHeight = innerHeight + borderTop + borderBottom;
+    let combinedScrollHeight = innerHeight + borderTop + borderBottom;
 
     if (outerHeight < combinedScrollHeight) {
         self.height(combinedScrollHeight);
@@ -125,24 +122,22 @@ function correctTextareaHeight(element) {
 ------------------------------------------*/
 function highlightBlock(block) {
     if (["select"].indexOf(block.innerHTML) >= 0) {
-        var newSpan = document.createElement("span");
+        let newSpan = document.createElement("span");
         newSpan.style.color = "red";
         newSpan.innerHTML = block.innerHTML;
 
         block.innerHTML = "";
 
-        var code = document.getElementsByClassName("syntax-highlight html")[0];
+        let code = document.getElementsByClassName("syntax-highlight html")[0];
         code.append(newSpan);
     }
 }
 
 function highlightSyntax() {
-    var me = document.getElementsByClassName("editor")[0];
-    var content = me.value;
-    var codeHolder = document.querySelector("code");
-    var escaped = escapeHtml(content);
-
-    codeHolder.innerHTML = escaped;
+    let me = document.getElementsByClassName("editor")[0];
+    let content = me.value;
+    let codeHolder = document.querySelector("code");
+    codeHolder.innerHTML = escapeHtml(content);
 
     document.querySelectorAll(".syntax-highlight").forEach((block) => {
         highlightBlock(block);
@@ -185,4 +180,56 @@ document.getElementsByClassName("reset-button")[0].addEventListener("click", () 
 
     textCode.innerHTML = "";
     textAreaElement.value = "";
+});
+
+document.querySelector(".verify-button").addEventListener("click", (event) => {
+    event.preventDefault();
+    let request = new XMLHttpRequest();
+    request.open("POST", "http://localhost:8201/solver.php");
+
+    request.onreadystatechange = function () {
+
+        if (this.readyState === 4 && this.status === 200) {
+            let type = request.getResponseHeader("Content-Type");
+
+            let response = JSON.parse(request.response);
+
+            if("errorMessage" in response)
+            {
+                let queryError = document.querySelector(".invalid-text.correctQuery");
+                queryError.innerHTML = response.errorMessage;
+                document.querySelector(".to-download").style.display = "none";
+                document.querySelector(".invalid-text.correctQuery").style.display = "block";
+            }else{
+                let csvContent = [Object.keys(response[0]).join(',')];
+
+                response.forEach(function (row){
+                    csvContent.push(Object.values(row).join(','));
+                });
+                csvContent = csvContent.join('\n');
+
+                let blob = new Blob([csvContent],{ type: 'text/csv;charset=utf-8;' });
+                let fileName = "results.csv";
+                document.querySelector(".to-download").style.display = "flex";
+
+                var link = document.querySelector('#downloadButton');
+                link.href = window.URL.createObjectURL(blob);
+
+                link.download=fileName;
+                document.querySelector(".invalid-text.correctQuery").style.display = "none";
+            }
+            // else{
+            //     var fileName = request.getResponseHeader("FileName");
+            //     document.querySelector(".to-download").style.display = "flex";
+            //
+            //     var link = document.querySelector('#downloadButton');
+            //     link.href = window.URL.createObjectURL(response);
+            //
+            //     link.download=fileName.replaceAll('"',"");
+            // }
+        }
+    }
+
+    let editorText = document.querySelector(".editor").value;
+    request.send(JSON.stringify({"correctQuery": editorText}));
 });

@@ -64,10 +64,10 @@ $form = Form::begin('', "") ?>
         </div>
         <?php echo $form->field($model,'correctQuery','')->errorField();?>
         <div class="to-download">
-            <h1 class="download-text"><a class="download-link" href="#">Here</a> is the result of your query</h1>
+            <h1 class="download-text"><a id="downloadButton" href="#">Here</a> is the result of your query</h1>
         </div>
         <div class="buttons">
-            <button class="verify-button">Verify Query</button>
+            <button type="button" class="verify-button">Verify Query</button>
             <button type="button" class="reset-button">Reset Content</button>
             <button type="button" class="submit-button">Submit</button>
         </div>

@@ -30,11 +30,7 @@ function getDatabaseConnection(): Database
 
 function getInformation(): array
 {
-    header("Access-Control-Allow-Origin: *");
-    header("Content-Type: application/json; charset=UTF-8");
-    header("Access-Control-Allow-Methods: POST");
-    header("Access-Control-Max-Age: 3600");
-    header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
 
     $data = json_decode(file_get_contents("php://input"));
     $values = $data;
@@ -72,7 +68,7 @@ function validate($receivedRules, $values, $database): array
                 $answer = json_decode(checkQuery(getQueryDatabaseConnection(),$value));
                 if(isset($answer->error))
                 {
-                    $errors[$attribute] =[$answer->error];
+                    $errors[$attribute] =[$answer->errorMessage];
                 }
             }
             if ($ruleName === RULE_REQUIRED && !$value) {

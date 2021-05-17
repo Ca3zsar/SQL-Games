@@ -318,12 +318,12 @@ pre code {
     justify-content: center;
 }
 
-.download-text, .download-link {
+.download-text, #downloadButton {
     font-size: 22px;
     font-family: montserrat-regular, sans-serif;
 }
 
-.download-link {
+#downloadButton {
     color: #1ba94c;
     text-decoration: none;
 }
@@ -337,6 +337,7 @@ pre code {
 .complete-form{
     width:100%;
 }
+
 
 @media (max-width: 800px) {
     .submit-button, .reset-button, .verify-button {
