@@ -32,7 +32,7 @@ body {
 	float: left;
 	padding: 10px;
 	line-height: 30px;
-	font-family: open-sans-light;
+	font-family: open-sans-light, serif;
 	border-right: 1px solid gray;
 	width: 200px;
 	position: fixed;
@@ -46,7 +46,7 @@ body {
 	width: 100%;
 	user-select: none;
 	color: black;
-	font-family: open-sans-light;
+	font-family: open-sans-light, serif;
 	font-size: 1em;
 	text-decoration: none;
 }
@@ -61,7 +61,7 @@ body {
 	height: 35px;
 	color: #fff;
 	font-size: 15px;
-	font-family: open-sans-light;
+	font-family: open-sans-light, serif;
 	font-weight: 400;
 	cursor: pointer;
 	width: 60%;
@@ -95,13 +95,13 @@ body {
 }
 
 .section-header {
-	font-family: open-sans-bold;
+	font-family: open-sans-bold, serif;
 	font-weight: lighter;
 	font-size: 1.7em;
 }
 
 .settings-label {
-	font-family: open-sans-light;
+	font-family: open-sans-light, serif;
 }
 
 .complete-form {
@@ -130,7 +130,7 @@ body {
 }
 
 .name-info input, .email-info input, .password-info input, .current-info input, .contact-info-phone input, .contact-info-address input, .about-info-birthday input, .about-info-description textarea {
-	font-family: open-sans-light;
+	font-family: open-sans-light, serif;
 	font-weight: 600;
 	line-height: 1.5em;
 	font-size: 1em;

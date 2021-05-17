@@ -6,7 +6,10 @@ document.getElementsByClassName("content-area")[0].style.top = heightValue;
 function modifyDimensions(condition)
 {
     if(condition.matches){
-        document.getElementsByClassName("dropdown-content")[0].style.width="100vw";
+        let dropDown = document.getElementsByClassName("dropdown-content")[0];
+        if(dropDown) {
+            document.getElementsByClassName("dropdown-content")[0].style.width = "100vw";
+        }
     }else{
         let dropDown = document.getElementsByClassName("dropdown-content")[0];
         if(dropDown) {

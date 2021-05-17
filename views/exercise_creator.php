@@ -13,6 +13,7 @@ $form = Form::begin('', "") ?>
             <label class="meta-label">
                 Exercise Title
                 <?php echo $form->field($model, 'title', 'title-area')->textArea() ?>
+                <?php echo $form->field($model,'title','')->errorField();?>
             </label>
         </div>
         <div class="difficulty-subdiv">
@@ -42,6 +43,7 @@ $form = Form::begin('', "") ?>
         <label class="requirement-label">
             Exercise Requirement
             <?php echo $form->field($model, 'requirement', 'requirement-text')->textArea() ?>
+            <?php echo $form->field($model,'requirement','')->errorField();?>
         </label>
     </div>
     <div class="price-div">
@@ -56,9 +58,11 @@ $form = Form::begin('', "") ?>
             Your Solution
         </label>
         <div class="editor-holder">
-            <?php echo $form->field($model, 'correctQuery', 'editor')->textArea() ?>
+
             <pre><code class="syntax-highlight html"></code></pre>
+            <?php echo $form->field($model, 'correctQuery', 'editor')->textArea() ?>
         </div>
+        <?php echo $form->field($model,'correctQuery','')->errorField();?>
         <div class="to-download">
             <h1 class="download-text"><a class="download-link" href="#">Here</a> is the result of your query</h1>
         </div>

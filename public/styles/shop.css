@@ -21,7 +21,7 @@ body {
 .shop-header {
     width: 100%;
     padding-top: 50px;
-    font-family: bebas;
+    font-family: bebas, serif;
     font-size: 40px;
     user-select: none;
     color: #333;
@@ -115,7 +115,7 @@ body {
 
     float: right;
     margin: 2px;
-    padding: 0px 6px;
+    padding: 0 6px;
     font-size: 0.9em;
     line-height: 1.5;
     color: #333;
@@ -137,7 +137,6 @@ body {
 .shop-filter {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
     justify-content: space-evenly;
     width: 55%;
@@ -157,7 +156,7 @@ body {
     border-style: solid;
     border-color: #c4c2c2;
     border-width: 1px;
-    padding: 0px;
+    padding: 0;
 }
 
 .exercise-wrapper {
@@ -192,12 +191,11 @@ body {
 
 .requirements {
     width: 100%;
-    padding: 20px;
-    padding-top: 15px;
+    padding: 15px 20px 20px;
 }
 
 .exercise-author {
-    font-family: open-sans-bold;
+    font-family: open-sans-bold, serif;
     font-weight: lighter;
     font-size: 1em;
 }
@@ -235,7 +233,7 @@ body {
 
 .requirement-text {
     font-size: 0.9em;
-    font-family: open-sans-light;
+    font-family: open-sans-light, serif;
     text-align: left;
     margin: 10px;
     width: 70%;

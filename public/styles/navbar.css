@@ -84,7 +84,7 @@ nav>a:focus:after {
   display: none;
   position: absolute;
   background-color: #262626;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -93,7 +93,7 @@ nav>a:focus:after {
   display: inline-block;
   text-decoration: none;
   text-align: center;
-  margin-left: 0px;
+  margin-left: 0;
 }
 
 .dropdown-content a:hover {
@@ -125,7 +125,7 @@ nav p {
   text-decoration: none;
   letter-spacing: 4px;
   font-size: 1em;
-  font-family: bebas;
+  font-family: bebas, serif;
   margin: 0 10px;
   color: #ffffff;
 }
@@ -133,7 +133,7 @@ nav p {
 .logo a {
   text-decoration: none;
   font-size: 1.5em;
-  font-family: bebas;
+  font-family: bebas, serif;
   color: #ffffff;
   letter-spacing: 5px;
 }

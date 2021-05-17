@@ -1,9 +1,11 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoloader.php';
+include_once 'solver.php';
 
 use \app\core\Database;
 use \app\core\DotEnv;
+
 
 const RULE_REQUIRED = 'required';
 const RULE_TITLE_UNIQUE = 'title-unique';
@@ -66,7 +68,11 @@ function validate($receivedRules, $values, $database): array
                 }
             }
             if ($ruleName === RULE_CORRECT) {
-                continue;
+                $answer = json_decode(checkQuery($database,$value));
+                if($answer->error)
+                {
+                    $errors[$attribute] =[$answer->error];
+                }
             }
             if ($ruleName === RULE_REQUIRED && !$value) {
                 if ($attribute != 'correctQuery') {
@@ -227,5 +233,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         echo json_encode(array("error" => "Invalid request. Too many arguments"));
     }
 }
-
-

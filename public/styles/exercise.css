@@ -51,8 +51,7 @@ body {
 .requirements
 {
     width:90%;
-    padding: 20px;
-    padding-top: 10px;
+    padding: 10px 20px 20px;
 }
 
 .exercise-status{
@@ -81,7 +80,7 @@ body {
 .exercise-statistics>p{
     padding-left:10px;
     margin:0;
-    font-family: open-sans-light;
+    font-family: open-sans-light,sans-serif;
     font-size: 0.75em;   
 }
 
@@ -91,14 +90,14 @@ body {
 }
 
 .exercise-author{
-	font-family: open-sans-bold;
+	font-family: open-sans-bold,sans-serif;
     font-weight: lighter;
 } 
 
 .exercise-title{
     margin-top: 5px;
 	margin-left: 5px;
-	font-family: montserrat-regular;
+    font-family: montserrat-regular, serif;
     font-weight: bolder;
     
 	font-size: 1.25em;
@@ -107,7 +106,7 @@ body {
 
 .requirement-text{
     font-size: 1em;
-    font-family: open-sans-light;
+    font-family: open-sans-light, sans-serif;
 	text-align:left;
 	margin-left: 10px;
 	margin-right: 10px;
@@ -148,7 +147,7 @@ body {
 }
 
 .difficulty-title{
-    font-family: open-sans-light;
+    font-family: open-sans-light, serif;
     font-size:16px;
 }
 
@@ -165,7 +164,7 @@ body {
     color: #ffffff;
 
     font-size: 15px;
-    font-family: open-sans-light;
+    font-family: open-sans-light, serif;
     font-weight: 400;
 
     cursor: pointer;

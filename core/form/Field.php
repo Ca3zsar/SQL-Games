@@ -16,6 +16,7 @@ class Field
     public const TYPE_SLIDER = 'range';
     public const TYPE_TEL = 'tel';
     public const TYPE_DATE = 'date';
+    public const TYPE_ERROR = 'error';
 
     public string $type;
     public Model $model;
@@ -43,26 +44,33 @@ class Field
         if ($this->type === self::TYPE_PASSWORD) {
             return sprintf('<input type="%s" placeholder="%s" name="%s" value="" class="%s%s" %s>
                     <div class="invalid-text %s"><p>%s</p></div>',
-                $this->type, ucfirst($this->attribute), $this->attribute, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '',$this->options, $this->attribute, $this->model->getFirstError($this->attribute));
+                $this->type, ucfirst($this->attribute), $this->attribute, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '', $this->options, $this->attribute, $this->model->getFirstError($this->attribute));
         } elseif ($this->type === self::TYPE_TEXT_AREA) {
-            return sprintf('<textarea name="%s" class="%s%s" spellcheck="false">%s</textarea>
-                    <div class="invalid-text %s"><p>%s</p></div>',
-                $this->attribute, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '',$this->model->{$this->attribute} ,$this->attribute, $this->model->getFirstError($this->attribute));
+            return sprintf('<textarea name="%s" class="%s%s" spellcheck="false">%s</textarea>',
+                $this->attribute, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '', $this->model->{$this->attribute});
         } elseif ($this->type === self::TYPE_RADIO_BUTTON || $this->type === self::TYPE_SLIDER) {
             return sprintf('<input type="%s" placeholder="%s" name="%s" %s class="%s%s">',
                 $this->type, ucfirst($this->attribute), $this->attribute, $this->options, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '');
-        } elseif ($this->type === self::TYPE_DATE){
+        } elseif ($this->type === self::TYPE_DATE) {
             return sprintf('<input type="%s" name="%s" value="%s" %s class="%s%s">
                     <div class="invalid-text %s"><p>%s</p> </div>',
                 $this->type, $this->attribute, $this->model->{$this->attribute}, $this->options, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '', $this->attribute,
                 $this->model->getFirstError($this->attribute));
-        }
-        else {
+        } elseif ($this->type === self::TYPE_TEXT) {
             return sprintf('<input type="%s" placeholder="%s" name="%s" value="%s" %s class="%s%s">
                     <div class="invalid-text %s"><p>%s</p> </div>',
                 $this->type, ucfirst($this->attribute), $this->attribute, $this->model->{$this->attribute}, $this->options, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '', $this->attribute,
                 $this->model->getFirstError($this->attribute));
+        } else {
+            return sprintf('<div class="invalid-text %s"><p>%s</p> </div>',$this->attribute,
+                $this->model->getFirstError($this->attribute));
         }
+    }
+
+    public function errorField() : Field
+    {
+        $this->type = self::TYPE_ERROR;
+        return $this;
     }
 
     public function passwordField(): Field
