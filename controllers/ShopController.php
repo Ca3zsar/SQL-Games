@@ -76,8 +76,7 @@ class ShopController extends Controller
 
     public function shop(Request $request)
     {
-        $styles = '<link rel="stylesheet" title="extended" type="text/css" href="styles/shop.css"/>
-        <link rel="stylesheet" title="compact" type="text/css" href="styles/compact-shop.css" />';
+        $styles = '<link rel="stylesheet" title="extended" type="text/css" href="styles/shop.css"/>';
 
         if ($request->isGet() && isset($_GET["page"]) && isset($_GET["fromJS"])) {
             $this->loadExercises($_GET["page"]);

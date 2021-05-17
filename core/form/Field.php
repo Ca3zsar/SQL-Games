@@ -46,8 +46,8 @@ class Field
                     <div class="invalid-text %s"><p>%s</p></div>',
                 $this->type, ucfirst($this->attribute), $this->attribute, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '', $this->options, $this->attribute, $this->model->getFirstError($this->attribute));
         } elseif ($this->type === self::TYPE_TEXT_AREA) {
-            return sprintf('<textarea name="%s" class="%s%s" spellcheck="false">%s</textarea>',
-                $this->attribute, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '', $this->model->{$this->attribute});
+            return sprintf('<textarea name="%s" class="%s%s" spellcheck="false" %s>%s</textarea>',
+                $this->attribute, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '',$this->options, $this->model->{$this->attribute});
         } elseif ($this->type === self::TYPE_RADIO_BUTTON || $this->type === self::TYPE_SLIDER) {
             return sprintf('<input type="%s" placeholder="%s" name="%s" %s class="%s%s">',
                 $this->type, ucfirst($this->attribute), $this->attribute, $this->options, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '');

@@ -127,8 +127,7 @@ use app\core\form\Form;
 
             <div class="about-info-description">
                 <div class="description-div">
-                    <p class="description-label settings-label"
-                    >Description</p>
+                    <label for="description" class="description-label settings-label">Description</label>
                     <?php echo $form->field($model, 'description', "", "name='description' id='description'")->textArea(); ?>
                 </div>
             </div>

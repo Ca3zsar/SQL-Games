@@ -21,9 +21,9 @@ function getQueryDatabaseConnection(): Database
     (new DotEnv(__DIR__ . '/.env.user'))->load();
     $config = [
         'db' => [
-            'dsn' => getenv('DB_DSN'),
-            'user' => getenv('DB_USER'),
-            'password' => getenv('DB_PASSWORD')
+            'dsn' => getenv('DB_DSN_QUERY'),
+            'user' => getenv('DB_USER_QUERY'),
+            'password' => getenv('DB_PASSWORD_QUERY')
         ]
     ];
     return new Database($config['db']);
@@ -75,13 +75,13 @@ function checkQuery(Database $database, $query): bool|string
             return json_encode(array("status"=>"correct","results"=>$results));
         }catch(PDOException)
         {
-            return json_encode(array("error"=>"Invalid MySQL query"));
+            return json_encode(array("error"=>"Invalid MySQL statement!"));
         }
     }else{
         if($query === ""){
             return json_encode(array("error"=>"Empty query"));
         }
-        return json_encode(array("error"=>"No DML or DDL allowed"));
+        return json_encode(array("error"=>"Invalid Query / No DML or DDL allowed"));
     }
 }
 

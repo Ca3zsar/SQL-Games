@@ -6,6 +6,7 @@ include_once 'solver.php';
 use \app\core\Database;
 use \app\core\DotEnv;
 
+$results = null;
 
 const RULE_REQUIRED = 'required';
 const RULE_TITLE_UNIQUE = 'title-unique';
@@ -68,8 +69,8 @@ function validate($receivedRules, $values, $database): array
                 }
             }
             if ($ruleName === RULE_CORRECT) {
-                $answer = json_decode(checkQuery($database,$value));
-                if($answer->error)
+                $answer = json_decode(checkQuery(getQueryDatabaseConnection(),$value));
+                if(isset($answer->error))
                 {
                     $errors[$attribute] =[$answer->error];
                 }

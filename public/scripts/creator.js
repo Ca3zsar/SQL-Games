@@ -178,3 +178,11 @@ document.getElementsByClassName("reset-button")[0].addEventListener("click", () 
 
     newLines = 0;
 });
+
+document.getElementsByClassName("reset-button")[0].addEventListener("click", () => {
+    let textCode = document.getElementsByClassName("syntax-highlight")[0];
+    let textAreaElement = document.getElementsByClassName("editor")[0];
+
+    textCode.innerHTML = "";
+    textAreaElement.value = "";
+});

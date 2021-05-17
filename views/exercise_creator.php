@@ -54,13 +54,13 @@ $form = Form::begin('', "") ?>
         <output class="bubble"></output>
     </div>
     <div class="correct-solution">
-        <label class="correct-label">
+        <label class="correct-label" for="text-editor">
             Your Solution
         </label>
         <div class="editor-holder">
 
             <pre><code class="syntax-highlight html"></code></pre>
-            <?php echo $form->field($model, 'correctQuery', 'editor')->textArea() ?>
+            <?php echo $form->field($model, 'correctQuery', 'editor','id="text-editor"')->textArea() ?>
         </div>
         <?php echo $form->field($model,'correctQuery','')->errorField();?>
         <div class="to-download">
@@ -68,7 +68,7 @@ $form = Form::begin('', "") ?>
         </div>
         <div class="buttons">
             <button class="verify-button">Verify Query</button>
-            <button class="reset-button">Reset Content</button>
+            <button type="button" class="reset-button">Reset Content</button>
             <button type="button" class="submit-button">Submit</button>
         </div>
 

@@ -35,7 +35,7 @@
     </div>
     <nav class="right-nav">
         <?php if (!Application::isGuest()): ?>
-            <a class="coins"
+            <a class="coins" href="#"
             ><span class="coins-value"><?php echo Application::$app->user->coins ?></span><img
                         src="/resources/images/coin.png"
                         class="coin-img"
@@ -43,7 +43,8 @@
                         itemscope
                         itemtype="https://schema.org/ImageObject"
                 /></a>
-            <a class="coins-collapsed"
+            <a href="/exercise_creator" class="creator">Add Exercise</a>
+            <a class="coins-collapsed" href="#"
             >Coins : <span class="coins-value"> <?php echo Application::$app->user->coins ?> </span><img
                         src="/resources/images/coin.png"
                         class="coin-img"
