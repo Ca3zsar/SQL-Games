@@ -8,19 +8,21 @@ use app\core\Application;
 use app\core\Controller;
 use app\core\exception\NotFoundException;
 use app\core\Request;
-use app\core\Response;
 use app\models\Exercise;
 
 class ExerciseController extends Controller
 {
-    public function specificExercise(Request $request, Response $response)
+    public function specificExercise(Request $request)
     {
         $exercise = new Exercise();
 
         $path = $request->getPath();
         $id = substr($path,strlen("/exercise/")+1);
 
-        $exercise->loadExercise($id);
+        try {
+            $exercise->loadExercise($id);
+        } catch (NotFoundException) {
+        }
 
         $styles = '<link rel="stylesheet" href="/styles/exercise.css" />
                     <link rel="stylesheet" href="/styles/code_editor.css" />';
@@ -34,15 +36,17 @@ class ExerciseController extends Controller
         $exercise = new Exercise();
 
         $params = $request->getBody();
-        if (isset($_SESSION['user'])){
+        if (isset($_SESSION['user']))
+        {
             $response = ["errorCode" => ''];
 
-            if(isset($params["buy"]) && isset($params["exerciseId"]))
-            {
-                $exercise->loadExercise($params["exerciseId"]);
-                if($exercise->price <= Application::$app->user->coins)
-                {
-                    Exercise::buyExercise(Application::$app->user->id,$exercise->id);
+            if (isset($params["buy"]) && isset($params["exerciseId"])) {
+                try {
+                    $exercise->loadExercise($params["exerciseId"]);
+                } catch (NotFoundException $e) {
+                }
+                if ($exercise->price <= Application::$app->user->coins) {
+                    Exercise::buyExercise(Application::$app->user->id, $exercise->id);
                     Application::$app->user->updateCoins($exercise->price);
 
                     Application::$app->user->coins -= $exercise->price;
@@ -70,43 +74,55 @@ class ExerciseController extends Controller
                         <script src="/scripts/highlighter.js"></script>
                     ';
 
-                }else{
+                } else {
                     $response["errorCode"] = 1;
                 }
-                $response["coins"]=Application::$app->user->coins;
+                $response["coins"] = Application::$app->user->coins;
                 echo json_encode($response);
                 return;
-            }elseif(isset($params["solve"]) && isset($params["exerciseId"]))
-            {
+            } elseif (isset($params["solve"]) && isset($params["exerciseId"])) {
                 try {
                     $exercise->loadExercise($params["exerciseId"]);
-
-                    $data = json_encode(array("query"=>$params["query"],"correctQuery"=>$exercise->correctQuery));
+                    $data = json_encode(array("query" => $params["query"], "correctQuery" => $exercise->correctQuery));
 
                     $curl = curl_init();
                     curl_setopt($curl, CURLOPT_POST, 1);
                     curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-                    curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
+                    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
                     curl_setopt($curl, CURLOPT_URL, "http://localhost:8201/solver.php");
 
                     curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
                     $result = curl_exec($curl);
+
+                    $decoded = json_decode($result, 1);
+
                     curl_close($curl);
 
-                    if(isset($result["errorMessage"]))
-                    {
+                    if (isset($decoded["errorMessage"])) {
                         echo $result;
-                    }elseif(isset($result["status"])){
-                        if($result["status"]==="correct")
-                        {
+                        exit;
+                    } elseif (isset($decoded["status"])) {
+                        if ($decoded["status"] === "correct") {
+                            if (Exercise::checkStatus(Application::$app->user->id, $params["exerciseId"]) == 1) {
+                                echo $result;
+                                exit;
+                            } else {
+                                Exercise::solveExercise(Application::$app->user->id, $params["exerciseId"]);
+                                Application::$app->user->updateCoins(-($exercise->price + (round((int)$exercise->price / 4))));
 
-                        }else{
+                                Application::$app->user->coins += (round($exercise->price + (int)$exercise->price / 4));
+                                $decoded["coins"] = Application::$app->user->coins;
+                                echo json_encode($decoded);
+                                exit;
+                            }
+                        } else {
                             echo $result;
+                            exit;
                         }
                     }
 
-                } catch (NotFoundException $e) {
+                } catch (NotFoundException) {
                 }
             }
         }

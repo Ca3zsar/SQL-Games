@@ -28,6 +28,13 @@ class Exercise extends DBModel
         $statement->execute();
     }
 
+    static public function solveExercise($id_user, $id_exercise)
+    {
+        $tableName = "userexercises";
+        $statement = Application::$app->db->prepare("UPDATE $tableName SET solved = 1 WHERE idUser = $id_user and idExercise = $id_exercise");
+        $statement->execute();
+    }
+
     static public function getAuthorName($id_author)
     {
         $tableName = 'users';
@@ -38,6 +45,21 @@ class Exercise extends DBModel
 
         if (!empty($record)) {
             return $record["username"];
+        } else {
+            return -1;
+        }
+    }
+
+    static public function getCorrectQuery($id_exercise)
+    {
+        $tableName = 'exercises';
+        $statement = Application::$app->db->prepare("SELECT correctQuery FROM $tableName WHERE id = :id_exercise");
+        $statement->bindValue(':id_exercise', $id_exercise);
+        $statement->execute();
+        $record = $statement->fetch(PDO::FETCH_ASSOC);
+
+        if (!empty($record)) {
+            return $record["correctQuery"];
         } else {
             return -1;
         }
@@ -76,6 +98,7 @@ class Exercise extends DBModel
         if (isset($result->error)) {
             throw new NotFoundException();
         } else {
+            $this->correctQuery = Exercise::getCorrectQuery($result->id);
             $this->id = $result->id;
             $this->title = $result->title;
             $this->difficulty = $result->difficulty;

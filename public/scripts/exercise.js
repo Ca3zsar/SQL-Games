@@ -57,6 +57,9 @@ async function buyExercise()
             } else {
                 wrapper = document.querySelector(".editor-wrapper");
                 wrapper.innerHTML = response["exerciseEditor"];
+
+                let exerciseStatus = document.querySelector(".exercise-status");
+                exerciseStatus.classList.replace("blocked", "tried");
             }
 
             coinsTexts = document.querySelectorAll(".coins-value");

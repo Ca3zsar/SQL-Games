@@ -169,6 +169,12 @@ pre code {
 	width: 16px;
 }
 
+.exercise-message{
+	font-size:20px;
+	font-family: montserrat-regular, open-sans-light, sans-serif;
+	color:red;
+}
+
 .line-number{
 	padding-top:20px;
 	position: absolute;
