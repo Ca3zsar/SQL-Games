@@ -56,4 +56,9 @@ class User extends DBModel
         $statement = $statement = Application::$app->db->prepare("UPDATE $tableName SET coins = $this->coins-$toSubstract WHERE id= $this->id");
         $statement->execute();
     }
+
+    static public function addCoins($userId, $toAdd)
+    {
+
+    }
 }

@@ -4,16 +4,15 @@ let exerciseId = window.location.pathname.replace("\/exercises\/", "");
 
 document.getElementsByClassName("content-area")[0].style.top = heightValue;
 
-function modifyDimensions()
-{
+function modifyDimensions() {
     const navbar = document.querySelector("header");
     const navHeight = navbar.offsetHeight;
-    document.getElementsByClassName("content-area")[0].style.top=navHeight+"px";
+    document.getElementsByClassName("content-area")[0].style.top = navHeight + "px";
 }
 
 const condition = window.matchMedia("(max-width:800px)");
 modifyDimensions();
-condition.addEventListener("change",modifyDimensions);
+condition.addEventListener("change", modifyDimensions);
 
 function getCorrectSize() {
     let outerHeight = window.outerHeight;
@@ -25,18 +24,18 @@ function getCorrectSize() {
         document.body.style.height = "auto";
     }
 }
-window.onresize = getCorrectSize;
-document.addEventListener('DOMContentLoaded',getCorrectSize,false);
 
-async function buyExercise()
-{
+window.onresize = getCorrectSize;
+document.addEventListener('DOMContentLoaded', getCorrectSize, false);
+
+async function buyExercise() {
     let request = new XMLHttpRequest();
-    request.open('POST',window.location.pathname,true);
+    request.open('POST', window.location.pathname, true);
     request.responseType = 'json';
 
     let dataToSend = new FormData();
-    dataToSend.append("buy","yes");
-    dataToSend.append("exerciseId",exerciseId);
+    dataToSend.append("buy", "yes");
+    dataToSend.append("exerciseId", exerciseId);
 
     request.onreadystatechange = function () {
         let errorText;
@@ -45,7 +44,7 @@ async function buyExercise()
         let buyButton;
         if (this.readyState === 4 && this.status === 200) {
             let response = request.response;
-            if ("errorCode" in response && response.errorCode!='') {
+            if ("errorCode" in response && response.errorCode != '') {
                 errorText = document.querySelector(".buy-text");
                 errorText.innerHTML = "You don't have enough eSQLids to buy this!";
 
@@ -71,10 +70,13 @@ async function buyExercise()
             coinsTexts.forEach(coinText => coinText.innerHTML = response["coins"]);
 
             boughtBy = document.querySelector(".bought-by");
-            boughtBy.innerHTML = "bought by : " + response["boughtBy"] + " persons";
+            boughtBy.innerHTML = "bought by : " + response["boughtBy"] + " users";
 
             solvedBy = document.querySelector(".solved-by");
-            solvedBy.innerHTML = "solved by : " + response["solvedBy"] + " persons";
+            solvedBy.innerHTML = "solved by : " + response["solvedBy"] + " users";
+
+            votedBy = document.querySelector(".voted-by");
+            votedBy.innerHTML = response["stars"] + " &#9733;";
 
         }
     };
@@ -83,11 +85,50 @@ async function buyExercise()
 }
 
 let buyButton = document.querySelector(".buy");
-if(buyButton)
-{
-    document.querySelector(".buy").addEventListener("click", async function(e) {
+if (buyButton) {
+    document.querySelector(".buy").addEventListener("click", async function (e) {
         e.preventDefault();
         await buyExercise();
+    });
+}
+
+async function starExercise() {
+    let request = new XMLHttpRequest();
+    request.open('POST', '/evaluation', true);
+    request.responseType = 'json';
+
+    let dataToSend = new FormData();
+    dataToSend.append("exerciseId", exerciseId);
+
+    request.onreadystatechange = function () {
+
+        if (this.readyState === 4 && this.status === 200) {
+            response = request.response;
+            exerciseStatus = document.querySelector('.star-image');
+            exerciseStatus.classList.replace('novote', 'voted');
+
+            coinsTexts = document.querySelectorAll(".coins-value");
+            coinsTexts.forEach(coinText => coinText.innerHTML = response["coins"]);
+
+            boughtBy = document.querySelector(".bought-by");
+            boughtBy.innerHTML = "bought by : " + response["boughtBy"] + " users";
+
+            solvedBy = document.querySelector(".solved-by");
+            solvedBy.innerHTML = "solved by : " + response["solvedBy"] + " users";
+
+            votedBy = document.querySelector(".voted-by");
+            votedBy.innerHTML = response["stars"] + " &#9733;";
+        }
+    };
+
+    request.send(dataToSend);
+}
+
+starButton = document.querySelector(".star-image.novote");
+if (starButton) {
+    starButton.addEventListener("click", async function (e) {
+        e.preventDefault();
+        await starExercise();
     });
 }
 

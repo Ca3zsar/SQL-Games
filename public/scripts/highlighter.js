@@ -230,14 +230,17 @@ document.querySelector(".submit-button").addEventListener("click", async functio
                         coinsTexts.forEach(coinText => coinText.innerHTML = response["coins"]);
                     }
 
-                    document.getElementsByClassName("tried")[0].classList.replace("tried", "solved");
+                    // document.getElementsByClassName("tried")[0].classList.replace("tried", "solved");
                 }
             }
             boughtBy = document.querySelector(".bought-by");
-            boughtBy.innerHTML = "bought by : " + response["boughtBy"] + " persons";
+            boughtBy.innerHTML = "bought by : " + response["boughtBy"] + " users";
 
             solvedBy = document.querySelector(".solved-by");
-            solvedBy.innerHTML = "solved by : " + response["solvedBy"] + " persons";
+            solvedBy.innerHTML = "solved by : " + response["solvedBy"] + " users";
+
+            votedBy = document.querySelector(".voted-by");
+            votedBy.innerHTML = response["stars"] + " &#9733;";
         }
 
     }

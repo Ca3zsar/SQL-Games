@@ -20,6 +20,7 @@ class Exercise extends DBModel
     public string $requirement = '';
     public int $boughtBy = 0;
     public int $solvedBy = 0;
+    public int $stars = 0;
 
     public function buyExercise($id_user)
     {
@@ -37,15 +38,44 @@ class Exercise extends DBModel
 
     public function solveExercise($id_user)
     {
+        //Set the exercise as solved
         $tableName = "userexercises";
         $statement = Application::$app->db->prepare("UPDATE $tableName SET solved = 1 WHERE idUser = $id_user and idExercise = $this->id");
         $statement->execute();
 
+        //Increment the times the exercise was solved
         $tableName = "exercises";
 
         $statement = Application::$app->db->prepare("UPDATE $tableName SET timesSolved = $this->solvedBy+1 WHERE id = $this->id");
         $statement->execute();
         $this->solvedBy += 1;
+
+
+    }
+
+    public function starExercise($id_user)
+    {
+        $tableName = "userexercises";
+        $statement = Application::$app->db->prepare("UPDATE $tableName SET star = 1 WHERE idUser = $id_user and idExercise = $this->id");
+        $statement->execute();
+
+        $tableName = "exercises";
+
+        $statement = Application::$app->db->prepare("UPDATE $tableName SET stars = $this->stars+1 WHERE id = $this->id");
+        $statement->execute();
+        $this->stars += 1;
+
+        //Add coins to the author
+        $tableName = "users";
+
+        $statement = Application::$app->db->prepare("SELECT coins FROM $tableName WHERE id = $this->authorId");
+        $statement->execute();
+        $coins = $statement->fetch(PDO::FETCH_ASSOC);
+        $coins = $coins["coins"];
+
+        $statement = Application::$app->db->prepare("UPDATE users SET coins = $coins + 1 WHERE id = $this->authorId");
+        $statement->execute();
+
     }
 
     static public function getAuthorName($id_author)
@@ -121,6 +151,7 @@ class Exercise extends DBModel
             $this->boughtBy = $result->timesBought;
             $this->solvedBy = $result->timesSolved;
             $this->authorName = static::getAuthorName($this->authorId);
+            $this->stars = $result->stars;
         }
     }
 

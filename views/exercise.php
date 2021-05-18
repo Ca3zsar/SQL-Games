@@ -41,14 +41,17 @@ if (isset($_SESSION['user'])) {
                 <?php echo $model->requirement ?>
             </p>
             <div class="exercise-statistics" itemscope itemtype="https://schema.org/InteractionCounter">
+                <p class="voted-by" itemprop="interactionStatistic"> <?php echo $model->stars ?> &#9733;</p>
                 <p class="bought-by" itemprop="interactionStatistic">bought by : <?php echo $model->boughtBy ?>
-                    persons</p>
+                    users</p>
                 <p class="solved-by" itemprop="interactionStatistic">solved by : <?php echo $model->solvedBy ?>
-                    person</p>
+                    users</p>
             </div>
 
         </div>
-        <div class="exercise-status <?php echo $exStatus; ?>"></div>
+        <div class="exercise-status <?php echo $exStatus; ?>">
+            <img class="star-image novote"src="/resources/images/star.png"/>
+        </div>
     </div>
     <div class="editor-wrapper">
         <?php if (isset($_SESSION['user'])) {
