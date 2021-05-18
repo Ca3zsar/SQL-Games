@@ -21,18 +21,31 @@ class Exercise extends DBModel
     public int $boughtBy = 0;
     public int $solvedBy = 0;
 
-    static public function buyExercise($id_user, $id_exercise)
+    public function buyExercise($id_user)
     {
         $tableName = "userexercises";
-        $statement = Application::$app->db->prepare("INSERT INTO $tableName (idUser, idExercise) VALUES ($id_user,$id_exercise)");
+
+        $statement = Application::$app->db->prepare("INSERT INTO $tableName (idUser, idExercise) VALUES ($id_user,$this->id)");
         $statement->execute();
+
+        $tableName = "exercises";
+
+        $statement = Application::$app->db->prepare("UPDATE $tableName SET timesBought = $this->boughtBy+1 WHERE id = $this->id");
+        $statement->execute();
+        $this->boughtBy += 1;
     }
 
-    static public function solveExercise($id_user, $id_exercise)
+    public function solveExercise($id_user)
     {
         $tableName = "userexercises";
-        $statement = Application::$app->db->prepare("UPDATE $tableName SET solved = 1 WHERE idUser = $id_user and idExercise = $id_exercise");
+        $statement = Application::$app->db->prepare("UPDATE $tableName SET solved = 1 WHERE idUser = $id_user and idExercise = $this->id");
         $statement->execute();
+
+        $tableName = "exercises";
+
+        $statement = Application::$app->db->prepare("UPDATE $tableName SET timesSolved = $this->solvedBy+1 WHERE id = $this->id");
+        $statement->execute();
+        $this->solvedBy += 1;
     }
 
     static public function getAuthorName($id_author)

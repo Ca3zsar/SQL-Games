@@ -17,7 +17,7 @@ class ExerciseController extends Controller
         $exercise = new Exercise();
 
         $path = $request->getPath();
-        $id = substr($path,strlen("/exercise/")+1);
+        $id = substr($path, strlen("/exercise/") + 1);
 
         try {
             $exercise->loadExercise($id);
@@ -28,7 +28,7 @@ class ExerciseController extends Controller
                     <link rel="stylesheet" href="/styles/code_editor.css" />';
 
         $this->setLayout('general');
-        return $this->render('exercise',"#Exercise ID",$styles,['model' => $exercise]);
+        return $this->render('exercise', "#Exercise ID", $styles, ['model' => $exercise]);
     }
 
     public function exerciseManager(Request $request)
@@ -36,8 +36,7 @@ class ExerciseController extends Controller
         $exercise = new Exercise();
 
         $params = $request->getBody();
-        if (isset($_SESSION['user']))
-        {
+        if (isset($_SESSION['user'])) {
             $response = ["errorCode" => ''];
 
             if (isset($params["buy"]) && isset($params["exerciseId"])) {
@@ -46,7 +45,7 @@ class ExerciseController extends Controller
                 } catch (NotFoundException $e) {
                 }
                 if ($exercise->price <= Application::$app->user->coins) {
-                    Exercise::buyExercise(Application::$app->user->id, $exercise->id);
+                    $exercise->buyExercise(Application::$app->user->id);
                     Application::$app->user->updateCoins($exercise->price);
 
                     Application::$app->user->coins -= $exercise->price;
@@ -71,13 +70,14 @@ class ExerciseController extends Controller
                             <button type="button" class="reset-button">Reset Content</button>
                             <button type="button" class="submit-button">Submit Answer</button>
                         </div>
-                        <script src="/scripts/highlighter.js"></script>
                     ';
 
                 } else {
                     $response["errorCode"] = 1;
                 }
                 $response["coins"] = Application::$app->user->coins;
+                $response["boughtBy"] = $exercise->boughtBy;
+                $response["solvedBy"] = $exercise->solvedBy;
                 echo json_encode($response);
                 return;
             } elseif (isset($params["solve"]) && isset($params["exerciseId"])) {
@@ -96,6 +96,10 @@ class ExerciseController extends Controller
                     $result = curl_exec($curl);
 
                     $decoded = json_decode($result, 1);
+                    $decoded["boughtBy"] = $exercise->boughtBy;
+                    $decoded["solvedBy"] = $exercise->solvedBy;
+
+                    $result = json_encode($decoded);
 
                     curl_close($curl);
 
@@ -108,11 +112,14 @@ class ExerciseController extends Controller
                                 echo $result;
                                 exit;
                             } else {
-                                Exercise::solveExercise(Application::$app->user->id, $params["exerciseId"]);
+                                $exercise->solveExercise(Application::$app->user->id);
                                 Application::$app->user->updateCoins(-($exercise->price + (round((int)$exercise->price / 4))));
 
                                 Application::$app->user->coins += (round($exercise->price + (int)$exercise->price / 4));
                                 $decoded["coins"] = Application::$app->user->coins;
+
+                                $decoded["solvedBy"] = $exercise->solvedBy;
+
                                 echo json_encode($decoded);
                                 exit;
                             }
@@ -134,6 +141,6 @@ class ExerciseController extends Controller
                     <link rel="stylesheet" href="styles/code_editor.css" />';
 
         $this->setLayout('general');
-        return $this->render('exercise',"#Exercise ID",$styles);
+        return $this->render('exercise', "#Exercise ID", $styles);
     }
 }

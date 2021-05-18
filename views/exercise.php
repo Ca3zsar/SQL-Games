@@ -85,10 +85,11 @@ if (isset($_SESSION['user'])) {
                 <button class="reset-button">Reset Content</button>
                 <button class="submit-button">Submit Answer</button>
             </div>
-             <script src="/scripts/highlighter.js"></script>
+                <script src="/scripts/highlighter.js"></script>
         ';
             }
         } ?>
+
     </div>
 
     <script src="/scripts/exercise.js"></script>

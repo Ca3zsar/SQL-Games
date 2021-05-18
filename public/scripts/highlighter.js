@@ -42,7 +42,7 @@ document.querySelector("#fullscreen").addEventListener("click", (e) => {
   Render existing code
 ------------------------------------------*/
 function ready(functionToRun) {
-    while (document.readyState != "loading") {
+    while (document.readyState != "loading" && document.readyState != 'complete') {
 
     }
 
@@ -102,7 +102,7 @@ document.querySelector("textarea").addEventListener("keydown", updater);
 document.querySelector("textarea").addEventListener("change", updater);
 
 /*------------------------------------------
-  Resize textarea based on content  
+  Resize textarea based on content
 ------------------------------------------*/
 function correctTextareaHeight(element) {
     let self = document.querySelector("textarea");
@@ -120,7 +120,7 @@ function correctTextareaHeight(element) {
 }
 
 /*------------------------------------------
-  Run syntax hightlighter  
+  Run syntax hightlighter
 ------------------------------------------*/
 function highlightBlock(block) {
     if (["select"].indexOf(block.innerHTML) >= 0) {
@@ -217,17 +217,15 @@ document.querySelector(".submit-button").addEventListener("click", async functio
         if (this.readyState === 4 && this.status === 200) {
             let response = request.response;
 
-            if("errorMessage" in response){
+            if ("errorMessage" in response) {
                 errorText.innerHTML = response.errorMessage;
                 errorText.style.color = "#FF0000";
-            }else{
+            } else {
                 errorText.innerHTML = response.status;
                 errorText.style.color = "#FF0000";
-                if(response.status == "correct")
-                {
+                if (response.status == "correct") {
                     errorText.style.color = "#1AA84B";
-                    if("coins" in response)
-                    {
+                    if ("coins" in response) {
                         let coinsTexts = document.querySelectorAll(".coins-value");
                         coinsTexts.forEach(coinText => coinText.innerHTML = response["coins"]);
                     }
@@ -235,6 +233,11 @@ document.querySelector(".submit-button").addEventListener("click", async functio
                     document.getElementsByClassName("tried")[0].classList.replace("tried", "solved");
                 }
             }
+            boughtBy = document.querySelector(".bought-by");
+            boughtBy.innerHTML = "bought by : " + response["boughtBy"] + " persons";
+
+            solvedBy = document.querySelector(".solved-by");
+            solvedBy.innerHTML = "solved by : " + response["solvedBy"] + " persons";
         }
 
     }

@@ -58,12 +58,23 @@ async function buyExercise()
                 wrapper = document.querySelector(".editor-wrapper");
                 wrapper.innerHTML = response["exerciseEditor"];
 
+                var script = document.createElement("script");
+                script.setAttribute("type", "text/javascript");
+                script.setAttribute("src", "/scripts/highlighter.js");
+                document.getElementsByTagName("head")[0].appendChild(script);
+
                 let exerciseStatus = document.querySelector(".exercise-status");
                 exerciseStatus.classList.replace("blocked", "tried");
             }
 
             coinsTexts = document.querySelectorAll(".coins-value");
             coinsTexts.forEach(coinText => coinText.innerHTML = response["coins"]);
+
+            boughtBy = document.querySelector(".bought-by");
+            boughtBy.innerHTML = "bought by : " + response["boughtBy"] + " persons";
+
+            solvedBy = document.querySelector(".solved-by");
+            solvedBy.innerHTML = "solved by : " + response["solvedBy"] + " persons";
 
         }
     };
