@@ -216,6 +216,7 @@ document.querySelector(".submit-button").addEventListener("click", async functio
         let errorText = document.querySelector(".exercise-message");
         if (this.readyState === 4 && this.status === 200) {
             let response = request.response;
+            console.log(response);
 
             if ("errorMessage" in response) {
                 errorText.innerHTML = response.errorMessage;
@@ -230,7 +231,18 @@ document.querySelector(".submit-button").addEventListener("click", async functio
                         coinsTexts.forEach(coinText => coinText.innerHTML = response["coins"]);
                     }
 
-                    // document.getElementsByClassName("tried")[0].classList.replace("tried", "solved");
+                    let tried = document.querySelector(".tried");
+                    if(tried)
+                    {
+                        tried.classList.replace("tried", "solved");
+
+                        if("starImage" in response) {
+                            var dummy = document.createElement('DIV');
+                            dummy.innerHTML = response["starImage"];
+                            tried.appendChild(dummy.firstChild);
+                        }
+                    }
+
                 }
             }
             boughtBy = document.querySelector(".bought-by");

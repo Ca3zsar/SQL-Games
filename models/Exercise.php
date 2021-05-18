@@ -124,6 +124,22 @@ class Exercise extends DBModel
         }
     }
 
+    static public function checkVoted($id_user, $id_exercise)
+    {
+        $tableName = 'userexercises';
+        $statement = Application::$app->db->prepare("SELECT star FROM $tableName WHERE idUser = :idUser and idExercise = :idExercise");
+        $statement->bindValue(':idUser', $id_user);
+        $statement->bindValue(':idExercise', $id_exercise);
+        $statement->execute();
+        $record = $statement->fetch(PDO::FETCH_ASSOC);
+
+        if (!empty($record)) {
+            return $record["star"];
+        } else {
+            return -1;
+        }
+    }
+
     public function loadExercise($id)
     {
         $curl = curl_init();

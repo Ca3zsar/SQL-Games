@@ -6,6 +6,7 @@ use app\models\Exercise;
 
 if (isset($_SESSION['user'])) {
     $status = Exercise::checkStatus(Application::$app->user->id, $model->id);
+    $voteStatus = Exercise::checkVoted(Application::$app->user->id,$model->id);
 
     $exStatus = '';
     if ($status == -1) {
@@ -16,6 +17,12 @@ if (isset($_SESSION['user'])) {
     }
     if ($status == 1) {
         $exStatus = 'solved';
+        if($voteStatus == 1)
+        {
+            $voteStatus = 'voted';
+        }else{
+            $voteStatus = 'novote';
+        }
     }
 } else {
     $exStatus = 'blocked';
@@ -50,7 +57,9 @@ if (isset($_SESSION['user'])) {
 
         </div>
         <div class="exercise-status <?php echo $exStatus; ?>">
-            <img class="star-image novote"src="/resources/images/star.png"/>
+            <?php if($exStatus=="solved" && $model->authorId != Application::$app->user->id){
+            echo "<img class='star-image $voteStatus' src='/resources/images/star.png'/>";
+            }?>
         </div>
     </div>
     <div class="editor-wrapper">

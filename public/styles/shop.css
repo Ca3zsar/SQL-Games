@@ -436,9 +436,14 @@ body {
     font-size: 0.75em;
 }
 
-.exercise-wrapper.compact .exercise-requirement .exercise-statistics > p:first-child {
+.exercise-wrapper.compact .exercise-requirement .exercise-statistics > p {
     padding-right: 10px;
     border-right: 1px solid gray;
+}
+
+.exercise-wrapper.compact .exercise-requirement .exercise-statistics > p:last-child {
+    padding-right: 0;
+    border-right: 0;
 }
 
 .exercise-wrapper.compact .exercise-requirement .exercise-statistics .easy {

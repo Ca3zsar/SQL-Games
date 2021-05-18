@@ -27,7 +27,8 @@ class EvaluationController extends Controller
         {
             $exercise->loadExercise($params["exerciseId"]);
             $status = Exercise::checkStatus(Application::$app->user->id,$exercise->id);
-            if($status == 1)
+            $voteStatus = Exercise::checkVoted(Application::$app->user->id,$exercise->id);
+            if($status == 1 && $voteStatus == 0)
             {
                 $exercise->starExercise(Application::$app->user->id);
                 echo json_encode(array("status"=>"star added","coins"=>Application::$app->user->coins,"stars"=>$exercise->stars,

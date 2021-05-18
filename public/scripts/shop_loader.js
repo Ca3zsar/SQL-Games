@@ -76,6 +76,7 @@ async function loadExercises(url) {
                         '</span>\n' +
                         '                        </p>\n' +
                         '                        <p>Solved by : ' + response[exercise].timesSolved + '</p>\n' +
+                        '                        <p>' + response[exercise].stars + '&#9733;</p>\n' +
                         '                    </div>\n' +
                         '                    <div class="solve-button-div">\n' +
                         '                        <a\n' +

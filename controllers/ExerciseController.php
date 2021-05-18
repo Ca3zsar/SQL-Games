@@ -66,6 +66,7 @@ class ExerciseController extends Controller
                                 <pre><code class="syntax-highlight html"></code></pre>
                             </div>
                         </div>
+                        <div class="exercise-message"></div>
                         <div class="buttons">
                             <button type="button" class="reset-button">Reset Content</button>
                             <button type="button" class="submit-button">Submit Answer</button>
@@ -78,6 +79,7 @@ class ExerciseController extends Controller
                 $response["coins"] = Application::$app->user->coins;
                 $response["boughtBy"] = $exercise->boughtBy;
                 $response["solvedBy"] = $exercise->solvedBy;
+                $response["stars"] = $exercise->stars;
                 echo json_encode($response);
                 return;
             } elseif (isset($params["solve"]) && isset($params["exerciseId"])) {
@@ -113,18 +115,24 @@ class ExerciseController extends Controller
                                 exit;
                             } else {
                                 $exercise->solveExercise(Application::$app->user->id);
-                                if($exercise->solvedBy == 1) {
-                                    Application::$app->user->updateCoins(-2*($exercise->price + (round((int)$exercise->price / 4))));
+                                if ($exercise->solvedBy == 1) {
+                                    Application::$app->user->updateCoins(-2 * ($exercise->price + (round((int)$exercise->price / 4))));
 
-                                    Application::$app->user->coins += (2*round($exercise->price + (int)$exercise->price / 4));
-                                }else{
+                                    Application::$app->user->coins += (2 * round($exercise->price + (int)$exercise->price / 4));
+                                } else {
                                     Application::$app->user->updateCoins(-($exercise->price + (round((int)$exercise->price / 4))));
 
                                     Application::$app->user->coins += (round($exercise->price + (int)$exercise->price / 4));
                                 }
-                                $decoded["coins"] = Application::$app->user->coins;
 
+                                $decoded["coins"] = Application::$app->user->coins;
+                                $decoded["stars"] = $exercise->stars;
                                 $decoded["solvedBy"] = $exercise->solvedBy;
+
+                                //Check that the author and the current user are different users.
+                                if ($exercise->authorId != Application::$app->user->id) {
+                                    $decoded["starImage"] = '<img onclick="starExercise()" class="star-image novote" src="/resources/images/star.png"/>';
+                                }
 
                                 echo json_encode($decoded);
                                 exit;

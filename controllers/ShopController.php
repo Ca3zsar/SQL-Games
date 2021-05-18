@@ -47,7 +47,7 @@ class ShopController extends Controller
         $result = curl_exec($curl);
         $result = json_decode($result);
 
-        $limit = 3;
+        $limit = 5;
         $offset = ($currentPage - 1) * $limit;
         if($result) {
             $result = array_slice($result, $offset, $limit);
@@ -72,7 +72,6 @@ class ShopController extends Controller
             }else{
                 $row->early = 0;
             }
-//            $row->early = ($row->solvedBy != 0) ? 0 : 1;
             $newResults[] = $row;
         }
 
