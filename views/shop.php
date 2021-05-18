@@ -8,7 +8,7 @@
                 class="search-input"
                 type="text"
                 name="search-input"
-                placeholder="Search"
+                placeholder="Search by title"
         />
         <button class="search-button">
             <img class="search-image" src="resources/images/search.png" alt="search"/>

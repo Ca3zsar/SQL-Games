@@ -174,9 +174,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $tableName = 'exercises';
 
         $diff = '';
+        $search = '';
         if(isset($_GET["difficulty"]))
         {
             $diff = sprintf("WHERE difficulty =  '%s'", $_GET["difficulty"]);
+            if(isset($_GET["search"]))
+            {
+                $diff = sprintf("%s AND title LIKE '%%%s%%' ",$diff,$_GET["search"]);
+//                $diff .= " AND title LIKE CONCAT('%', ' $search ', '%')";
+            }
+        }else{
+            if(isset($_GET["search"]))
+            {
+                $diff = sprintf("WHERE title LIKE '%%%s%%' ", $_GET["search"]);
+            }
         }
 
         $orderBy = '';

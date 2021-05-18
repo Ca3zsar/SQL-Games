@@ -1,5 +1,6 @@
 let filter = '';
 let orderBy = '&orderBy=popularity';
+let search = '';
 let currentPage = new URLSearchParams(window.location.search).get('page');
 
 async function loadExercises(url) {
@@ -125,14 +126,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if ("page" in keyValue) {
         if (parseInt(keyValue.page)) {
-            loadExercises("shop?page=" + keyValue.page + filter + orderBy);
+            loadExercises("shop?page=" + keyValue.page + filter + orderBy + search);
         } else {
             currentPage = 1;
-            loadExercises("shop?page=1" + filter + orderBy);
+            loadExercises("shop?page=1" + filter + orderBy + search);
         }
     } else {
         currentPage = 1;
-        loadExercises("shop?page=1" + filter + orderBy);
+        loadExercises("shop?page=1" + filter + orderBy + search);
 
     }
     changeButtonValues();
@@ -141,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 pageButtons.forEach(function (pageButton) {
     pageButton.addEventListener("click", function () {
-        loadExercises("shop?page=" + pageButton.innerHTML + filter + orderBy);
+        loadExercises("shop?page=" + pageButton.innerHTML + filter + orderBy + search);
         currentPage = parseInt(pageButton.innerHTML);
 
         changeButtonValues();
@@ -158,7 +159,7 @@ diffFilter.addEventListener("change", function () {
         filter = "&difficulty=" + diffFilter.value;
     }
     currentPage = 1;
-    loadExercises("shop?page=1&" + filter + orderBy, 1);
+    loadExercises("shop?page=1&" + filter + orderBy + search, 1);
     changeButtonValues();
 
 }, false);
@@ -167,6 +168,19 @@ const orderFilter = document.querySelector("#order-by-filter");
 orderFilter.addEventListener("change", function () {
     orderBy = "&orderBy=" + orderFilter.value;
     currentPage = 1;
-    loadExercises("shop?page=1" + filter + orderBy);
+    loadExercises("shop?page=1" + filter + orderBy + search);
     changeButtonValues();
 }, false);
+
+const searchFilter = document.querySelector(".search-input");
+searchFilter.addEventListener("keyup",function(){
+    search = "&search=" + searchFilter.value;
+    currentPage = 1;
+    if(searchFilter.value) {
+
+        loadExercises("shop?page=1" + filter + orderBy + search);
+    }else{
+        search = '';
+        loadExercises("shop?page=1" + filter + orderBy);
+    }
+},false);

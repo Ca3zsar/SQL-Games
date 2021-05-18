@@ -8,7 +8,6 @@ use app\core\Controller;
 use app\core\Request;
 
 use app\models\Exercise;
-use PDO;
 
 class ShopController extends Controller
 {
@@ -29,6 +28,10 @@ class ShopController extends Controller
         if (isset($_GET["orderBy"])) {
             $params["orderBy"] = $_GET["orderBy"];
 //            $orderBy = "?orderBy=".$_GET["orderBy"];
+        }
+
+        if(isset($_GET["search"])){
+            $params["search"] = $_GET["search"];
         }
 
 //        $difficulty = '';

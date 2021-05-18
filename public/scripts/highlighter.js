@@ -42,7 +42,7 @@ document.querySelector("#fullscreen").addEventListener("click", (e) => {
   Render existing code
 ------------------------------------------*/
 function ready(functionToRun) {
-    while (document.readyState != "loading" && document.readyState != 'complete') {
+    while (document.readyState !== "loading" && document.readyState !== 'complete') {
 
     }
 
@@ -64,16 +64,16 @@ ready(hightlightSyntax);
 /*------------------------------------------
   Capture text updates
 ------------------------------------------*/
-function updater(event, turn) {
+function updater(event) {
     let lineShow;
     let thisObject = document.getElementsByClassName("editor allow-tabs")[0];
     correctTextareaHeight(thisObject);
     hightlightSyntax();
 
-    if (event.type == "keyup") {
+    if (event.type === "keyup") {
         let content = document.querySelector("code").innerHTML;
         let lines = (content.match(/\n/g) || "").length;
-        if (lines != newLines) {
+        if (lines !== newLines) {
             if (lines > newLines) {
                 for (let i = newLines; i < lines; i++) {
                     let toAddLine = document.createElement("div");
@@ -163,7 +163,7 @@ function escapeHtml(unsafe) {
 ------------------------------------------*/
 document.querySelector(".allow-tabs").addEventListener("keydown", function (e) {
     let keyCode = e.keyCode || e.which;
-    if (keyCode == 9) {
+    if (keyCode === 9) {
         e.preventDefault();
 
         let thisObject = document.getElementsByClassName("allow-tabs")[0];
@@ -232,12 +232,11 @@ document.querySelector(".submit-button").addEventListener("click", async functio
                     }
 
                     let tried = document.querySelector(".tried");
-                    if(tried)
-                    {
+                    if (tried) {
                         tried.classList.replace("tried", "solved");
 
-                        if("starImage" in response) {
-                            var dummy = document.createElement('DIV');
+                        if ("starImage" in response) {
+                            let dummy = document.createElement('DIV');
                             dummy.innerHTML = response["starImage"];
                             tried.appendChild(dummy.firstChild);
                         }
@@ -245,13 +244,13 @@ document.querySelector(".submit-button").addEventListener("click", async functio
 
                 }
             }
-            boughtBy = document.querySelector(".bought-by");
+            let boughtBy = document.querySelector(".bought-by");
             boughtBy.innerHTML = "bought by : " + response["boughtBy"] + " users";
 
-            solvedBy = document.querySelector(".solved-by");
+            let solvedBy = document.querySelector(".solved-by");
             solvedBy.innerHTML = "solved by : " + response["solvedBy"] + " users";
 
-            votedBy = document.querySelector(".voted-by");
+            let votedBy = document.querySelector(".voted-by");
             votedBy.innerHTML = response["stars"] + " &#9733;";
         }
 
