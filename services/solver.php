@@ -3,8 +3,7 @@
 require_once __DIR__ . '/../vendor/autoloader.php';
 
 use \app\core\Database;
-use \app\core\DotEnv;
-use JetBrains\PhpStorm\NoReturn;
+use app\services\Checker as CheckerAlias;
 
 header('Access-Control-Allow-Origin: *');
 header("Content-Type: application/json; charset=UTF-8");
@@ -13,23 +12,9 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Expose-Headers : Content-Disposition, FileName");
 header("Access-Control-Allow-Headers: Data-Type,Access-Control-Expose-Headers, FileName, Origin, Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-
 function getQueryInformation()
 {
     return json_decode(file_get_contents("php://input"));
-}
-
-function getQueryDatabaseConnection(): Database
-{
-    (new DotEnv(__DIR__ . '/.env.user'))->load();
-    $config = [
-        'db' => [
-            'dsn' => getenv('DB_DSN_QUERY'),
-            'user' => getenv('DB_USER_QUERY'),
-            'password' => getenv('DB_PASSWORD_QUERY')
-        ]
-    ];
-    return new Database($config['db']);
 }
 
 function getDifferences(Database $database, $query, $correctQuery)
@@ -39,6 +24,30 @@ function getDifferences(Database $database, $query, $correctQuery)
         try {
             $query = rtrim($query, ';');
             $correctQuery = rtrim($correctQuery, ';');
+
+            $statement = $database->pdo->prepare($query);
+            $statement->execute();
+
+            $firstResults = $statement->fetchAll(PDO::FETCH_ASSOC);
+            $firstColumns = array_keys($firstResults[0]);
+
+            $statement = $database->pdo->prepare($correctQuery);
+            $statement->execute();
+
+            $secondResults = $statement->fetchAll(PDO::FETCH_ASSOC);
+            $secondColumns = array_keys($secondResults[0]);
+
+            if(sizeof($firstColumns) != sizeof($secondColumns))
+            {
+                echo json_encode(array("status"=>"wrong"));
+                exit;
+            }
+
+            if(sizeof(array_diff($firstColumns,$secondColumns)) + sizeof(array_diff($secondColumns,$firstColumns)) > 0)
+            {
+                echo json_encode(array("status"=>"wrong"));
+                exit;
+            }
 
             $statement = $database->pdo->prepare("($query EXCEPT ($correctQuery)) UNION ALL ($correctQuery EXCEPT ($query))");
             $statement->execute();
@@ -61,63 +70,16 @@ function getDifferences(Database $database, $query, $correctQuery)
     }
 }
 
-#[NoReturn] function sendData($information)
-{
-    echo json_encode($information);
-    exit;
-}
-
-function checkQuery(Database $database, $query, $inService = true)
-{
-    $query = trim($query);
-    $query = rtrim($query, ';');
-    if (str_starts_with(strtolower($query), "select")) {
-        try {
-            $statement = $database->pdo->prepare($query);
-            $statement->execute();
-
-            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-            if ($inService) {
-                return json_encode(array("status" => "correct", "results" => $results));
-            } else {
-                sendData($results);
-            }
-        } catch (PDOException) {
-            if ($inService) {
-                return json_encode(array("errorMessage" => "Invalid MySQL statement!"));
-            } else {
-                echo json_encode(array("errorMessage" => "Invalid MySQL statement!"));
-                exit;
-            }
-        }
-    } else {
-        if ($query === "") {
-            if ($inService) {
-                return json_encode(array("errorMessage" => "Empty query"));
-            } else {
-                echo json_encode(array("errorMessage" => "Empty query"));
-                exit;
-            }
-        }
-        if ($inService) {
-            return json_encode(array("errorMessage" => "Invalid Query / No DML or DDL allowed"));
-        } else {
-            echo json_encode(array("errorMessage" => "Invalid Query / No DML or DDL allowed"));
-            exit;
-        }
-    }
-}
-
 if($_SERVER['REQUEST_METHOD'] === 'POST')
 {
     $queries = getQueryInformation();
     if(isset($queries->query))
     {
-        getDifferences(getQueryDatabaseConnection(),$queries->query,$queries->correctQuery);
+        getDifferences(CheckerAlias::getQueryDatabaseConnection(),$queries->query,$queries->correctQuery);
     }else{
         if(isset($queries->correctQuery))
         {
-            checkQuery(getQueryDatabaseConnection(),$queries->correctQuery,false);
+            CheckerAlias::checkQuery(CheckerAlias::getQueryDatabaseConnection(),$queries->correctQuery,false);
         }
     }
 }

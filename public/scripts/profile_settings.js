@@ -21,7 +21,7 @@ button.addEventListener('click', async function (event) {
     console.log(formData.entries());
 
     let request = new XMLHttpRequest();
-    request.open('PUT', 'localhost:8123/profile_settings', true);
+    request.open('PUT', '/profile_settings', true);
     request.responseType = 'json';
 
     request.send(formData);

@@ -6,6 +6,7 @@ namespace app\controllers;
 
 use app\core\Application;
 use app\core\Controller;
+use app\core\exception\NotFoundException;
 use app\core\Request;
 use app\core\Response;
 use app\models\Exercise;
@@ -63,8 +64,8 @@ class ExerciseController extends Controller
                             </div>
                         </div>
                         <div class="buttons">
-                            <button class="reset-button">Reset Content</button>
-                            <button class="submit-button">Submit Answer</button>
+                            <button type="button" class="reset-button">Reset Content</button>
+                            <button type="button" class="submit-button">Submit Answer</button>
                         </div>
                         <script src="/scripts/highlighter.js"></script>
                     ';
@@ -75,9 +76,40 @@ class ExerciseController extends Controller
                 $response["coins"]=Application::$app->user->coins;
                 echo json_encode($response);
                 return;
+            }elseif(isset($params["solve"]) && isset($params["exerciseId"]))
+            {
+                try {
+                    $exercise->loadExercise($params["exerciseId"]);
+
+                    $data = json_encode(array("query"=>$params["query"],"correctQuery"=>$exercise->correctQuery));
+
+                    $curl = curl_init();
+                    curl_setopt($curl, CURLOPT_POST, 1);
+                    curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+                    curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
+                    curl_setopt($curl, CURLOPT_URL, "http://localhost:8201/solver.php");
+
+                    curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+                    $result = curl_exec($curl);
+                    curl_close($curl);
+
+                    if(isset($result["errorMessage"]))
+                    {
+                        echo $result;
+                    }elseif(isset($result["status"])){
+                        if($result["status"]==="correct")
+                        {
+
+                        }else{
+                            echo $result;
+                        }
+                    }
+
+                } catch (NotFoundException $e) {
+                }
             }
         }
-
     }
 
     public function exercise()

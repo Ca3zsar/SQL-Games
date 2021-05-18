@@ -1,10 +1,10 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoloader.php';
-include_once 'solver.php';
 
 use \app\core\Database;
 use \app\core\DotEnv;
+use app\services\Checker as CheckerAlias;
 
 $results = null;
 
@@ -30,7 +30,11 @@ function getDatabaseConnection(): Database
 
 function getInformation(): array
 {
-
+    header("Access-Control-Allow-Origin: *");
+    header("Content-Type: application/json; charset=UTF-8");
+    header("Access-Control-Allow-Methods: POST");
+    header("Access-Control-Max-Age: 3600");
+    header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
     $data = json_decode(file_get_contents("php://input"));
     $values = $data;
@@ -65,11 +69,12 @@ function validate($receivedRules, $values, $database): array
                 }
             }
             if ($ruleName === RULE_CORRECT) {
-                $answer = json_decode(checkQuery(getQueryDatabaseConnection(),$value));
-                if(isset($answer->error))
+                $answer = json_decode(CheckerAlias::checkQuery(CheckerAlias::getQueryDatabaseConnection(),$value));
+                if(isset($answer->errorMessage))
                 {
                     $errors[$attribute] =[$answer->errorMessage];
                 }
+                continue;
             }
             if ($ruleName === RULE_REQUIRED && !$value) {
                 if ($attribute != 'correctQuery') {
@@ -153,6 +158,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     addInformation($information[0], $database);
     echo json_encode(array("errors" => $errors));
+    exit;
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {

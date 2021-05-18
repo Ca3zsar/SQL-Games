@@ -201,3 +201,22 @@ document.getElementsByClassName("reset-button")[0].addEventListener("click", () 
 
   newLines = 0;
 });
+
+document.querySelector(".submit-button").addEventListener("click",async function (event){
+  event.preventDefault();
+
+  let request = new XMLHttpRequest();
+  request.open('POST', window.location.pathname,true);
+  request.responseType = 'json';
+
+  let dataToSend = new FormData();
+  dataToSend.append("exerciseId",exerciseId);
+  dataToSend.append("query",document.querySelector(".editor").value);
+  dataToSend.append("solve",1);
+
+  request.onreadystatechange = function () {
+
+  }
+
+  request.send(dataToSend);
+});
