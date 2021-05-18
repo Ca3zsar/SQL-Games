@@ -37,6 +37,12 @@ async function loadExercises(url) {
                         buttonText = "Solved"
                     }
 
+                    let imageElement = '';
+                    if(response[exercise].early == 1 )
+                    {
+                        imageElement = '<img alt="first" src="resources/first.png" class="first-image" />';
+                    }
+
                     exerciseWrapper.innerHTML =
                         '<div class="exercise-requirement">\n' +
                         '            <div class="requirements">\n' +
@@ -53,7 +59,7 @@ async function loadExercises(url) {
                         '                </div>\n' +
                         '                <br class="meta-break" />\n' +
                         '                <div class="title-holder">\n' +
-                        '                    <a href="/exercises/' + response[exercise]["id"] + '" class="exercise-title">#' + response[exercise].id + ' ' + response[exercise].title + '</a>\n' +
+                        '                    <a href="/exercises/' + response[exercise]["id"] + '" class="exercise-title">#' + response[exercise].id + ' ' + response[exercise].title + '</a>\n' + imageElement+
                         '                </div>\n' +
                         '                <div\n' +
                         '                    itemscope\n' +

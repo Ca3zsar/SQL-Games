@@ -66,7 +66,13 @@ class ShopController extends Controller
                 }
             }
             $row->authorName = Exercise::getAuthorName($row->authorId);
-
+            if($row->timesSolved == 0 )
+            {
+                $row->early = 1;
+            }else{
+                $row->early = 0;
+            }
+//            $row->early = ($row->solvedBy != 0) ? 0 : 1;
             $newResults[] = $row;
         }
 
