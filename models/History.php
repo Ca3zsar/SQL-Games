@@ -16,6 +16,8 @@ class History extends \app\core\DBModel
     public float $successRate;
     public int $starsGiven;
     public int $starsReceived;
+    public array $history;
+
 
     public function loadHistory($id)
     {
@@ -78,7 +80,14 @@ class History extends \app\core\DBModel
             $this->successRate = 100;
         }
 
+        $tableName = "solutions";
+        $statement = Application::$app->db->prepare("SELECT * FROM solutions WHERE idUser = :idUser ORDER BY dateTried DESC");
+        $statement->bindValue(":idUser",$id);
 
+        $statement->execute();
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        $this->history = $result;
     }
 
     public function tableName(): string

@@ -109,8 +109,8 @@ class ExerciseController extends Controller
                         echo $result;
                         exit;
                     } elseif (isset($decoded["status"])) {
-                        $exercise->addSolution(Application::$app->user->id,$params["query"]);
                         if ($decoded["status"] === "correct") {
+                            $exercise->addSolution(Application::$app->user->id,$params["query"],1);
                             if (Exercise::checkStatus(Application::$app->user->id, $params["exerciseId"]) == 1) {
                                 echo $result;
                                 exit;
@@ -139,6 +139,7 @@ class ExerciseController extends Controller
                                 exit;
                             }
                         } else {
+                            $exercise->addSolution(Application::$app->user->id,$params["query"],0);
                             echo $result;
                             exit;
                         }

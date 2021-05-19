@@ -42,7 +42,12 @@ body {
     color: #333;
 }
 
-.statistics td {
+.stats-header:last-of-type{
+    padding-top:0;
+}
+
+.information-table tbody tr td,
+.information-table thead tr th{
     color: #777;
     font-weight: 400;
     padding: 0.75rem;
@@ -51,4 +56,21 @@ body {
 
     font-family: roboto;
     font-size:1.1em;
+}
+
+.information-table thead tr th{
+    border-top:none;
+    vertical-align: bottom;
+}
+
+.information-table:last-of-type{
+    margin-bottom:35px;
+}
+
+.correct td{
+    color: #0F9347 !important;
+}
+
+.incorrect td{
+    color: #BE2026 !important;
 }
