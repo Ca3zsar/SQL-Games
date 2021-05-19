@@ -1,4 +1,4 @@
-<?php use app\core\Application;?>
+<?php use app\core\Application; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +35,7 @@
     <nav class="right-nav">
 
         <?php if (!Application::isGuest()): ?>
-            <a class="coins" href="#"><?php echo Application::$app->user->coins?><img
+            <a class="coins" href="#"><?php echo Application::$app->user->coins ?><img
                         src="resources/images/coin.png"
                         class="coin-img"
                         alt="eSQLids"
@@ -44,7 +44,7 @@
                 /></a>
             <a href="/exercise_creator" class="creator">Add Exercise</a>
             <a class="coins-collapsed" href="#"
-            >Coins : <?php echo Application::$app->user->coins?><img
+            >Coins : <?php echo Application::$app->user->coins ?><img
                         src="resources/images/coin.png"
                         class="coin-img"
                         alt="eSQLids"
@@ -56,7 +56,7 @@
         <?php endif; ?>
         <?php if (!Application::isGuest()): ?>
             <div class="dropdown">
-                <p class="dropbtn"><?php echo Application::$app->user->username?></p>
+                <p class="dropbtn"><?php echo Application::$app->user->username ?></p>
                 <div
                         class="dropdown-content"
                         itemscope
@@ -65,9 +65,8 @@
                     <a href="/profile_settings" itemprop="url"
                     ><span itemprop="name">Profile Settings</span></a
                     >
-                    <a href="#" itemprop="url"
-                    ><span itemprop="name">Statistics</span></a
-                    >
+                    <a href="/history" itemprop="url"
+                    ><span itemprop="name">History</span></a>
                     <a href="/logout" itemprop="url"><span itemprop="name">Log out</span></a>
                 </div>
             </div>

@@ -109,6 +109,7 @@ class ExerciseController extends Controller
                         echo $result;
                         exit;
                     } elseif (isset($decoded["status"])) {
+                        $exercise->addSolution(Application::$app->user->id,$params["query"]);
                         if ($decoded["status"] === "correct") {
                             if (Exercise::checkStatus(Application::$app->user->id, $params["exerciseId"]) == 1) {
                                 echo $result;

@@ -68,8 +68,8 @@
                     <a href="/profile_settings" itemprop="url"
                     ><span itemprop="name">Profile Settings</span></a
                     >
-                    <a href="#" itemprop="url"
-                    ><span itemprop="name">Statistics</span></a
+                    <a href="/history" itemprop="url"
+                    ><span itemprop="name">History</span></a
                     >
                     <a href="/logout" itemprop="url"><span itemprop="name">Log out</span></a>
                 </div>

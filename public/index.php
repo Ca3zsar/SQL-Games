@@ -5,6 +5,7 @@ require_once __DIR__ . '/../vendor/autoloader.php';
 use app\controllers\CreatorController;
 use app\controllers\EvaluationController;
 use app\controllers\ExerciseController;
+use app\controllers\HistoryController;
 use app\controllers\SettingsController;
 use app\controllers\ShopController;
 use app\core\Application;
@@ -55,5 +56,6 @@ $app->router->get('/exercise_creator', [CreatorController::class, 'viewCreator']
 $app->router->post('/exercise_creator',[CreatorController::class, 'creator']);
 
 $app->router->post('/evaluation',[EvaluationController::class,'evaluateExercise']);
+$app->router->get('/history',[HistoryController::class,'showHistory']);
 
 $app->run();
