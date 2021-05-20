@@ -22,18 +22,22 @@ $form = Form::begin('', "") ?>
 
             </label>
             <div class="choices">
-                <?php echo $form->field($model, 'difficulty', 'input-hidden', 'id="easy" value="easy" checked')->radioButton() ?>
+                <?php
+                    $difficulties = array("easy"=>'',"medium"=>'',"hard"=>'');
+                    $difficulties[$model->difficulty] = "checked";
+                ?>
+                <?php echo $form->field($model, 'difficulty', 'input-hidden', 'id="easy" value="easy" '.$difficulties["easy"])->radioButton() ?>
                 <label for="easy">
-                    <img class="difficulty-img" src="resources/images/difficulty_easy.png" alt="Easy"/>
+                    <img class="difficulty-img" src="/resources/images/difficulty_easy.png" alt="Easy"/>
                 </label>
-                <?php echo $form->field($model, 'difficulty', 'input-hidden', 'id="medium" value="medium"')->radioButton() ?>
+                    <?php echo $form->field($model, 'difficulty', 'input-hidden', 'id="medium" value="medium" '.$difficulties["medium"])->radioButton() ?>
                 <label for="medium">
-                    <img class="difficulty-img" src="resources/images/difficulty_medium.png"
+                    <img class="difficulty-img" src="/resources/images/difficulty_medium.png"
                          alt="Medium"/>
                 </label>
-                <?php echo $form->field($model, 'difficulty', 'input-hidden', 'id="hard" value="hard"')->radioButton() ?>
+                <?php echo $form->field($model, 'difficulty', 'input-hidden', 'id="hard" value="hard" '.$difficulties["hard"])->radioButton() ?>
                 <label for="hard">
-                    <img class="difficulty-img" src="resources/images/difficulty_hard.png"
+                    <img class="difficulty-img" src="/resources/images/difficulty_hard.png"
                          alt="Hard"/>
                 </label>
             </div>
@@ -49,7 +53,7 @@ $form = Form::begin('', "") ?>
     <div class="price-div">
         <label class="price-label">
             Exercise Price
-            <?php echo $form->field($model, 'price', 'slider', 'id="price_range" min="1" max="15" value="3"')->slider() ?>
+                <?php echo $form->field($model, 'price', 'slider', 'id="price_range" min="1" max="15" value='.$model->price)->slider() ?>
         </label>
         <output class="bubble"></output>
     </div>
@@ -75,4 +79,4 @@ $form = Form::begin('', "") ?>
     </div>
 </div>
 <?php echo Form::end() ?>
-<script src="scripts/creator.js"></script>
+<script src="/scripts/creator.js"></script>
