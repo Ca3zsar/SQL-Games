@@ -2,7 +2,6 @@
 
 require_once __DIR__ . '/../vendor/autoloader.php';
 
-use app\controllers\AchievementsController;
 use app\controllers\CreatorController;
 use app\controllers\EvaluationController;
 use app\controllers\ExerciseController;
@@ -55,12 +54,8 @@ $app->router->put('/profile_settings', [SettingsController::class, 'profileSetti
 
 $app->router->get('/exercise_creator', [CreatorController::class, 'viewCreator']);
 $app->router->post('/exercise_creator',[CreatorController::class, 'creator']);
-$app->router->getRegex('/exercise_creator\/([0-9]*)$/', [CreatorController::class, 'viewEditor']);
-$app->router->putRegex('/exercise_creator\/([0-9]*)$/', [CreatorController::class, 'editExercises']);
 
 $app->router->post('/evaluation',[EvaluationController::class,'evaluateExercise']);
 $app->router->get('/history',[HistoryController::class,'showHistory']);
-
-$app->router->get('/achievements',[AchievementsController::class,'showAchievements']);
 
 $app->run();

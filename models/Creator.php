@@ -3,7 +3,6 @@
 
 namespace app\models;
 
-use app\core\Application;
 use app\core\DBModel;
 use app\core\Model;
 
@@ -11,23 +10,14 @@ class Creator extends DBModel
 {
     public string $title = '';
     public string $difficulty = '';
-    public int $authorId = 0;
-    public int $exerciseId = 0;
-    public int $price = 3;
+    public int $authorId;
+    public int $price = 0;
     public string $requirement = '';
     public string $correctQuery = '';
 
-    public function __construct(Exercise $exercise=null)
+    public function __construct($userId)
     {
-        if($exercise != null) {
-            $this->exerciseId = $exercise->id;
-            $this->authorId = $exercise->authorId;
-            $this->title = $exercise->title;
-            $this->price = $exercise->price;
-            $this->requirement = $exercise->requirement;
-            $this->correctQuery = Exercise::getCorrectQuery($exercise->id);
-            $this->difficulty = $exercise->difficulty;
-        }
+        $this->authorId = $userId;
     }
 
     public function rules(): array
@@ -56,25 +46,8 @@ class Creator extends DBModel
 
     public function primaryKey(): string
     {
-            return 'id';
+        return 'id';
     }
 
-    static public function isExerciseAuthor($exerciseId)
-    {
-        $userId = Application::$app->session->get('user');
-        $sql = Application::$app->db->prepare("select * from exercises where id = :id and authorId = :authorId");
-        $sql->bindValue(':id', $exerciseId);
-        $sql->bindValue(':authorId', $userId);
-        $sql->execute();
-        $result = $sql->fetch();
-
-        if(!empty($result))
-        {
-            return true;
-        }
-
-        return false;
-
-    }
 
 }

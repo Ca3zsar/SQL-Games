@@ -14,7 +14,7 @@ class Exercise extends DBModel
     public int $id = 0;
     public string $title = '';
     public string $difficulty = '';
-    public int $authorId = 0;
+    public int $authorId;
     public string $authorName = '';
     public int $price = 0;
     public string $requirement = '';

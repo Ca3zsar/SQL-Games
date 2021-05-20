@@ -5,13 +5,10 @@ namespace app\controllers;
 
 use app\core\Application;
 use app\core\Controller;
-use app\core\exception\NotFoundException;
 use app\core\middlewares\AuthMiddleware;
-use app\core\middlewares\AuthorMiddleware;
 use app\core\Request;
 use app\core\Response;
 use app\models\Creator;
-use app\models\Exercise;
 
 class CreatorController extends Controller
 {
@@ -19,14 +16,12 @@ class CreatorController extends Controller
     {
         $this->registerMiddleware(new AuthMiddleware(['viewCreator']));
         $this->registerMiddleware(new AuthMiddleware(['creator']));
-        $this->registerMiddleware(new AuthorMiddleware(['viewEditor']));
-        $this->registerMiddleware(new AuthorMiddleware(['editExercise']));
     }
 
     public function viewCreator()
     {
-        $creator = new Creator();
-        $styles = '<link rel="stylesheet" href="/styles/creator.css" />';
+        $creator = new Creator(Application::$app->session->get('id'));
+        $styles = '<link rel="stylesheet" href="styles/creator.css" />';
 
         $this->setLayout('general');
         return $this->render('exercise_creator', "Add Exercise", $styles, ['model' => $creator]);
@@ -35,6 +30,9 @@ class CreatorController extends Controller
 
     public function creator(Request $request, Response $response)
     {
+        $creator = new Creator(Application::$app->session->get('id'));
+        $styles = '<link rel="stylesheet" href="styles/creator.css" />';
+
         $data = $request->getBody();
         $data["authorId"] =  (int)Application::$app->session->get('user');
 
@@ -52,31 +50,13 @@ class CreatorController extends Controller
         curl_close($curl);
 
         echo $result;
-    }
 
-    public function viewEditor(Request $request)
-    {
-        //Get the id of the edited exercise from the path
-        $path = $request->getPath();
-        $id = substr($path, strlen("/exercise_creator/") );
-
-        $exercise = new Exercise();
-
-        try {
-            $exercise->loadExercise($id);
-        } catch (NotFoundException) {
-        }
-
-        $creator = new Creator($exercise);
-        $styles = '<link rel="stylesheet" href="/styles/creator.css" />';
-
-        $this->setLayout('general');
-        return $this->render('exercise_creator', "Edit Exercise #$id", $styles, ['model' => $creator]);
-    }
-
-    public function editExercise(Request $request)
-    {
-
+//        if(empty($result['errors'])) {
+//            Application::$app->response->redirectInTime(3, '/');
+//        }
+//
+//        $this->setLayout('general');
+//        return $this->render('exercise_creator', "Add Exercise", $styles, ['model' => $creator]);
     }
 
 }

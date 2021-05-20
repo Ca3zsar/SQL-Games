@@ -57,9 +57,8 @@ abstract class DBModel extends Model
             $statement->bindValue(":$key", $value);
         }
         $statement->execute();
-        return $statement->fetchObject(static::class);}
-
-
+        return $statement->fetchObject(static::class);
+    }
 
     abstract public function primaryKey(): string;
 }

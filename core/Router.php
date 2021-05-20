@@ -27,11 +27,6 @@ class Router
         $this->regexRoutes['post'][$expression] = $callback;
     }
 
-    public function putRegex($expression, $callback)
-    {
-        $this->regexRoutes['put'][$expression] = $callback;
-    }
-
     public function get($path, $callback)
     {
         $this->routes['get'][$path] = $callback;
