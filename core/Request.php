@@ -27,6 +27,11 @@ class Request
         return $this->method() === 'get';
     }
 
+    public function isPut()
+    {
+        return $this->method() === 'put';
+    }
+
     public function isPost()
     {
         return $this->method() === 'post';

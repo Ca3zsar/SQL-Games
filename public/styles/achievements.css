@@ -1,0 +1,98 @@
+@import "font-importer.css";
+
+body {
+    text-align: center;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.content-area {
+    flex: 1 0 auto;
+    width: 100%;
+    position: relative;
+    background: #F3F7F7;
+    height: auto;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.achievements-header{
+    width: 100%;
+    padding-top: 50px;
+    font-family: bebas, serif;
+    font-size: 33px;
+    user-select: none;
+    color: #333;
+}
+
+.achievements-list{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin-bottom: 20px;
+}
+
+.achievements-manager{
+    font-family: montserrat-regular;
+    padding: 10px;
+    height: fit-content;
+    width: 940px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-top: 1px solid #d3d6d8;
+    border-bottom: 1px solid #d3d6d8;
+}
+
+
+
+
+
+.page-buttons {
+    width: 940px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom:40px;
+}
+
+.page-buttons > button {
+    padding: 5px 10px;
+
+    font-family: open-sans-bold,sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color:#005eb8;
+
+    margin-right: 8px;
+    border:1px solid #005eb8;
+    background-color: #FFFFFF;
+    border-radius:4px;
+    cursor:pointer;
+}
+
+.page-buttons>button:last-child
+{
+    margin-right:20px;
+}
