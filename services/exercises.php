@@ -124,7 +124,33 @@ function addInformation($values, $database): bool
     return true;
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+function updateInformation($values, $database): bool
+{
+    $tableName = 'exercises';
+    $attributes = [];
+    $id = $values->exerciseId;
+    unset($values->exerciseId);
+    foreach ($values as $key => $value) {
+        $attributes[] = $key;
+    }
+
+    $toInsert = [];
+    foreach($attributes as $attribute)
+    {
+        $toInsert[] = $attribute . "= :$attribute";
+    }
+    $toInsert = implode(',',$toInsert);
+    $statement = $database->pdo->prepare("UPDATE $tableName SET " . $toInsert . " WHERE id = :id");
+    foreach ($attributes as $attribute) {
+        $statement->bindValue(":$attribute", $values->{$attribute});
+    }
+    $statement->bindValue(":id",$id);
+
+    $statement->execute();
+    return true;
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_SERVER['REQUEST_METHOD'] === 'PUT') {
     $information = getInformation();
 
     if (empty($information[0]->price)) {
@@ -156,7 +182,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    addInformation($information[0], $database);
+    if($_SERVER["REQUEST_METHOD"] === 'POST') {
+        addInformation($information[0], $database);
+    }else{
+        updateInformation($information[0],$database);
+    }
     echo json_encode(array("errors" => $errors));
     exit;
 }

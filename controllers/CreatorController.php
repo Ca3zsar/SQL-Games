@@ -51,12 +51,32 @@ class CreatorController extends Controller
 
         echo $result;
 
+<<<<<<< Updated upstream
 //        if(empty($result['errors'])) {
 //            Application::$app->response->redirectInTime(3, '/');
 //        }
 //
 //        $this->setLayout('general');
 //        return $this->render('exercise_creator', "Add Exercise", $styles, ['model' => $creator]);
+=======
+        $data = $request->getBody();
+        $data["authorId"] =  (int)Application::$app->session->get('user');
+
+        $data = json_encode($data);
+
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'PUT');
+        curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+        curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
+        curl_setopt($curl, CURLOPT_URL, "http://localhost:8201/exercises.php");
+
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+        $result = curl_exec($curl);
+        curl_close($curl);
+
+        echo $result;
+>>>>>>> Stashed changes
     }
 
 }

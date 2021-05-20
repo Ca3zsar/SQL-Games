@@ -6,7 +6,7 @@ use app\models\Exercise;
 
 if (isset($_SESSION['user'])) {
     $status = Exercise::checkStatus(Application::$app->user->id, $model->id);
-    $voteStatus = Exercise::checkVoted(Application::$app->user->id,$model->id);
+    $voteStatus = Exercise::checkVoted(Application::$app->user->id, $model->id);
 
     $exStatus = '';
     if ($status == -1) {
@@ -17,14 +17,18 @@ if (isset($_SESSION['user'])) {
     }
     if ($status == 1) {
         $exStatus = 'solved';
-        if($voteStatus == 1)
-        {
+        if ($voteStatus == 1) {
             $voteStatus = 'voted';
-        }else{
+        } else {
             $voteStatus = 'novote';
         }
     }
+    $reset = '';
+    if ($model->authorId == Application::$app->user->id) {
+        $reset = '<button class="edit-button">Edit exercise</button>';
+    }
 } else {
+    $reset ='';
     $exStatus = 'blocked';
 }
 
@@ -57,9 +61,9 @@ if (isset($_SESSION['user'])) {
 
         </div>
         <div class="exercise-status <?php echo $exStatus; ?>">
-            <?php if($exStatus=="solved" && $model->authorId != Application::$app->user->id){
-            echo "<img class='star-image $voteStatus' src='/resources/images/star.png'/>";
-            }?>
+            <?php if ($exStatus == "solved" && $model->authorId != Application::$app->user->id) {
+                echo "<img class='star-image $voteStatus' src='/resources/images/star.png'/>";
+            } ?>
         </div>
     </div>
     <div class="editor-wrapper">
@@ -93,8 +97,8 @@ if (isset($_SESSION['user'])) {
            
             </div>
             <div class="exercise-message"></div>
-            <div class="buttons">
-                <button class="reset-button">Reset Content</button>
+            <div class="buttons">' . $reset .
+                    '<button class="reset-button">Reset Content</button>
                 <button class="submit-button">Submit Answer</button>
             </div>
                 <script src="/scripts/highlighter.js"></script>

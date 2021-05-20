@@ -54,6 +54,11 @@ $app->router->put('/profile_settings', [SettingsController::class, 'profileSetti
 
 $app->router->get('/exercise_creator', [CreatorController::class, 'viewCreator']);
 $app->router->post('/exercise_creator',[CreatorController::class, 'creator']);
+<<<<<<< Updated upstream
+=======
+$app->router->getRegex('/exercise_creator\/([0-9]*)$/', [CreatorController::class, 'viewEditor']);
+$app->router->putRegex('/exercise_creator\/([0-9]*)$/', [CreatorController::class, 'editExercise']);
+>>>>>>> Stashed changes
 
 $app->router->post('/evaluation',[EvaluationController::class,'evaluateExercise']);
 $app->router->get('/history',[HistoryController::class,'showHistory']);

@@ -75,4 +75,17 @@ $form = Form::begin('', "") ?>
     </div>
 </div>
 <?php echo Form::end() ?>
+<<<<<<< Updated upstream
 <script src="scripts/creator.js"></script>
+=======
+<script src="/scripts/common_creator.js"></script>
+<?php
+    if($model->title==='')
+    {
+        echo '<script src="/scripts/creator.js"></script>';
+    }else{
+        echo '<script src="/scripts/editor.js"></script>';
+    }
+?>
+
+>>>>>>> Stashed changes

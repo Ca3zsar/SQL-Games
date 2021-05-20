@@ -200,6 +200,10 @@ document.getElementsByClassName("reset-button")[0].addEventListener("click", () 
     newLines = 0;
 });
 
+document.querySelector(".edit-button").addEventListener("click",()=>{
+    window.location.href = '/exercise_creator/'+exerciseId;
+});
+
 document.querySelector(".submit-button").addEventListener("click", async function (event) {
     event.preventDefault();
 
