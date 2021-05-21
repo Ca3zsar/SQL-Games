@@ -4,13 +4,13 @@ const button = document.getElementsByClassName("submit-button")[0];
 const infoForm = document.getElementById("complete-form");
 button.addEventListener('click', async function (event) {
     event.preventDefault();
-    const formData = new FormData(infoForm);
-    formData["exerciseId"] = exerciseId;
-    console.log(formData);
+    let formData = new FormData(infoForm);
+    formData.append("exerciseId",exerciseId);
+
     let classNames = ["title", "correctQuery", "requirement"];
 
     let request = new XMLHttpRequest();
-    request.open('PUT', '/exercise_creator/'+exerciseId);
+    request.open('POST', '/exercise_creator/'+exerciseId);
     request.responseType = 'json';
 
     request.onreadystatechange = function () {

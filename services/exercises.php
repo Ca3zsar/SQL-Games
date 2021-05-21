@@ -152,7 +152,7 @@ function updateInformation($values, $database): bool
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_SERVER['REQUEST_METHOD'] === 'PUT') {
     $information = getInformation();
-
+    $errors = [];
     if (empty($information[0]->price)) {
         $errors['price'] = ['This field is required!'];
     }
@@ -187,7 +187,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_SERVER['REQUEST_METHOD'] === 'PUT
     }else{
         updateInformation($information[0],$database);
     }
-    echo json_encode(array("errors" => $errors));
+    echo json_encode(array("errors" => []));
     exit;
 }
 

@@ -52,9 +52,9 @@ class Checker
                 }
             } catch (PDOException $e) {
                 if ($inService) {
-                    return json_encode(array("errorMessage" => $e->getMessage()));
+                    return json_encode(array("errorMessage" => "Only MySQL queries are allowed1"));
                 } else {
-                    echo json_encode(array("errorMessage" => $e->getMessage()));
+                    echo json_encode(array("errorMessage" => "Only MySQL queries are allowed1"));
                     exit;
                 }
             }

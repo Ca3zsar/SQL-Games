@@ -10,7 +10,7 @@ use app\core\Model;
 class Creator extends DBModel
 {
     public string $title = '';
-    public string $difficulty = '';
+    public string $difficulty = 'easy';
     public int $authorId = 0;
     public int $exerciseId = 0;
     public int $price = 3;

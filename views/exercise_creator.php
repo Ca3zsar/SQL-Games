@@ -2,8 +2,17 @@
 /** @var $model Creator */
 
 use app\models\Creator;
-
 use app\core\form\Form;
+
+$type = '';
+if($model->title === '')
+{
+    $type = 'creator.js';
+}else{
+    $type = 'editor.js';
+}
+$difficulties = array("easy" => '', "medium" => '', "hard" => '');
+$difficulties[$model->difficulty] = "checked";
 
 $form = Form::begin('', "") ?>
 <div class="container">
@@ -13,7 +22,7 @@ $form = Form::begin('', "") ?>
             <label class="meta-label">
                 Exercise Title
                 <?php echo $form->field($model, 'title', 'title-area')->textArea() ?>
-                <?php echo $form->field($model,'title','')->errorField();?>
+                <?php echo $form->field($model, 'title', '')->errorField(); ?>
             </label>
         </div>
         <div class="difficulty-subdiv">
@@ -23,19 +32,17 @@ $form = Form::begin('', "") ?>
             </label>
             <div class="choices">
                 <?php
-                    $difficulties = array("easy"=>'',"medium"=>'',"hard"=>'');
-                    $difficulties[$model->difficulty] = "checked";
                 ?>
-                <?php echo $form->field($model, 'difficulty', 'input-hidden', 'id="easy" value="easy" '.$difficulties["easy"])->radioButton() ?>
+                <?php echo $form->field($model, 'difficulty', 'input-hidden', 'id="easy" value="easy" ' . $difficulties["easy"])->radioButton() ?>
                 <label for="easy">
                     <img class="difficulty-img" src="/resources/images/difficulty_easy.png" alt="Easy"/>
                 </label>
-                    <?php echo $form->field($model, 'difficulty', 'input-hidden', 'id="medium" value="medium" '.$difficulties["medium"])->radioButton() ?>
+                <?php echo $form->field($model, 'difficulty', 'input-hidden', 'id="medium" value="medium" ' . $difficulties["medium"])->radioButton() ?>
                 <label for="medium">
                     <img class="difficulty-img" src="/resources/images/difficulty_medium.png"
                          alt="Medium"/>
                 </label>
-                <?php echo $form->field($model, 'difficulty', 'input-hidden', 'id="hard" value="hard" '.$difficulties["hard"])->radioButton() ?>
+                <?php echo $form->field($model, 'difficulty', 'input-hidden', 'id="hard" value="hard" ' . $difficulties["hard"])->radioButton() ?>
                 <label for="hard">
                     <img class="difficulty-img" src="/resources/images/difficulty_hard.png"
                          alt="Hard"/>
@@ -47,13 +54,13 @@ $form = Form::begin('', "") ?>
         <label class="requirement-label">
             Exercise Requirement
             <?php echo $form->field($model, 'requirement', 'requirement-text')->textArea() ?>
-            <?php echo $form->field($model,'requirement','')->errorField();?>
+            <?php echo $form->field($model, 'requirement', '')->errorField(); ?>
         </label>
     </div>
     <div class="price-div">
         <label class="price-label">
             Exercise Price
-                <?php echo $form->field($model, 'price', 'slider', 'id="price_range" min="1" max="15" value='.$model->price)->slider() ?>
+            <?php echo $form->field($model, 'price', 'slider', 'id="price_range" min="1" max="15" value=' . $model->price)->slider() ?>
         </label>
         <output class="bubble"></output>
     </div>
@@ -64,9 +71,9 @@ $form = Form::begin('', "") ?>
         <div class="editor-holder">
 
             <pre><code class="syntax-highlight html"></code></pre>
-            <?php echo $form->field($model, 'correctQuery', 'editor','id="text-editor"')->textArea() ?>
+            <?php echo $form->field($model, 'correctQuery', 'editor', 'id="text-editor"')->textArea() ?>
         </div>
-        <?php echo $form->field($model,'correctQuery','')->errorField();?>
+        <?php echo $form->field($model, 'correctQuery', '')->errorField(); ?>
         <div class="to-download">
             <h1 class="download-text"><a id="downloadButton" href="#">Here</a> is the result of your query</h1>
         </div>
@@ -79,4 +86,5 @@ $form = Form::begin('', "") ?>
     </div>
 </div>
 <?php echo Form::end() ?>
-<script src="/scripts/creator.js"></script>
+<script src="/scripts/common_creator.js"></script>
+<?php echo "<script src='/scripts/$type'></script>" ; ?>
