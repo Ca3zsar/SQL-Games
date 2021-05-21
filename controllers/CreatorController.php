@@ -17,10 +17,10 @@ class CreatorController extends Controller
 {
     public function __construct()
     {
-//        $this->registerMiddleware(new AuthMiddleware(['viewCreator']));
-//        $this->registerMiddleware(new AuthMiddleware(['creator']));
-//        $this->registerMiddleware(new AuthorMiddleware(['viewEditor']));
-//        $this->registerMiddleware(new AuthorMiddleware(['editExercise']));
+        $this->registerMiddleware(new AuthMiddleware(['viewCreator']));
+        $this->registerMiddleware(new AuthMiddleware(['creator']));
+        $this->registerMiddleware(new AuthorMiddleware(['viewEditor']));
+        $this->registerMiddleware(new AuthorMiddleware(['editExercise']));
     }
 
     public function viewCreator()
