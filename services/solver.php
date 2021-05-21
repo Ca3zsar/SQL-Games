@@ -23,7 +23,12 @@ function getDifferences(Database $database, $query, $correctQuery)
     if (str_starts_with(strtolower($query), "select")) {
         try {
             $query = rtrim($query, ';');
+            $query = str_replace('&#39;',"'",$query);
+            $query = str_replace('&#39',"'",$query);
+
             $correctQuery = rtrim($correctQuery, ';');
+            $correctQuery = str_replace('&#39;',"'",$correctQuery);
+            $correctQuery = str_replace('&#39',"'",$correctQuery);
 
             $statement = $database->pdo->prepare($query);
             $statement->execute();

@@ -32,8 +32,13 @@ class Checker
 
     static function checkQuery(Database $database, $query, $inService = true)
     {
+
         $query = trim($query);
         $query = rtrim($query, ';');
+
+        $query = str_replace('&#39;',"'",$query);
+        $query = str_replace('&#39',"'",$query);
+
         if (str_starts_with(strtolower($query), "select")) {
             try {
                 $statement = $database->pdo->prepare($query);
@@ -45,11 +50,11 @@ class Checker
                 } else {
                     Checker::sendData($results);
                 }
-            } catch (PDOException) {
+            } catch (PDOException $e) {
                 if ($inService) {
-                    return json_encode(array("errorMessage" => "Invalid MySQL statement!"));
+                    return json_encode(array("errorMessage" => $e->getMessage()));
                 } else {
-                    echo json_encode(array("errorMessage" => "Invalid MySQL statement!"));
+                    echo json_encode(array("errorMessage" => $e->getMessage()));
                     exit;
                 }
             }
