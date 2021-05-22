@@ -6,6 +6,7 @@ namespace app\models;
 use app\core\Application;
 use app\core\DBModel;
 use app\core\Model;
+use PDO;
 
 class User extends DBModel
 {
@@ -55,6 +56,15 @@ class User extends DBModel
         $tableName = "users";
         $statement = $statement = Application::$app->db->prepare("UPDATE $tableName SET coins = $this->coins-$toSubstract WHERE id= $this->id");
         $statement->execute();
+    }
+
+    static function getUsername($id)
+    {
+        $tableName = "users";
+        $statement = Application::$app->db->prepare("select username from $tableName where id=:id");
+        $statement->bindValue(":id", $id);
+        $statement->execute();
+        return $statement->fetch(PDO::FETCH_ASSOC)["username"];
     }
 
     static public function addCoins($userId, $toAdd)

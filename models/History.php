@@ -90,7 +90,7 @@ class History extends DBModel
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
         $this->history = $result;
-        return $this;
+        return array("solved" => $this->solved, "successRate" => $this->successRate, "starsReceived" => $this->starsReceived);
     }
 
     public function tableName(): string

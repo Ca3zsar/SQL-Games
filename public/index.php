@@ -8,6 +8,7 @@ use app\controllers\EvaluationController;
 use app\controllers\ExerciseController;
 use app\controllers\HistoryController;
 use app\controllers\SettingsController;
+use app\controllers\StatisticsController;
 use app\controllers\ShopController;
 use app\core\Application;
 use app\controllers\SiteController;
@@ -64,4 +65,5 @@ $app->router->get('/history',[HistoryController::class,'showHistory']);
 $app->router->get('/achievements',[AchievementsController::class,'showAchievements']);
 
 $app->router->get('/statistics', [StatisticsController::class, 'statistics']);
+
 $app->run();
