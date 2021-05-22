@@ -21,8 +21,8 @@
 
 
 <div class="achievements-list">
-    <div class="achievemnt-box">
-
+    <div class="achievement-box">
+        <p>ceva bun</p>
     </div>
 </div>
 

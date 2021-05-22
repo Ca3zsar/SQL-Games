@@ -61,7 +61,13 @@ class Field
                     <div class="invalid-text %s"><p>%s</p> </div>',
                 $this->type, ucfirst($this->attribute), $this->attribute, $this->model->{$this->attribute}, $this->options, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '', $this->attribute,
                 $this->model->getFirstError($this->attribute));
-        } else {
+        } elseif($this->type === self::TYPE_TEL){
+            return sprintf('<input type="%s" placeholder="%s" name="%s" value="%s" %s class="%s%s">
+                    <div class="invalid-text %s"><p>%s</p> </div>',
+                $this->type, ucfirst($this->attribute), $this->attribute, $this->model->{$this->attribute}, $this->options, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '', $this->attribute,
+                $this->model->getFirstError($this->attribute));
+        }
+        else {
             return sprintf('<div class="invalid-text %s"><p>%s</p> </div>',$this->attribute,
                 $this->model->getFirstError($this->attribute));
         }

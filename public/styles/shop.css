@@ -115,11 +115,12 @@ body {
     display: block;
     width: 100%;
     max-width: 220px;
-    height: 25px;
+    /*height: 25px;*/
 
     float: right;
     margin: 2px;
     padding: 0 6px;
+    padding-bottom : 2px;
     font-size: 0.9em;
     line-height: 1.5;
     color: #333;
@@ -404,6 +405,44 @@ body {
     .shop-header {
         font-size: 2em;
     }
+}
+
+@media screen and (max-width:460px)
+{
+    .shop-select{
+        font-size:10px;
+    }
+
+    .shop-filter-layout{
+        font-size:10px;
+    }
+
+    .shop-filter-layout img{
+        width:20px;
+        height:20px;
+    }
+
+    .search-box > .search-input {
+        width: 130px;
+        padding: 0 6px;
+    }
+    .search-box {
+        height:15px;
+    }
+    .search-button{
+        height:15px;
+        width:15px;
+    }
+    .search-input{
+        line-height: 15px;
+        font-size:10px;
+    }
+
+    .search-image{
+        width: 10px;
+        height: 10px;
+    }
+
 }
 
 .exercise-wrapper.compact .exercise-requirement .requirement-text {

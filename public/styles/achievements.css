@@ -43,16 +43,6 @@ body {
     color: #333;
 }
 
-.achievements-list{
-    width: 100%;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    margin-bottom: 20px;
-}
-
 .achievements-manager{
     font-family: montserrat-regular;
     padding: 10px;
@@ -66,7 +56,20 @@ body {
     border-bottom: 1px solid #d3d6d8;
 }
 
+.achievements-list{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
+    margin-bottom: 20px;
+}
+
+.achievement-box{
+    background-color: lightgrey;
+    padding: 10px;
+}
 
 
 

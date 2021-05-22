@@ -18,10 +18,12 @@ body {
 }
 
 .content-area {
+	width:100%;
 	position: relative;
 	margin-top: 0;
 	background: #F3F7F7;
-	height: 1400px;
+	min-height: 100vh;
+	height:fit-content;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
@@ -75,6 +77,10 @@ body {
 
 .settings-area {
 	width: 100%;
+	min-height: 100vh;
+	height:fit-content;
+	height: -moz-fit-content;
+	height:auto;
 	margin: 50px 80px 80px;
 	display: flex;
 }
@@ -85,7 +91,6 @@ body {
 }
 
 .complete-form {
-	position: absolute;
 	margin-left: 250px;
 	text-align: left;
 }
@@ -110,7 +115,7 @@ body {
 }
 
 .personal-info, .pass-info, .contact-info, .about-info {
-	width: 50%;
+	width: 65%;
 }
 
 .information {
@@ -153,7 +158,11 @@ body {
 
 @media (max-width:1100px) {
 	.personal-info, .pass-info, .contact-info, .about-info {
-		width: 70%;
+		width: 80%;
+	}
+	.personal-info .email-div
+	{
+		width:100%;
 	}
 }
 
@@ -199,5 +208,38 @@ body {
 	}
 	.settings-area {
 		margin-left: 5px;
+	}
+}
+
+@media(max-width: 470px){
+	.complete-form h1{
+		font-size:1.4em;
+	}
+
+	.complete-form label{
+		font-size:0.9em;
+	}
+
+	.phone-div, .address-div, .birthday-div, .description-div
+	{
+		width:100%;
+
+	}
+
+	.about-info-description textarea {
+		width: 100%;
+		height: 150px;
+		resize: none;
+	}
+
+}
+
+@media(max-width: 400px){
+	.complete-form h1{
+		font-size:1.3em;
+	}
+
+	.complete-form label{
+		font-size:0.75em;
 	}
 }
