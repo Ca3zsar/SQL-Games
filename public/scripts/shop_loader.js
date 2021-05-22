@@ -2,6 +2,7 @@ let filter = '';
 let orderBy = '&orderBy=popularity';
 let search = '';
 let currentPage = new URLSearchParams(window.location.search).get('page');
+let lastPage = 0;
 
 async function loadExercises(url) {
     let request = new XMLHttpRequest();
@@ -16,6 +17,11 @@ async function loadExercises(url) {
             while (exerciseList.hasChildNodes()) {
                 exerciseList.removeChild(exerciseList.lastChild);
             }
+
+            lastPage = response[response.length - 1][0];
+            response.pop();
+            // console.log(lastPage);
+
             for (let exercise in response) {
                 if (response.hasOwnProperty(exercise)) {
 
@@ -94,8 +100,11 @@ async function loadExercises(url) {
                         '            </div>\n' +
                         '        </div>'
                     exerciseList.appendChild(exerciseWrapper);
+
                 }
+
             }
+            changeButtonValues();
         }
     };
     request.send();
@@ -107,7 +116,8 @@ function changeButtonValues() {
     let buttonIndex = currentPage - 1;
     pageButtons.forEach(function (tempPageButton) {
         tempPageButton.innerHTML = buttonIndex;
-        if (buttonIndex === 0) {
+
+        if (buttonIndex === 0 || (buttonIndex === currentPage+1 && lastPage===1)) {
             tempPageButton.style.display = 'none';
         } else {
             tempPageButton.style.display = 'block';
@@ -126,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if ("page" in keyValue) {
         if (parseInt(keyValue.page)) {
+            currentPage = parseInt(keyValue.page);
             loadExercises("shop?page=" + keyValue.page + filter + orderBy + search);
         } else {
             currentPage = 1;
@@ -136,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
         loadExercises("shop?page=1" + filter + orderBy + search);
 
     }
-    changeButtonValues();
+
 }, false);
 
 
@@ -145,7 +156,6 @@ pageButtons.forEach(function (pageButton) {
         loadExercises("shop?page=" + pageButton.innerHTML + filter + orderBy + search);
         currentPage = parseInt(pageButton.innerHTML);
 
-        changeButtonValues();
         window.history.pushState({}, '', 'shop?page=' + currentPage);
     }, false);
 });
@@ -160,7 +170,6 @@ diffFilter.addEventListener("change", function () {
     }
     currentPage = 1;
     loadExercises("shop?page=1&" + filter + orderBy + search, 1);
-    changeButtonValues();
 
 }, false);
 
@@ -169,7 +178,7 @@ orderFilter.addEventListener("change", function () {
     orderBy = "&orderBy=" + orderFilter.value;
     currentPage = 1;
     loadExercises("shop?page=1" + filter + orderBy + search);
-    changeButtonValues();
+
 }, false);
 
 const searchFilter = document.querySelector(".search-input");

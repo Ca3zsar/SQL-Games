@@ -52,7 +52,16 @@ class ShopController extends Controller
 
         $limit = 5;
         $offset = ($currentPage - 1) * $limit;
+
+        $lastPage = 1;
+
         if($result) {
+            if($limit+$offset >= count($result))
+            {
+                $lastPage = 1;
+            }else{
+                $lastPage = 0;
+            }
             $result = array_slice($result, $offset, $limit);
         }
         $newResults = [];
@@ -77,6 +86,7 @@ class ShopController extends Controller
             }
             $newResults[] = $row;
         }
+        $newResults[] = [$lastPage];
 
         curl_close($curl);
         echo json_encode($newResults);

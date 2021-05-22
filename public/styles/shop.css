@@ -1,5 +1,9 @@
 @import "font-importer.css";
 
+html{
+    height:100%;
+}
+
 body {
     text-align: center;
     margin: 0;
@@ -12,7 +16,7 @@ body {
     width: 100%;
     position: relative;
     background: #f3f7f7;
-    min-height: 800px;
+    min-height: 100vh;
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: center;
