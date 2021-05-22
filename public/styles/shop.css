@@ -91,6 +91,10 @@ body {
     width: 0;
 }
 
+.search-input:focus{
+    width:240px;
+}
+
 .shop-select {
     display: flex;
 }
@@ -367,6 +371,10 @@ body {
         padding: 0 6px;
     }
 
+    .search-input:focus{
+        width:150px;
+    }
+
     .shop-filter {
         width: 65%;
     }
@@ -376,6 +384,10 @@ body {
     .search-box:hover > .search-input {
         width: 130px;
         padding: 0 6px;
+    }
+
+    .search-input:focus{
+        width:130px;
     }
 
     .shop-filter {

@@ -68,9 +68,24 @@ body {
 
 .achievement-box{
     background-color: lightgrey;
+    display: flex;
+    flex-direction: row;
     padding: 10px;
 }
 
+.achievement-icon{
+    background-color: yellow;
+    border: black 1px solid;
+}
+
+.achievement-icon img{
+    height:100px;
+}
+
+.achievement-stats{
+    display: flex;
+    flex-direction: column;
+}
 
 
 .page-buttons {

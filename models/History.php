@@ -5,9 +5,10 @@ namespace app\models;
 
 
 use app\core\Application;
+use app\core\DBModel;
 use PDO;
 
-class History extends \app\core\DBModel
+class History extends DBModel
 {
     public string $createdAt;
     public int $bought;
@@ -39,7 +40,8 @@ class History extends \app\core\DBModel
 
         $this->bought = $result["bought"];
 
-        $statement = Application::$app->db->prepare("SELECT count(*) solved FROM $tableName WHERE idUser = :idUser AND solved=1");
+        // Get the number of solved exercises.
+        $statement = Application::$app->db->prepare("SELECT count(*) solved   FROM userexercises ue JOIN exercises e ON ue.idExercise = e.id AND ue.idUser = :idUser AND ue.idUser != e.authorId AND ue.solved = 1;");
         $statement->bindValue(":idUser",$id);
 
         $statement->execute();
@@ -75,7 +77,7 @@ class History extends \app\core\DBModel
         $this->attempts = $result["attempts"];
         if($this->attempts != 0)
         {
-            $this->successRate = ($this->solved / $this->attempts) * 100;
+            $this->successRate = min((($this->solved / $this->attempts) * 100), 100);
         }else{
             $this->successRate = 100;
         }

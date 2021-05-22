@@ -1,3 +1,7 @@
+<?php
+/** @var $model \app\models\History */
+?>
+
 <div class="achievements-header">
     <h1>Achievements</h1>
 </div>
@@ -22,8 +26,19 @@
 
 <div class="achievements-list">
     <div class="achievement-box">
-        <p>ceva bun</p>
+        <div class="achievement-icon">
+            <img src="/resources/images/achievement.png">
+        </div>
+        <div class="achievement-stats">
+            <div class="achievement-title">
+                <p>Gather 30 eSQLids.</p>
+            </div>
+            <div class="achievement-loading-bar">
+                <p>1/30</p>
+            </div>
+        </div>
     </div>
+
 </div>
 
 <div class="page-buttons">
