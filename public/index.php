@@ -65,5 +65,6 @@ $app->router->get('/history',[HistoryController::class,'showHistory']);
 $app->router->get('/achievements',[AchievementsController::class,'showAchievements']);
 
 $app->router->get('/statistics', [StatisticsController::class, 'statistics']);
+$app->router->get('/getStatistics',[StatisticsController::class,'getStats']);
 
 $app->run();

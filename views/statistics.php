@@ -1,4 +1,3 @@
-
 <?php
 /** @var $model \app\models\Statistics */
 ?>
@@ -6,6 +5,7 @@
 <div class="container">
     <div class="stats-header">
         <h1>Top Users</h1>
+        <h5>(export data as PDF)</h5>
     </div>
     <table class="information-table">
         <thead>
