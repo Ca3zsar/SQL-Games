@@ -22,10 +22,12 @@ body {
 	width:100%;
 	position: relative;
 	background:#F3F7F7;
-	height: auto;
+	height: fit-content;
+    height: -moz-fit-content;
 	display:inline-flex;
 	flex-wrap: wrap;
 	justify-content: center;
+    min-height: 100vh;
 }
 
 .page-up{
