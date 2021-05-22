@@ -83,13 +83,14 @@ class History extends DBModel
         }
 
         $tableName = "solutions";
-        $statement = Application::$app->db->prepare("SELECT * FROM solutions WHERE idUser = :idUser ORDER BY dateTried DESC");
+        $statement = Application::$app->db->prepare("SELECT * FROM $tableName WHERE idUser = :idUser ORDER BY dateTried DESC");
         $statement->bindValue(":idUser",$id);
 
         $statement->execute();
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
         $this->history = $result;
+        return $this;
     }
 
     public function tableName(): string

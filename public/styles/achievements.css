@@ -67,19 +67,29 @@ body {
 }
 
 .achievement-box{
+    width: 100%;
     background-color: lightgrey;
     display: flex;
     flex-direction: row;
     padding: 10px;
+    justify-content: space-evenly;
 }
 
 .achievement-icon{
     background-color: yellow;
     border: black 1px solid;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 .achievement-icon img{
     height:100px;
+}
+
+.achievement-loading-bar{
+    background-color: gray;
+    border: black 1px solid;
+    width: 200px;
 }
 
 .achievement-stats{

@@ -35,6 +35,7 @@
             </div>
             <div class="achievement-loading-bar">
                 <p>1/30</p>
+                <progress max="100" value="80"></progress>
             </div>
         </div>
     </div>
