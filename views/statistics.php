@@ -1,5 +1,8 @@
 <?php
-/** @var $model \app\models\Statistics */
+/** @var $model Statistics */
+
+use app\models\Statistics;
+
 ?>
 
 <div class="container">
@@ -34,3 +37,5 @@
         ?>
     </table>
 </div>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>-->
+<script type="module" src="/scripts/statistics.js"></script>

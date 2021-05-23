@@ -11,6 +11,13 @@ use app\core\Application;
 
 class StatisticsController extends Controller
 {
+    public function getStats(Request $request)
+    {
+        $statistics = new Statistics();
+
+        $statistics->loadStats();
+        echo json_encode($statistics->finalStats);
+    }
 
     public function statistics(Request $request)
     {
@@ -19,7 +26,8 @@ class StatisticsController extends Controller
         $statistics->loadStats();
 
         $styles = '<link rel="stylesheet" href="styles/history.css" />
-                    <link rel="stylesheet" href="styles/statistics.css" />';
+                    <link rel="stylesheet" href="styles/statistics.css" />
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>';
 
         $this->setLayout('general');
         return $this->render('statistics', "General Stats", $styles, ['model' => $statistics]);
