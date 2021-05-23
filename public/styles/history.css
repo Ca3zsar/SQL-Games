@@ -49,7 +49,7 @@ body {
 
 .information-table tbody tr td,
 .information-table thead tr th{
-    color: #777;
+    color: #333;
     font-weight: 400;
     padding: 0.75rem;
     vertical-align: top;

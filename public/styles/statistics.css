@@ -13,17 +13,22 @@
     align-items: center;
 }
 
-.stats-header h5{
+.stats-header a{
     margin: 0;
     color: #1C2434;
     margin-bottom: 10px;
     width: fit-content;
     width: -moz-fit-content;
+    font-size: 15px;
 
 }
 
-.stats-header h5:hover{
+.stats-header a:hover{
     text-decoration: underline;
     cursor: pointer;
+}
+
+#html-download, #pdf-download{
+    font-weight: normal;
 }
 
