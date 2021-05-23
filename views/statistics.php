@@ -37,5 +37,6 @@ use app\models\Statistics;
         ?>
     </table>
 </div>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>-->
-<script type="module" src="/scripts/statistics.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script src="/scripts/statistics.js">
+</script>
