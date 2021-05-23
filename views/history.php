@@ -25,7 +25,7 @@
         </tr>
         <tr>
             <td>Success rate : </td>
-            <td><?php echo $model->successRate . '%'; ?> </td>
+            <td><?php echo round($model->successRate, 2) . '%'; ?> </td>
         </tr>
         <tr>
             <td>Stars given : </td>

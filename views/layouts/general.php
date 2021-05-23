@@ -86,7 +86,7 @@
     {{content}}
 
     <footer class="footer-bar">
-        <a href="#">Contact us</a>
+        <a href="/statistics">Statistics</a>
         <a href="/scholarlyhtml">Scholarly HTML</a>
         <h4 itemscope itemtype="https://schema.org/copyrightHolder">
             © SQL-GAMES 2021

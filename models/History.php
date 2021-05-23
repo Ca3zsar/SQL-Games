@@ -77,7 +77,7 @@ class History extends DBModel
         $this->attempts = $result["attempts"];
         if($this->attempts != 0)
         {
-            $this->successRate = min((($this->solved / $this->attempts) * 100), 100);
+            $this->successRate = round(min((($this->solved / $this->attempts) * 100), 100),2);
         }else{
             $this->successRate = 100;
         }

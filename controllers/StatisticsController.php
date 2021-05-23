@@ -26,8 +26,7 @@ class StatisticsController extends Controller
         $statistics->loadStats();
 
         $styles = '<link rel="stylesheet" href="styles/history.css" />
-                    <link rel="stylesheet" href="styles/statistics.css" />
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>';
+                    <link rel="stylesheet" href="styles/statistics.css" />';
 
         $this->setLayout('general');
         return $this->render('statistics', "General Stats", $styles, ['model' => $statistics]);
