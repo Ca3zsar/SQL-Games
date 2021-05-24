@@ -6,7 +6,6 @@ namespace app\controllers;
 
 use app\core\Application;
 use app\core\Controller;
-use app\core\form\Form;
 use app\core\middlewares\AuthMiddleware;
 use app\core\Request;
 use app\core\Response;
@@ -41,13 +40,33 @@ class AuthController extends Controller
         $user = new User();
         $styles = "<link rel=\"stylesheet\" href=\"styles/signin_register.css\"/>";
         if ($request->isPost()) {
+            $data = $request->getBody();
 
+            $curl = curl_init();
+            curl_setopt($curl, CURLOPT_POST, 1);
+            curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+            curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
+            curl_setopt($curl, CURLOPT_URL, "http://localhost:8201/authentication/create_user.php");
+
+            curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
+
+            $result = curl_exec($curl);
+            curl_close($curl);
+
+            $result = json_decode($result,1);
             $user->loadData($request->getBody());
 
-            if ($user->validate() && $user->saveUser()) {
-                Application::$app->session->setFlash('success', "You have successfully registered!");
-                Application::$app->response->redirectInTime(3, '/');
+            if(!isset($result->errors))
+            {
+                $user->errors = $result["errors"];
+            }else{
+                $newUser = (new User)->findOne(['username' => $user->username]);
+                if(Application::$app->register($newUser)) {
+                    Application::$app->session->setFlash('success', "You have successfully registered!");
+                    Application::$app->response->redirectInTime(3, '/');
+                }
             }
+
             $this->setLayout('general');
             return $this->render('register', "Register", $styles, ['model' => $user]);
         }

@@ -47,6 +47,10 @@ function validate($receivedRules, $values, $database): array
             if ($ruleName === RULE_MIN && strlen($value) < 8) {
                 $errors[$attribute] = ['The minimum length is ' . 8];
             }
+            if($ruleName === RULE_MATCH && $value !== $values->password)
+            {
+                $errors[$attribute] = ['Passwords do not match!'];
+            }
             if ($ruleName === RULE_UNIQUE) {
                 $uniqueAttr = $rule['attribute'] ?? $attribute;
                 $tableName = 'users';
@@ -127,7 +131,7 @@ if($user->create()){
 }
 else{
     http_response_code(400);
-    echo json_encode(array("message" => "Unable to create user."));
+    echo json_encode(array("errors" => ["Unable to create user."]));
     exit;
 }
 
