@@ -108,8 +108,4 @@ class History extends DBModel
         return 'id';
     }
 
-    public function rules(): array
-    {
-        return [];
-    }
 }

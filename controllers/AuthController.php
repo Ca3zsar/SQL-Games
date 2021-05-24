@@ -56,7 +56,7 @@ class AuthController extends Controller
             $result = json_decode($result,1);
             $user->loadData($request->getBody());
 
-            if(!isset($result->errors))
+            if(isset($result["errors"]))
             {
                 $user->errors = $result["errors"];
             }else{

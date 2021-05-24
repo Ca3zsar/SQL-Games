@@ -67,8 +67,4 @@ class Statistics extends DBModel
         // TODO: Implement primaryKey() method.
     }
 
-    public function rules(): array
-    {
-        return [];
-    }
 }

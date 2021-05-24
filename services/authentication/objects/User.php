@@ -16,7 +16,7 @@ class User
     public $password;
 
     // constructor
-    public function __construct($connection){
+    public function __construct($connection=null){
         $this->connection = $connection;
     }
 
@@ -49,5 +49,19 @@ class User
         }
 
         return false;
+    }
+
+    public function userExists($where)
+    {
+        $attributes = array_keys($where);
+        $sql = implode(" AND ", array_map(fn($attr) => "$attr = :$attr", $attributes));
+
+        $statement = $this->connection->prepare("SELECT * FROM $this->tableName WHERE $sql");
+        foreach ($where as $key => $value) {
+            $statement->bindValue(":$key", $value);
+        }
+
+        $statement->execute();
+        return $statement->fetchObject(static::class);
     }
 }

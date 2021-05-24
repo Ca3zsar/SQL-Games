@@ -184,11 +184,6 @@ class Exercise extends DBModel
         }
     }
 
-    public function rules(): array
-    {
-        return [];
-    }
-
     public function tableName(): string
     {
         return 'exercises';

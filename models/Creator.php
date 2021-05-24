@@ -30,15 +30,6 @@ class Creator extends DBModel
         }
     }
 
-    public function rules(): array
-    {
-        return ['difficulty' => [self::RULE_REQUIRED],
-            'title' => [self::RULE_REQUIRED, [self::RULE_TITLE_UNIQUE, 'class' => self::class]],
-            'requirement' => [self::RULE_REQUIRED, [self::RULE_MIN_TEXT, 'min' => 20]],
-            'price' => [self::RULE_REQUIRED]
-        ];
-    }
-
     public function addExercise(): bool
     {
         return parent::save();

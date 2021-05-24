@@ -14,16 +14,6 @@ class User extends DBModel
     public string $password= '';
     public string $confirmPassword= '';
 
-    public function rules(): array
-    {
-        return [
-            'username' => [self::RULE_REQUIRED,[self::RULE_UNIQUE, 'class' => self::class]],
-            'email' => [self::RULE_REQUIRED,self::RULE_EMAIL, [self::RULE_UNIQUE, 'class' => self::class]],
-            'password' => [self::RULE_REQUIRED,[self::RULE_MIN,'min'=>8]],
-            'confirmPassword' => [self::RULE_REQUIRED,[self::RULE_MATCH,'match'=>'password']]
-        ];
-    }
-
     public function updateSettings()
     {
 
@@ -34,11 +24,6 @@ class User extends DBModel
         return 'users';
     }
 
-    public function saveUser(): bool
-    {
-        $this->password = password_hash($this->password, PASSWORD_DEFAULT);
-        return parent::saveUser();
-    }
 
     public function attributes(): array
     {
