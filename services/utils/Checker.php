@@ -1,7 +1,7 @@
 <?php
 
 
-namespace app\services;
+namespace app\services\utils;
 
 
 use app\core\Database;
@@ -13,7 +13,7 @@ class Checker
 {
     static function getQueryDatabaseConnection(): Database
     {
-        (new DotEnv(__DIR__ . '/.env.user'))->load();
+        (new DotEnv(__DIR__ . '/../.env.user'))->load();
         $config = [
             'db' => [
                 'dsn' => getenv('DB_DSN_QUERY'),
@@ -50,7 +50,7 @@ class Checker
                 } else {
                     Checker::sendData($results);
                 }
-            } catch (PDOException $e) {
+            } catch (PDOException) {
                 if ($inService) {
                     return json_encode(array("errorMessage" => "Only MySQL queries are allowed1"));
                 } else {

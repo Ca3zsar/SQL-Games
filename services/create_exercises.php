@@ -4,7 +4,8 @@ require_once __DIR__ . '/../vendor/autoloader.php';
 
 use \app\core\Database;
 use \app\core\DotEnv;
-use app\services\Checker as CheckerAlias;
+use app\services\utils\Checker as CheckerAlias;
+use app\services\utils\DatabaseConnection;
 
 $results = null;
 
@@ -15,27 +16,14 @@ const RULE_INT = 'int';
 const RULE_CORRECT = 'correct';
 const RULE_DIFFICULTY = "difficulty";
 
-function getDatabaseConnection(): Database
-{
-    (new DotEnv(__DIR__ . '/.env'))->load();
-    $config = [
-        'db' => [
-            'dsn' => getenv('DB_DSN'),
-            'user' => getenv('DB_USER'),
-            'password' => getenv('DB_PASSWORD')
-        ]
-    ];
-    return new Database($config['db']);
-}
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Max-Age: 3600");
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 function getInformation(): array
 {
-    header("Access-Control-Allow-Origin: *");
-    header("Content-Type: application/json; charset=UTF-8");
-    header("Access-Control-Allow-Methods: POST");
-    header("Access-Control-Max-Age: 3600");
-    header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
     $data = json_decode(file_get_contents("php://input"));
     $values = $data;
 
@@ -174,7 +162,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_SERVER['REQUEST_METHOD'] === 'PUT
         exit();
     }
 
-    $database = getDatabaseConnection();
+    $database = DatabaseConnection::getDatabaseConnection();
     $errors = validate($information[1], $information[0], $database);
 
     if (!empty($errors)) {
@@ -191,89 +179,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_SERVER['REQUEST_METHOD'] === 'PUT
     exit;
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $params = substr($_SERVER['REQUEST_URI'], strlen("/exercises.php")); // '\x20\x2f'
-    $pos = strpos($params, '/');
 
-    if ($pos !== false) {
-        $param = substr($params, $pos + 1);
-    }
-
-    $database = getDatabaseConnection();
-    if (empty($param) || $param[0] === '?') {
-        $tableName = 'exercises';
-
-        $diff = '';
-        $search = '';
-        if(isset($_GET["difficulty"]))
-        {
-            $diff = sprintf("WHERE difficulty =  '%s'", $_GET["difficulty"]);
-            if(isset($_GET["search"]))
-            {
-                $diff = sprintf("%s AND title LIKE '%%%s%%' ",$diff,$_GET["search"]);
-//                $diff .= " AND title LIKE CONCAT('%', ' $search ', '%')";
-            }
-        }else{
-            if(isset($_GET["search"]))
-            {
-                $diff = sprintf("WHERE title LIKE '%%%s%%' ", $_GET["search"]);
-            }
-        }
-
-        $orderBy = '';
-        if(isset($_GET["orderBy"]))
-        {
-            if($_GET["orderBy"] === 'dateAdded')
-            {
-                $orderBy = "ORDER BY " . "createdAt";
-            }
-            if($_GET["orderBy"] === 'popularity')
-            {
-                $orderBy = "ORDER BY " . "timesSolved/(DATEDIFF(CURDATE(),createdAt)+1) DESC";
-            }
-        }
-
-        $statement = $database->prepare("SELECT * FROM " . $tableName . ' ' . $diff . ' ' . $orderBy);
-        $statement->execute();
-        $record = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-        if (!empty($record)) {
-            echo json_encode($record);
-            exit();
-        }
-    } elseif ($param != '' && !str_contains($param, '/')) {
-
-        $tableName = 'exercises';
-
-        if (is_numeric($param) && !str_contains($param, '.')) {
-            $statement = $database->prepare("SELECT * FROM $tableName WHERE id = :id");
-            $statement->bindValue(':id', $param);
-            $statement->execute();
-            $record = $statement->fetch(PDO::FETCH_ASSOC);
-
-            if (!empty($record)) {
-                echo json_encode($record);
-                exit();
-            } else {
-                http_response_code(404);
-                echo json_encode(array("error" => "There is no exercise with that id"));
-            }
-        }
-        elseif ($param === 'easy' || $param === 'medium' || $param === 'hard') {
-            $statement = $database->prepare("SELECT * FROM $tableName WHERE difficulty = :difficulty");
-            $statement->bindValue(':difficulty', $param);
-            $statement->execute();
-            $record = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-            echo json_encode($record);
-            exit();
-        }
-        else {
-            http_response_code(400); // bad request
-            echo json_encode(array("error" => "Invalid request."));
-        }
-    } else {
-        http_response_code(400);// bad request
-        echo json_encode(array("error" => "Invalid request. Too many arguments"));
-    }
-}

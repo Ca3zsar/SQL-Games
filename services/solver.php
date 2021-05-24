@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../vendor/autoloader.php';
 
 use \app\core\Database;
-use app\services\Checker as CheckerAlias;
+use app\services\utils\Checker as CheckerAlias;
 
 header('Access-Control-Allow-Origin: *');
 header("Content-Type: application/json; charset=UTF-8");
@@ -88,5 +88,3 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
         }
     }
 }
-
-//echo checkQuery(getQueryDatabaseConnection(), 'select * from studenti where bursa > 400');

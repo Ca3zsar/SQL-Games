@@ -161,7 +161,7 @@ class Exercise extends DBModel
         curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
-        $url = "http://localhost:8201/exercises.php/" . $id;
+        $url = "http://localhost:8201/get_exercises.php/" . $id;
         curl_setopt($curl, CURLOPT_URL, $url);
 
         $result = curl_exec($curl);

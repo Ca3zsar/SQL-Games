@@ -40,7 +40,7 @@ class ShopController extends Controller
 //            $difficulty = "difficulty=".$_GET["difficulty"];
         }
         $query = http_build_query($params);
-        $url = "http://localhost:8201/exercises.php";
+        $url = "http://localhost:8201/get_exercises.php";
 
         if (!empty($query)) {
             $url = $url . "?" . $query;
