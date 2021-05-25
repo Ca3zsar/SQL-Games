@@ -56,7 +56,7 @@ class Field
                 $this->type, $this->attribute, $this->model->{$this->attribute}, $this->options, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '', $this->attribute,
                 $this->model->getFirstError($this->attribute));
         } elseif ($this->type === self::TYPE_TEXT) {
-            return sprintf('<input type="%s" placeholder="%s" name="%s" value="%s" %s class="%s%s">',
+            return sprintf('<input type="%s" placeholder="%s" name="%s" value="%s" %s class="%s%s"/>',
                 $this->type, ucfirst($this->attribute), $this->attribute, $this->model->{$this->attribute}, $this->options, $this->class, $this->model->hasError($this->attribute) ? ' invalid' : '');
         } elseif($this->type === self::TYPE_TEL){
             return sprintf('<input type="%s" placeholder="%s" name="%s" value="%s" %s class="%s%s">

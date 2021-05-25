@@ -13,16 +13,40 @@ modifyDimensions(condition);
 condition.addEventListener("change", modifyDimensions);
 
 const button = document.getElementById('submit-changes');
-const formElement = document.getElementById('complete-form');
+const formElement = document.querySelector('.complete-form');
 
 button.addEventListener('click', async function (event) {
     event.preventDefault();
-    const formData = new FormData(formElement);
-    console.log(formData.entries());
+    let classNames = ["current-password","new-password","confirm-password"];
+    let formData = new FormData(formElement);
 
     let request = new XMLHttpRequest();
-    request.open('PUT', '/profile_settings', true);
+    request.open('POST', '/profile_settings', true);
     request.responseType = 'json';
+
+    request.onreadystatechange = function () {
+        let errorClass;
+        if (this.readyState === 4 && this.status === 200) {
+            let response = request.response;
+            if ("errors" in response && response.errors.length === 0) {
+                window.location.replace("/");
+            }
+        }
+        if(this.readyState === 4 && this.status === 401)
+        {
+            let response = request.response;
+            for (let key of classNames) {
+                let classname = 'invalid-text ' + key;
+                errorClass = document.getElementsByClassName(classname)[0];
+                if (key in response.errors) {
+                    errorClass.innerHTML = response.errors[key][0];
+                } else {
+                    errorClass.innerHTML = '';
+                }
+            }
+        }
+
+    };
 
     request.send(formData);
 });

@@ -104,7 +104,7 @@ if(!empty($errors))
     exit;
 }
 
-$errors = validate($rules,$data,$database);
+    $errors = validate($rules,$data,$database);
 
 if(!empty($errors))
 {

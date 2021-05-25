@@ -52,7 +52,7 @@ $app->router->get('/logout', [AuthController::class, 'logout']);
 $app->router->get('/getExercises',[ShopController::class,'loadExercises']);
 
 $app->router->get('/profile_settings', [SettingsController::class, 'profileSettings']);
-$app->router->put('/profile_settings', [SettingsController::class, 'profileSettings']);
+$app->router->post('/profile_settings', [SettingsController::class, 'changeSettings']);
 
 $app->router->get('/exercise_creator', [CreatorController::class, 'viewCreator']);
 $app->router->post('/exercise_creator',[CreatorController::class, 'creator']);

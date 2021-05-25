@@ -1,7 +1,8 @@
 <?php
-/** @var $model \app\models\User */
+/** @var $model User */
 
 use app\core\form\Form;
+use app\models\User;
 
 ?>
 
@@ -64,7 +65,8 @@ use app\core\form\Form;
                     >Current Password</label
                     >
 
-                    <?php echo $form->field($model, 'password', "", "id='current-pass-input'")->passwordField(); ?>
+                    <?php echo $form->field($model, 'currentPassword', "", "id='current-pass-input'")->passwordField(); ?>
+                    <?php echo $form->field($model, 'currentPassword', '')->errorField(); ?>
                 </div>
             </div>
 
@@ -76,7 +78,8 @@ use app\core\form\Form;
                     >New Password</label
                     >
 
-                    <?php echo $form->field($model, 'password', "", "id='password-input'")->passwordField(); ?>
+                    <?php echo $form->field($model, 'newPassword', "", "id='password-input'")->passwordField(); ?>
+                    <?php echo $form->field($model, 'newPassword', '')->errorField(); ?>
                 </div>
                 <div class="confirm-password-div">
                     <label
@@ -85,7 +88,8 @@ use app\core\form\Form;
                     >Confirm Password</label
                     >
 
-                    <?php echo $form->field($model, 'password', "", "id='confirm-input'")->passwordField(); ?>
+                    <?php echo $form->field($model, 'confirmPassword', "", "id='confirm-input'")->passwordField(); ?>
+                    <?php echo $form->field($model, 'confirmPassword', '')->errorField(); ?>
                 </div>
             </div>
         </div>
