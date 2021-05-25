@@ -14,9 +14,11 @@ class SettingsController extends Controller
     public function changeSettings(Request $request){
         $data = $request->getBody();
         $data["username"] = Application::$app->user->username;
-        $data["password"] = Application::$app->user->password;
 
         $data = json_encode($data);
+
+//        echo $data;
+//        exit;
 
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_POST, 1);
@@ -28,7 +30,9 @@ class SettingsController extends Controller
 
         $result = curl_exec($curl);
         $statusCode = curl_getinfo($curl,CURLINFO_HTTP_CODE);
-        curl_close($curl);
+
+//        echo $result;
+//        exit;
 
         if($statusCode == 200) {
             http_response_code(200);
@@ -41,6 +45,13 @@ class SettingsController extends Controller
             echo $result;
             exit;
         }
+        if($statusCode == 401)
+        {
+            http_response_code(401);
+            echo $result;
+            exit;
+        }
+        curl_close($curl);
     }
 
     public function profileSettings()

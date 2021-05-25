@@ -23,7 +23,7 @@ function getInformation(): array
     $data = json_decode(file_get_contents("php://input"));
     $values = $data;
 
-    $receivedRules = ['currentPassword' => [RULE_REQUIRED,RULE_CORRECT],
+    $receivedRules = [
                         'newPassword' => [RULE_REQUIRED,RULE_MIN],
                         'confirmPassword' => [RULE_REQUIRED,RULE_MATCH],
                         'email' => [RULE_EMAIL,RULE_UNIQUE]];
@@ -51,9 +51,6 @@ function validate($receivedRules, $values, $database): array
             if($ruleName === RULE_MATCH && isset($values->newPassword) &&  $value !== $values->newPassword)
             {
                 $errors[$attribute] = ['Passwords do not match!'];
-            }
-            if($ruleName === RULE_CORRECT && $value && $value != $values->password){
-                $errors[$attribute] = ['Wrong password'];
             }
             if ($ruleName === RULE_UNIQUE) {
                 $uniqueAttr = $rule['attribute'] ?? $attribute;
@@ -110,15 +107,21 @@ $connection = $database->pdo;
 $user = new User($connection);
 $user = $user->userExists(["username"=>$data->username]);
 
-if($user && password_verify($data->password,$user->password))
+if(!isset($data->currentPassword) || empty($data->currentPassword))
+{
+    http_response_code(400);
+    $errors["currentPassword"] = ["Password is needed"];
+    echo json_encode(array("errors"=>$errors));
+    exit;
+}
+
+if($user && password_verify($data->currentPassword,$user->password))
 {
 
-    if(!(isset($data->currentPassword) || isset($data->newPassword) || isset($data->confirmPassword)))
+    if(!(isset($data->newPassword) || isset($data->confirmPassword)) || (empty($data->newPassword)  && empty($data->confirmPassword)))
     {
-        unset($rules["currentPassword"]);
         unset($rules["newPassword"]);
         unset($rules["confirmPassword"]);
-        unset($data->password);
     }
     if(!(isset($data->email)) || $data->email === $user->email)
     {
@@ -135,17 +138,20 @@ if($user && password_verify($data->password,$user->password))
 
     unset($data->confirmPassword);
     unset($data->currentPassword);
-    if(isset($data->newPassword)) {
+    if(isset($data->newPassword) && !empty($data->newPassword)) {
         $data->password = password_hash($data->newPassword, PASSWORD_BCRYPT);;
+    }else{
+        unset($data->password);
     }
     unset($data->newPassword);
     updateInformation($user->id,$data,$database);
 
     http_response_code(200);
-    echo json_encode(array("message"=>"Modified setting successfully"));
+    echo json_encode(array(["message"=>"Modified settings successfully"]));
     exit;
 }else{
     http_response_code(401);
-    echo json_encode(array("errors"=>"Access forbidden"));
+    $errors["currentPassword"] = ["Wrong password"];
+    echo json_encode(array("errors"=>$errors));
     exit;
 }
