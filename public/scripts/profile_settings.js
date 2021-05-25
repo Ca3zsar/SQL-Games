@@ -19,6 +19,7 @@ button.addEventListener('click', async function (event) {
     event.preventDefault();
     let classNames = ["current-password","new-password","confirm-password"];
     let formData = new FormData(formElement);
+    formData.append('','');
 
     let request = new XMLHttpRequest();
     request.open('POST', '/profile_settings', true);
@@ -27,12 +28,9 @@ button.addEventListener('click', async function (event) {
     request.onreadystatechange = function () {
         let errorClass;
         if (this.readyState === 4 && this.status === 200) {
-            let response = request.response;
-            if ("errors" in response && response.errors.length === 0) {
-                window.location.replace("/");
-            }
+            window.location.replace("/");
         }
-        if(this.readyState === 4 && this.status === 401)
+        if(this.readyState === 4 && this.status === 400)
         {
             let response = request.response;
             for (let key of classNames) {

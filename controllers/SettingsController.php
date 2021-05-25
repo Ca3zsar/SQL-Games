@@ -27,9 +27,20 @@ class SettingsController extends Controller
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
         $result = curl_exec($curl);
+        $statusCode = curl_getinfo($curl,CURLINFO_HTTP_CODE);
         curl_close($curl);
 
-        Application::$app->response->redirect('/');
+        if($statusCode == 200) {
+            http_response_code(200);
+            echo json_encode(array("message"=>"successful"));
+            exit;
+        }
+        if($statusCode == 400)
+        {
+            http_response_code(400);
+            echo $result;
+            exit;
+        }
     }
 
     public function profileSettings()
