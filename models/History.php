@@ -68,8 +68,10 @@ class History extends DBModel
         $this->starsReceived = $result["starsReceived"];
 
         //Get the number of attempts;
-        $statement = Application::$app->db->prepare("SELECT COUNT(*) attempts FROM solutions WHERE idUser = :idUser");
+        $statement = Application::$app->db->prepare("SELECT COUNT(*) attempts FROM solutions WHERE idUser = :idUser AND idExercise NOT IN (SELECT id FROM exercises WHERE authorId = :idUser2)");
         $statement->bindValue(":idUser",$id);
+        $statement->bindValue(":idUser2",$id);
+
 
         $statement->execute();
         $result = $statement->fetch(PDO::FETCH_ASSOC);
