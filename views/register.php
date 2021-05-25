@@ -22,9 +22,13 @@ use app\core\Application;
         $form = Form::begin('', "post") ?>
         <h1 class="h1-title">Create Account</h1>
         <?php echo $form->field($model, 'username') ?>
+        <?php echo $form->field($model, 'username', '')->errorField(); ?>
         <?php echo $form->field($model, 'email') ?>
+        <?php echo $form->field($model, 'email', '')->errorField(); ?>
         <?php echo $form->field($model, 'password')->passwordField() ?>
+        <?php echo $form->field($model, 'password', '')->errorField(); ?>
         <?php echo $form->field($model, 'confirmPassword')->passwordField() ?>
+        <?php echo $form->field($model, 'confirmPassword', '')->errorField(); ?>
         <button type="submit" class="action-button">Sign Up</button>
         <?php echo Form::end() ?>p
     </div>
@@ -32,8 +36,10 @@ use app\core\Application;
         <?php $form = Form::begin('', "post") ?>
         <h1 class="h1-title">Sign in</h1>
         <?php echo $form->field($model, 'username') ?>
+        <?php echo $form->field($model, 'username', '')->errorField(); ?>
         <?php echo $form->field($model, 'password')->passwordField() ?>
-        <a class="forgot-password" href="#">Forgot your password?</a>
+        <?php echo $form->field($model, 'password', '')->errorField(); ?>
+        <?php echo $form->field($model, 'loginError', '')->errorField(); ?>
         <button type="submit" class="action-button">Sign In</button>
         <?php echo Form::end() ?>
     </div>

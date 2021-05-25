@@ -24,10 +24,33 @@ class AuthController extends Controller
     {
         $loginForm = new LoginForm();
         if ($request->isPost()) {
+            $data = $request->getBody();
+
+            $curl = curl_init();
+            curl_setopt($curl, CURLOPT_POST, 1);
+            curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+            curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
+            curl_setopt($curl, CURLOPT_URL, "http://localhost:8201/authentication/login.php");
+
+            curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
+
+            $result = curl_exec($curl);
+            $result = json_decode($result,1);
+
             $loginForm->loadData($request->getBody());
-            if ($loginForm->validate() && $loginForm->login()) {
-                $response->redirect('/');
-                return;
+            $statusCode = curl_getinfo($curl,CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+            if($statusCode == 401)
+            {
+                $loginForm->errors = $result["errors"];
+            }else{
+                $user = (new User)->findOne(['username' => $data["username"]]);
+                if(Application::$app->login($user))
+                {
+                    $response->redirect('/');
+                    return;
+                }
             }
         }
         $this->setLayout('general');

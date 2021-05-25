@@ -49,7 +49,7 @@ if (empty($data->password)) {
 if(!empty($errors))
 {
     // set response code
-    http_response_code(400);
+    http_response_code(401);
 
     // display message: unable to create user
     echo json_encode(array("errors"=>$errors));
@@ -85,5 +85,6 @@ if($user && password_verify($data->password,$user->password))
     http_response_code(401);
 
     // tell the user login failed
-    echo json_encode(array("errors" => ["Login failed."]));
+    $errors["loginError"] = ["Login failed"];
+    echo json_encode(array("errors" => $errors));
 }
