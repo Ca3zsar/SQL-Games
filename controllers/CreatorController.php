@@ -26,7 +26,9 @@ class CreatorController extends Controller
     public function viewCreator()
     {
         $creator = new Creator();
-        $styles = '<link rel="stylesheet" href="/styles/creator.css" />';
+        $styles = '<link rel="stylesheet" href="/styles/creator.css" />
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+                    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/arduino-light.min.css">';
 
         $this->setLayout('general');
         return $this->render('exercise_creator', "Add Exercise", $styles, ['model' => $creator]);
@@ -37,7 +39,9 @@ class CreatorController extends Controller
     {
         $data = $request->getBody();
         $data["authorId"] =  (int)Application::$app->session->get('user');
-
+        $data["password"] = Application::$app->user->password;
+        $data["username"] = Application::$app->user->username;
+        
         $data = json_encode($data);
 
         $curl = curl_init();
@@ -68,7 +72,9 @@ class CreatorController extends Controller
         }
 
         $creator = new Creator($exercise);
-        $styles = '<link rel="stylesheet" href="/styles/creator.css" />';
+        $styles = '<link rel="stylesheet" href="/styles/creator.css" />
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+                    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/arduino-light.min.css">';
 
         $this->setLayout('general');
         return $this->render('exercise_creator', "Edit Exercise #$id", $styles, ['model' => $creator]);

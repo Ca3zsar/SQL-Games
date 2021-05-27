@@ -1,4 +1,5 @@
 .footer-bar{
+	align-self: flex-end;
 	display: flex;
 	justify-content: center;
 	align-items: center;

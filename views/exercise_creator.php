@@ -70,7 +70,7 @@ $form = Form::begin('', "") ?>
         </label>
         <div class="editor-holder">
 
-            <pre><code class="syntax-highlight html"></code></pre>
+            <pre><code class="syntax-highlight sql"></code></pre>
             <?php echo $form->field($model, 'correctQuery', 'editor', 'id="text-editor"')->textArea() ?>
         </div>
         <?php echo $form->field($model, 'correctQuery', '')->errorField(); ?>
@@ -86,5 +86,6 @@ $form = Form::begin('', "") ?>
     </div>
 </div>
 <?php echo Form::end() ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
 <script src="/scripts/common_creator.js"></script>
 <?php echo "<script src='/scripts/$type'></script>" ; ?>

@@ -220,8 +220,3 @@ document.querySelector(".submit-button").addEventListener("click", async functio
     request.send(dataToSend);
 });
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    document.querySelectorAll('pre code').forEach((block) => {
-        hljs.highlightElement(block);
-    })
-});
