@@ -38,15 +38,11 @@ document.querySelector("#fullscreen").addEventListener("click", (e) => {
     document.getElementsByClassName("buttons")[0].classList.toggle("fullscreen");
 });
 
-/*------------------------------------------
-  Render existing code
-------------------------------------------*/
 function ready(functionToRun) {
     while (document.readyState !== "loading" && document.readyState !== 'complete') {
 
     }
 
-    document.querySelector("textarea").content = "";
     document.querySelector("code").content = "";
 
     let firstLine = document.createElement("div");
@@ -61,14 +57,12 @@ function ready(functionToRun) {
 
 ready(hightlightSyntax);
 
-/*------------------------------------------
-  Capture text updates
-------------------------------------------*/
 function updater(event) {
     let lineShow;
     let thisObject = document.getElementsByClassName("editor allow-tabs")[0];
     correctTextareaHeight(thisObject);
     hightlightSyntax();
+    hljs.highlightAll();
 
     if (event.type === "keyup") {
         let content = document.querySelector("code").innerHTML;
@@ -85,7 +79,6 @@ function updater(event) {
                 }
             } else {
                 let toDeleteChild = document.getElementsByClassName("specific-line");
-                lineShow = document.getElementsByClassName("line-number")[0];
                 for (let i = newLines; i > lines; i--) {
                     toDeleteChild[i].remove();
                 }
@@ -101,10 +94,7 @@ document.querySelector("textarea").addEventListener("keyup", updater);
 document.querySelector("textarea").addEventListener("keydown", updater);
 document.querySelector("textarea").addEventListener("change", updater);
 
-/*------------------------------------------
-  Resize textarea based on content
-------------------------------------------*/
-function correctTextareaHeight(element) {
+function correctTextareaHeight(){
     let self = document.querySelector("textarea");
     let outerHeight = self.outerHeight;
     let innerHeight = window.getComputedStyle(self).scrollheight;
@@ -119,48 +109,14 @@ function correctTextareaHeight(element) {
     }
 }
 
-/*------------------------------------------
-  Run syntax hightlighter
-------------------------------------------*/
-function highlightBlock(block) {
-    if (["select"].indexOf(block.innerHTML) >= 0) {
-        let newSpan = document.createElement("span");
-        newSpan.style.color = "red";
-        newSpan.innerHTML = block.innerHTML;
-
-        block.innerHTML = "";
-
-        let code = document.getElementsByClassName("syntax-highlight html")[0];
-        code.append(newSpan);
-    }
-}
 
 function hightlightSyntax() {
     let me = document.getElementsByClassName("editor")[0];
     let content = me.value;
     let codeHolder = document.querySelector("code");
-    codeHolder.innerHTML = escapeHtml(content);
-
-    document.querySelectorAll(".syntax-highlight").forEach((block) => {
-        highlightBlock(block);
-    });
+    codeHolder.innerHTML = content;
 }
 
-/*------------------------------------------
-  String html characters
-------------------------------------------*/
-function escapeHtml(unsafe) {
-    return unsafe
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-}
-
-/*------------------------------------------
-  Enable tabs in textarea
-------------------------------------------*/
 document.querySelector(".allow-tabs").addEventListener("keydown", function (e) {
     let keyCode = e.keyCode || e.which;
     if (keyCode === 9) {
@@ -262,4 +218,10 @@ document.querySelector(".submit-button").addEventListener("click", async functio
     }
 
     request.send(dataToSend);
+});
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightElement(block);
+    })
 });

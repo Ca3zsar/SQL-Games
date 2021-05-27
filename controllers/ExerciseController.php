@@ -25,7 +25,9 @@ class ExerciseController extends Controller
         }
 
         $styles = '<link rel="stylesheet" href="/styles/exercise.css" />
-                    <link rel="stylesheet" href="/styles/code_editor.css" />';
+                    <link rel="stylesheet" href="/styles/code_editor.css" />
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+                    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/vs2015.min.css">';
 
         $this->setLayout('general');
         return $this->render('exercise', "#Exercise ID", $styles, ['model' => $exercise]);
@@ -154,7 +156,9 @@ class ExerciseController extends Controller
     public function exercise()
     {
         $styles = '<link rel="stylesheet" href="styles/exercise.css" />
-                    <link rel="stylesheet" href="styles/code_editor.css" />';
+                    <link rel="stylesheet" href="styles/code_editor.css" />
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+                    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/vs2015.min.css">';
 
         $this->setLayout('general');
         return $this->render('exercise', "#Exercise ID", $styles);

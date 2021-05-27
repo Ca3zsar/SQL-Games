@@ -85,8 +85,7 @@
 }
 
 .editor-holder textarea, .editor-holder code {
-	width: 91%;
-	
+	width:calc(100% - 80px);
 	height: auto;
 	min-height: 450px;
 	font-size: 14px;

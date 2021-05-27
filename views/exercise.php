@@ -92,11 +92,12 @@ if (isset($_SESSION['user'])) {
                     </li>
                 </ul>
                 <div class="line-number" role="presentation"></div>
-                <label style="display:none;">
-                CEVA
+         
                 <textarea id="editor" autocomplete="off" spellcheck="false" class="editor allow-tabs"></textarea>
+                <label style="display:none;" for="editor">
+                CEVA
                 </label>
-                <pre><code class="syntax-highlight html"></code></pre>
+                <pre><code class="sql syntax-highlight "></code></pre>
            
             </div>
             <div class="exercise-message"></div>
@@ -110,6 +111,9 @@ if (isset($_SESSION['user'])) {
         } ?>
 
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
     <script src="/scripts/exercise.js"></script>
+
+
+
 <?php echo '</div>'; ?>
