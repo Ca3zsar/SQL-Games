@@ -6,10 +6,17 @@ namespace app\controllers;
 
 use app\core\Application;
 use app\core\Controller;
+use app\core\middlewares\AuthMiddleware;
 use app\core\Request;
 
 class SettingsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->registerMiddleware(new AuthMiddleware(['changeSettings']));
+        $this->registerMiddleware(new AuthMiddleware(['profileSettings']));
+    }
 
     public function changeSettings(Request $request){
         $data = $request->getBody();

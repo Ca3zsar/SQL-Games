@@ -2,7 +2,7 @@
 
 namespace app\core;
 
-use app\models\Creator;
+use Exception;
 
 class Application
 {
@@ -46,7 +46,8 @@ class Application
     {
         try {
             echo $this->router->resolve();
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
+            Application::$app->controller->layout = 'general';
             $this->response->setStatusCode($e->getCode());
             $styles = '<link rel="stylesheet" title="extended" type="text/css" href="styles/error.css"/>';
             echo $this->router->renderView('_error', $this->errorTitles[$e->getCode()], $styles, ['exception' => $e]);
