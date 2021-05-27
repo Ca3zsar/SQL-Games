@@ -47,6 +47,10 @@ class Application
         try {
             echo $this->router->resolve();
         } catch (Exception $e) {
+
+            if($e->getCode() == 404){
+                Application::$app->controller = new Controller();
+            }
             Application::$app->controller->layout = 'general';
             $this->response->setStatusCode($e->getCode());
             $styles = '<link rel="stylesheet" title="extended" type="text/css" href="styles/error.css"/>';

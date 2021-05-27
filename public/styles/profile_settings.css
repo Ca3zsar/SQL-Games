@@ -156,6 +156,13 @@ body {
 	resize: none;
 }
 
+.invalid-text{
+	font-size: 14px;
+	color: #FF0000;
+	font-family: montserrat-regular,sans-serif;
+}
+
+
 @media (max-width:1100px) {
 	.personal-info, .pass-info, .contact-info, .about-info {
 		width: 80%;
