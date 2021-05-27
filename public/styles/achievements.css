@@ -9,7 +9,7 @@ body {
 }
 
 .wrapper {
-    width: 100%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -57,13 +57,12 @@ body {
 }
 
 .achievements-list{
-    width: 100%;
+    width: 900px;
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-
-    margin-bottom: 20px;
+    justify-content: start;
+    padding: 20px;
 }
 
 .achievement-box{
@@ -72,55 +71,45 @@ body {
     display: flex;
     flex-direction: row;
     padding: 10px;
-    justify-content: space-evenly;
+    padding-left: 7%;
+    padding-right: 7%;
+    justify-content: start;
 }
 
 .achievement-icon{
     background-color: yellow;
     border: black 1px solid;
-    padding-left: 100px;
-    padding-right: 100px;
+    height:120px;
 }
 
 .achievement-icon img{
     height:100px;
+    padding: 10px;
 }
 
 .achievement-loading-bar{
     background-color: gray;
     border: black 1px solid;
-    width: 200px;
+    width: 60%;
+}
+
+.achievement-loading-bar progress{
+    width: 80%;
+    height: 20px;
 }
 
 .achievement-stats{
+    width:100%;
     display: flex;
     flex-direction: column;
+    justify-content:space-evenly;
+    padding-left:50px;
+    padding-right:50px;
 }
 
-
-.page-buttons {
-    width: 940px;
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom:40px;
+.achievement-title p{
+    text-align:left;
+    font-family: montserrat-regular, open-sans-light, sans-serif;
+    size: 20px;
 }
 
-.page-buttons > button {
-    padding: 5px 10px;
-
-    font-family: open-sans-bold,sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    color:#005eb8;
-
-    margin-right: 8px;
-    border:1px solid #005eb8;
-    background-color: #FFFFFF;
-    border-radius:4px;
-    cursor:pointer;
-}
-
-.page-buttons>button:last-child
-{
-    margin-right:20px;
-}

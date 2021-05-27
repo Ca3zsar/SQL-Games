@@ -1,5 +1,5 @@
 <?php
-/** @var $model \app\models\History */
+/** @var $model \app\models\User */
 ?>
 
 <div class="achievements-header">
@@ -34,18 +34,29 @@
                 <p>Gather 30 eSQLids.</p>
             </div>
             <div class="achievement-loading-bar">
-                <p>1/30</p>
-                <progress max="100" value="80"></progress>
+                <progress max="30" value="<?php echo 10; ?>"></progress>
             </div>
         </div>
     </div>
-
 </div>
 
-<div class="page-buttons">
-    <button id="previous">1</button>
-    <button id="current">2</button>
-    <button id="next">3</button>
+
+<div class="achievements-list">
+    <div class="achievement-box">
+        <div class="achievement-icon">
+            <img src="/resources/images/checked.png">
+        </div>
+        <div class="achievement-stats">
+            <div class="achievement-title">
+                <p>Solve 10 exercises.</p>
+            </div>
+            <div class="achievement-loading-bar">
+                <progress max="10" value="<?php echo 7; ?>"></progress>
+            </div>
+        </div>
+    </div>
 </div>
+
+
 
 <script src="scripts/shop_loader.js"></script>

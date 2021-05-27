@@ -27,4 +27,11 @@ class AchievementsController extends \app\core\Controller
         return $this->render('achievements', "Achievements", $styles);
     }
 
+//    public function showCoins(){
+//        $coins = Application::$app->user->coins;
+//        echo $coins;
+//
+//    }
+
+
 }

@@ -4,6 +4,8 @@ require_once __DIR__ . '/../vendor/autoloader.php';
 
 use \app\core\Database;
 use \app\core\DotEnv;
+use app\services\authentication\objects\User;
+use app\services\authentication\Verifier;
 use app\services\utils\Checker as CheckerAlias;
 use app\services\utils\DatabaseConnection;
 
@@ -140,43 +142,76 @@ function updateInformation($values, $database): bool
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_SERVER['REQUEST_METHOD'] === 'PUT') {
     $information = getInformation();
-    $errors = [];
-    if (empty($information[0]->price)) {
-        $errors['price'] = ['This field is required!'];
-    }
-    if (empty($information[0]->requirement)) {
-        $errors['requirement'] = ['This field is required!'];
-    }
-    if (empty($information[0]->title)) {
-        $errors['title'] = ['This field is required!'];
-    }
-    if (empty($information[0]->difficulty)) {
-        $errors['difficulty'] = ['This field is required!'];
-    }
 
-    header('Cache-Control: no-cache, must-revalidate');
-    header('Content-type: application/json');
+    if(isset($information[0]->password) && isset($information[0]->username))
+    {
+        if(Verifier::checkLoginStatus($information[0]->username,$information[0]->password))
+        {
+            $database = DatabaseConnection::getDatabaseConnection();
+            $connection = $database->pdo;
 
-    if (!empty($errors)) {
-        echo json_encode(array("errors" => $errors));
-        exit();
-    }
+            $user = new User($connection);
+            $user = $user->userExists(["username"=>$information[0]->username]);
 
-    $database = DatabaseConnection::getDatabaseConnection();
-    $errors = validate($information[1], $information[0], $database);
+            if($user->id === $information[0]->authorId)
+            {
+                unset($information[0]->password);
+                unset($information[0]->username);
 
-    if (!empty($errors)) {
-        echo json_encode(array("errors" => $errors));
-        exit();
-    }
+                $errors = [];
+                if (empty($information[0]->price)) {
+                    $errors['price'] = ['This field is required!'];
+                }
+                if (empty($information[0]->requirement)) {
+                    $errors['requirement'] = ['This field is required!'];
+                }
+                if (empty($information[0]->title)) {
+                    $errors['title'] = ['This field is required!'];
+                }
+                if (empty($information[0]->difficulty)) {
+                    $errors['difficulty'] = ['This field is required!'];
+                }
 
-    if($_SERVER["REQUEST_METHOD"] === 'POST') {
-        addInformation($information[0], $database);
+                header('Cache-Control: no-cache, must-revalidate');
+                header('Content-type: application/json');
+
+                if (!empty($errors)) {
+                    echo json_encode(array("errors" => $errors));
+                    exit();
+                }
+
+                $database = DatabaseConnection::getDatabaseConnection();
+                $errors = validate($information[1], $information[0], $database);
+
+                if (!empty($errors)) {
+                    echo json_encode(array("errors" => $errors));
+                    exit();
+                }
+
+                if($_SERVER["REQUEST_METHOD"] === 'POST') {
+                    addInformation($information[0], $database);
+                }else{
+                    updateInformation($information[0],$database);
+                }
+                echo json_encode(array("errors" => []));
+                exit;
+            }else {
+                http_response_code(401);
+                echo json_encode(array("error" => "You are not the author of this exercise"));
+                exit;
+            }
+        }else{
+            http_response_code(401);
+            echo json_encode(array("error"=>"Wrong username or password"));
+            exit;
+        }
+
     }else{
-        updateInformation($information[0],$database);
+        http_response_code(400);
+        echo json_encode(array("error"=>"Username or password not supplied"));
+        exit;
     }
-    echo json_encode(array("errors" => []));
-    exit;
+
 }
 
 

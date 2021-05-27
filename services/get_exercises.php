@@ -49,6 +49,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $statement = $database->prepare("SELECT * FROM " . $tableName . ' ' . $diff . ' ' . $orderBy);
         $statement->execute();
         $record = $statement->fetchAll(PDO::FETCH_ASSOC);
+        foreach($record as &$row){
+            unset($row["correctQuery"]);
+        }
 
         if (!empty($record)) {
             echo json_encode($record);
@@ -63,6 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $statement->bindValue(':id', $param);
             $statement->execute();
             $record = $statement->fetch(PDO::FETCH_ASSOC);
+            unset($record["correctQuery"]);
 
             if (!empty($record)) {
                 echo json_encode($record);
@@ -77,6 +81,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $statement->bindValue(':difficulty', $param);
             $statement->execute();
             $record = $statement->fetchAll(PDO::FETCH_ASSOC);
+            foreach($record as &$row){
+                unset($row["correctQuery"]);
+            }
 
             echo json_encode($record);
             exit();

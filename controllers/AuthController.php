@@ -23,6 +23,12 @@ class AuthController extends Controller
     public function login(Request $request, Response $response)
     {
         $loginForm = new LoginForm();
+
+        if(isset($_SESSION["user"]))
+        {
+            $response->redirect('/');
+        }
+
         if ($request->isPost()) {
             $data = $request->getBody();
 
@@ -49,7 +55,6 @@ class AuthController extends Controller
                 if(Application::$app->login($user))
                 {
                     $response->redirect('/');
-                    return;
                 }
             }
         }
@@ -60,6 +65,11 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
+        if(isset($_SESSION["user"]))
+        {
+            Application::$app->response->redirect('/');
+        }
+
         $user = new User();
         $styles = "<link rel=\"stylesheet\" href=\"styles/signin_register.css\"/>";
         if ($request->isPost()) {
