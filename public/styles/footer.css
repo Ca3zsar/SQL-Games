@@ -1,13 +1,22 @@
 .footer-bar{
-	align-self: flex-end;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
 	padding-bottom: 1%;
+
 	text-align: center;
 	padding-top: 1%;
 	background-color: #262626;
 	width: 100%;
 }
 
-.footer-bar h4,a{
+.links{
+	width:100%;
+}
+
+.footer-bar p,a{
 	color:#ffffff;
 	font-size: 1.2em;
 	font-family: bebas, serif;
@@ -15,12 +24,18 @@
 
 .footer-bar a{
 	text-decoration: none;
-	padding: 0 20px;
+	padding: 0 15px;
+}
+
+.footer-bar p{
+	font-weight: normal;
+	padding:0;
+	line-height: 1em;
 }
 
 @media(max-width:810px)
 {
-	.footer-bar h4,a{
+	.footer-bar p,a{
 		font-size: 0.9em;
 	}
 }

@@ -23,6 +23,7 @@ class AuthController extends Controller
     public function login(Request $request, Response $response)
     {
         $loginForm = new LoginForm();
+        $user = new User();
 
         if(isset($_SESSION["user"]))
         {
@@ -60,7 +61,7 @@ class AuthController extends Controller
         }
         $this->setLayout('general');
         $styles = "<link rel=\"stylesheet\" href=\"styles/signin_register.css\"/>";
-        return $this->render('login', "Login", $styles, ['model' => $loginForm]);
+        return $this->render('login', "Login", $styles, ['model' => $user,"loginModel"=>$loginForm]);
     }
 
     public function register(Request $request)
@@ -71,6 +72,7 @@ class AuthController extends Controller
         }
 
         $user = new User();
+        $loginForm = new LoginForm();
         $styles = "<link rel=\"stylesheet\" href=\"styles/signin_register.css\"/>";
         if ($request->isPost()) {
             $data = $request->getBody();
@@ -101,10 +103,10 @@ class AuthController extends Controller
             }
 
             $this->setLayout('general');
-            return $this->render('register', "Register", $styles, ['model' => $user]);
+            return $this->render('register', "Register", $styles, ['model' => $user,"loginModel"=>$loginForm]);
         }
         $this->setLayout('general');
-        return $this->render('register', "Register", $styles, ['model' => $user]);
+        return $this->render('register', "Register", $styles, ['model' => $user,"loginModel"=>$loginForm]);
     }
 
     public function logout(Request $request, Response $response)

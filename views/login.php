@@ -1,5 +1,6 @@
 <?php
-/** @var $model \app\models\User */
+/** @var $model User */
+/** @var $loginModel LoginForm */
 ?>
 
 <div class="container" id="container">
@@ -21,11 +22,11 @@
     <div class="form-container sign-in-container">
         <?php $form = Form::begin('', "post") ?>
         <h1 class="h1-title">Sign in</h1>
-        <?php echo $form->field($model, 'username') ?>
-        <?php echo $form->field($model, 'username', '')->errorField(); ?>
-        <?php echo $form->field($model, 'password')->passwordField() ?>
-        <?php echo $form->field($model, 'password', '')->errorField(); ?>
-        <?php echo $form->field($model, 'loginError', '')->errorField(); ?>
+        <?php echo $form->field($loginModel, 'username') ?>
+        <?php echo $form->field($loginModel, 'username', '')->errorField(); ?>
+        <?php echo $form->field($loginModel, 'password')->passwordField() ?>
+        <?php echo $form->field($loginModel, 'password', '')->errorField(); ?>
+        <?php echo $form->field($loginModel, 'loginError', '')->errorField(); ?>
         <button type="submit" class="action-button">Sign In</button>
         <?php echo Form::end() ?>
     </div>
@@ -43,7 +44,7 @@
                 <p class="general-info">
                     Enter your details to start conquering SQl-craft!
                 </p>
-                <a href="/register"><button type="submit" class="action-button ghost" id="signUp">Sign Up</button></a>
+                <button type="submit" class="action-button ghost" id="signUp">Sign Up</button>
             </div>
         </div>
     </div>

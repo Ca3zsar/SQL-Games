@@ -128,9 +128,11 @@
         </div>
     </div>
     <footer class="footer-bar">
-        <a href="/statistics">Statistics</a>
-        <a href="/scholarlyhtml">Scholarly HTML</a>
-        <h4 itemscope itemtype="https://schema.org/copyrightHolder">
+        <div class="links">
+            <a href="/statistics">Statistics</a>
+            <a href="/scholarlyhtml">Scholarly HTML</a>
+        </div>
+        <p itemscope itemtype="https://schema.org/copyrightHolder">
             © SQL-GAMES 2021
             <span
                     itemscope=""
@@ -138,7 +140,7 @@
                     itemprop="author"
             >Buliga Eugeniu, Todirisca Cezar, Toma Andrei</span
             >
-        </h4>
+        </p>
     </footer>
 </div>
 <script src="scripts/resize.js"></script>

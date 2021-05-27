@@ -28,7 +28,7 @@ if (isset($_SESSION['user'])) {
         $reset = '<button class="edit-button">Edit exercise</button>';
     }
 } else {
-    $reset ='';
+    $reset = '';
     $exStatus = 'blocked';
 }
 
@@ -92,7 +92,10 @@ if (isset($_SESSION['user'])) {
                     </li>
                 </ul>
                 <div class="line-number" role="presentation"></div>
-                <textarea autocomplete="off" spellcheck="false" class="editor allow-tabs"></textarea>
+                <label style="display:none;">
+                CEVA
+                <textarea id="editor" autocomplete="off" spellcheck="false" class="editor allow-tabs"></textarea>
+                </label>
                 <pre><code class="syntax-highlight html"></code></pre>
            
             </div>
