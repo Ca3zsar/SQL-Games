@@ -116,8 +116,8 @@
                 </h3>
                 <p itemprop="description">
                     For each exercise that you solve you will receive a specific number
-                    of <strong>eSQLids</strong> based on its difficulty. Be among
-                    the first ones to solve an exercise and you will receive a bonus.
+                    of <strong>eSQLids</strong> based on its difficulty. Be
+                    the first one to solve an exercise and you will receive a bonus.
                     Solve as many exercises as you can and be among the
                     <strong>best</strong>!
                 </p>

@@ -10,7 +10,7 @@ use app\core\Request;
 use app\models\Creator;
 use app\models\Achievements;
 
-class AchievementsController extends \app\core\Controller
+class AchievementsController extends Controller
 {
 
     public function __construct()
@@ -18,18 +18,12 @@ class AchievementsController extends \app\core\Controller
         $this->registerMiddleware(new AuthMiddleware(['showAchievements']));
     }
 
-    public function showAchievements(Request $request)
+    public function showAchievements()
     {
+        $achievementsList = Achievements::loadAchievements();
+
         $styles = '<link rel="stylesheet" href="styles/achievements.css" />';
         $this->setLayout('general');
-        return $this->render('achievements', "Achievements", $styles);
+        return $this->render('achievements', "Achievements", $styles,['achievements' => $achievementsList]);
     }
-
-//    public function showCoins(){
-//        $coins = Application::$app->user->coins;
-//        echo $coins;
-//
-//    }
-
-
 }

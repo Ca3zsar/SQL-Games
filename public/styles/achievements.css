@@ -57,59 +57,106 @@ body {
 }
 
 .achievements-list{
-    width: 900px;
+    width: 700px;
     position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
-    padding: 20px;
 }
+
+
 
 .achievement-box{
     width: 100%;
     /*background-color: lightgrey;*/
     display: flex;
-    flex-direction: row;
-    padding: 10px;
-    padding-left: 7%;
-    padding-right: 7%;
+    height:fit-content;
     justify-content: start;
-}
-
-.achievement-icon{
-    /*background-color: yellow;*/
-    /*border: black 1px solid;*/
-    height:120px;
-}
-
-.achievement-icon img{
-    height:100px;
-    padding: 10px;
-}
-
-.achievement-loading-bar{
-    background-color: gray;
-    border: black 1px solid;
-    width: 60%;
-}
-
-.achievement-loading-bar progress{
-    width: 80%;
-    height: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    border-radius:0 65px 65px 0;
+    margin-bottom: 20px;
 }
 
 .achievement-stats{
+    height:fit-content;
     width:100%;
     display: flex;
     flex-direction: column;
-    justify-content:space-evenly;
-    padding-left:50px;
+    justify-content:flex-start;
+    padding-left:30px;
     padding-right:50px;
 }
 
-.achievement-title p{
+.achievement-title{
+    margin-top:1em;
+    margin-bottom:0;
     text-align:left;
     font-family: montserrat-regular, open-sans-light, sans-serif;
-    size: 20px;
+    font-size: 1.2em;
 }
 
+.achievement-description{
+    text-align:left;
+    font-family: montserrat-regular, open-sans-light, sans-serif;
+    font-size: 1em;
+}
+
+progress
+{
+
+    /* Turns off styling - not usually needed, but good to know. */
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+}
+
+/* IE10 */
+progress {
+    color: #75b800;
+    width:45%;
+}
+
+/* Firefox */
+progress::-moz-progress-bar {
+    background: #75b800;
+}
+
+/* Chrome and others */
+progress::-webkit-progress-bar{
+    border-radius:10px;
+    background-color:#eef1f3;
+    height:12px;
+}
+
+progress::-webkit-progress-value{
+    background: #75b800;
+    border-radius: 10px;
+}
+
+.progress-div{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    flex-wrap:nowrap;
+}
+.achievement-icon{
+    margin-left:20px;
+    display:flex;
+    align-items:center;
+    height:128px;
+}
+
+.achievement-image{
+    width:100px;
+    height:100px;
+}
+
+.progress-text {
+    font-family: montserrat-regular, open-sans-light, sans-serif;
+    font-size:0.9em;
+    margin:0;
+    margin-left: 5px;
+    margin-top: -3px;
+}

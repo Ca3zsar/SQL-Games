@@ -1,5 +1,8 @@
 <?php
-/** @var $model \app\models\User */
+/** @var $achievements Achievements **/
+
+use app\models\Achievements;
+
 ?>
 
 <div class="achievements-header">
@@ -8,35 +11,28 @@
 
 
 <div class="achievements-list">
-    <div class="achievement-box">
-        <div class="achievement-icon">
-            <img src="/resources/achievements/early-bird.png">
-        </div>
-        <div class="achievement-stats">
-            <div class="achievement-title">
-                <p>Gather 30 eSQLids.</p>
+    <?php
+        foreach($achievements as $achievement)
+        {
+            echo '
+            <div class="achievement-box">
+                <div class="achievement-icon">
+                    <img class="achievement-image" src="/resources/achievements/'. $achievement->image .'">
+                </div>
+                <div class="achievement-stats">
+                    <p class="achievement-title">'.$achievement->name .'</p>
+                    <p class="achievement-description">' . $achievement->description .'</p>
+                    <div class="progress-div">
+                        <progress class="progress" value="'.$achievement->current.'" max="'.$achievement->target.'"></progress>
+                        <p class="progress-text">'.$achievement->current.'/'.$achievement->target.'</p>
+                    </div>
+                </div>
             </div>
-            <div class="achievement-loading-bar">
-                    <progress max="30" value="<?php echo 10; ?>"></progress>
-            </div>
-        </div>
-    </div>
+            
+            ';
+        }
+    ?>
+
 </div>
 
-
-<div class="achievements-list">
-    <div class="achievement-box">
-        <div class="achievement-icon">
-            <img src="/resources/images/checked.png">
-        </div>
-        <div class="achievement-stats">
-            <div class="achievement-title">
-                <p>Solve 10 exercises.</p>
-            </div>
-            <div class="achievement-loading-bar">
-                <progress max="10" value="<?php echo 7; ?>"></progress>
-            </div>
-        </div>
-    </div>
-</div>
 
