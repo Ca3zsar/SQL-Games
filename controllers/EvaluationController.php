@@ -22,7 +22,6 @@ class EvaluationController extends Controller
         $params = $request->getBody();
         $exercise = new Exercise();
 
-
         if(isset($params["exerciseId"]))
         {
             $exercise->loadExercise($params["exerciseId"]);

@@ -104,6 +104,7 @@ class Achievements extends DBModel
     static public function loadAchievements()
     {
         Achievements::readAchievements();
+        Achievements::updateAchievements(Application::$app->user->id);
         foreach (Achievements::$allAchievements as $achievement) {
             $achievement->current = call_user_func(array(static::class, $achievement->required));
             if (!Achievements::hasAchieved($achievement->id)) {

@@ -10,6 +10,7 @@ use app\core\middlewares\AuthMiddleware;
 use app\core\middlewares\AuthorMiddleware;
 use app\core\Request;
 use app\core\Response;
+use app\models\Achievements;
 use app\models\Creator;
 use app\models\Exercise;
 
@@ -54,6 +55,11 @@ class CreatorController extends Controller
 
         $result = curl_exec($curl);
         curl_close($curl);
+
+        if(empty($result->errors))
+        {
+            Achievements::updateAchievements(Application::$app->user->id);
+        }
 
         echo $result;
     }

@@ -90,6 +90,7 @@ class Exercise extends DBModel
         $statement = Application::$app->db->prepare("UPDATE users SET coins = $coins + 1 WHERE id = $this->authorId");
         $statement->execute();
 
+        Achievements::updateAchievements($this->authorId);
     }
 
     static public function getAuthorName($id_author)

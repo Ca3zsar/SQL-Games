@@ -8,6 +8,7 @@ use app\core\Application;
 use app\core\Controller;
 use app\core\exception\NotFoundException;
 use app\core\Request;
+use app\models\Achievements;
 use app\models\Exercise;
 
 class ExerciseController extends Controller
@@ -27,7 +28,7 @@ class ExerciseController extends Controller
         $styles = '<link rel="stylesheet" href="/styles/exercise.css" />
                     <link rel="stylesheet" href="/styles/code_editor.css" />
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
-                    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/vs2015.min.css">';
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/vs2015.min.css">';
 
         $this->setLayout('general');
         return $this->render('exercise', "#Exercise ID", $styles, ['model' => $exercise]);
@@ -44,7 +45,7 @@ class ExerciseController extends Controller
             if (isset($params["buy"]) && isset($params["exerciseId"])) {
                 try {
                     $exercise->loadExercise($params["exerciseId"]);
-                } catch (NotFoundException $e) {
+                } catch (NotFoundException) {
                 }
                 if ($exercise->price <= Application::$app->user->coins) {
                     $exercise->buyExercise(Application::$app->user->id);
@@ -130,6 +131,7 @@ class ExerciseController extends Controller
 
                                     Application::$app->user->coins += (round($exercise->price + (int)$exercise->price / 4));
                                 }
+                                Achievements::updateAchievements(Application::$app->user->id);
 
                                 $decoded["coins"] = Application::$app->user->coins;
                                 $decoded["stars"] = $exercise->stars;
