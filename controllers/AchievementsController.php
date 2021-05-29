@@ -16,12 +16,10 @@ class AchievementsController extends \app\core\Controller
     public function __construct()
     {
         $this->registerMiddleware(new AuthMiddleware(['showAchievements']));
-
     }
 
     public function showAchievements(Request $request)
     {
-
         $styles = '<link rel="stylesheet" href="styles/achievements.css" />';
         $this->setLayout('general');
         return $this->render('achievements', "Achievements", $styles);

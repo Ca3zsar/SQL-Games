@@ -27,62 +27,6 @@ abstract class Model
         }
     }
 
-    public function validate()
-    {
-        foreach ($this->rules() as $attribute => $rules)
-        {
-            $value = $this->{$attribute};
-            foreach ($rules as $rule)
-            {
-                $ruleName = $rule;
-                if (!is_string($ruleName))
-                {
-                    $ruleName = $rule[0];
-                }
-                if($ruleName === self::RULE_REQUIRED && !$value)
-                {
-                    $this->addErrorForRule($attribute,self::RULE_REQUIRED);
-                }
-
-                if($ruleName === self::RULE_EMAIL && !filter_var($value,FILTER_VALIDATE_EMAIL))
-                {
-                    $this->addErrorForRule($attribute,self::RULE_EMAIL);
-                }
-                if(($ruleName === self::RULE_MIN || $ruleName === self::RULE_MIN_TEXT) && strlen($value) < $rule['min']){
-                    if($ruleName === self::RULE_MIN)
-                    {
-                        $this->addErrorForRule($attribute,self::RULE_MIN, $rule);
-                    }
-                    else {
-                        $this->addErrorForRule($attribute, self::RULE_MIN_TEXT, $rule);
-                    }
-                }
-                if($ruleName === self::RULE_MATCH && $value !== $this->{$rule['match']})
-                {
-                    $this->addErrorForRule($attribute,self::RULE_MATCH);
-                }
-                if($ruleName === self::RULE_UNIQUE || $ruleName === self::RULE_TITLE_UNIQUE){
-                    $className = $rule['class'];
-                    $uniqueAttr = $rule['attribute'] ?? $attribute;
-                    $tableName = $className::tableName();
-                    $statement = Application::$app->db->prepare("SELECT * FROM $tableName WHERE $uniqueAttr = :attr");
-                    $statement->bindValue(':attr', $value);
-                    $statement->execute();
-                    $record = $statement->fetch();
-                    if($record){
-                        if($ruleName === self::RULE_UNIQUE){
-                            $this->addErrorForRule($attribute, self::RULE_UNIQUE, ['field' => $attribute]);
-                        }else {
-                            $this->addErrorForRule($attribute, self::RULE_TITLE_UNIQUE, ['field' => $attribute]);
-                        }
-                    }
-                }
-            }
-        }
-
-        return empty($this->errors);
-    }
-
     private function addErrorForRule(string $attribute, string $rule, $params = [])
     {
         $message = $this->errorMessages()[$rule] ?? '';

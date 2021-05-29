@@ -112,17 +112,20 @@ class ExerciseController extends Controller
                         exit;
                     } elseif (isset($decoded["status"])) {
                         if ($decoded["status"] === "correct") {
-                            $exercise->addSolution(Application::$app->user->id,$params["query"],1);
                             if (Exercise::checkStatus(Application::$app->user->id, $params["exerciseId"]) == 1) {
+                                $exercise->addSolution(Application::$app->user->id,$params["query"],1);
                                 echo $result;
                                 exit;
                             } else {
                                 $exercise->solveExercise(Application::$app->user->id);
                                 if ($exercise->solvedBy == 1) {
+                                    $exercise->addSolution(Application::$app->user->id,$params["query"],1,1);
                                     Application::$app->user->updateCoins(-2 * ($exercise->price + (round((int)$exercise->price / 4))));
 
                                     Application::$app->user->coins += (2 * round($exercise->price + (int)$exercise->price / 4));
+
                                 } else {
+                                    $exercise->addSolution(Application::$app->user->id,$params["query"],1);
                                     Application::$app->user->updateCoins(-($exercise->price + (round((int)$exercise->price / 4))));
 
                                     Application::$app->user->coins += (round($exercise->price + (int)$exercise->price / 4));

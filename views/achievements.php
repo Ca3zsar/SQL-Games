@@ -7,34 +7,17 @@
 </div>
 
 
-<div class="achievements-manager">
-    <div class="achievements-filter">
-
-        <div class="achievements-select">
-            <label>Order by:</label>
-            <form>
-                <select id="order-by-filter">
-                    <option value="dateCompleted" selected>Date Completed</option>
-                    <option value="progress">Progress</option>
-                </select>
-            </form>
-        </div>
-
-    </div>
-</div>
-
-
 <div class="achievements-list">
     <div class="achievement-box">
         <div class="achievement-icon">
-            <img src="/resources/images/achievement.png">
+            <img src="/resources/achievements/early-bird.png">
         </div>
         <div class="achievement-stats">
             <div class="achievement-title">
                 <p>Gather 30 eSQLids.</p>
             </div>
             <div class="achievement-loading-bar">
-                <progress max="30" value="<?php echo 10; ?>"></progress>
+                    <progress max="30" value="<?php echo 10; ?>"></progress>
             </div>
         </div>
     </div>
@@ -57,6 +40,3 @@
     </div>
 </div>
 
-
-
-<script src="scripts/shop_loader.js"></script>

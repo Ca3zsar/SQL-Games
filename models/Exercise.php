@@ -22,15 +22,16 @@ class Exercise extends DBModel
     public int $solvedBy = 0;
     public int $stars = 0;
 
-    public function addSolution($id_user,$solution,$correct)
+    public function addSolution($id_user,$solution,$correct,$first = 0)
     {
         $tableName = "solutions";
 
-        $statement = Application::$app->db->prepare("INSERT INTO $tableName (idExercise,idUser,solve,correct) VALUES (:idExercise, :idUser, :solve, :correct)");
+        $statement = Application::$app->db->prepare("INSERT INTO $tableName (idExercise,idUser,solve,correct,firstSolver) VALUES (:idExercise, :idUser, :solve, :correct, :first)");
         $statement->bindValue(":idExercise",$this->id);
         $statement->bindValue(":idUser",$id_user);
         $statement->bindValue(":solve",$solution);
         $statement->bindValue(":correct",$correct);
+        $statement->bindValue(":first",$first);
 
         $statement->execute();
     }

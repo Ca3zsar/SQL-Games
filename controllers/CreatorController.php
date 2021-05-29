@@ -41,7 +41,7 @@ class CreatorController extends Controller
         $data["authorId"] =  (int)Application::$app->session->get('user');
         $data["password"] = Application::$app->user->password;
         $data["username"] = Application::$app->user->username;
-        
+
         $data = json_encode($data);
 
         $curl = curl_init();

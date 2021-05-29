@@ -62,7 +62,7 @@ if (isset($_SESSION['user'])) {
         </div>
         <div class="exercise-status <?php echo $exStatus; ?>">
             <?php if ($exStatus == "solved" && $model->authorId != Application::$app->user->id) {
-                echo "<img class='star-image $voteStatus' src='/resources/images/star.png'/>";
+                echo "<img class='star-image $voteStatus' alt='star' src='/resources/images/star.png'/>";
             } ?>
         </div>
     </div>
