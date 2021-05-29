@@ -7,8 +7,6 @@ namespace app\controllers;
 use app\core\Application;
 use app\core\Controller;
 use app\core\middlewares\AuthMiddleware;
-use app\core\Request;
-use app\models\Creator;
 use app\models\History;
 
 class HistoryController extends Controller
@@ -19,7 +17,7 @@ class HistoryController extends Controller
 
     }
 
-    public function showHistory(Request $request)
+    public function showHistory()
     {
         $history = new History();
 

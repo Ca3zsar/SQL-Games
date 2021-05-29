@@ -9,7 +9,6 @@ use app\core\exception\NotFoundException;
 use app\core\middlewares\AuthMiddleware;
 use app\core\middlewares\AuthorMiddleware;
 use app\core\Request;
-use app\core\Response;
 use app\models\Achievements;
 use app\models\Creator;
 use app\models\Exercise;
@@ -29,14 +28,14 @@ class CreatorController extends Controller
         $creator = new Creator();
         $styles = '<link rel="stylesheet" href="/styles/creator.css" />
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
-                    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/arduino-light.min.css">';
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/arduino-light.min.css">';
 
         $this->setLayout('general');
         return $this->render('exercise_creator', "Add Exercise", $styles, ['model' => $creator]);
 
     }
 
-    public function creator(Request $request, Response $response)
+    public function creator(Request $request)
     {
         $data = $request->getBody();
         $data["authorId"] =  (int)Application::$app->session->get('user');

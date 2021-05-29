@@ -14,6 +14,8 @@ class User extends DBModel
     public string $password= '';
     public string $confirmPassword= '';
     public string $loginError;
+    public int $coins;
+    public int $id;
 
     public function updateSettings()
     {

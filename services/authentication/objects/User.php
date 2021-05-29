@@ -7,20 +7,21 @@ namespace app\services\authentication\objects;
 class User
 {
     private $connection;
-    private $tableName = "users";
+    private String $tableName = "users";
 
     // object properties
-    public $id;
-    public $username;
-    public $email;
-    public $password;
+    public int $id;
+    public String $username;
+    public String $email;
+    public String $password;
 
     // constructor
     public function __construct($connection=null){
         $this->connection = $connection;
     }
 
-    function create(){
+    function create(): bool
+    {
         $query = "INSERT INTO " . $this->tableName . "
             SET
                 username = :username,
@@ -31,7 +32,7 @@ class User
         $statement = $this->connection->prepare($query);
 
         // sanitize
-        $this->firstname=htmlspecialchars(strip_tags($this->username));
+        $this->username=htmlspecialchars(strip_tags($this->username));
         $this->email=htmlspecialchars(strip_tags($this->email));
         $this->password=htmlspecialchars(strip_tags($this->password));
 

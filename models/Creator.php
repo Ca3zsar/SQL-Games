@@ -5,7 +5,6 @@ namespace app\models;
 
 use app\core\Application;
 use app\core\DBModel;
-use app\core\Model;
 
 class Creator extends DBModel
 {

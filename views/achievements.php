@@ -17,7 +17,7 @@ use app\models\Achievements;
             echo '
             <div class="achievement-box">
                 <div class="achievement-icon">
-                    <img class="achievement-image" src="/resources/achievements/'. $achievement->image .'">
+                    <img class="achievement-image" alt="'. $achievement->name.'" src="/resources/achievements/'. $achievement->image .'">
                 </div>
                 <div class="achievement-stats">
                     <p class="achievement-title">'.$achievement->name .'</p>

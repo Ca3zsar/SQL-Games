@@ -85,7 +85,7 @@ $form = Form::begin('', "") ?>
 
     </div>
 </div>
-<?php echo Form::end() ?>
+<?php Form::end() ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
 <script src="/scripts/common_creator.js"></script>
 <?php echo "<script src='/scripts/$type'></script>" ; ?>

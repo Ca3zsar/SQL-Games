@@ -3,8 +3,6 @@
 
 namespace app\core;
 
-
-use app\models\User;
 use PDOStatement;
 
 abstract class DBModel extends Model

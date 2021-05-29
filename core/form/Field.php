@@ -10,7 +10,6 @@ class Field
 {
     public const TYPE_TEXT = 'text';
     public const TYPE_PASSWORD = 'password';
-    public const TYPE_NUMBER = 'number';
     public const TYPE_TEXT_AREA = 'text_area';
     public const TYPE_RADIO_BUTTON = 'radio';
     public const TYPE_SLIDER = 'range';
@@ -26,9 +25,10 @@ class Field
 
     /**
      * Field constructor.
-     * @param Model $model
-     * @param string $attribute
-     * @param string $class
+     * @param Model $model - the model the data will be taken from
+     * @param string $attribute - the attribute we are interested in
+     * @param string $class - the HTML class of the element
+     * @param string $options - the additional options such as id, name
      */
     public function __construct(Model $model, string $attribute, string $class = "user-input", string $options = "")
     {

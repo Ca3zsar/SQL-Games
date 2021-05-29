@@ -139,7 +139,7 @@ class ExerciseController extends Controller
 
                                 //Check that the author and the current user are different users.
                                 if ($exercise->authorId != Application::$app->user->id) {
-                                    $decoded["starImage"] = '<img onclick="starExercise()" class="star-image novote" src="/resources/images/star.png"/>';
+                                    $decoded["starImage"] = '<img alt="star" onclick="starExercise()" class="star-image novote" src="/resources/images/star.png"/>';
                                 }
 
                                 echo json_encode($decoded);

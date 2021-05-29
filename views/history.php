@@ -1,5 +1,8 @@
 <?php
-/** @var $model \app\models\History */
+/** @var $model History */
+
+use app\models\History;
+
 ?>
 
 <div class="container">

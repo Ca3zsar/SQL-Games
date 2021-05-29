@@ -139,7 +139,7 @@ if($user && password_verify($data->currentPassword,$user->password))
     unset($data->confirmPassword);
     unset($data->currentPassword);
     if(isset($data->newPassword) && !empty($data->newPassword)) {
-        $data->password = password_hash($data->newPassword, PASSWORD_BCRYPT);;
+        $data->password = password_hash($data->newPassword, PASSWORD_BCRYPT);
     }else{
         unset($data->password);
     }

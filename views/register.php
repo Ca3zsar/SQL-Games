@@ -32,7 +32,7 @@ use app\core\Application;
         <?php echo $form->field($model, 'confirmPassword')->passwordField() ?>
         <?php echo $form->field($model, 'confirmPassword', '')->errorField(); ?>
         <button type="submit" class="action-button">Sign Up</button>
-        <?php echo Form::end() ?>p
+        <?php Form::end() ?>p
     </div>
     <div class="form-container sign-in-container">
         <?php $form = Form::begin('', "post") ?>
@@ -43,7 +43,7 @@ use app\core\Application;
         <?php echo $form->field($loginModel, 'password', '')->errorField(); ?>
         <?php echo $form->field($loginModel, 'loginError', '')->errorField(); ?>
         <button type="submit" class="action-button">Sign In</button>
-        <?php echo Form::end() ?>
+        <?php Form::end() ?>
     </div>
     <div class="overlay-container">
         <div class="overlay">
@@ -59,7 +59,7 @@ use app\core\Application;
                 <p class="general-info">
                     Enter your details to start conquering SQl-craft!
                 </p>
-               <button type="submit" href="/register" class="action-button ghost" id="signUp">Sign Up</button>
+               <button type="submit" class="action-button ghost" id="signUp">Sign Up</button>
             </div>
         </div>
     </div>

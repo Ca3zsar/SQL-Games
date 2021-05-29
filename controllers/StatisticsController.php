@@ -5,13 +5,11 @@ namespace app\controllers;
 
 
 use app\core\Controller;
-use app\core\Request;
 use app\models\Statistics;
-use app\core\Application;
 
 class StatisticsController extends Controller
 {
-    public function getStats(Request $request)
+    public function getStats()
     {
         $statistics = new Statistics();
 
@@ -19,7 +17,7 @@ class StatisticsController extends Controller
         echo json_encode($statistics->finalStats);
     }
 
-    public function statistics(Request $request)
+    public function statistics()
     {
         $statistics = new Statistics();
 

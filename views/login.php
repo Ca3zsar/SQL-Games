@@ -6,6 +6,9 @@
 <div class="container" id="container">
     <div class="form-container sign-up-container">
         <?php use app\core\form\Form;
+        use app\models\LoginForm;
+        use app\models\User;
+
         $form = Form::begin('', "post") ?>
         <h1 class="h1-title">Create Account</h1>
         <?php echo $form->field($model, 'username') ?>
@@ -17,7 +20,7 @@
         <?php echo $form->field($model, 'confirmPassword')->passwordField() ?>
         <?php echo $form->field($model, 'confirmPassword', '')->errorField(); ?>
         <button type="submit" class="action-button">Sign Up</button>
-        <?php echo Form::end() ?>p
+        <?php Form::end() ?>p
     </div>
     <div class="form-container sign-in-container">
         <?php $form = Form::begin('', "post") ?>
@@ -28,7 +31,7 @@
         <?php echo $form->field($loginModel, 'password', '')->errorField(); ?>
         <?php echo $form->field($loginModel, 'loginError', '')->errorField(); ?>
         <button type="submit" class="action-button">Sign In</button>
-        <?php echo Form::end() ?>
+        <?php Form::end() ?>
     </div>
     <div class="overlay-container">
         <div class="overlay">

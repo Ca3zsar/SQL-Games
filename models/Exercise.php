@@ -21,6 +21,7 @@ class Exercise extends DBModel
     public int $boughtBy = 0;
     public int $solvedBy = 0;
     public int $stars = 0;
+    public string $correctQuery = '';
 
     public function addSolution($id_user,$solution,$correct,$first = 0)
     {

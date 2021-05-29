@@ -18,6 +18,6 @@ class Response
 
     public function redirectInTime(int $seconds, string $url)
     {
-        header("refresh:3;url = " . $url);
+        header("refresh:$seconds;url = " . $url);
     }
 }
