@@ -12,7 +12,7 @@ class m0001_initial
                    firstName VARCHAR(20),
                    lastName VARCHAR(30),
                    email VARCHAR(70) UNIQUE,
-                   phone VARCHAR(10) UNIQUE,
+                   phone VARCHAR(21) UNIQUE,
                    birthday DATE,
                    description TEXT,
                    address VARCHAR(200));      

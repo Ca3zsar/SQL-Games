@@ -71,6 +71,7 @@
                     <a href="/history" itemprop="url"
                     ><span itemprop="name">History</span></a
                     >
+                    <a href="/achievements" itemprop="url"><span itemprop="name">Achievements</span></a>
                     <a href="/logout" itemprop="url"><span itemprop="name">Log out</span></a>
                 </div>
             </div>

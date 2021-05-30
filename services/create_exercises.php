@@ -2,8 +2,6 @@
 
 require_once __DIR__ . '/../vendor/autoloader.php';
 
-use \app\core\Database;
-use \app\core\DotEnv;
 use app\services\authentication\objects\User;
 use app\services\authentication\Verifier;
 use app\services\utils\Checker as CheckerAlias;

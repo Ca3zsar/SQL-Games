@@ -34,13 +34,18 @@ function getDifferences(Database $database, $query, $correctQuery)
             $statement->execute();
 
             $firstResults = $statement->fetchAll(PDO::FETCH_ASSOC);
-            $firstColumns = array_keys($firstResults[0]);
-
+            $firstColumns = array();
+            if(!empty($firstResults)) {
+                $firstColumns = array_keys($firstResults[0]);
+            }
             $statement = $database->pdo->prepare($correctQuery);
             $statement->execute();
 
             $secondResults = $statement->fetchAll(PDO::FETCH_ASSOC);
-            $secondColumns = array_keys($secondResults[0]);
+            $secondColumns = array();
+            if(!empty($secondResults)) {
+                $secondColumns = array_keys($secondResults[0]);
+            }
 
             if(sizeof($firstColumns) != sizeof($secondColumns))
             {
@@ -65,12 +70,12 @@ function getDifferences(Database $database, $query, $correctQuery)
                 echo json_encode(array("status" => "correct"));
                 exit;
             }
-        } catch (PDOException) {
+        } catch (PDOException $e) {
             echo json_encode(array("errorMessage" => "Invalid query"));
             exit;
         }
     } else {
-        echo json_encode(array("errorMessage" => "Only MySQL queries are allowed"));
+        echo json_encode(array("errorMessage" => "Only MySQL queries are allowed!"));
         exit;
     }
 }

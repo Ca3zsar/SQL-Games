@@ -170,14 +170,13 @@ document.querySelector(".submit-button").addEventListener("click", async functio
 
     let dataToSend = new FormData();
     dataToSend.append("exerciseId", exerciseId);
-    dataToSend.append("query", document.querySelector(".editor").value);
+    dataToSend.append("query", document.querySelector(".editor").value.trim());
     dataToSend.append("solve", "1");
 
     request.onreadystatechange = function () {
         let errorText = document.querySelector(".exercise-message");
         if (this.readyState === 4 && this.status === 200) {
             let response = request.response;
-            console.log(response);
 
             if ("errorMessage" in response) {
                 errorText.innerHTML = response.errorMessage;

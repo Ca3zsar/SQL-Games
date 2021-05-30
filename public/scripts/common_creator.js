@@ -119,13 +119,15 @@ document.querySelector(".verify-button").addEventListener("click", (event) => {
                 document.querySelector(".to-download").style.display = "none";
                 document.querySelector(".invalid-text.correctQuery").style.display = "block";
             }else{
-                let csvContent = [Object.keys(response[0]).join(',')];
+                let csvContent = '';
+                if(response.length > 0) {
+                    csvContent = [Object.keys(response[0]).join(',')];
 
-                response.forEach(function (row){
-                    csvContent.push(Object.values(row).join(','));
-                });
-                csvContent = csvContent.join('\n');
-
+                    response.forEach(function (row) {
+                        csvContent.push(Object.values(row).join(','));
+                    });
+                    csvContent = csvContent.join('\n');
+                }
                 let blob = new Blob([csvContent],{ type: 'text/csv;charset=utf-8;' });
                 let fileName = "results.csv";
                 document.querySelector(".to-download").style.display = "flex";

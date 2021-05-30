@@ -118,19 +118,26 @@ async function starExercise() {
 
             votedBy = document.querySelector(".voted-by");
             votedBy.innerHTML = response["stars"] + " &#9733;";
+
+            let starButton = document.querySelector(".star-image.voted");
+            starButton.removeEventListener("click",starExercise);
         }
     };
 
     request.send(dataToSend);
 }
 
-starButton = document.querySelector(".star-image.novote");
-if (starButton) {
-    starButton.addEventListener("click", async function (e) {
-        e.preventDefault();
-        await starExercise();
-    });
+async function star(e)
+{
+    e.preventDefault();
+    await starExercise();
 }
+
+var starButton = document.querySelector(".star-image.novote");
+if(starButton != null) {
+    starButton.addEventListener("click", star);
+}
+
 
 
 

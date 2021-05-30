@@ -16,6 +16,7 @@ const RULE_MATCH = 'match';
 const RULE_CORRECT ='correct';
 const RULE_UNIQUE = 'unique';
 const RULE_MIN = 'min';
+const RULE_PHONE = 'phone';
 const RULE_EMAIL ='email';
 
 function getInformation(): array
@@ -26,7 +27,8 @@ function getInformation(): array
     $receivedRules = [
                         'newPassword' => [RULE_REQUIRED,RULE_MIN],
                         'confirmPassword' => [RULE_REQUIRED,RULE_MATCH],
-                        'email' => [RULE_EMAIL,RULE_UNIQUE]];
+                        'email' => [RULE_EMAIL,RULE_UNIQUE],
+                        'phone'=>[RULE_PHONE]];
 
     return [$values, $receivedRules];
 }
@@ -67,6 +69,9 @@ function validate($receivedRules, $values, $database): array
             if($ruleName === RULE_EMAIL && !filter_var($value,FILTER_VALIDATE_EMAIL))
             {
                 $errors[$attribute] = ['Not a valid email!'];
+            }
+            if($ruleName === RULE_PHONE  && !preg_match('/\+?[0-9]{5,20}/',$value)){
+                $errors[$attribute] = ['Not a valid phone number'];
             }
         }
     }
@@ -126,6 +131,11 @@ if($user && password_verify($data->currentPassword,$user->password))
     if(!(isset($data->email)) || $data->email === $user->email)
     {
         unset($rules["email"]);
+    }
+
+    if(!(isset($data->phone)) || $data->phone === $user->phone)
+    {
+        unset($rules["phone"]);
     }
 
     $errors = validate($rules,$data,$database);

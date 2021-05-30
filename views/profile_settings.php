@@ -49,6 +49,7 @@ use app\models\User;
                     >Email Address</label
                     >
                     <?php echo $form->field($model, 'email', "", "id='email-input'"); ?>
+                    <?php echo $form->field($model, 'email', '')->errorField(); ?>
                 </div>
             </div>
         </div>
@@ -105,6 +106,7 @@ use app\models\User;
                     >
 
                     <?php echo $form->field($model, 'phone', "", "pattern='[0-9]{10}' id='phone-number'")->telField(); ?>
+                    <?php echo $form->field($model, 'phone', '')->errorField(); ?>
                 </div>
             </div>
 

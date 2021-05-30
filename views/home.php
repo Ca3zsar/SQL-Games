@@ -17,10 +17,10 @@
     />
     <meta name="application-name" content="SQL-Games"/>
 
-    <link rel="stylesheet" href="styles/content_style.css"/>
-    <link rel="stylesheet" href="styles/navbar.css"/>
-    <link rel="stylesheet" href="styles/footer.css"/>
-    <script src="scripts/navFunctions.js"></script>
+    <link rel="stylesheet" href="/styles/content_style.css"/>
+    <link rel="stylesheet" href="/styles/navbar.css"/>
+    <link rel="stylesheet" href="/styles/footer.css"/>
+    <script src="/scripts/navFunctions.js"></script>
 
     <link rel="shortcut icon" type="image/png" href="resources/favicon.png"/>
 </head>
@@ -67,6 +67,7 @@
                     >
                     <a href="/history" itemprop="url"
                     ><span itemprop="name">History</span></a>
+                    <a href="/achievements" itemprop="url"><span itemprop="name">Achievements</span></a>
                     <a href="/logout" itemprop="url"><span itemprop="name">Log out</span></a>
                 </div>
             </div>

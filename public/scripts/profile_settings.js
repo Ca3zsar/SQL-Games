@@ -19,7 +19,7 @@ const formElement = document.querySelector('.complete-form');
 
 button.addEventListener('click', async function (event) {
     event.preventDefault();
-    let classNames = ["currentPassword", "newPassword", "confirmPassword"];
+    let classNames = ["currentPassword", "newPassword", "confirmPassword","email","phone"];
     let formData = new FormData(formElement);
 
     let request = new XMLHttpRequest();

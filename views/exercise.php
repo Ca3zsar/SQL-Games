@@ -9,7 +9,6 @@ if (isset($_SESSION['user'])) {
     $voteStatus = Exercise::checkVoted(Application::$app->user->id, $model->id);
 
     $exStatus = '';
-    $voteStatus = '';
     if ($status == -1) {
         $exStatus = 'blocked';
     }
