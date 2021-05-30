@@ -106,5 +106,4 @@ class CreatorController extends Controller
         curl_close($curl);
         echo $result;
     }
-
 }

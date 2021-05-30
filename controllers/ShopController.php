@@ -104,5 +104,4 @@ class ShopController extends Controller
         $this->setLayout('general');
         return $this->render('shop', "SQL-Games Shop", $styles);
     }
-
 }

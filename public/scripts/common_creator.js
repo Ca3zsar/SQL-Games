@@ -30,7 +30,7 @@ let textAreaVar = document.getElementsByClassName("editor")[0];
 
 textAreaVar.oninput = function () {
     this.style.height = "";
-    this.style.height = this.scrollHeight - 38 + "px";
+    this.style.height = this.scrollHeight - 40 + "px";
 };
 
 
@@ -74,21 +74,6 @@ function correctTextareaHeight(element) {
     }
 }
 
-/*------------------------------------------
-  Run syntax highlighter
-------------------------------------------*/
-function highlightBlock(block) {
-    if (["select"].indexOf(block.innerHTML) >= 0) {
-        let newSpan = document.createElement("span");
-        newSpan.style.color = "red";
-        newSpan.innerHTML = block.innerHTML;
-
-        block.innerHTML = "";
-
-        let code = document.getElementsByClassName("syntax-highlight html")[0];
-        code.append(newSpan);
-    }
-}
 
 function highlightSyntax() {
     let me = document.getElementsByClassName("editor")[0];
@@ -96,7 +81,6 @@ function highlightSyntax() {
     let codeHolder = document.querySelector("code");
     codeHolder.innerHTML = content;
 }
-
 
 textAreaVar.focus();
 

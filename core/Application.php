@@ -53,7 +53,7 @@ class Application
             }
             Application::$app->controller->layout = 'general';
             $this->response->setStatusCode($e->getCode());
-            $styles = '<link rel="stylesheet" title="extended" type="text/css" href="styles/error.css"/>';
+            $styles = '<link rel="stylesheet" title="extended" type="text/css" href="/styles/error.css"/>';
             echo $this->router->renderView('_error', $this->errorTitles[$e->getCode()], $styles, ['exception' => $e]);
         }
     }

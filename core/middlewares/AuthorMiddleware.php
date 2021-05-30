@@ -27,7 +27,7 @@ class AuthorMiddleware extends BaseMidleware
         $id = substr($path, strlen("/exercise_creator/") );
 
 
-        if (!Creator::isExerciseAuthor($id) && in_array(Application::$app->controller->action, $this->actions)){
+        if ((Application::isGuest() ||  !Creator::isExerciseAuthor($id)) && in_array(Application::$app->controller->action, $this->actions)){
             throw new ForbiddenException();
     }
     }

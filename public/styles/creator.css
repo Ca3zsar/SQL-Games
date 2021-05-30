@@ -258,7 +258,8 @@ input[type=radio]:checked + label > img {
 }
 
 .editor-holder textarea, .editor-holder code {
-    width: 100%;
+    width:calc(100% - 40px);
+
     height: auto;
     min-height: 146px;
     font-size: 14px;
@@ -268,7 +269,7 @@ input[type=radio]:checked + label > img {
     padding: 20px 20px 20px 20px;
     line-height: 21px;
     position: absolute;
-    font-family: montserrat-regular, Courier, monospace;
+    font-family: Consolas, Courier, monospace;
     overflow: visible;
     transition: all 0.5s ease-in-out;
 }
@@ -285,7 +286,7 @@ input[type=radio]:checked + label > img {
 
     -webkit-text-fill-color: transparent;
     color: black;
-    top: -12px;
+    top: -11px;
     /* user-select: none; */
 
 }
@@ -301,14 +302,13 @@ pre {
     word-wrap: break-word;
     position: relative;
     top: -12px;
-
 }
 
 pre code {
     background: #ffffff !important;
     color: #000000;
     /*font-size: 29px;*/
-    font-family: montserrat-regular, sans-serif;
+    font-family: roboto, sans-serif;
     top: -12px;
 }
 

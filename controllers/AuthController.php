@@ -114,6 +114,4 @@ class AuthController extends Controller
         Application::$app->logout();
         $response->redirect('/');
     }
-
-
 }
