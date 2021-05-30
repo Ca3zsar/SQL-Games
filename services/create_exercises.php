@@ -138,6 +138,16 @@ function updateInformation($values, $database): bool
     return true;
 }
 
+function getTitle($database,$id)
+{
+    $statement = $database->pdo->prepare("SELECT title FROM exercises where ID =:id");
+    $statement->bindValue(":id",$id);
+
+    $statement->execute();
+    $result = $statement->fetch(PDO::FETCH_ASSOC);
+    return $result["title"];
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_SERVER['REQUEST_METHOD'] === 'PUT') {
     $information = getInformation();
 
@@ -179,6 +189,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_SERVER['REQUEST_METHOD'] === 'PUT
                 }
 
                 $database = DatabaseConnection::getDatabaseConnection();
+
+                if($_SERVER["REQUEST_METHOD"] == "PUT")
+                {
+                    if($information[0]->title === getTitle($database, $information[0]->exerciseId))
+                    {
+                        unset($information[1]["title"]);
+                    }
+                }
+
                 $errors = validate($information[1], $information[0], $database);
 
                 if (!empty($errors)) {
