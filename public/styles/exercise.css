@@ -1,0 +1,234 @@
+@import "font-importer.css";
+
+body {
+    text-align: center;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.editor-wrapper{
+    margin-bottom:100px;
+}
+
+.wrapper{
+	width:100%;
+	margin:0 auto;
+}
+
+.content-area{
+    flex:1 0 auto;
+	width:100%;
+	position: relative;
+	background:#F3F7F7;
+	height: fit-content;
+    height: -moz-fit-content;
+	display:inline-flex;
+	flex-wrap: wrap;
+	justify-content: center;
+    min-height: 100vh;
+}
+
+.page-up{
+    flex:1 0 auto;
+    width:100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.exercise-requirement{
+    width:940px;
+    height:fit-content;
+    height: -moz-fit-content;
+    
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
+    margin-top:50px;
+    	
+    display:flex;
+ }
+
+.requirements
+{
+    width:90%;
+    padding: 10px 20px 20px;
+}
+
+.exercise-status{
+    width:10%;
+    padding:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.star-image{
+    width:90%;
+    filter:grayscale(100%);
+}
+
+.star-image.novote:hover{
+    filter:none;
+}
+
+.star-image.voted{
+    filter:none;
+}
+
+.exercise-status.solved{
+    background-color: #0F9347;
+}
+
+.exercise-status.blocked{
+    background-color: #BE2026;
+}
+
+.exercise-status.tried{
+    background-color: #FCC50E;
+}
+
+.exercise-statistics{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0;
+}
+
+.exercise-statistics>p{
+    padding-left:10px;
+    margin:0;
+    font-family: open-sans-light,sans-serif;
+    font-size: 0.75em;   
+}
+
+.exercise-statistics>p{
+    padding-right:10px;
+    border-right: 1px solid gray;
+}
+
+.exercise-statistics>p:last-child
+{
+    padding-right: 0;
+    border-right:0;
+}
+
+.exercise-author{
+	font-family: open-sans-bold,sans-serif;
+    font-weight: lighter;
+} 
+
+.exercise-title{
+    margin-top: 5px;
+	margin-left: 5px;
+    font-family: montserrat-regular, serif;
+    font-weight: bolder;
+    
+	font-size: 1.25em;
+    text-align: left;
+}
+
+.requirement-text{
+    font-size: 1em;
+    font-family: open-sans-light, sans-serif;
+	text-align:left;
+	margin-left: 10px;
+	margin-right: 10px;
+    word-break: break-word;
+    word-wrap: anywhere;
+}
+
+.meta-info{
+    width:100%;
+    border-bottom: 2px solid #d3d6d8;
+    
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.difficulty-wrapper{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
+}
+
+.difficulty-bar{
+    display:flex;
+    align-items: center;
+    margin-left:10px;
+    width:50px;
+}
+
+.difficulty{
+    width : 25px;
+    height: 10px;
+    list-style: none;
+    padding: 5px;
+    float: left;
+    
+}
+
+.difficulty-title{
+    font-family: open-sans-light, serif;
+    font-size:16px;
+}
+
+.not-bought{
+    flex:1 0 auto;
+    width:100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.buy{
+    height: 40px;
+    color: #ffffff;
+
+    font-size: 15px;
+    font-family: open-sans-light, serif;
+    font-weight: 400;
+
+    cursor: pointer;
+
+    align-items: center;
+    width: 150px;
+    text-decoration: none;
+}
+
+.buy.can-buy{
+    box-shadow: 0 4px 12px 0 rgba(245, 193, 23, 0.5);
+    background-color: #FCC50E;
+    border: 1px solid #ffcf30;
+}
+
+.buy.cant-buy{
+    box-shadow: 0 4px 12px 0 rgba(190, 32, 38, .5);
+    background-color: #BE2026;
+    border: 1px solid #a02327;
+}
+
+.buy-text{
+    width:100%;
+    font-size:15px;
+    font-weight: 400;
+    font-family: open-sans-bold,sans-serif;
+}
+
+
+
+@media (max-width:430px)
+{
+    .content-area{
+        height:100vh;
+    }
+
+    .exercise-requirement{
+        height:min-content;
+    }
+    
+}

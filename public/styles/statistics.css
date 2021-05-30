@@ -1,0 +1,34 @@
+.stats-header:last-of-type {
+    padding-top: 50px;
+}
+
+.stats-header h1{
+    margin: 0;
+}
+
+.stats-header{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stats-header a{
+    margin: 0;
+    color: #1C2434;
+    margin-bottom: 10px;
+    width: fit-content;
+    width: -moz-fit-content;
+    font-size: 15px;
+
+}
+
+.stats-header a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#html-download, #pdf-download{
+    font-weight: normal;
+}
+

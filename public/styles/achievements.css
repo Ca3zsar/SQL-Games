@@ -1,0 +1,162 @@
+@import "font-importer.css";
+
+body {
+    text-align: center;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.content-area {
+    flex: 1 0 auto;
+    width: 100%;
+    position: relative;
+    background: #F3F7F7;
+    height: auto;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.achievements-header{
+    width: 100%;
+    padding-top: 50px;
+    font-family: bebas, serif;
+    font-size: 33px;
+    user-select: none;
+    color: #333;
+}
+
+.achievements-manager{
+    font-family: montserrat-regular;
+    padding: 10px;
+    height: fit-content;
+    width: 940px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-top: 1px solid #d3d6d8;
+    border-bottom: 1px solid #d3d6d8;
+}
+
+.achievements-list{
+    width: 700px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+
+
+.achievement-box{
+    width: 100%;
+    /*background-color: lightgrey;*/
+    display: flex;
+    height:fit-content;
+    justify-content: start;
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    border-radius:0 65px 65px 0;
+    margin-bottom: 20px;
+}
+
+.achievement-stats{
+    height:fit-content;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    padding-left:30px;
+    padding-right:50px;
+}
+
+.achievement-title{
+    margin-top:1em;
+    margin-bottom:0;
+    text-align:left;
+    font-family: montserrat-regular, open-sans-light, sans-serif;
+    font-size: 1.2em;
+}
+
+.achievement-description{
+    text-align:left;
+    font-family: montserrat-regular, open-sans-light, sans-serif;
+    font-size: 1em;
+}
+
+progress
+{
+
+    /* Turns off styling - not usually needed, but good to know. */
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+}
+
+/* IE10 */
+progress {
+    color: #75b800;
+    width:45%;
+}
+
+/* Firefox */
+progress::-moz-progress-bar {
+    background: #75b800;
+}
+
+/* Chrome and others */
+progress::-webkit-progress-bar{
+    border-radius:10px;
+    background-color:#eef1f3;
+    height:12px;
+}
+
+progress::-webkit-progress-value{
+    background: #75b800;
+    border-radius: 10px;
+}
+
+.progress-div{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    flex-wrap:nowrap;
+}
+.achievement-icon{
+    margin-left:20px;
+    display:flex;
+    align-items:center;
+    height:128px;
+}
+
+.achievement-image{
+    width:100px;
+    height:100px;
+}
+
+.progress-text {
+    font-family: montserrat-regular, open-sans-light, sans-serif;
+    font-size:0.9em;
+    margin:0;
+    margin-left: 5px;
+    margin-top: -3px;
+}

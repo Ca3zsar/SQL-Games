@@ -1,0 +1,77 @@
+@import "font-importer.css";
+
+body {
+    text-align: center;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.content-area {
+    flex: 1 0 auto;
+    width: 100%;
+    position: relative;
+    background: #F3F7F7;
+    height: auto;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stats-header {
+    width: 100%;
+    padding-top: 50px;
+    font-family: bebas, serif;
+    font-size: 33px;
+    user-select: none;
+    color: #333;
+}
+
+.stats-header:last-of-type{
+    padding-top:0;
+}
+
+.information-table tbody tr td,
+.information-table thead tr th{
+    color: #333;
+    font-weight: 400;
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+
+    font-family: roboto;
+    font-size:1.1em;
+}
+
+.information-table thead tr th{
+    border-top:none;
+    vertical-align: bottom;
+}
+
+.information-table:last-of-type{
+    margin-bottom:35px;
+}
+
+.correct td{
+    color: #0F9347 !important;
+}
+
+.incorrect td{
+    color: #BE2026 !important;
+}
