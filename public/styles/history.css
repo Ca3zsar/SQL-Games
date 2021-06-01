@@ -47,6 +47,10 @@ body {
     padding-top:0;
 }
 
+table{
+    max-width:80%;
+}
+
 .information-table tbody tr td,
 .information-table thead tr th{
     color: #333;
@@ -54,9 +58,12 @@ body {
     padding: 0.75rem;
     vertical-align: top;
     border-top: 1px solid #dee2e6;
-
-    font-family: roboto;
+    font-family: roboto, sans-serif;
     font-size:1.1em;
+}
+
+.information-table tbody tr td{
+    word-break:break-word;
 }
 
 .information-table thead tr th{

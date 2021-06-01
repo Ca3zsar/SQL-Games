@@ -17,17 +17,11 @@ class User extends DBModel
     public int $coins;
     public int $id;
 
-    public function updateSettings()
-    {
-
-    }
-
     public function tableName(): string
     {
         return 'users';
     }
-
-
+    
     public function attributes(): array
     {
         return ['username','email','password'];
