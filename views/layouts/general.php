@@ -89,7 +89,7 @@
     <footer class="footer-bar">
         <div class="links">
             <a href="/statistics">Statistics</a>
-            <a href="/scholarlyhtml">Scholarly HTML</a>
+            <a href="/Docs/scholarlyhtml">Scholarly HTML</a>
         </div>
         <p itemscope itemtype="https://schema.org/copyrightHolder">
             © SQL-GAMES 2021
