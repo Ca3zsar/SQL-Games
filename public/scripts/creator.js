@@ -1,7 +1,7 @@
 
 
 const button = document.getElementsByClassName("submit-button")[0];
-const infoForm = document.getElementById("complete-form");
+const infoForm = document.querySelector(".complete-form");
 button.addEventListener('click', async function (event) {
     event.preventDefault();
     const formData = new FormData(infoForm);

@@ -8,9 +8,9 @@ use app\core\Model;
 
 class Form
 {
-    public static function begin($action,$method)
+    public static function begin($method)
     {
-        echo sprintf('<form id="complete-form" class="complete-form" action="%s" method="%s">',$action,$method);
+        echo sprintf('<form class="complete-form" method="%s">',$method);
         return new Form();
     }
 

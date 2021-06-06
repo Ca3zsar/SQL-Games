@@ -14,16 +14,16 @@ if($model->title === '')
 $difficulties = array("easy" => '', "medium" => '', "hard" => '');
 $difficulties[$model->difficulty] = "checked";
 
-$form = Form::begin('', "") ?>
+$form = Form::begin("post") ?>
 <div class="container">
 
     <div class="meta-info">
         <div class="title-subdiv">
             <label class="meta-label">
                 Exercise Title
-                <?php echo $form->field($model, 'title', 'title-area')->textArea() ?>
-                <?php echo $form->field($model, 'title', '')->errorField(); ?>
+                <?php echo $form->field($model, 'title', 'title-area')->textArea() ?>                
             </label>
+            <?php echo $form->field($model, 'title', '')->errorField(); ?>
         </div>
         <div class="difficulty-subdiv">
             <label class="meta-label">
@@ -54,8 +54,8 @@ $form = Form::begin('', "") ?>
         <label class="requirement-label">
             Exercise Requirement
             <?php echo $form->field($model, 'requirement', 'requirement-text')->textArea() ?>
-            <?php echo $form->field($model, 'requirement', '')->errorField(); ?>
         </label>
+        <?php echo $form->field($model, 'requirement', '')->errorField(); ?>
     </div>
     <div class="price-div">
         <label class="price-label">

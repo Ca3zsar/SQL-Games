@@ -1,7 +1,7 @@
 let exerciseId = window.location.pathname.replace("\/exercise_creator\/", "");
 
 const button = document.getElementsByClassName("submit-button")[0];
-const infoForm = document.getElementById("complete-form");
+const infoForm = document.querySelector(".complete-form");
 button.addEventListener('click', async function (event) {
     event.preventDefault();
     let formData = new FormData(infoForm);

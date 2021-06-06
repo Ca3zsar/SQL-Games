@@ -21,7 +21,7 @@ use app\core\Application;
         use app\models\LoginForm;
         use app\models\User;
 
-        $form = Form::begin('', "post") ?>
+        $form = Form::begin("post") ?>
         <h1 class="h1-title">Create Account</h1>
         <?php echo $form->field($model, 'username') ?>
         <?php echo $form->field($model, 'username', '')->errorField(); ?>
@@ -35,7 +35,7 @@ use app\core\Application;
         <?php Form::end() ?>p
     </div>
     <div class="form-container sign-in-container">
-        <?php $form = Form::begin('', "post") ?>
+        <?php $form = Form::begin("post") ?>
         <h1 class="h1-title">Sign in</h1>
         <?php echo $form->field($loginModel, 'username') ?>
         <?php echo $form->field($loginModel, 'username', '')->errorField(); ?>

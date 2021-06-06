@@ -17,10 +17,10 @@ use app\models\User;
         <a href="#pass-info">Password</a>
         <a href="#contact-info">Contact</a>
         <a href="#about-info">About</a>
-        <button type="submit" form="complete-form" class="submit-changes" id="submit-changes">Save Changes</button>
+        <button type="submit" class="submit-changes" id="submit-changes">Save Changes</button>
     </div>
     <!--    <div class="settings">-->
-    <?php $form = Form::begin("", "post") ?>
+    <?php $form = Form::begin("post") ?>
     <br id="personal-info"/>
     <div class="personal-info">
         <h1 class="section-header">Personal information</h1>
@@ -134,7 +134,7 @@ use app\models\User;
             <div class="about-info-description">
                 <div class="description-div">
                     <label for="description" class="description-label settings-label">Description</label>
-                    <?php echo $form->field($model, 'description', "", "name='description' id='description'")->textArea(); ?>
+                    <?php echo $form->field($model, 'description', "", " id='description'")->textArea(); ?>
                 </div>
             </div>
         </div>
