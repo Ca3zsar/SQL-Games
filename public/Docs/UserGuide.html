@@ -2,117 +2,58 @@
 <html lang="en">
 
 <head>
-  <title>Scholarly HTML</title>
+  <title>Manual de utilizare "SQL-Games"</title>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" href="../styles/scholarly_style.css" />
-  
+  <link rel="stylesheet" href="../styles/guide_style.css" />
+
 </head>
 
-<body prefix="schema: https://schema.org/"  itemscope=""
-  itemtype="http://schema.org/WebPage">
+<body prefix="schema: https://schema.org/" itemscope="" itemtype="http://schema.org/WebPage">
   <article prefix="sa:https://ns.science.ai/" typeof="schema:ScholarlyArticle">
     <header>
-      <h1>Scholarly HTML "SQL-Games"</h1>
+      <h1>Manual de utilizare "SQL-Games"</h1>
     </header>
-    <h2>Table of contents</h2>
+    <h2>Cuprins</h2>
     <ul>
       <li>
-        <a href="#authors">Authors</a>
+        <a href="#authors">Autori</a>
       </li>
       <li>
-        <a href="#introduction">1. Introduction</a>
+        <a href="#introduction">1. Introducere</a>
         <ul>
-          <li><a href="#introduction-purpose">1.1 Purpose</a></li>
-          <li><a href=" #conventions">1.2 Document Conventions</a></li>
-          <li><a href="#audience">1.3 Intended Audience and Reading Suggestions</a></li>
-          <li><a href="#product-references">1.4 References</a></li>
+          <li><a href="#introduction-purpose">1.1 Scop</a></li>
+          <li><a href=" #conventions">1.2 Convenții ale documentului</a></li>
+          <li><a href="#audience">1.3 Persoanele cărora le este destinat acest document</a></li>
+          <li><a href="#product-references">1.4 Referințe</a></li>
         </ul>
       </li>
-     
-      <li><a href="#external">3. External Interface Requirements</a>
+      <li>
+        <a href="#guide">2. Manual de utilizare</a>
         <ul>
-          <li><a href="#user-interface">3.1 User Interfaces</a>
-            <ul>
-              <li><a href="#user-interface-1">3.1.1 Navbar</a></li>
-              <li><a href="#user-interface-2">3.1.2 Navbar dropdown</a></li>
-              <li><a href="#user-interface-3">3.1.3 Main Page</a></li>
-              <li><a href="#user-interface-4">3.1.4 Login/Register Page</a></li>
-              <li><a href="#user-interface-5">3.1.5 Shop Extended Page</a></li>
-              <li><a href="#user-interface-6">3.1.6 Shop Compact Page</a></li>
-              <li><a href="#user-interface-7">3.1.7 Individual Exercise Page</a></li>
-              <li><a href="#user-interface-8">3.1.8 Profile Settings Page</a></li>
-              <li><a href="#user-interface-9">3.1.9 Footer</a></li>
-            </ul>
-          </li>
-          <li><a href="#hardware-interface">3.2 Hardware Interfaces</a></li>
-          <li><a href="#software-interface">3.3 Software Interfaces</a></li>
-          <li><a href="#communications-interface">3.4 Communications Interfaces</a></li>
-        </ul>
-      </li>
-      <li><a href="#system-features">4. System Features</a>
-        <ul>
-          <li><a href="#first-feature">4.1 System Feature 1: SQL exercises solving</a>
-            <ul>
-              <li><a href="#first-feature-1">4.1.1 Description and Priority</a></li>
-              <li><a href="#first-feature-2">4.1.2 Stimulus/Response</a></li>
-              <li><a href="#first-feature-3">4.1.3 Functional Requirements</a></li>
-            </ul>
-          </li>
-          <li><a href="#second-feature">4.2 System Feature 2: Shop</a>
-            <ul>
-              <li><a href="#second-feature-1">4.2.1 Description and Priority</a></li>
-              <li><a href="#second-feature-2">4.2.2 Stimulus/Response</a></li>
-              <li><a href="#second-feature-3">4.2.3 Functional Requirements</a></li>
-            </ul>
-          </li>
-          <li><a href="#third-feature">4.3 System Feature 3: Achievements</a>
-            <ul>
-              <li><a href="#third-feature-1">4.3.1 Description and Priority</a></li>
-              <li><a href="#third-feature-2">4.3.2 Stimulus/Response</a></li>
-              <li><a href="#third-feature-3">4.3.3 Functional Requirements</a></li>
-            </ul>
-          </li>
-          <li><a href="#fourth-feature">4.4 System Feature 4: Profile</a>
-            <ul>
-              <li><a href="#fourth-feature-1">4.4.1 Description and Priority</a></li>
-              <li><a href="#fourth-feature-2">4.4.2 Stimulus/Response</a></li>
-              <li><a href="#fourth-feature-3">4.4.3 Functional Requirements</a></li>
-            </ul>
-          </li>
-          <li><a href="#fifth-feature">4.5 System Feature 5: Profile Settings</a>
-            <ul>
-              <li><a href="#fifth-feature-1">4.5.1 Description and Priority</a></li>
-              <li><a href="#fifth-feature-2">4.5.2 Stimulus/Response</a></li>
-              <li><a href="#fifth-feature-3">4.5.3 Functional Requirements</a></li>
-            </ul>
-          </li>
-          <li><a href="#sixth-feature">4.6 System Feature 6: Code Editor Syntax Highlighting</a>
-            <ul>
-              <li><a href="#sixth-feature-1">4.6.1 Description and Priority</a></li>
-              <li><a href="#sixth-feature-2">4.6.2 Stimulus/Response</a></li>
-              <li><a href="#sixth-feature-3">4.6.3 Functional Requirements</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li><a href="#non-functional">5. Other Nonfunctional Requirements</a>
-        <ul>
-          <li><a href="#performance">5.1 Performance Requirements</a></li>
-          <li><a href="#safety">5.2 Safety Requirements</a></li>
-          <li><a href="#security">5.3 Security Requirements</a></li>
-        </ul>
-      </li>
-      <li><a href="#other-requirements">Other Requirements</a>
-        <ul>
-          <li><a href="#databases">1.The databases included in the web application</a></li>
-          <li><a href="#appendix-a">Appendix A: Glossary</a></li>
-          <li><a href="#appendix-b">Appendix B: Used Creative Works</a></li>
+          <li><a href="#register">2.1 Înregistrarea în aplicație</a></li>
+          <li><a href="#login">2.2 Autentificarea în aplicație</a></li>
+          <li><a href="#settings">2.3 Pagina pentru setările contului</a></li>
+          <li><a href="#create">2.4 Crearea unui exercițiu</a></li>
+          <li><a href="#shop">2.5 Afișarea listei de exerciții disponibile</a></li>
+          <li><a href="#difficulty">2.6 Filtre exerciții</a></li>
+          <li><a href="#order">2.7 Ordonare exerciții</a></li>
+          <li><a href="#search">2.8 Căutare exercițiu</a></li>
+          <li><a href="#layout">2.9 Setarea interfeței magazinului ( compact / extins )</a></li>
+          <li><a href="#buy">2.10 Cumpărarea unui exercițiu</a></li>
+          <li><a href="#solve">2.11 Rezolvarea unui exercițiu</a></li>
+          <li><a href="#star">2.12 Acordarea unei steluțe pentru un exercițiu</a></li>
+          <li><a href="#edit-exercise">2.13 Editarea unui exercițiu</a></li>
+          <li><a href="#history">2.14 Vizualizarea statisticilor personale și a istoricului</a></li>
+          <li><a href="#statistics">2.15 Vizualizarea statisticilor generale ale site-ului</a></li>
+          <li><a href="#achievements">2.16 Vizualizarea realizărilor obținute</a></li>
+          <li><a href="#navbar">2.17 Utilizarea barei de navigare</a></li>
+          <li><a href="#dropdown">2.18 Meniul dropdown</a></li>
         </ul>
       </li>
     </ul>
     <section id="authors" typeof="sa:AuthorsList">
       <div role="contentinfo">
-        <h2>Authors</h2>
+        <h2>Autori</h2>
         <ul>
           <li typeof="sa:ContributorRole" property="schema:author">
             <span typeof="schema:Person">
@@ -158,74 +99,38 @@
 
     <section typeof="sa:Abstract">
       <div role="doc-introduction">
-        <h2 id="introduction">1. Introduction</h2>
-        SQL-Games is a web application whose purpose is to help people develop
-        their SQL skills by solving various types of exercises and also
-        creating their own exercises in order to challenge other users. They
-        will be able to track their progress through the statistics section
-        and through theirs teacher feedback.
-        <h3 id="introduction-purpose">1.1 Purpose</h3>
+        <h2 id="introduction">1. Introducere</h2>
+        SQL-Games este o aplicație weg a cărei scop este de a ajuta oamenii să
+        își dezvolte abilitățile de rezolvare a variate tipuri de exerciții și
+        de a-și crea propriile exerciții pentru a-i stimula pe ceilalți utilizatori.
+        Aceștia vor mai putea să iși vizualizeze progresul prin intermediul
+        secțiunii de statistici.
+        <h3 id="introduction-purpose">1.1 Scop</h3>
         <p>
-          The purpose of this document is to specify the requirements for the
-          SQL-Games site. It will present the purpose and features of the web
-          application and what the application will be able to do. In
-          addition, this document will present the way this application is
-          intended to be used and will explain some concepts. This document is
-          intended for general users of the application.
+          Scopul acestui document este acela de a specifica cerințele site-ului SQL-Games.
+          Acesta va prezenta scopul si caracteristicile aplicației web și ce poate aceasta să facă.
+          În plus, acest document va prezenta modul în care aplicația trebuie folosită.
+          Acest document este menit pentru a fi folosit de utilizatorii aplicației.
         </p>
 
-        <h3 id="conventions">1.2 Document Conventions</h3>
+        <h3 id="conventions">1.2 Convenții ale documentului</h3>
 
         <ul>
-          <li>This document follows the IEEE SRS documentation template.</li>
+          <li>Acest document urmează standardul IEEE SRS</li>
           <li>
-            <i><b>Italic bold</b></i> text is used for defining custom
-            notions.
+            Scrisul cu <i><b>Italic Bold</b></i> evidențiază anumite chestiuni
+            specifice aplicației noastre.
           </li>
         </ul>
 
-        <h3 id="audience">1.3 Intended Audience and Reading Suggestions</h3>
+        <h3 id="audience">1.3 Persoanele cărora le este destinat acest document</h3>
         <p>
-          The document is intended for both developers and users. Some
-          techincal notions could rise up here-and-there, but anyone should be
-          able to understand the contents of this document.
+          Acest document este destinat atât pentru dezvoltatori cât și pentru utilizatori.
+          Câteva elemente tehnice vor apărea de-a lungul documentului dar oricine
+          ar trebui să fie capabil să înțeleagă conținutul.
         </p>
 
-        <h3 id="product-scope">1.4 Product Scope</h3>
-        <h4 id="product-purpose">1.4.1 Purpose</h4>
-        <p>
-          The following site has the purpose of offering its users a chance to
-          practice their skills in the databases course and learn how to write
-          SQL queries properly. Another purpose of the application is to boost
-          the users' creativity by offering them a chance to create their own
-          queries to be solved by other users. Also, it is intended to help
-          teachers track their students' progress and organize them in classes
-          in order to evaluate them.
-        </p>
-
-        <h4 id="product-benefits">1.4.2 Benefits</h4>
-        <p>
-          The site offers a wide range of exercises for different levels of
-          knowledge relating to the databases course. The shop system
-          encourages the users to perform as good as possible, so they can
-          accumulate more eSQLids. <br />
-          Achievements are intended as not only a form of bragging, but also a
-          way of noting the most advanced students. <br />
-          The grouping of students in classes in order to follow their
-          evolution is another benefit of the application, helping teachers
-          evaluating their students in an easier way.
-        </p>
-
-        <h4 id="product-goals">1.4.3 Goals and objectives</h4>
-        <p>
-          The main goal of this web application is to help regular users learn
-          how to write SQL queries in a much easier way through solving
-          exercises that are easier to comprehend than abstract concepts. It
-          will also make it much more fun to learn by receiving various
-          achievements.
-        </p>
-
-        <h3 id="product-references" typeof="sa:ReferenceList">1.5 References</h3>
+        <h3 id="product-references" typeof="sa:ReferenceList">1.5 Referințe</h3>
         <ul>
           <li class="ref-something" typeof="schema:ScholarlyArticle"
             resource="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-projects.html">
@@ -276,538 +181,239 @@
     </section>
 
     <section typeof="sa:MaterialsAndMethods">
-      <h2 id="overall">2. Overall Description</h2>
-
-      <h3 id="product-perspective">2.1 Product Perspective</h3>
+      <h2 id="guide">2. Manual de utilizare</h2>
+      <h3 id="register">2.1 Înregistrarea în aplicație</h3>
+      <figure typeof="sa:image" id="register-image">
+        <img src="UserGuideImages/register.png" alt="register" class="screenshots">
+        <figcaption>2.1 Formularul de înregistrare</figcaption>
+      </figure>
       <p>
-        SQL-Games is an under development open source project that will
-        receive updates in the future and may change based on users feedback.
-        It is a platform created for anyone interested in learning SQL. It is
-        a self-contained product that represents the authors' college project.
-        The overall structure of this application is shown in the figure
-        below.
+        Utilizatorii se pot înregistra folosind formularul de înregistrare, fiind necesare informații precum
+        nume de utilizator, adresă de email și parolă. Pentru ca procesul de înregistrare să aibă loc,
+        utilizatorul trebuie să introducă date valide : nume de utilizator care să nu fie deja existent,
+        adresă de email validă și care nu este deja utilizată în aplicație și o parolă de minim 8 caractere,
+        a cărei confirmare este necesară. În cazul în care nu este respectată cel puțin una din cerințe, se
+        va afișa un mesaj de eroare corespunzător.
       </p>
-      <figure typeof="sa:image">
-        <img src="../resources/scholarly_images/C2_Diagram.svg" class="img-c2-diagram" />
-        <figcaption>C2 diagram of the SQL-Games site</figcaption>
+
+      <h3 id="login">2.2 Autentificarea în aplicație</h3>
+      <figure typeof="sa:image" id="login-image">
+        <img src="UserGuideImages/login.png" alt="login" class="screenshots">
+        <figcaption>2.2 Formularul de autentificare</figcaption>
+      </figure>
+      <p>
+        Pentru ca un utilizator deja existent să se autentifice în aplicație, este necesar ca acesta să
+        introducă combinația de nume de utilizator și parola validă.
+      </p>
+
+      <h3 id="settings">2.3 Pagina pentru setările contului</h3>
+      <figure typeof="sa:image" id="settings-image">
+        <img src="UserGuideImages/settings.png" alt="settings" class="screenshots">
+        <figcaption>2.3 Setări cont</figcaption>
+      </figure>
+      <p>
+        În urma autentificării, utilizatorului îi este permis să-și modifice informațiile personale
+        folosind pagina de setări. Pentru confirmarea modificărilor, utilizatorul este nevoit să
+        introducă parola în câmpul "Current Password" după care să apese pe butonul "Save Changes".
+      </p>
+
+      <h3 id="create">2.4 Crearea unui exercițiu</h3>
+      <figure typeof="sa:image" id="creator-image">
+        <img src="UserGuideImages/creator.png" alt="creator" class="screenshots">
+        <figcaption>2.4.1 Crearea unui exercițiu</figcaption>
       </figure>
 
-      <h3 id="product-functions">2.2 Product Functions</h3>
-      <p>Some of the major functions are:</p>
-
-      <ul>
-        <li>create account</li>
-        <li>modify account settings</li>
-        <li>the ability to solve database-related tasks</li>
-        <li>buy new tasks and earn eSQLids currency</li>
-        <li>an achievement system integrated in the account of every user</li>
-        <li>group student users in classes</li>
-        <li>create new tasks</li>
-        <li>view statistics</li>
-      </ul>
-
-      <h3 id="users">2.3 User Classes and Characteristics</h3>
-      <ul>
-        <li>
-          Regular user such as students, or anyone who has an interest in
-          practising SQL
-        </li>
-        <li>
-          Teacher user such as university, college professors, tutors or any
-          other worker in the education system.
-        </li>
-        <li>
-          Admin user such as the project's authors or any pertinent or
-          appropriate person willing to maintain the web application
-        </li>
-      </ul>
-
-      <h4 id="regular-users">2.3.1 Regular user</h4>
-      <ul>
-        <li>Can solve tasks</li>
-        <li>Gain achivements.</li>
-        <li>Can create his own problems to be solved by other users</li>
-        <li>Gain eSQLids</li>
-        <li>See their statistics</li>
-        <li>Modify account details.</li>
-      </ul>
-
-      <h4 id="teacher-users">2.3.2 Teacher user</h4>
-      <ul>
-        <li>Cand do the same actions a regular user can do.</li>
-        <li>Group students in a class and give them specific tasks.</li>
-        <li>Can see students responses.</li>
-        <li>(Low priority)</li>
-      </ul>
-
-      <h4 id="admin-users">2.3.3 Admin</h4>
-      <ul>
-        <li>Everything the above roles can do +</li>
-        <li>Set task price</li>
-        <li>Change task requirements</li>
-        <li>Assign teacher role to a simple user.</li>
-      </ul>
-
-      <h3 id="operating-environment">2.4 Operating Environment</h3>
       <p>
-        Can be used on any device with a web browser that supports HTML5, CSS
-        and JavaScript. Media queries allow for a comfortable use on any
-        screen resolution (above 400px width).
+        Utilizatorii pot să adauge exerciții, care ulterior vor putea fi rezolvate de ceilalți utilizatori.
+        Când este adăugat un exercițiu, trebuie specificate într-un formular: titlul exercițiului,
+        dificultatea, cerința, numărul de eSQLids pe care un utilizator va trebui să-i plătească pentru a rezolva
+        acel exercițiu, rezolvarea corectă a exercițiului. Dacă vreunul din câmpuri este completat cu informații invalide
+        vor fi afișate mesaje de eroare.
       </p>
-
-      <h3 id="constraints">2.5 Design and Implementation Constraints</h3>
-      <p>
-        SQL-Games interface is developed using only vanilla HTML5, CSS3,
-        JavaScript without any frameworks or plugins. <br />
-        The project backend is written in PHP 8 and is based on MVC
-        architecture that will modularize the project in 3 main components :
-        Models, Views and Controllers. The MVC structure will make the
-        application modular and easier to develop.
-      </p>
-
-      <h3 id="documentantion">2.6 User Documentation</h3>
-      <p>
-        A potential help page or guide for users on the site may be added
-        sometime in the future.
-      </p>
-
-      <h3 id="dependencies">2.7 Assumptions and Dependencies</h3>
-      <p>
-        SQL-Games is developed using JavaScript and HTML5, therefore disabling
-        the JavaScript or using a browser that does not support HTML5 could
-        result in users being unable to use the site. Another factor that can
-        alter users experience is using a device with a very low resolution
-        screen (under 400px width) because otherwise the text editor would not
-        load properly.
-      </p>
-    </section>
-
-    <section typeof="sa:MaterialsAndMethods">
-      <h2 id="external">3. External Interface Requirements</h2>
-
-      <h3 id="user-interface">3.1 User Interfaces</h3>
-
-      <figure typeof="sa:image" id="user-interface-1">
-        <img src="../resources/scholarly_images/screenshot_navbar.png" alt="navbar-screenshot" class="screenshots-nav" />
-        <figcaption>3.1.1 Navbar</figcaption>
+      <figure typeof="sa:image" id="creator-buttons-image">
+        <img src="UserGuideImages/creatorButtons.png" alt="creatorButtons" class="screenshots">
+        <figcaption>2.4.2 Butoanele creatorului</figcaption>
       </figure>
+      <p>
+        După completarea formularului, utilizatorul poate să folosească unul din butoane pentru vizualizarea 
+        rezultatului interogării, resetarea conținutului sau trimiterea exercițiului către baza de date.
+      </p>
 
-
-      <figure typeof="sa:image" id="user-interface-2">
-        <img src="../resources/scholarly_images/screenshot_dropdown.png" alt="main-page-screenshot" class="screenshots-element" />
-        <figcaption>3.1.2 Navbar dropdown that appears when pressing Account Button on
-          Navbar</figcaption>
+      <h3 id="shop">2.5 Afișarea listei de exerciții disponibile</h3>
+      <figure typeof="sa:image" id="shop-image">
+        <img src="UserGuideImages/shop.png" alt="lista" class="screenshots">
+        <figcaption>2.5 Pagină cu lista de exerciții</figcaption>
       </figure>
+      <p>
+        Când se dorește rezolvarea unui exercițiu, utilizatorul poate vizualiza o listă de exerciții
+        care sunt disponibile spre a fi cumpărate și ulterior rezolvate.
+      </p>
 
-      <figure typeof="sa:image" id="user-interface-3">
-        <img src="../resources/scholarly_images/screenshot_mainpage.png" alt="main-page-screenshot" class="screenshots" />
-        <figcaption>3.1.3 Main Page</figcaption>
+      <h3 id="difficulty">2.6 Setare filtru dificultate pentru exerciții</h3>
+      <figure typeof="sa:image" id="difficulty-image">
+        <img src="UserGuideImages/difficulty.png" alt="dificultate" class="screenshots">
+        <figcaption>2.6 Filtre exerciții</figcaption>
       </figure>
+      <p>
+          Lista de exerciții poate fi filtrată în funcție de dificultatea dorită, folosind meniul de 
+          selecție a dificultății.
+      </p>
 
-      <figure typeof="sa:image" id="user-interface-4">
-        <img src="../resources/scholarly_images/screenshot_login.png" alt="login-register-screenshot" class="screenshots" />
-        <figcaption>3.1.4 Login/Register Page</figcaption>
+      <h3 id="order">2.7 Setare ordonare după anumite criterii</h3>
+      <figure typeof="sa:image" id="order-image">
+        <img src="UserGuideImages/order.png" alt="ordonare " class="screenshots">
+        <figcaption>2.7 Ordonare exerciții</figcaption>
       </figure>
+      <p>
+        Ordonarea listei de exerciții poate fi făcută folosind meniul de selecție al modului
+        de ordonare, permițând ordonarea după popularitate și data adaugării exercițiilor.
+      </p>
 
-      <figure typeof="sa:image" id="user-interface-5">
-        <img src="../resources/scholarly_images/screenshot_shop_extended.png" alt="shop-page-extended-screenshot" class="screenshots" />
-        <figcaption>3.1.5 Shop Extended Page</figcaption>
+      <h3 id="search">2.8 Căutarea unui exercițiu după numele acestuia</h3>
+      <figure typeof="sa:image" id="search-image">
+        <img src="UserGuideImages/search.png" alt="cautare" class="screenshots">
+        <figcaption>2.8 Căutare exercițiu</figcaption>
       </figure>
+      <p>
+          Utilizatorului îi este perimis să caute un exercițiu în funcție de numele acestuia, prin
+          introducerea titlului în câmpul de căutare.
+      </p>
 
-      <figure typeof="sa:image" id="user-interface-6">
-        <img src="../resources/scholarly_images/screenshot_shop_compact.png" alt="shop-page-compact-screenshot" class="screenshots" />
-        <figcaption>3.1.6 Shop Compact Page</figcaption>
+      <h3 id="layout">2.9 Setarea interfeței magazinului ( compact / extins )</h3>
+      <figure typeof="sa:image" id="layout-image">
+        <img src="UserGuideImages/layout.png" alt="layout" class="screenshots">
+        <figcaption>2.9 Setare interfață</figcaption>
       </figure>
+      <p>
+        Pentru o citire mai ușoară, utilizatorul poate să schimbe modul
+        de prezentare a listei de exerciții, având două moduri disponibile: extins și compact.
+      </p>
 
-      <figure typeof="sa:image" id="user-interface-7">
-        <img src="../resources/scholarly_images/screenshot_exercise.png" alt="exercise-page-screenshot" class="screenshots" />
-        <figcaption>3.1.7 Individual Exercise Page</figcaption>
+
+      <h3 id="buy">2.10 Cumpărarea unui exercițiu</h3>
+      <figure typeof="sa:image" id="buy-image">
+        <img src="UserGuideImages/buyExercise.png" alt="cumparare" class="screenshots">
+        <figcaption>2.10.1 Cumpărarea exercițiului</figcaption>
       </figure>
-
-      <figure typeof="sa:image" id="user-interface-8">
-        <img src="../resources/scholarly_images/screenshot_settings.png" alt="profile-settings-page-screenshot" class="screenshots" />
-        <figcaption>3.1.8 Profile Settings Page</figcaption>
+      <p>
+          Când se optează pentru rezolvarea unui exercițiu, utilizatorul poate să cumpere acel exercițiu dacă are
+          numărul necesar de eSQLids, prin apăsarea butonului de cumpărare.
+      </p>
+      <figure typeof="sa:image" id="cant-buy-image">
+        <img src="UserGuideImages/cantBuy.png" alt="cumparare" class="screenshots">
+        <figcaption>2.10.2 Număr insuficient de eSQLids</figcaption>
       </figure>
-
-      <figure typeof="sa:image" id="user-interface-9">
-        <img src="../resources/scholarly_images/screenshot_footer.png" alt="footer-screenshot" class="screenshots-nav" />
-        <figcaption>3.1.9 Footer</figcaption>
+      <p>
+          Dacă utilizatorul nu are suficienți eSQLids pentru cumpărarea unui exercițiu, acesta va fi
+          atenționat cu un mesaj și prin culoarea roșie a butonului de cumpărare.
+      </p>
+      <h3 id="solve">2.11 Rezolvarea unui exercițiu</h3>
+      <figure typeof="sa:image" id="solve-image">
+        <img src="UserGuideImages/editor.png" alt="rezolvare" class="screenshots">
+        <figcaption>2.11 Rezolvare exercițiu</figcaption>
       </figure>
-
-      <h3 id="hardware-interface">3.2 Hardware Interfaces</h3>
       <p>
-        This product does not require any hardware interfaces. It works in a
-        browser that has to be installed on the user's device (PC, mobile,
-        etc.).
+          După cumpărare, pe pagina exercițiului va apărea o zonă ce va permite introducerea soluției
+          utilizatorului. În plus, acest editor de text pune la dispoziție un toolbar ce conține două butoane :
+          un buton ce permite comutare tab-ului pentru a scrie 4 spații în momentul apăsării și butonul de fullscreen,
+          ce mărește dimensiunea editorului.
+      </p>
+      <figure typeof="sa:image" id="solve-image">
+        <img src="UserGuideImages/highlighter.png" alt="highlight" class="screenshots">
+        <figcaption>2.11 Evidențiere sintaxă</figcaption>
+      </figure>
+      <p>
+        Pentru ușurința citirii propriei soluții, cuvintele cheie din limbajul SQL vor fi evidențiate în cadrul
+        editorului de text. 
       </p>
 
-      <h3 id="software-interface">3.3 Software Interfaces</h3>
+      <h3 id="star">2.12 Acordarea unei steluțe pentru un exercițiu</h3>
+      <figure typeof="sa:image" id="star-image">
+        <img src="UserGuideImages/giveStar.png" alt="star-exercise" class="screenshots">
+        <figcaption>2.12 Acordarea steluței</figcaption>
+      </figure>
       <p>
-        SQL-Games requires a browser compatible with HTML5 and CSS3 as well as
-        JavaScript being enabled.<br />
-        The site can also send messages to user email for different reasons
-        such as: resetting password, confirming email addres, notifying about
-        important events on the site.
+          După trimiterea soluției corecte, pe pagina exercițiului, lângă cerință va apărea o imagine cu o stea 
+          ce permite utilizatorului să voteze acel exercițiu. În urma votului, creatorul acelui exercițiu va primi
+          un eSQLid.
       </p>
 
-      <h3 id="communications-interface">3.4 Communications Interfaces</h3>
+      <h3 id="edit-exercise">2.13 Editarea unui exercițiu</h3>
+      <figure typeof="sa:image" id="buttons-image">
+        <img src="UserGuideImages/buttons.png" alt="edit-exercise" class="screenshots">
+        <figcaption>2.13 Buton editare exercițiu</figcaption>
+      </figure>
       <p>
-        SQL-Games requires am internet connection to communicate with web
-        server for validating users' input.
-        <br />
-        The site can send email to the users mailboxes using a SMTP server.
-        <br />
-        Communication between a client and the site is done according to the
-        standard protocol HTTPS.
-      </p>
-    </section>
-
-    <section typeof="sa:MaterialsAndMethods">
-      <h2 id="system-features">4. System Features</h2>
-
-      <h3 id="first-feature">4.1 System Feature 1: SQL exercises solving</h3>
-      <p>
-        Users can solve a wide range of exercises with certain levels of
-        difficulty relating to databases by typing the query in the code
-        editor on the exercise page. Every exercise will be solved on its own
-        individual page. The page contains a section with all the infromation
-        about the task and a blank space/code editor for solving the given
-        exercise as shown in the <a href="#user-interface-8">3.1 screenshot</a>.
-      </p>
-      <h4 id="first-feature-1">4.1.1 Description and Priority</h4>
-      <p>
-        This feature is of High priority, as it is the main use of this site.
-        The requirement section also features a colored bar in its right part with the
-        following meaning: if the color is red it means that the user did not
-        unlocked the current exercise and therefore they cannot solve it; if the
-        color is yellow it means that the user did not succeed in solving the exercise
-        or they had not tried the exercise yet ( but they unlocked it previously);
-        the green color means that the user succeeded is solving the exercise.
-      </p>
-      <h4 id="first-feature-2">4.1.2 Stimulus/Response</h4>
-      <ul>
-        <li>
-          The user types the response to the given exercise - the system
-          checks if the solution is right using the exercise the especially created
-          database and returns a message depending on wether the solution was
-          wrong or right.
-        </li>
-        <li>
-          Depending on how good, how fast or in which manner the task was
-          solved, the user can get a corresponding achievement.
-        </li>
-        <li>
-          If the user tries to enter DML / DDL commands they will be notified,
-          because this type of commands is forbidden. In case of spamming this kind
-          of command, the user will be restricted from the site.
-        </li>
-      </ul>
-      <h4 id="first-feature-3">4.1.3 Functional Requirements</h4>
-      <p>
-        In case of a wrong answer, invalid input or an error from the
-        exercises database the site will notify the user either by an error, if
-        there was a mistake in the input or if there was a problem at the exercise database,
-        or through coloring the section of the requirement which
-        displays if the exercise was solved correctly
+        Creatorul unui exercițiu are posibilitatea de modificare a exercițiului adăugat, prin apăsarea butonului "Edit exercise"
+        care va redirecționa utilizatorul pe o pagină din care va putea să modifice informațiile exercițiului.
       </p>
 
-      <h3 id="second-feature"> 4.2 System Feature 2: Shop</h3>
+      <h3 id="history">2.14 Vizualizarea statisticilor personale și a istoricului</h3>
+      <figure typeof="sa:image" id="history-image">
+        <img src="UserGuideImages/history.png" alt="history" class="screenshots">
+        <figcaption>2.14 Statistici și istoric</figcaption>
+      </figure>
       <p>
-        By giving right solutions to the exercises, users gain an amount of
-        local currency - "eSQLids", depending on the difficulty of the task.
-        They can use this currency to buy other exercises in the "shop"
-        section, where all the other available tasks are filtered by
-        difficulty or other criteria.
-      </p>
-      <h4 id="second-feature-1">4.2.1 Description and Priority</h4>
-      <p>
-        The priority of this feature is high priority based on the fact that before
-        solving an exercise, the user has to first pick one up. This feature
-        gives the user a way to choose what task to solve next. After that he
-        is sent to the exercise screen.
+        Din pagina de statistici, utilizatorul va putea să-și vizualizeze atât statisticile proprii cât și istoricul soluțiilor trimise
+        (soluțiile corecte vor fi evidențiate cu verde iar cele greșite cu roșu).
       </p>
 
-      <h4 id="second-feature-2">4.2.2 Stimulus/Response</h4>
-      <ul>
-        <li>
-          the user has enough eSQLids and "buys" an exercise - the user is
-          redirected to the exercise page
-        </li>
-        <li>
-          the user does not have enough currency to buy an exercise - the
-          exercise page can not be accesed by clicking the button, untill the
-          user has gained enough to finally unlock it.
-        </li>
-        <li>
-          by clicking on of the "layout" buttons, the user can choose to
-          rearrange the way the list of items in the shop looks: an expanded
-          or more compact way.
-        </li>
-        <li>the search bar allows the user to find a specific exercise</li>
-        <li>
-          the filter options can help the user alter the list of exercises, so
-          the most relevant to him/her are shown
-        </li>
-        <li>
-          the color of the button from an exercise section represents the state
-          of the exercise : red means that the user cannot afford to buy that exercise,
-          yellow means that they can buy it, green means that the exercise is bought and
-          can be solved, and transparent with the text "solved" means that the user
-          solved the exercise
-        </li>
-      </ul>
-
-      <h4 id="second-feature-3">4.2.3 Functional Requirements</h4>
-      <ul>
-        <li>
-          <p>
-            The search bar should access the exercises database and return the
-            needed values. The buttons shall change the layout.
-          </p>
-        </li>
-        <li>
-          <p>Invalid search inputs will return no results.</p>
-        </li>
-        <li>
-          <p>
-            The layout button will resize the content of the page depending on the
-            user's prefference ( compact or extended).</p>
-        </li>
-        <li>
-          <p>
-            The filter button will show only the exercises that satisfy the criteria
-            chosen by the user.
-          </p>
-        </li>
-        <li>
-          <p>
-            The buy button will make the exercise available for a user if they have
-            enough eSQLids to buy it.
-          </p>
-        </li>
-      </ul>
-      <h3 id="third-feature">4.3 System Feature 3: Achievements</h3>
-
+      <h3 id="statistics">2.15 Vizualizarea statisticilor generale ale site-ului</h3>
+      <figure typeof="sa:image" id="statistics-image">
+        <img src="UserGuideImages/top.png" alt="view-statistics" class="screenshots">
+        <figcaption>2.15 Statistici generale</figcaption>
+      </figure>
       <p>
-        Special achievements are shown on the personal profile page of the
-        user. Claiming some of them can even give the user more eSQLids. Some
-        of them include being the first to solve a task, solving all the tasks
-        of a category.
+        Indiferent de utilizator (anonim sau autentificat), acesta poate cere informații cu privire la 
+        statistica și topul general al utilizatorilor. Topul este generat în funcție de numărul de exerciții
+        rezolvate al utilizatorilor și rata acestora de succes.
+        Tot aici se găsesc butoanele pentru exportul de date, disponibil în formatele HTML și PDF.
       </p>
 
-      <h4 id="third-feature-1">4.3.1 Description and Priority</h4>
+      <h3 id="achievements">2.16 Vizualizarea realizărilor obținute</h3>
+      <figure typeof="sa:image" id="achievements-image">
+        <img src="UserGuideImages/achievements.png" alt="achievements" class="screenshots">
+        <figcaption>2.16 Realizările utilizatorului</figcaption>
+      </figure>
       <p>
-        Low priority, as this feature is only cosmetic or/and to stimulate
-        learning. But it is a feature we would strongly like to implements,
-        because it will greatly influence the users' experience.
+        Pentru a motiva utilizatorul, acesta este răsplătit prin primirea de realizări. Progresul unei anumite realizări
+        poate fi urmărit prin bara de progres al acesteia. Dacă o anumită realizare nu este completată, aceasta va fi
+        evidențiată cu o imagine a unui lacăt, aceasta dispărând în momentul completării realizării.
       </p>
 
-      <h4 id="third-feature-2">4.3.2 Stimulus/Response</h4>
-      <ul>
-        <li>
-          When a user does something remarkable, they gey an achievement,
-          shown on personal profile page.
-        </li>
-        <li>
-          The achievements are specific and can be added indefinetely after the
-          project finalization.
-        </li>
-      </ul>
-
-      <h4 id="third-feature-3">4.3.3 Functional Requirements</h4>
+      <h3 id="navbar">2.17 Utilizarea barei de navigare</h3>
+      <figure typeof="sa:image" id="navbar-image">
+        <img src="UserGuideImages/navbar.png" alt="navbar" class="screenshots">
+        <figcaption>2.17 Bară de navigare</figcaption>
+      </figure>
       <p>
-        The site should be notified when the user does something that checks
-        an achievement condition, so the achievemnt in cause is unlocked on
-        his/her profile page.
+        Paginile pot fi accesate prin bara de navigare. Aceasta conține legături către toate paginile aplicației.
+        Tot aici se găsește și numărul de eSQLids pe care un utilizator îi are.
       </p>
 
-      <h3 id="fourth-feature">4.4 System Feature 4: Profile</h3>
+      <h3 id="dropdown">2.18 Meniul dropdown</h3>
+      <figure typeof="sa:image" id="dropdown-image">
+        <img src="UserGuideImages/dropdown.png" alt="dropdown" class="screenshots">
+        <figcaption>2.18 Meniu Dropdown</figcaption>
+      </figure>
       <p>
-        By registering, every user will have their own profile on the site,
-        which they can use to solve the given tasks and gain eSQLids to solve
-        others.
-      </p>
+        Acest meniu apare când utilizatorul este autentificat și îi permite să acceseze informații personale precum pagina
+        de setări a profilului, pagina de statistici și pagina de realizări. Tot de aici se poate face și 
+        deautentificarea utilizatorului.
+      </p>  
 
-      <h4 id="fourth-feature-1">4.4.1 Description and Priority</h4>
-      <p>
-        Medium priority, because it is an important safety/security
-        requirement, but it is not the main intent of the site. The profile
-        is intended to help tracking the progress of an individual and help
-        the web application not getting spammed.
-      </p>
-
-      <h4 id="fourth-feature-2">4.4.2 Stimulus/Response</h4>
-      <ul>
-        <li>
-          The user registers - the site remembers their account details.
-          The user will be needed to enter information such as : their name,
-          an email used to confirm their account, and a password. In case of
-          wrong input (such as some other text than an email address) the person
-          will be notified.
-        </li>
-        <li>
-          Logging in with the correct credentials gives the user access to
-          their account. In order to log in the individual is required to
-          enter the correct email and the corresponding password.
-        </li>
-      </ul>
-
-      <h4 id="fourth-feature-3">4.4.3 Functional Requirements</h4>
-      <p>
-        Introducing the wrong credentials will result in incapability of
-        accessing the account features. Registering requires a password and
-        login of adequate length. Also some logins may be banned for obscene
-        meaning.
-      </p>
-
-      <h3 id="fifth-feature">4.5 System Feature 5: Profile Settings</h3>
-      <p>
-        Every user is able to modify their account information in the profile
-        settings section of the website. The Settings section enables users
-        to change things like : the email address linked to the account, their name,
-        their description and their contact information.
-      </p>
-      <h4 id="fifth-feature-1">4.5.1 Description and Priority</h4>
-      <p>
-        Low priority, because it offers the users the possibility to add
-        new information about themselves or modify some incorrect information from
-        their accounts, but it does not affect the process of solving exercises
-        on the application, nor the overall interaction with the website.
-      </p>
-      <h4 id="fifth-feature-2">4.5.2 Stimulus/Response</h4>
-      <ul>
-        <li>
-          The user enters the settings section and can see the kind of information
-          they can change. In order to access that section the person has to be
-          connected. If they are not connected an error message will be displayed
-        </li>
-        <li>
-          Users can modify information from their account, such as email address,
-          name or birthday. In case of invalid input the user will be notified.
-        </li>
-        <li>
-          The user has to submit all the changes they have made, otherwise all the
-          modifications will be discarded.
-        </li>
-      </ul>
-      <h4 id="fifth-feature-3">4.5.3 Functional Requirements</h4>
-      <ul>
-        <li>The user is required to enter valid data, such as a valid
-          email address or a valid birthday
-        </li>
-        <li>
-          The user has to enter their current password in order to be able
-          to change it, and must type the new password twitce, in order to confirm it
-        </li>
-      </ul>
-      <h3 id="sixth-feature">4.6 System Feature 6: Code Editor Syntax Highlighting</h3>
-      <p>
-        While typing their solution to a specific exercise the users will
-        have specific syntax higlighted in order to help them visualize their
-        code better.
-      </p>
-      <h4 id="sixth-feature-1">4.6.1 Description and Priority</h4>
-      <p>
-        This feature has a medium priority because even though an user will
-        be able to write code without the syntax highlighting, this would come
-        in handy when the solution gets more extended and they will need some
-        way to visualize the code in a better way.
-      </p>
-      <h4 id="sixth-feature-2">4.6.2 Stimulus/Response</h4>
-      <ul>
-        <li>
-          When the user will type some SQL reserved keywords, they will be colored
-          with a different color in the code editor in order to make the exercise solving
-          easier for the user.
-        </li>
-      </ul>
-      <h4 id="sixth-feature-3">4.6.3 Functional Requirements</h4>
-      <ul>
-        <li>
-          <p>
-            In order to use the syntax highlighter the user has to enter valid
-            SQL keywords, otherwise the words will be considered to be names from
-            the tables or other kind of placeholders.
-          </p>
-        </li>
-        <li>
-          If the user wants to use the syntax highlighter they are required to
-          enable JavaScript as the editor runs a script that constantly verifies
-          the input and highlights it accordingly.
-        </li>
-      </ul>
-    </section>
-
-    <section typeof="sa:MaterialsAndMethods">
-      <h2 id="non-functional">5. Other Nonfunctional Requirements</h2>
-
-      <h3 id="performance">5.1 Performance Requirements</h3>
-      <p>
-        This web application does not have any specific system requirements in order to
-        run properly but it would be desirable to use a device able to load
-        load the pages properly and not in a slow way so as to the user experience
-        not to be sluggish or laggy.
-      </p>
-
-      <h3 id="safety">5.2 Safety Requirements</h3>
-      <p>
-        To ensure that every solution is processed and the results are returned in
-        a correct way, the application will get updated regularly based on users'
-        feedback or bugs discovered by the developers of the application.
-        Another aspect that we will take care about is the aquisition of exercises,
-        so the shop will be constantly verified and taken care of, so the users
-        have the best experience, without any problem of any kind.
-      </p>
-
-      <h3 id="security">5.3 Security Requirements</h3>
-      <p>
-        The user profile should be protected by a login and password system,
-        to maintain their privacy and keep their data safe. <br>
-        Other security measures that have to be taken are : prevention of SQL-injection
-        attacks, blocking the multiple consecutive request coming from a user
-        in order to prevent spamming that could slow down the application and
-        blocking the users that would try to use queries in the exercises that could
-        result in negative effects on the exercise database.
-      </p>
     </section>
 
     <section typeof="sa:ReferenceList">
-      <h2 id="other-requirements">Other Requirements</h2>
-      <h3 id="databases">1.The databases included in the web application</h3>
+      <h3 id="appendix-a">Appendix A: Glosar</h3>
       <p>
-        There will be two databases used: one for storing the content on the site, such as
-        the accounts or the exercise requirements, and one to be used for
-        applying the queries on.
+        <i><b>eSQLid</b></i> - Moneda utilizată pentru cumpărarea de exerciți. Poate fi obținută
+        prin rezolvarea de exerciții și primirea de stele.
       </p>
-
-      <h3 id="appendix-a">Appendix A: Glossary</h3>
-      <p>
-        <i><b>eSQLid</b></i> - local currency used for buying new exercises
-        from the shop. Can be earned by solving tasks or gaining achievements.
+      <p><img itemscope="" itemtype="sa:Image" property="schema:ImageObject" src="../resources/first.png" alt="first"
+          class="img-first" />
+        - Acest simbol reprezintă faptul că acel exercițiu nu a mai fost rezolvat.
       </p>
-      <p><img itemscope="" itemtype="sa:Image" property="schema:ImageObject" src="../resources/first.png"
-          alt="first" class="img-first" />
-        - this symbol means that the exercise has not been solved by anyone,
-        so the user can be the first one to do it.
-      </p>
-
-      <h3 id="appendix-b">Appendix B: Used Creative Works</h3>
-      <ul>
-        <li>
-          <a property="schema:hasPart" href="https://www.flaticon.com/free-icon/sql_603201">SQL icon source</a>
-        </li>
-        <li>
-          <a property="schema:hasPart" href="http://clipart-library.com/clipart/achievement-cliparts_7.htm">Award icon
-            source</a> 
-        </li>
-        <li>
-          <a property="schema:hasPart" href="https://dryicons.com/icon/first-place-medal-icon-6435">First to solve an
-            exercise icon source</a>
-        </li>
-        <li>
-          <a property="schema:hasPart" href="https://www.pngaaa.com/detail/1308962">Tick icon used in shop source</a>
-        </li>
-      </ul>
     </section>
   </article>
 </body>
