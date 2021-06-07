@@ -183,7 +183,7 @@
             </h2>
             <h3 id="first-half">3.1 Prima jumătate a proiectului</h3>
             <ul>
-                <li>Prima etapă a dezvoltării proiectului a constat în întelegerea cerințelor și conceperea imaginativă a proiectului.</li>
+                <li>Prima etapă a dezvoltării proiectului a constat în înțelegerea cerințelor și conceperea imaginativă a proiectului.</li>
                 <li>Pasul următor al dezvoltării proiectului a constat în documentarea necesară dobândirii cunoștințelor
                     potrivite pentru a crea o interfață simplistă și totodată atractivă. În acest sens am învățat HTML5 și 
                     CSS3 ( pentru așezarea corectă a elementelor în pagină, pentru schimbarea font-urilor și culorilor obiectelor).
@@ -215,7 +215,7 @@
                 <li>
                     Prima din paginile mai sus menționate care a fost finalizată o reprezintă pagina de autentificare /
                     înregistrare, unde s-a hotarât o îmbinare a celor
-                    două, pentru a avea într-un singur loc ambele operații. S-a decis cum va arata animația și culorile
+                    două, pentru a avea într-un singur loc ambele operații. S-a decis cum va arăta animația și culorile
                     ce vor fi utilizate. Pentru crearea animației de tranziție de la login la register s-a utilizat exclusiv CSS.
                 </li>
                 <li>
@@ -231,7 +231,7 @@
                 <li>
                     Într-un anumit moment al testării au fost constatate anumite probleme vizuale legate de
                     redimensionarea paginii cauzată de așezarea barei de navigare,
-                    astfel încât am creat un script care să poată redimensiona dinamic conținutul paginii în funcție de
+                    în consecință am creat un script care să poată redimensiona dinamic conținutul paginii în funcție de
                     dimensiunile altor elemente. Acest script a fost realizat în JavaScript și ulterior l-am utilizat
                     pe toate paginile aplicației.
                 </li>
@@ -246,8 +246,8 @@
                     Următoarea etapă a fost reprezentată de lucrul la pagina de setări a contului, care a necesitat
                     discuții referitoare la modul de prezentare al elementelor
                     în cadrul paginii, cât și ce elemente urma să afișăm. Astfel, am decis să avem un meniu care să
-                    fie mereu accesibil utilizatorului în partea dreaptă a paginii, sau în susul paginii, pe ecranele cu
-                    o lățime mai mică. Am realizat acest lucru utilizând CSS pentru a-i da o pozitie fixă acelui meniu.
+                    fie mereu accesibil utilizatorului în partea stângă a paginii, sau în susul paginii, pe ecranele cu
+                    o lățime mai mică. Am realizat acest lucru utilizând CSS pentru a-i da o poziție fixă acelui meniu.
                 </li>
                 <li>
                     În urma finalizării paginilor mai sus menționate am început testarea tuturor interfețelor create
@@ -264,8 +264,8 @@
             <h3 id="second-half">3.2 A doua jumătate a proiectului</h3>
             <ul>
                 <li>
-                    Partea a doua a lucrului la proiect a fost constituită din documentarea în privința creării
-                    backend-ului utilizând arhitectura MVC.
+                    Partea a doua a lucrului la proiect a început prin documentarea în privința creării
+                    backend-ului utilizând arhitectura MVC și folosindu-ne de limbajul PHP.
                 </li>
                 <li>
                     Am creat structura generală a proiectului folosind informațiile dobândite în urma documentării
@@ -279,28 +279,33 @@
                 </li>
                 <li>
                     Al doilea pas concret a fost reprezentat de scrierea unui router care să poată gestiona în ce fel
-                    vor fi tratate cererile care ajung la aplicația noastră.
+                    vor fi tratate cererile care ajung la aplicația noastră. Astfel, pentru fiecare rută se va realiza o anumită
+                    acțiune. Pentru rutele generate dinamic (spre exemplu pentru a accesa un exercițiu specific), am folosit expresii
+                    regulate pentru a face rutarea ( am asociat unui URL care se potrivea cu o anumită expresie regulată o anumită
+                    funcție).
                 </li>
                 <li>
                     Următoarea operație a constat în crearea unei baze de date care să stocheze toate informațiile
                     privitoare la conținutul aplicației (tabela pentru: utilizatori,
-                    bonusuri, exerciții, exerciții cumpărate, etc.)
+                    bonusuri, exerciții, exerciții cumpărate, etc.), dar și a unei baze de date care are doar rolul
+                    de a executa interogările date de către utilizatori în cadrul rezolvărilor.
                 </li>
                 <li>
                     După stabilirea tabelelor și a structurii acestora, am început implementarea modelelor care
                     reprezintă clase specializate în comunicarea cu baza de date și
-                    care sa ne ușureze operațiile cu date (salvarea unui utilizator sau exercițiu, modificarea datelor
-                    personale ale utilizatorului, etc.).
+                    care să ne ușureze operațiile cu date (salvarea unui utilizator sau exercițiu, modificarea datelor
+                    personale ale utilizatorului, etc.). Comunicarea cu baza de date se face prin folosirea clasei
+                    PDO din cadrul limbajului PHP.
                 </li>
                 <li>
                     Având structura de bază creată pe componentele cele mai importante, am putut începe lucrul la
-                    funcționalitățile de bază ale site-ului (login, register).
+                    funcționalitățile de bază ale site-ului (login, register). 
                 </li>
                 <li>
-                    Urmatorii pași au reprezentat crearea funcționalităților cerute, respectiv crearea, cumpărarea,
+                    Următorii pași au reprezentat crearea funcționalităților cerute, respectiv crearea, cumpărarea,
                     editarea și rezolvarea de exerciții, precum și acordarea de bonusuri
                     pentru îndeplinirea anumitor obiective. Pentru a implementa aceste funcționalități în primul rând
-                    ne-am documentat cu privire la crearea de servicii.
+                    ne-am documentat cu privire la crearea de servicii REST.
                     Având noțiunile cunoscute, am început scrierea de servicii care să îndeplinească sarcinile necesare.
                     Astfel, am creat un serviciu care permite crearea și editarea unui
                     exercițiu, un serviciu care permite rezolvarea unui exercițiu, testând corectitudinea răspunsului
@@ -318,6 +323,12 @@
                     servicii a operațiilor menționate, aerisind astfel aplicația și modularizând structura proiectului.
                 </li>
                 <li>
+                    Întrucât am dorit ca operațiile din aplicație să se efectueze fără necesitatea de a reîncarca
+                    pagina, am optat pentru crearea de apeluri AJAX către serviciile precedent create și către 
+                    server-ul nostru. Astfel, orice operație făcută de către un utilizator primește imediat răspuns pe pagină
+                    (spre exemplu, editorul de cod pentru un exercițiu va apărea imediat după cumpărarea acelui exercițiu).
+                </li>
+                <li>
                     A urmat o discuție asupra detaliilor privind sistemul de cumpărare a exercițiilor și a câștigului de
                     eSQLids de către un utilizator în urma rezolvării unui
                     exercițiu. Astfel, am hotărât că posibilul câștig al unui utilizator în urma rezolvării unui
@@ -326,19 +337,19 @@
                     de eSQLids.
                 </li>
                 <li>
-                    Următoare discuție necesară dezvoltării proiectului a fost despre sistemul de acordare de steluțe
+                    Următoarea discuție necesară dezvoltării proiectului a fost despre sistemul de acordare de steluțe
                     exercițiilor și ce presupune pentru creatori primirea acestor
                     steluțe. În consecință am căzut de comun acord că doar utilizatorii care au putut rezolva acel
                     exercițiu pot acorda steluțe și că aceasta va presupune primirea de către
-                    creator a unui eSQLid.
+                    creator a unui eSQLid. Am realizat acest lucru printr-un apel AJAX către server-ul de backend,
+                    care actualiza în baza de date faptul că a fost acordată acea steluță și a crescut numărul de eSQLids
+                    al creatorului.
                 </li>
                 <li>
                     Am continuat prin implementarea altor funcționalități cerute ale aplicației : istoricul și
                     statisticile unui utilizator, precum și statistica generală a clasamentului de pe site. În primă
-                    fază
-                    am creat view-urile celor două pagini, urmând ca după aceea să implmentăm modul în care preluăm
-                    informațiile necesare și le prelucrăm, pentru ca ulterior să le
-                    afișăm utilizatorilor.
+                    fază am creat view-urile celor două pagini, urmând ca după aceea să implementăm modul în care preluăm
+                    informațiile necesare și le prelucrăm, pentru ca ulterior să le afișăm utilizatorilor.
                 </li>
                 <li>
                     Crearea funcționalităților mai sus menționate a necesitat și implementarea unui mod de a exporta
@@ -362,7 +373,7 @@
                 <li>
                     După ce am finalizat de implementat toate funcționalitățile am testat fiecare componentă a
                     proiectului pentru a detecta eventuale nereguli. Astfel, am corectat fiecare
-                    problema depistată care nu a fost găsită în etapele intermediare de testare.
+                    problemă depistată care nu a fost găsită în etapele intermediare de testare.
                 </li>
                 <li>
                     Ultima etapă a dezvoltării proiectului a presupus refactoring-ul codului, pentru a îmbunătăți
