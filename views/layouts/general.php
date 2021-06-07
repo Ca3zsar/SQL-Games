@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <meta name="keywords" content="HTML, CSS, JavaScript, SQL"/>
+    <meta name="keywords" content="HTML, CSS, JavaScript, SQL, infoiasi, web, project"/>
     <meta
             name="description"
             content="An website where you can solve SQL exercises"
@@ -17,6 +17,7 @@
             content="Buliga Eugeniu, Todirisca Cezar, Toma Andrei"
     />
     <meta name="application-name" content="SQL-Games"/>
+    
 
     <link rel="stylesheet" href="/styles/navbar.css"/>
     <link rel="stylesheet" href="/styles/footer.css"/>
@@ -89,7 +90,9 @@
     <footer class="footer-bar">
         <div class="links">
             <a href="/statistics">Statistics</a>
-            <a href="/Docs/scholarlyhtml">Scholarly HTML</a>
+            <a href="/Docs/scholarlyhtml.html">Scholarly HTML</a>
+            <a href="/Docs/IntermediateSteps/Progress.html">Progress</a>
+            <a href="/Docs/UserGuide.html">User guide</a>
         </div>
         <p itemscope itemtype="https://schema.org/copyrightHolder">
             © SQL-GAMES 2021
