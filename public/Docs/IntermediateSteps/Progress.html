@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Progres SQL-Games</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../../styles/scholarly_style.css" />
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body prefix="schema: https://schema.org/" itemscope="" itemtype="http://schema.org/WebPage">
+    <article prefix="sa:https://ns.science.ai/" typeof="schema:ScholarlyArticle">
+        <header>
+            <h1>Progres SQL-Games</h1>
+        </header>
+        <h2>Cuprins</h2>
+        <ul>
+            <li>
+                <a href="#authors">Autori</a>
+            </li>
+            <li>
+                <a href="#introduction">1. Introducere</a>
+                <ul>
+                    <li><a href="#introduction-purpose">1.1 Scop</a></li>
+                    <li><a href=" #conventions">1.2 Convenții ale documentului</a></li>
+                    <li><a href="#audience">1.3 Persoanele cărora le este destinat acest document</a></li>
+                    <li><a href="#product-references">1.4 Referințe</a></li>
+                </ul>
+            </li>
+        </ul>
+        <section id="authors" typeof="sa:AuthorsList">
+            <div role="contentinfo">
+                <h2>Authors</h2>
+                <ul>
+                    <li typeof="sa:ContributorRole" property="schema:author">
+                        <span typeof="schema:Person">
+                            <meta property="schema:givenName" content="Cezar" />
+                            <meta property="schema:familyName" content="Todirisca" />
+                            <span property="schema:name">Cezar Todirisca</span>
+                        </span>
+                        <ul>
+                            <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                                <a href="mailto:cezartodirisca@gmail.com"
+                                    property="schema:email">cezartodirisca@gmail.com</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li typeof="sa:ContributorRole" property="schema:author">
+                        <span typeof="schema:Person">
+                            <meta property="schema:givenName" content="Andrei" />
+                            <meta property="schema:familyName" content="Toma" />
+                            <span property="schema:name">Andrei Toma</span>
+                        </span>
+                        <ul>
+                            <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                                <a href="mailto:toma1.andrei47@gmail.com"
+                                    property="schema:email">toma1.andrei47@gmail.com</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li typeof="sa:ContributorRole" property="schema:author">
+                        <span typeof="schema:Person">
+                            <meta property="schema:givenName" content="Eugeniu" />
+                            <meta property="schema:familyName" content="Buliga" />
+                            <span property="schema:name">Eugeniu Buliga</span>
+                        </span>
+                        <ul>
+                            <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                                <a href="mailto:bul9001.com@gmail.com" property="schema:email">bul9001.com@gmail.com</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section typeof="sa:Abstract">
+            <div role="doc-introduction">
+                <h2 id="introduction">1. Introducere</h2>
+                SQL-Games este o aplicație weg a cărei scop este de a ajuta oamenii să
+                își dezvolte abilitățile de rezolvare a variate tipuri de exerciții și
+                de a-și crea propriile exerciții pentru a-i stimula pe ceilalți utilizatori.
+                Aceștia vor mai putea să iși vizualizeze progresul prin intermediul
+                secțiunii de statistici.
+                <h3 id="introduction-purpose">1.1 Scop</h3>
+                <p>
+                    Scopul acestui document este acela de a specifica cerințele site-ului SQL-Games.
+                    Acesta va prezenta scopul si caracteristicile aplicației web și ce poate aceasta să facă.
+                    În plus, acest document va prezenta modul în care aplicația trebuie folosită.
+                    Acest document este menit pentru a fi folosit de utilizatorii aplicației.
+                </p>
+
+                <h3 id="conventions">1.2 Convenții ale documentului</h3>
+
+                <ul>
+                    <li>Acest document urmează standardul IEEE SRS</li>
+                    <li>
+                        Scrisul cu <i><b>Italic Bold</b></i> evidențiază anumite chestiuni
+                        specifice aplicației noastre.
+                    </li>
+                </ul>
+
+                <h3 id="audience">1.3 Persoanele cărora le este destinat acest document</h3>
+                <p>
+                    Acest document este destinat atât pentru dezvoltatori cât și pentru utilizatori.
+                    Câteva elemente tehnice vor apărea de-a lungul documentului dar oricine
+                    ar trebui să fie capabil să înțeleagă conținutul.
+                </p>
+
+                <h3 id="product-references" typeof="sa:ReferenceList">1.5 Referințe</h3>
+                <ul>
+                    <li class="ref-something" typeof="schema:ScholarlyArticle"
+                        resource="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-projects.html">
+                        <span property="schema:author" typeof="schema:Person">
+                            <span property="schema:familyName">Buraga</span>
+                            <span property="schema:givenName">Sabin</span>.
+                            <span property="schema:additionalName">Corneliu</span>
+                        </span>
+                        <cite property="schema:name">Site-ul Tehnologii Web.</cite>
+                        <span property="schema:isPartOf" typeof="schema:PublicationVolume">
+                            <span property="schema:isPartOf" typeof="schema:Periodical">
+                                <span property="schema:name">FII UAIC.</span>
+                            </span>
+                        </span>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li class="ref-something" typeof="schema:ScholarlyArticle"
+                        resource="https://github.com/rick4470/IEEE-SRS-Tempate">
+                        <span property="schema:author" typeof="schema:Person">
+                            <span property="schema:familyName">H</span>
+                            <span property="schema:givenName">Rick</span>.
+                        </span>
+                        <cite property="schema:name">IEEE-Template.</cite>
+                        <span property="schema:isPartOf" typeof="schema:Periodical">
+                            <span property="schema:name">GitHub</span>
+                        </span>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li class="ref-something" typeof="schema:ScholarlyArticle"
+                        resource="https://vivliostyle.github.io/vivliostyle_doc/samples/scholarly/index.html">
+                        <span property="schema:author" typeof="schema:Person">
+                            <span property="schema:familyName">Berjon</span>
+                            <span property="schema:givenName">Robin</span>.
+                        </span>
+                        <span property="schema:author" typeof="schema:Person">
+                            <span property="schema:familyName">Ballesteros</span>
+                            <span property="schema:givenName">Sebastien</span>.
+                        </span>
+                        <cite property="schema:name">What is Scholarly HTML?</cite>
+                        <!-- </span> -->
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section typeof="sa:MaterialsAndMethods">
+            <h2 id="management">2. Sistemul de management al codului sursă</h2>
+            <p>
+                Pentru o mai bună gestionare a codului sursă al proiectului am ales să folosim
+                GitHub, întrucât ne permite să ținem o evidență mai exactă a modificărilor aduse
+                de la o etapă la alta a dezvoltării. În plus, oferă posibilitatea de a lucra
+                în paralel pe branch-uri diferite la caracteristici distincte ale proiectului, fără a
+                interfera cu progresul celorlalți, permițând în final integrarea tuturor modificărilor.
+                Un alt avantaj important este versionarea, care ne-a permis să anulăm unele modificări
+                care nu au fost benefice.
+            </p>
+            <p>
+                Astfel, orice modificare adusă codului sursă a fost adăugată pe GitHub,
+                folosindu-ne de GitHub Desktop pentru a ușura procesul de commit și push.
+                În consecință, orice adăugare sau ștergere de cod putea fi ușor vizualizată
+                și preluată, doar prin acțiunea de pull, eficientizând astfel munca depusă.
+            </p>
+        </section>
+        <section typeof="sa:MaterialsAndMethods">
+            <h2 id="progress">
+                3. Pașii intermediari dezvoltării proiectului
+            </h2>
+            <h3 id="first-half">3.1 Prima jumătate a proiectului</h3>
+            <ul>
+                <li>Prima etapă a dezvoltării proiectului a constat în întelegerea cerințelor și conceperea imaginativă a proiectului.</li>
+                <li>Pasul următor al dezvoltării proiectului a constat în documentarea necesară dobândirii cunoștințelor
+                    potrivite pentru a crea o interfață simplistă și totodată atractivă. În acest sens am învățat HTML5 și 
+                    CSS3 ( pentru așezarea corectă a elementelor în pagină, pentru schimbarea font-urilor și culorilor obiectelor).
+                </li>
+                <li>
+                    Următorul pas a presupus începerea creării unei pagini principale care îl va întâmpina pe utilizator în
+                    momentul accesării site-ului web. Am încercat inițial diferite modele de pagină principală și am 
+                    îmbinat din fiecare idee ce ni s-a părut mai bun.
+                </li>
+                <li>
+                    Am hotărât crearea unei bare de navigare și a unei zone de subsol și reutilizarea lor în toate
+                    celelalte pagini ale aplicației pentru a păstra o interfață
+                    comună. Acestea au fost gândite pentru a fi folosite pe orice fel de dispozitiv, fiind responsive și
+                    adaptându-se, astfel încât pe o rezoluție
+                    mai mică a ecranului, anumite elemente ale barei de navigare vor fi transformate într-un
+                    meniu dropdown.
+                </li>
+                <li>
+                    Am revenit asupra anumitor elemente din pagina principală și le-am adăugat efecte noi (spre exemplu
+                    hover-ul de pe elementele din bara de navigare) și am
+                    hotărât eliminarea altora (spre exemplu, inițial exista un editor de cod pe pagina principală pentru
+                    demo).
+                </li>
+                <li>
+                    După finalizarea paginii principale a început lucrul în paralel la mai multe pagini. Astfel, s-a
+                    început lucrul la pagina de setări, pagina de
+                    autentificare / înregistrare, pagina de magazin și interfața specifică unui anumit exercițiu.
+                </li>
+                <li>
+                    Prima din paginile mai sus menționate care a fost finalizată o reprezintă pagina de autentificare /
+                    înregistrare, unde s-a hotarât o îmbinare a celor
+                    două, pentru a avea într-un singur loc ambele operații. S-a decis cum va arata animația și culorile
+                    ce vor fi utilizate. Pentru crearea animației de tranziție de la login la register s-a utilizat exclusiv CSS.
+                </li>
+                <li>
+                    Urmatoarea pagină finalizată a fost pagina specifică unui anumit exercițiu, pentru care a trebuit să
+                    alegem în ce mod va arăta editorul de cod,
+                    cum vom ilustra diferitele stadii ale unor exerciții ( cumpărate, încercate, rezolvate ) și am creat
+                    anumite script-uri care să faciliteze
+                    redimensionarea editorului în funcție de conținutul scris și să arate numărul de linii scrise de
+                    utilizator. De altfel, tot atunci am decis și introducerea unei bare de instrumente care să
+                    permită utilizarea editorului pe întreaga lățime a ecranului. Am realizat acest lucru utilizând
+                    un script simplu în JavaScript, plus CSS.
+                </li>
+                <li>
+                    Într-un anumit moment al testării au fost constatate anumite probleme vizuale legate de
+                    redimensionarea paginii cauzată de așezarea barei de navigare,
+                    astfel încât am creat un script care să poată redimensiona dinamic conținutul paginii în funcție de
+                    dimensiunile altor elemente. Acest script a fost realizat în JavaScript și ulterior l-am utilizat
+                    pe toate paginile aplicației.
+                </li>
+                <li>
+                    După rezolvarea problemelor vizuale, am continuat lucrul la pagina de magazin, unde am hotărât cum
+                    organizăm lista de exerciții (și care sunt informațiile relevante
+                    pentru un exercițiu din listă) și bara de meniu a magazinului, care urma să aibă rolul de a filtra
+                    și căuta anumite exerciții. Pentru implementarea celor două moduri de vizualizare (compact / extins),
+                    ne-am folosit de JavaScript, adăugând un eveniment care se declanșează în momentul apăsării unui buton.
+                </li>
+                <li>
+                    Următoarea etapă a fost reprezentată de lucrul la pagina de setări a contului, care a necesitat
+                    discuții referitoare la modul de prezentare al elementelor
+                    în cadrul paginii, cât și ce elemente urma să afișăm. Astfel, am decis să avem un meniu care să
+                    fie mereu accesibil utilizatorului în partea dreaptă a paginii, sau în susul paginii, pe ecranele cu
+                    o lățime mai mică. Am realizat acest lucru utilizând CSS pentru a-i da o pozitie fixă acelui meniu.
+                </li>
+                <li>
+                    În urma finalizării paginilor mai sus menționate am început testarea tuturor interfețelor create
+                    pentru a depista posibile probleme. După găsirea neregulilor,
+                    le-am rezolvat și am postat modificările pe platforma de management a codului.
+                    Testarea a presupus analiza paginilor pe diverse rezoluții și apăsarea anumitor butoane pentru a
+                    ne asigura că funcționează corespunzător.
+                </li>
+                <li>
+                    După scrierea de cod, am redactat documentul în formatul Scholarly HTML necesar primei etape de
+                    construire a proiectului.
+                </li>
+            </ul>
+            <h3 id="second-half">3.2 A doua jumătate a proiectului</h3>
+            <ul>
+                <li>
+                    Partea a doua a lucrului la proiect a fost constituită din documentarea în privința creării
+                    backend-ului utilizând arhitectura MVC.
+                </li>
+                <li>
+                    Am creat structura generală a proiectului folosind informațiile dobândite în urma documentării
+                    asupra arhitecturii MVC.
+                </li>
+                <li>
+                    Primul pas concret a constat în transformarea fișierelor HTML din cadrul componentei de front-end în
+                    fișiere PHP, transformându-le în view-uri și creând
+                    layout-uri pentru a facilita scrierea și de a nu repeta anumite secvențe de cod. Astfel, în
+                    următorii pași va fi posibilă crearea de conținut dinamic.
+                </li>
+                <li>
+                    Al doilea pas concret a fost reprezentat de scrierea unui router care să poată gestiona în ce fel
+                    vor fi tratate cererile care ajung la aplicația noastră.
+                </li>
+                <li>
+                    Următoarea operație a constat în crearea unei baze de date care să stocheze toate informațiile
+                    privitoare la conținutul aplicației (tabela pentru: utilizatori,
+                    bonusuri, exerciții, exerciții cumpărate, etc.)
+                </li>
+                <li>
+                    După stabilirea tabelelor și a structurii acestora, am început implementarea modelelor care
+                    reprezintă clase specializate în comunicarea cu baza de date și
+                    care sa ne ușureze operațiile cu date (salvarea unui utilizator sau exercițiu, modificarea datelor
+                    personale ale utilizatorului, etc.).
+                </li>
+                <li>
+                    Având structura de bază creată pe componentele cele mai importante, am putut începe lucrul la
+                    funcționalitățile de bază ale site-ului (login, register).
+                </li>
+                <li>
+                    Urmatorii pași au reprezentat crearea funcționalităților cerute, respectiv crearea, cumpărarea,
+                    editarea și rezolvarea de exerciții, precum și acordarea de bonusuri
+                    pentru îndeplinirea anumitor obiective. Pentru a implementa aceste funcționalități în primul rând
+                    ne-am documentat cu privire la crearea de servicii.
+                    Având noțiunile cunoscute, am început scrierea de servicii care să îndeplinească sarcinile necesare.
+                    Astfel, am creat un serviciu care permite crearea și editarea unui
+                    exercițiu, un serviciu care permite rezolvarea unui exercițiu, testând corectitudinea răspunsului
+                    trimis de utilizator, și un serviciu care poate servi o listă de exerciții filtrate și sortate după
+                    anumite criterii date de utilizator sau un exercițiu specific.
+                </li>
+                <li>
+                    Pentru a ușura procesul de creare și editare a unui exercițiu am creat un view care să poată deservi
+                    utilizatorului o interfață grafică unde poate introduce sau modifica
+                    specificațiile unui anumit exercițiu.
+                </li>
+                <li>
+                    Următoarea modificare adusă aplicației a implicat schimbarea modului în care realizăm autentificarea
+                    și înregistrarea, optând în favoarea rescrierii ca
+                    servicii a operațiilor menționate, aerisind astfel aplicația și modularizând structura proiectului.
+                </li>
+                <li>
+                    A urmat o discuție asupra detaliilor privind sistemul de cumpărare a exercițiilor și a câștigului de
+                    eSQLids de către un utilizator în urma rezolvării unui
+                    exercițiu. Astfel, am hotărât că posibilul câștig al unui utilizator în urma rezolvării unui
+                    exercițiu este calculat după formula : (preț exercițiu*1.25) rotunjit la cel mai apropiat întreg.
+                    În cazul în care un utilizator este primul care rezolvă un exercițiu, acesta va primi un număr dublu
+                    de eSQLids.
+                </li>
+                <li>
+                    Următoare discuție necesară dezvoltării proiectului a fost despre sistemul de acordare de steluțe
+                    exercițiilor și ce presupune pentru creatori primirea acestor
+                    steluțe. În consecință am căzut de comun acord că doar utilizatorii care au putut rezolva acel
+                    exercițiu pot acorda steluțe și că aceasta va presupune primirea de către
+                    creator a unui eSQLid.
+                </li>
+                <li>
+                    Am continuat prin implementarea altor funcționalități cerute ale aplicației : istoricul și
+                    statisticile unui utilizator, precum și statistica generală a clasamentului de pe site. În primă
+                    fază
+                    am creat view-urile celor două pagini, urmând ca după aceea să implmentăm modul în care preluăm
+                    informațiile necesare și le prelucrăm, pentru ca ulterior să le
+                    afișăm utilizatorilor.
+                </li>
+                <li>
+                    Crearea funcționalităților mai sus menționate a necesitat și implementarea unui mod de a exporta
+                    datele, astfel am creat script-uri JavaScript care folosesc librăria externă jsPDF și
+                    care poate îndeplini aceste sarcini, iar utilizatorul să poată descărca statisticile oferite de site
+                    doar prin apăsarea unui buton.
+                </li>
+                <li>
+                    Un alt detaliu implementat a fost reprezentat de adăugarea de evidențiere de sintaxă în cadrul
+                    editoarelor din paginile de creat, editat și rezolvat exerciții, lucru
+                    pe care l-am îndeplinit prin utilizarea unei librării externe, respectiv highlightJS.
+                </li>
+                <li>
+                    Ultima funcționalitate implementată a fost cea care se ocupă de administrarea realizărilor obținute
+                    de un utilizator. Pentru aceasta, am discutat și am căutat resurse
+                    artistice externe care să ilustreze diferite realizări, recurgând la descărcarea de imagini
+                    gratuite, a căror autori vor fi menționați în documentația proiectului.
+                    Așadar, am hotărât ca în final să avem 15 realizări diferite, care să stimuleze atât crearea de
+                    exerciții bune și rezolvarea acestora cât și motivația utilizatorilor de a obține realizări.
+                </li>
+                <li>
+                    După ce am finalizat de implementat toate funcționalitățile am testat fiecare componentă a
+                    proiectului pentru a detecta eventuale nereguli. Astfel, am corectat fiecare
+                    problema depistată care nu a fost găsită în etapele intermediare de testare.
+                </li>
+                <li>
+                    Ultima etapă a dezvoltării proiectului a presupus refactoring-ul codului, pentru a îmbunătăți
+                    calitatea acestuia, a-l face mai lizibil și mai eficient.
+                </li>
+            </ul>
+        </section>
+    </article>
+</body>
+
+</html>
