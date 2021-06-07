@@ -95,7 +95,7 @@ if (isset($_SESSION['user'])) {
          
                 <textarea id="editor" autocomplete="off" spellcheck="false" class="editor allow-tabs"></textarea>
                 <label style="display:none;" for="editor">
-                CEVA
+                placeholder
                 </label>
                 <pre><code class="sql syntax-highlight "></code></pre>
            

@@ -87,7 +87,10 @@ class ExerciseController extends Controller
             } elseif (isset($params["solve"]) && isset($params["exerciseId"])) {
                 try {
                     $exercise->loadExercise($params["exerciseId"]);
-                    $data = json_encode(array("query" => $params["query"], "correctQuery" => $exercise->correctQuery));
+                    $data = json_encode(array("query" => htmlspecialchars_decode($params["query"]), "correctQuery" => htmlspecialchars_decode($exercise->correctQuery)));
+
+//                    echo $data;
+//                    exit;
 
                     $curl = curl_init();
                     curl_setopt($curl, CURLOPT_POST, 1);
@@ -102,6 +105,7 @@ class ExerciseController extends Controller
                     $decoded = json_decode($result, 1);
                     $decoded["boughtBy"] = $exercise->boughtBy;
                     $decoded["solvedBy"] = $exercise->solvedBy;
+                    $decoded["stars"] = $exercise->stars;
 
                     $result = json_encode($decoded);
 

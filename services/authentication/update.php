@@ -133,7 +133,7 @@ if($user && password_verify($data->currentPassword,$user->password))
         unset($rules["email"]);
     }
 
-    if(!(isset($data->phone)) || $data->phone === $user->phone)
+    if(!(isset($data->phone)) || $data->phone === $user->phone || empty($data->phone))
     {
         unset($rules["phone"]);
     }
