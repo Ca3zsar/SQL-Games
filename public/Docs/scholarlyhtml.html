@@ -43,8 +43,7 @@
           <li><a href="#users">2.3 User Classes and Characteristics</a>
             <ul>
               <li><a href="#regular-users">2.3.1 Regular user</a></li>
-              <li><a href="#teacher-users">2.3.2 Teacher user</a></li>
-              <li><a href="#admin-users">2.3.3 Admin</a></li>
+              <li><a href="#unauth-users">2.3.2 Unautenticated user</a></li>
             </ul>
           </li>
           <li><a href="#operating-environment">2.4 Operating Environment</a></li>
@@ -96,25 +95,18 @@
               <li><a href="#third-feature-3">4.3.3 Functional Requirements</a></li>
             </ul>
           </li>
-          <li><a href="#fourth-feature">4.4 System Feature 4: Profile</a>
+          <li><a href="#fifth-feature">4.4 System Feature 4: Profile Settings</a>
             <ul>
-              <li><a href="#fourth-feature-1">4.4.1 Description and Priority</a></li>
-              <li><a href="#fourth-feature-2">4.4.2 Stimulus/Response</a></li>
-              <li><a href="#fourth-feature-3">4.4.3 Functional Requirements</a></li>
+              <li><a href="#fifth-feature-1">4.4.1 Description and Priority</a></li>
+              <li><a href="#fifth-feature-2">4.4.2 Stimulus/Response</a></li>
+              <li><a href="#fifth-feature-3">4.4.3 Functional Requirements</a></li>
             </ul>
           </li>
-          <li><a href="#fifth-feature">4.5 System Feature 5: Profile Settings</a>
+          <li><a href="#sixth-feature">4.5 System Feature 5: Code Editor Syntax Highlighting</a>
             <ul>
-              <li><a href="#fifth-feature-1">4.5.1 Description and Priority</a></li>
-              <li><a href="#fifth-feature-2">4.5.2 Stimulus/Response</a></li>
-              <li><a href="#fifth-feature-3">4.5.3 Functional Requirements</a></li>
-            </ul>
-          </li>
-          <li><a href="#sixth-feature">4.6 System Feature 6: Code Editor Syntax Highlighting</a>
-            <ul>
-              <li><a href="#sixth-feature-1">4.6.1 Description and Priority</a></li>
-              <li><a href="#sixth-feature-2">4.6.2 Stimulus/Response</a></li>
-              <li><a href="#sixth-feature-3">4.6.3 Functional Requirements</a></li>
+              <li><a href="#sixth-feature-1">4.5.1 Description and Priority</a></li>
+              <li><a href="#sixth-feature-2">4.5.2 Stimulus/Response</a></li>
+              <li><a href="#sixth-feature-3">4.5.3 Functional Requirements</a></li>
             </ul>
           </li>
         </ul>
@@ -222,9 +214,7 @@
           practice their skills in the databases course and learn how to write
           SQL queries properly. Another purpose of the application is to boost
           the users' creativity by offering them a chance to create their own
-          queries to be solved by other users. Also, it is intended to help
-          teachers track their students' progress and organize them in classes
-          in order to evaluate them.
+          queries to be solved by other users.
         </p>
 
         <h4 id="product-benefits">1.4.2 Benefits</h4>
@@ -235,9 +225,6 @@
           accumulate more eSQLids. <br />
           Achievements are intended as not only a form of bragging, but also a
           way of noting the most advanced students. <br />
-          The grouping of students in classes in order to follow their
-          evolution is another benefit of the application, helping teachers
-          evaluating their students in an easier way.
         </p>
 
         <h4 id="product-goals">1.4.3 Goals and objectives</h4>
@@ -320,14 +307,15 @@
       <p>Some of the major functions are:</p>
 
       <ul>
-        <li>create account</li>
+        <li>create an account</li>
+        <li>login</li>
         <li>modify account settings</li>
-        <li>the ability to solve database-related tasks</li>
-        <li>buy new tasks and earn eSQLids currency</li>
+        <li>the ability to solve exercises</li>
+        <li>buy new exercises and earn eSQLids</li>
         <li>an achievement system integrated in the account of every user</li>
-        <li>group student users in classes</li>
-        <li>create new tasks</li>
-        <li>view statistics</li>
+        <li>create new exercises</li>
+        <li>edit your own exercises</li>
+        <li>view your statistics and history</li>
       </ul>
 
       <h3 id="users">2.3 User Classes and Characteristics</h3>
@@ -337,41 +325,30 @@
           practising SQL
         </li>
         <li>
-          Teacher user such as university, college professors, tutors or any
-          other worker in the education system.
-        </li>
-        <li>
-          Admin user such as the project's authors or any pertinent or
-          appropriate person willing to maintain the web application
+          Unautenticated users, that can only see the exercises, without interacting
+          in any other way with the content of the application
         </li>
       </ul>
 
       <h4 id="regular-users">2.3.1 Regular user</h4>
       <ul>
-        <li>Can solve tasks</li>
+        <li>Can solve exercises</li>
         <li>Gain achivements.</li>
-        <li>Can create his own problems to be solved by other users</li>
+        <li>Can create their own problems to be solved by other users</li>
+        <li>Modify their own exercises</li>
+        <li>Give stars</li>
         <li>Gain eSQLids</li>
         <li>See their statistics</li>
         <li>Modify account details.</li>
       </ul>
 
-      <h4 id="teacher-users">2.3.2 Teacher user</h4>
+      <h4 id="unauth-users">2.3.2 Unautenticated user</h4>
       <ul>
-        <li>Cand do the same actions a regular user can do.</li>
-        <li>Group students in a class and give them specific tasks.</li>
-        <li>Can see students responses.</li>
-        <li>(Low priority)</li>
+        <li>Can see the exercises posted on the website</li>
+        <li>Can see the top of users</li>
+        <li>Can create an account</li>
+        <li>Can login in the application</li>
       </ul>
-
-      <h4 id="admin-users">2.3.3 Admin</h4>
-      <ul>
-        <li>Everything the above roles can do +</li>
-        <li>Set task price</li>
-        <li>Change task requirements</li>
-        <li>Assign teacher role to a simple user.</li>
-      </ul>
-
       <h3 id="operating-environment">2.4 Operating Environment</h3>
       <p>
         Can be used on any device with a web browser that supports HTML5, CSS
@@ -458,6 +435,21 @@
         <figcaption>3.1.9 Footer</figcaption>
       </figure>
 
+      <figure typeof="sa:image" id="user-interface-10">
+        <img src="../resources/scholarly_images/screenshot_achievements.png" alt="achievements-page-screenshot" class="screenshots" />
+        <figcaption>3.1.10 Achievements page</figcaption>
+      </figure>
+
+      <figure typeof="sa:image" id="user-interface-11">
+        <img src="../resources/scholarly_images/screenshot_history.png" alt="history-page-screenshot" class="screenshots" />
+        <figcaption>3.1.11 History page</figcaption>
+      </figure>
+
+      <figure typeof="sa:image" id="user-interface-12">
+        <img src="../resources/scholarly_images/screenshot_creator.png" alt="exercise-editor-page-screenshot" class="screenshots" />
+        <figcaption>3.1.12 Exercise editor page</figcaption>
+      </figure>
+
       <h3 id="hardware-interface">3.2 Hardware Interfaces</h3>
       <p>
         This product does not require any hardware interfaces. It works in a
@@ -479,8 +471,6 @@
         SQL-Games requires am internet connection to communicate with web
         server for validating users' input.
         <br />
-        The site can send email to the users mailboxes using a SMTP server.
-        <br />
         Communication between a client and the site is done according to the
         standard protocol HTTPS.
       </p>
@@ -494,7 +484,7 @@
         Users can solve a wide range of exercises with certain levels of
         difficulty relating to databases by typing the query in the code
         editor on the exercise page. Every exercise will be solved on its own
-        individual page. The page contains a section with all the infromation
+        individual page. The page contains a section with all the information
         about the task and a blank space/code editor for solving the given
         exercise as shown in the <a href="#user-interface-8">3.1 screenshot</a>.
       </p>
@@ -517,13 +507,12 @@
           wrong or right.
         </li>
         <li>
-          Depending on how good, how fast or in which manner the task was
+          Depending on how fast the task was
           solved, the user can get a corresponding achievement.
         </li>
         <li>
           If the user tries to enter DML / DDL commands they will be notified,
-          because this type of commands is forbidden. In case of spamming this kind
-          of command, the user will be restricted from the site.
+          because this type of commands is forbidden. 
         </li>
       </ul>
       <h4 id="first-feature-3">4.1.3 Functional Requirements</h4>
@@ -554,13 +543,13 @@
       <h4 id="second-feature-2">4.2.2 Stimulus/Response</h4>
       <ul>
         <li>
-          the user has enough eSQLids and "buys" an exercise - the user is
-          redirected to the exercise page
+          the user has enough eSQLids and "buys" an exercise - the code editor
+          will appear
         </li>
         <li>
           the user does not have enough currency to buy an exercise - the
-          exercise page can not be accesed by clicking the button, untill the
-          user has gained enough to finally unlock it.
+          exercise page will not display the code editor but a message that
+          tells this.
         </li>
         <li>
           by clicking on of the "layout" buttons, the user can choose to
@@ -579,6 +568,7 @@
           can be solved, and transparent with the text "solved" means that the user
           solved the exercise
         </li>
+        <li>after solving an exercise, a star image appears and allows user to upvote the exercise</li>
       </ul>
 
       <h4 id="second-feature-3">4.2.3 Functional Requirements</h4>
@@ -613,24 +603,21 @@
       <h3 id="third-feature">4.3 System Feature 3: Achievements</h3>
 
       <p>
-        Special achievements are shown on the personal profile page of the
-        user. Claiming some of them can even give the user more eSQLids. Some
-        of them include being the first to solve a task, solving all the tasks
-        of a category.
+        Special achievements are shown on the achievements page. 
+        Some of them include being the first to solve a task, solving a specific number of exercises.
       </p>
 
       <h4 id="third-feature-1">4.3.1 Description and Priority</h4>
       <p>
         Low priority, as this feature is only cosmetic or/and to stimulate
-        learning. But it is a feature we would strongly like to implements,
-        because it will greatly influence the users' experience.
+        learning. 
       </p>
 
       <h4 id="third-feature-2">4.3.2 Stimulus/Response</h4>
       <ul>
         <li>
-          When a user does something remarkable, they gey an achievement,
-          shown on personal profile page.
+          When a user does something remarkable, they get an achievement,
+          shown on achievement page.
         </li>
         <li>
           The achievements are specific and can be added indefinetely after the
@@ -641,64 +628,25 @@
       <h4 id="third-feature-3">4.3.3 Functional Requirements</h4>
       <p>
         The site should be notified when the user does something that checks
-        an achievement condition, so the achievemnt in cause is unlocked on
-        his/her profile page.
+        an achievement condition, so the achievement in cause is unlocked.
       </p>
 
-      <h3 id="fourth-feature">4.4 System Feature 4: Profile</h3>
-      <p>
-        By registering, every user will have their own profile on the site,
-        which they can use to solve the given tasks and gain eSQLids to solve
-        others.
-      </p>
-
-      <h4 id="fourth-feature-1">4.4.1 Description and Priority</h4>
-      <p>
-        Medium priority, because it is an important safety/security
-        requirement, but it is not the main intent of the site. The profile
-        is intended to help tracking the progress of an individual and help
-        the web application not getting spammed.
-      </p>
-
-      <h4 id="fourth-feature-2">4.4.2 Stimulus/Response</h4>
-      <ul>
-        <li>
-          The user registers - the site remembers their account details.
-          The user will be needed to enter information such as : their name,
-          an email used to confirm their account, and a password. In case of
-          wrong input (such as some other text than an email address) the person
-          will be notified.
-        </li>
-        <li>
-          Logging in with the correct credentials gives the user access to
-          their account. In order to log in the individual is required to
-          enter the correct email and the corresponding password.
-        </li>
-      </ul>
-
-      <h4 id="fourth-feature-3">4.4.3 Functional Requirements</h4>
-      <p>
-        Introducing the wrong credentials will result in incapability of
-        accessing the account features. Registering requires a password and
-        login of adequate length. Also some logins may be banned for obscene
-        meaning.
-      </p>
-
-      <h3 id="fifth-feature">4.5 System Feature 5: Profile Settings</h3>
+     
+      <h3 id="fifth-feature">4.4 System Feature 4: Profile Settings</h3>
       <p>
         Every user is able to modify their account information in the profile
         settings section of the website. The Settings section enables users
         to change things like : the email address linked to the account, their name,
-        their description and their contact information.
+        their description, their contact information and their password.
       </p>
-      <h4 id="fifth-feature-1">4.5.1 Description and Priority</h4>
+      <h4 id="fifth-feature-1">4.4.1 Description and Priority</h4>
       <p>
         Low priority, because it offers the users the possibility to add
         new information about themselves or modify some incorrect information from
         their accounts, but it does not affect the process of solving exercises
         on the application, nor the overall interaction with the website.
       </p>
-      <h4 id="fifth-feature-2">4.5.2 Stimulus/Response</h4>
+      <h4 id="fifth-feature-2">4.4.2 Stimulus/Response</h4>
       <ul>
         <li>
           The user enters the settings section and can see the kind of information
@@ -714,30 +662,30 @@
           modifications will be discarded.
         </li>
       </ul>
-      <h4 id="fifth-feature-3">4.5.3 Functional Requirements</h4>
+      <h4 id="fifth-feature-3">4.4.3 Functional Requirements</h4>
       <ul>
         <li>The user is required to enter valid data, such as a valid
-          email address or a valid birthday
+          email address or a valid birthday.
         </li>
         <li>
           The user has to enter their current password in order to be able
-          to change it, and must type the new password twitce, in order to confirm it
+          to change it, and must type the new password twitce, in order to confirm it.
         </li>
       </ul>
-      <h3 id="sixth-feature">4.6 System Feature 6: Code Editor Syntax Highlighting</h3>
+      <h3 id="sixth-feature">4.5 System Feature 5: Code Editor Syntax Highlighting</h3>
       <p>
         While typing their solution to a specific exercise the users will
         have specific syntax higlighted in order to help them visualize their
         code better.
       </p>
-      <h4 id="sixth-feature-1">4.6.1 Description and Priority</h4>
+      <h4 id="sixth-feature-1">4.5.1 Description and Priority</h4>
       <p>
         This feature has a medium priority because even though an user will
         be able to write code without the syntax highlighting, this would come
         in handy when the solution gets more extended and they will need some
         way to visualize the code in a better way.
       </p>
-      <h4 id="sixth-feature-2">4.6.2 Stimulus/Response</h4>
+      <h4 id="sixth-feature-2">4.5.2 Stimulus/Response</h4>
       <ul>
         <li>
           When the user will type some SQL reserved keywords, they will be colored
@@ -745,7 +693,7 @@
           easier for the user.
         </li>
       </ul>
-      <h4 id="sixth-feature-3">4.6.3 Functional Requirements</h4>
+      <h4 id="sixth-feature-3">4.5.3 Functional Requirements</h4>
       <ul>
         <li>
           <p>
@@ -830,6 +778,39 @@
         </li>
         <li>
           <a property="schema:hasPart" href="https://www.pngaaa.com/detail/1308962">Tick icon used in shop source</a>
+        </li>
+        <li>
+          <a property="schema:hasPart" href="https://www.flaticon.com/free-icon/star_276020">Star icon</a>
+        </li>
+        <li>
+          <a property="schema:hasPart" href="https://www.flaticon.com/free-icon/early-bird_2332125?term=early%20bird&page=1&position=9&page=1&position=9&related_id=2332125&origin=tag">Early bird icon</a>
+        </li>
+        <li>
+          <a property="schema:hasPart" href="https://www.flaticon.com/free-icon/stars_270171?term=stars&page=5&position=27&page=5&position=27&related_id=270171&origin=search&k=1622300294801">Lock icon</a>
+        </li>
+        <li>
+          <a property="schema:hasPart" href="https://www.flaticon.com/free-icon/generate_1924721?related_id=1924721">Achievement icon 1</a>
+        </li>
+        <li>
+          <a property="schema:hasPart" href="https://www.flaticon.com/free-icon/teamwork_4814780?term=puzzle&page=1&position=86&page=1&position=86&related_id=4814780&origin=search">Achievement icon 2</a>
+        </li>
+        <li>
+          <a property="schema:hasPart" href="https://www.flaticon.com/free-icon/piggy-bank_1198349?related_id=1198298&origin=search">Achievement icon 3</a>
+        </li>
+        <li>
+          <a property="schema:hasPart" href="https://www.flaticon.com/free-icon/salary_3135679?term=money&related_id=3135679">Achievement icon 4</a>
+        </li>
+        <li>
+          <a property="schema:hasPart" href="https://www.flaticon.com/free-icon/review_2885608?term=stars&related_id=2885608">Achievement icon 5</a>
+        </li>
+        <li>
+          <a property="schema:hasPart" href="https://www.flaticon.com/free-icon/stars_270171?term=stars&page=5&position=27&page=5&position=27&related_id=270171&origin=search&k=1622300294801">Achievement icon 6</a>
+        </li>
+        <li>
+          <a property="schema:hasPart" href="https://www.flaticon.com/free-icon/stars_270171?term=stars&page=5&position=27&page=5&position=27&related_id=270171&origin=search&k=1622300294801">Achievement icon 7</a>
+        </li>
+        <li>
+          <a property="schema:hasPart" href="https://www.flaticon.com/free-icon/stars_270171?term=stars&page=5&position=27&page=5&position=27&related_id=270171&origin=search&k=1622300294801">Achievement icon 8</a>
         </li>
       </ul>
     </section>
