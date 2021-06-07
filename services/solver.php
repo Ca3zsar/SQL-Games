@@ -59,7 +59,13 @@ function getDifferences(Database $database, $query, $correctQuery)
                 exit;
             }
 
-            $statement = $database->pdo->prepare("($query EXCEPT ($correctQuery)) UNION ALL ($correctQuery EXCEPT ($query))");
+            $statement = $database->pdo->prepare("((SELECT * FROM ( $query ) a )
+                                                    EXCEPT 
+                                                    ( SELECT * FROM ($correctQuery) b ) ) 
+                                                    UNION ALL 
+                                                    ((SELECT * FROM ( $correctQuery ) c ) 
+                                                    EXCEPT 
+                                                    (SELECT * FROM ( $query ) d ))");
             $statement->execute();
 
             $results = $statement->fetch();
@@ -71,7 +77,7 @@ function getDifferences(Database $database, $query, $correctQuery)
                 exit;
             }
         } catch (PDOException $e) {
-            echo json_encode(array("errorMessage" => "Invalid query"));
+            echo json_encode(array("errorMessage" => $e->getMessage()));
             exit;
         }
     } else {
