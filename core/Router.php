@@ -37,11 +37,8 @@ class Router
         $this->routes['post'][$path] = $callback;
     }
 
-    public function resolve()
+    public function getCallback($path, $method)
     {
-        $path = $this->request->getPath();
-        $method = $this->request->method();
-
         $callback = $this->routes[$method][$path] ?? false;
 
         if ($callback === false) {
@@ -51,20 +48,26 @@ class Router
                     break;
                 }
             }
-            if ($callback === false) {
-                throw new NotFoundException();
-            }
         }
-        if (is_string($callback)) {
+        return $callback;
+    }
 
-            return $this->renderView($callback, "", "");
+    public function resolve()
+    {
+        $path = $this->request->getPath();
+        $method = $this->request->method();
+
+        $callback = $this->getCallback($path, $method);
+
+        if ($callback === false) {
+            throw new NotFoundException();
         }
+
         if (is_array($callback)) {
-            /**
-             * @var Controller $controller
-             */
             $controller = new $callback[0]();
+
             Application::$app->controller = $controller;
+
             $controller->action = $callback[1];
             $callback[0] = $controller;
 

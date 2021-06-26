@@ -10,9 +10,6 @@ class Controller
 {
     public string $layout = 'main';
     public string $action = '';
-    /**
-     * @var BaseMidleware[]
-     */
     protected array $middlewares = [];
 
     public function setLayout($layout)
@@ -30,9 +27,6 @@ class Controller
         $this->middlewares[]=$middleware;
     }
 
-    /**
-     * @return BaseMidleware[]
-     */
     public function getMiddlewares(): array
     {
         return $this->middlewares;

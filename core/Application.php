@@ -25,8 +25,10 @@ class Application
     {
         $this->userClass = $config['userClass'];
         $this->creatorClass = $config['creatorClass'];
+
         self::$ROOT_DIR = $rootPath;
         self::$app = $this;
+
         $this->request = new Request();
         $this->response = new Response();
         $this->router = new Router($this->request, $this->response);
@@ -47,25 +49,14 @@ class Application
         try {
             echo $this->router->resolve();
         } catch (Exception $e) {
+             Application::$app->controller = new Controller();
 
-            if($e->getCode() == 404){
-                Application::$app->controller = new Controller();
-            }
             Application::$app->controller->layout = 'general';
             $this->response->setStatusCode($e->getCode());
             $styles = '<link rel="stylesheet" title="extended" type="text/css" href="/styles/error.css"/>';
+
             echo $this->router->renderView('_error', $this->errorTitles[$e->getCode()], $styles, ['exception' => $e]);
         }
-    }
-
-    public function getController(): Controller
-    {
-        return $this->controller;
-    }
-
-    public function setController(Controller $controller): void
-    {
-        $this->controller = $controller;
     }
 
     public function login(DBModel $user)
